@@ -26,8 +26,8 @@
         <h3 class="toc_title" id="contents">Contents</h3>
         <div id="toc_container">
           <ul>
-            <li><a href="#sec1">1. Sentence prosody generation from the same speaker onto a multi-speaker model(Korean)</a></li>
-            <li><a href="#sec2">2. Sentence prosody generation from unseens speaker onto a multi-speaker model(Korean)</a></li>
+            <li><a href="#sec1">1. Sentence prosody generation from the seen speaker onto a multi-speaker model(Korean)</a></li>
+            <li><a href="#sec2">2. Sentence prosody generation from the unseen speaker onto a multi-speaker model(Korean)</a></li>
           </ul>
           <h5>Result : <a href="https://github.com/prml-lab-speech-team/demo">[Link]</a></h5>
         </div>
@@ -35,9 +35,11 @@
         <!-- Section1 -->
         <br>
         <div>
-          <a id="sec1"><h3 style="display:inline">1. Sentence prosody generation from the same speaker onto a multi-speaker model(Korean)</h3> &nbsp<a href="#contents">&ltTop&gt</a></a>
+          <a id="sec1"><h3 style="display:inline">1. Sentence prosody generation from the seen speaker onto a multi-speaker model(Korean)</h3> &nbsp<a href="#contents">&ltTop&gt</a></a>
+          <div style="padding-left: 10px;">
+          <p>&nbsp;Using 30 speakers from National Institute of Korean Language(NIKL) dataset, we train the sentence prosody autoencoder to generate sentence prosody embedding. We compare the speeches synthesized with prosody embedding(baseline) and sentence prosody embedding(proposed method) from unseen utterances of the trained speakers. During the inference, we utilize long utterance for prosody and synthesize with longer sentence to evaluate robustness toward the length of sentence.</p>
+          </div>
 
-          <br><br>
            <!-- <p><b> Sentence :</b> 안녕하세요 모두들 반갑습니다.</p>-->
           <table cellpadding="15">
             <tbody>
@@ -327,9 +329,11 @@
         <!-- Section2 -->
         <br>
         <div>
-          <a id="sec2"><h3 style="display:inline">2. Sentence prosody generation from unseens speaker onto a multi-speaker model(Korean)</h3> &nbsp<a href="#contents">&ltTop&gt</a></a>
+          <a id="sec2"><h3 style="display:inline">2. Sentence prosody generation from the unseen speaker onto a multi-speaker model(Korean)</h3> &nbsp<a href="#contents">&ltTop&gt</a></a>
+          <div style="padding-left: 10px;">
+            <p>We compare the speeches synthesized with prosody embedding(baseline) and sentence prosody embedding(proposed method) from unseen utterances of the unseen speakers. During the inference, we utilize long utterance for prosody and synthesize with longer sentence to evaluate robustness toward the length of sentence.</p>
+          </div>
 
-          <br><br>
            <!-- <p><b> Sentence :</b> 안녕하세요 모두들 반갑습니다.</p>-->
           <table cellpadding="15">
             <tbody>
