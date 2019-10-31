@@ -16,8 +16,8 @@
         <!--<div class="p-3">-->
         <header>
           <h1 align="left">INDIVIDUAL PROSODY CONTROL USING GENERATED DURATION AND INTONATION VIA MEL SPECTROGRAM DEFORMATION</h1>
-            <h4 align="left"><b>Authors :</b> Chan-Ho Song, Sang-Hoon Lee, and Seong-Whan Lee</h4>
-            <p><font size="4"><b>Abstract : </b></font>In speech and signal processing, it is very important to control the prosody for various speech synthesis. However, as the prosody is mixed with various features, it is difficult to control the individual prosody. Disentangling various features allows individual control without affecting other features. In this paper, we propose an individual prosody control architecture which consists of domain adversarial neural network (DANN) and conditional variational autoencoder (CVAE). We apply data augmentation which randomly warps the duration and local pitch of the mel spectrogram to deform the speaker’s unique prosody. We utilize the difference between original and deformed mel spectrograms to represent the disentangled voice and prosody features. We can control the prosody and synthesize the various duration and intonation speeches using only monotonic speech data without high-quality data. We evaluate disentangling features and individual prosody control of synthesized speech through t-SNE and comparison of F0.</p>
+            <h4 align="left"><b>Authors :</b> Chan-Ho Song, Sang-Hoon Lee, Hyun-Wook Yoon, Hyeong-Rae Noh, and Seong-Whan Lee</h4>
+            <p><font size="4"><b>Abstract : </b></font>In speech and signal processing, it is very important to control the prosody for various speech synthesis. However, as the prosody is mixed with various features, it is difficult to control the individual prosody. Disentangling various features allows individual control without affecting other features. In this paper, we propose an individual prosody control architecture which consists of domain adversarial neural network (DANN) and conditional variational autoencoder (CVAE). We apply data augmentation which randomly warps the duration and local pitch of the mel spectrogram to deform the speaker’s unique prosody. We utilize the difference between original and deformed mel spectrograms to represent the disentangled voice and prosody features. We can control the prosody and synthesize the various duration and intonation speeches using only monotonic speech data without high-quality data. We evaluate disentangling features and individual prosody control of synthesized speech through t-SNE and comparison of F0 tracks.</p>
           <!--<h3 align="center">Korea University PRML Lab</h3>-->
         </header>
         </br>
@@ -294,12 +294,12 @@
           <table cellpadding="15">
             <tbody>
             <tr>
-              <td align="left" valign="center" style="padding-right:10px"><b>Reference audio sentence <br>(English pronounciation)</b><img width="400" /></td>
-              <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+              <td align="left" valign="center" style="padding-right:10px"><b>Reference sentence<br>(English pronounciation)</b><img width="400" /></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Reference audio</b></td>
               <td align="center" valign="center" style="padding-right:10px"><b>Input sentence <br>(English pronounciation)</b><img width="400" /></td>
-              <td align="center" valign="center" style="padding-right:30px"><b>Condition label= original</b></td>
-              <td align="center" valign="center" style="padding-right:30px"><b>Condition label = time</b></td>
-              <td align="center" valign="center" style="padding-right:30px"><b>Condition label = frequency</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Synthesized (Condition label=original)</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Synthesized (time)</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Synthesized (frequency)</b></td>
             </tr>
 
             <tr>
