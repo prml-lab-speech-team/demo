@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<br lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>SENTENCE PROSODY GENERATION USING TEXT-CONDITIONAL SENTENCE PROSODY AUTOENCODER FOR NATURAL SPEECH SYNTHESIS</title>
+    <link href="static/bootstrap-4.1.3-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    </head>
+    <body>
+        </br>
+        <div align="left">
+          <img src="static/images/01_korea_logo.png" width="300">
+        </div>
+        </br>
+
+        <!--<div class="p-3">-->
+        <header>
+          <h1 align="left">SENTENCE PROSODY GENERATION USING TEXT-CONDITIONAL SENTENCE PROSODY AUTOENCODER FOR NATURAL SPEECH SYNTHESIS</h1>
+            <h4 align="left"><b>Authors :</b> Sang-Hoon Lee, Hyun-Wook Yoon, Hyeong-Rae Noh, and Seong-Whan Lee</h4>
+            <p><font size="4"><b>Abstract : </b></font>Numerous attempts have been made to enable the text-tospeech (TTS) model to synthesize speech with a variety of speaking styles extracted from the input audio. Given that the input audio is an utterance of a particular sentence, the speaking style from the audio has specific sentence information. However, many use this speaking style as a prosody feature without removing text information. In this work, we introduce a text-conditional sentence prosody autoencoder which can generate the appropriate sentence prosody for the text sequence to be synthesized by removing the text information of the input audio and predicting the text information of the target audio. We demonstrate that the synthesized speech with the generated sentence prosody features has not only speaker identity of the input audio, but also prosody for a particular sentence. Furthermore, we also evaluate zero-shot sentence prosody generation from the audio of an unknown speaker.</p>
+          <!--<h3 align="center">Korea University PRML Lab</h3>-->
+        </header>
+        </br>
+        <!--</div>-->
+
+        <h3 class="toc_title" id="contents">Contents</h3>
+        <div id="toc_container">
+          <ul>
+            <li><a href="#sec1">1. Sentence prosody generation from the seen speaker onto a multi-speaker model(Korean)</a></li>
+            <li><a href="#sec2">2. Sentence prosody generation from the unseen speaker onto a multi-speaker model(Korean)</a></li>
+          </ul>
+          <!--<h5>Result : <a href="https://github.com/prml-lab-speech-team/demo">[Link]</a></h5>-->
+        </div>
+
+        <!-- Section1 -->
+        <br>
+        <div>
+          <a id="sec1"><h3 style="display:inline">1. Sentence prosody generation from the seen speaker onto a multi-speaker model(Korean)</h3> &nbsp<a href="#contents">&ltTop&gt</a></a>
+          <div style="padding-left: 10px;">
+          <p>&nbsp;Using 30 speakers from National Institute of Korean Language(NIKL) dataset, we train the sentence prosody autoencoder to generate sentence prosody embedding. We compare the speeches synthesized with prosody embedding(baseline) and sentence prosody embedding(proposed method) from unseen utterances of the trained speakers. During the inference, we utilize long utterance for prosody and synthesize with longer sentence to evaluate robustness toward the length of sentence.</p>
+          </div>
+
+           <!-- <p><b> Sentence :</b> 안녕하세요 모두들 반갑습니다.</p>-->
+          <table cellpadding="15">
+            <tbody>
+            <!-- fv01 -->
+            <tr>
+              <td align="left" valign="center" style="padding-right:10px"><b>Korean sentence <br>(English pronounciation)</b><img width="400" /></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;"><i>먼 산골짜기에 얼룩얼룩 눈이 녹기 시작하고 흙바람이 불어 오면, 양지쪽에 몰려 앉아 볕을 쬐던 마을 아이들은 들로 뛰쳐 나가 불놀이를 시작했다.<br>(meon sangoljjagie eollug-eollug nun-i noggi sijaghago heulgbalam-i bul-eo omyeon, yangjijjog-e mollyeo anj-a byeot-eul jjoedeon ma-eul aideul-eun deullo ttwichyeo naga bulnol-ileul sijaghaessda.)</i></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv01/original/fv01_t01_s05.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv01/reference/fv01_t14_s04.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv01/random/2019-10-03_11-47-40.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv01/autoencoder/2019-10-03_11-48-06.wav"></audio></td>
+            </tr>
+
+            <!-- fv02 -->
+            <tr>
+              <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+              <td style="padding-right:50px; font-size:13px;">여름 장이란 애시 당초에 글러서, 해는 아직 중천에 있건만 장판은 벌써 쓸쓸하고 더운 햇발이 벌여 놓은 전 휘장 밑으로 등줄기를 훅훅 볶는다.<br>(yeoleum jang-ilan aesi dangcho-e geulleoseo, haeneun ajig jungcheon-e issgeonman jangpan-eun beolsseo sseulsseulhago deoun haesbal-i beol-yeo noh-eun jeon hwijang mit-eulo deungjulgileul hughug bokkneunda.)</td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv02/original/fv02_t08_s01.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv02/reference/fv02_t18_s05.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv02/random/2019-10-04_12-40-23.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv02/autoencoder/2019-10-04_12-40-33.wav"></audio></td>
+            </tr>
+
+            <!-- fv03 -->
+            <tr>
+              <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+              <td style="padding-right:50px; font-size:13px;">실컷 풀을 먹고 난 소들은 나무 밑이나 잔디밭에 배를 깔고 졸면서 천천히 새김질을 하거나, 젖먹이를 달고 온 어미소면 혓바닥으로 새끼 몸뚱이를 핥아 주기도 했다.<br>(silkeos pul-eul meoggo nan sodeul-eun namu mit-ina jandibat-e baeleul kkalgo jolmyeonseo cheoncheonhi saegimjil-eul hageona, jeojmeog-ileul dalgo on eomisomyeon hyeosbadag-eulo saekki momttung-ileul halt-a jugido haessda.)</td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv03/original/fv03_t01_s35.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv03/reference/fv03_t11_s40.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv03/random/2019-10-04_13-10-52.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv03/autoencoder/2019-10-04_13-11-11.wav"></audio></td>
+            </tr>
+
+            <!-- fv05 -->
+            <tr>
+              <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+              <td style="padding-right:50px; font-size:13px;">주막 앞을 지나치면서 만도는 술방 문을 열어 볼까 했으나, 방문 앞에 신이 여러 켤레 널려 있고, 방안에서는 지금 웃음소리가 요란하기 때문에 돌아오는 길에 들르기로 하였다.<br>(jumag ap-eul jinachimyeonseo mandoneun sulbang mun-eul yeol-eo bolkka haess-euna, bangmun ap-e sin-i yeoleo kyeolle neollyeo issgo, bang-an-eseoneun jigeum us-eumsoliga yolanhagi ttaemun-e dol-aoneun gil-e deulleugilo hayeossda.)</td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv05/original/fv05_t07_s62.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv05/reference/fv05_t18_s20.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv05/random/2019-10-04_13-57-25.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv05/autoencoder/2019-10-04_13-56-53.wav"></audio></td>
+            </tr>
+
+            <!-- fx01 -->
+            <tr>
+              <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+              <td style="padding-right:50px; font-size:13px;">둘레에는 잡목과 가시 덩굴들이 얽혔지만, 등성이로는 오솔길이 나 있고, 군데군데 잔디를 곱게 입은 무덤들이 도래솔에 둘려 있었다.<br>(dulleeneun jabmoggwa gasi deong-guldeul-i eolghyeossjiman, deungseong-iloneun osolgil-i na issgo, gundegunde jandileul gobge ib-eun mudeomdeul-i dolaesol-e dullyeo iss-eossda.)</td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fx01/original/fx01_t01_s22.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fx01/reference/fx01_t19_s02.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fx01/random/2019-10-06_08-08-12.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fx01/autoencoder/2019-10-06_08-08-26.wav"></audio></td>
+            </tr>
+
+            <!-- fx02 -->
+            <tr>
+              <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+              <td style="padding-right:50px; font-size:13px;">둘레에는 잡목과 가시 덩굴들이 얽혔지만, 등성이로는 오솔길이 나 있고, 군데군데 잔디를 곱게 입은 무덤들이 도래솔에 둘려 있었다.<br>(dulleeneun jabmoggwa gasi deong-guldeul-i eolghyeossjiman, deungseong-iloneun osolgil-i na issgo, gundegunde jandileul gobge ib-eun mudeomdeul-i dolaesol-e dullyeo iss-eossda.)</td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fx02/original/fx02_t01_s22.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fx02/reference/fx02_t19_s05.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fx02/random/2019-10-06_10-22-41.wav"></audio></td>
+              <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fx02/autoencoder/2019-10-06_10-22-55.wav"></audio></td>
+            </tr>
+
+            <!-- my01 -->
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">광화문 근처에 신문판매대가 많지만 내가 다른 곳을 찾지 않고 유독 지하도에서 신문 파는 아주머니에게 가는 것은 몇 해 전 일 때문이다.<br>(gwanghwamun geuncheoe sinmunpanmaedaega manhjiman naega daleun gos-eul chaj-ji anhgo yudog jihado-eseo sinmun paneun ajumeoniege ganeun geos-eun myeoch hae jeon il ttaemun-ida.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/my01/original/my01_t14_s07.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/my01/reference/my01_t18_s19.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/my01/random/2019-10-07_07-39-23.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/my01/autoencoder/2019-10-07_07-39-35.wav"></audio></td>
+            </tr>
+
+            <!-- my02 -->
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">한편 창가에 있던 호랑이는 곶감? 곶감이란 놈이 나보다 더 무서운 모양이구나.  여기 있다가는 그 곶감이란 놈한테 잡혀먹을지도 모르겠다.  하고는 뒤도 돌아보지 않고 산을 향해서 뛰었습니다.<br>(hanpyeon chang-ga-e issdeon holang-ineun gojgam? gojgam-ilan nom-i naboda deo museoun moyang-iguna.  yeogi issdaganeun geu gojgam-ilan nomhante jabhyeomeog-euljido moleugessda.  hagoneun dwido dol-aboji anhgo san-eul hyanghaeseo ttwieossseubnida.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/my02/original/my02_t11_s40.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/my02/reference/my02_t13_s21.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/my02/random/2019-10-07_07-41-36.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/my02/autoencoder/2019-10-07_07-41-50.wav"></audio></td>
+            </tr>
+
+            <!-- mz02 -->
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">간간이 벼를 지거나 물동이를 이고 징검다리를 건너는 사람들의 모습이 가을하늘을 배경으로 물에 비치면 사람들은 뜻 모를 쓸쓸함으로 괜한 한숨을 짓기도 합니다.<br>(gangan-i byeoleul jigeona muldong-ileul igo jing-geomdalileul geonneoneun salamdeul-ui moseub-i ga-eulhaneul-eul baegyeong-eulo mul-e bichimyeon salamdeul-eun tteus moleul sseulsseulham-eulo gwaenhan hansum-eul jisgido habnida.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mz02/original/mz02_t13_s21.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mz02/reference/mz02_t19_s19.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mz02/random/2019-10-07_07-52-55.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mz02/autoencoder/2019-10-07_07-53-07.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">주막 앞을 지나치면서 만도는 술방 문을 열어 볼까 했으나, 방문 앞에 신이 여러 켤레 널려 있고, 방안에서는 지금 웃음소리가 요란하기 때문에 돌아오는 길에 들르기로 하였다.<br>(jumag ap-eul jinachimyeonseo mandoneun sulbang mun-eul yeol-eo bolkka haess-euna, bangmun ap-e sin-i yeoleo kyeolle neollyeo issgo, bang-an-eseoneun jigeum us-eumsoliga yolanhagi ttaemun-e dol-aoneun gil-e deulleugilo hayeossda.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw04/original/mw04_t07_s62.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw04/reference/mw04_t08_s02.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw04/random/2019-10-07_07-16-25.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw04/autoencoder/2019-10-07_07-16-41.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">여름이 오면 소금쟁이가 바빠지고 개구리들도 분주해지지만 무럭무럭 자라는 벼에 물을 대기 위하여 동네 아저씨들도 아침저녁으로 냇가에 나와 도랑을 쳐 물꼬를 틉니다.<br>(yeoleum-i omyeon sogeumjaeng-iga bappajigo gaegulideuldo bunjuhaejijiman muleogmuleog jalaneun byeoe mul-eul daegi wihayeo dongne ajeossideuldo achimjeonyeog-eulo naesga-e nawa dolang-eul chyeo mulkkoleul teubnida.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw03/original/mw03_t13_s12.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw03/reference/mw03_t18_s20.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw03/random/2019-10-07_05-42-27.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw03/autoencoder/2019-10-07_05-42-41.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">이상은 비현실적인 것, 초현실적인 것이란 점에서 우리 현실의 권외에 있으면서도, 이것을 추구하기 위하여 연구하고 노력하면 도달할 수도 있다는 점에서 꿈과 다르고, 따라서 공상이 아니다.<br>(isang-eun bihyeonsiljeog-in geos, chohyeonsiljeog-in geos-ilan jeom-eseo uli hyeonsil-ui gwon-oee iss-eumyeonseodo, igeos-eul chuguhagi wihayeo yeonguhago nolyeoghamyeon dodalhal sudo issdaneun jeom-eseo kkumgwa daleugo, ttalaseo gongsang-i anida.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw02/original/mw02_t06_s17.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw02/reference/mw02_t15_s11.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw02/random/2019-10-07_02-58-39.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw02/autoencoder/2019-10-07_02-58-52.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">둘레에는 잡목과 가시 덩굴들이 얽혔지만, 등성이로는 오솔길이 나 있고, 군데군데 잔디를 곱게 입은 무덤들이 도래솔에 둘려 있었다.<br>(dulleeneun jabmoggwa gasi deong-guldeul-i eolghyeossjiman, deungseong-iloneun osolgil-i na issgo, gundegunde jandileul gobge ib-eun mudeomdeul-i dolaesol-e dullyeo iss-eossda.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw01/original/mw01_t01_s22.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw01/reference/mw01_t19_s02.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw01/random/2019-10-07_02-54-45.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mw01/autoencoder/2019-10-07_02-54-57.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">씨름에도 지치고 말타기도 싫증이 나면, 산을 향해 고함을 질러, 돌아오는 메아리에 귀를 기울여 보기도 하고, 만만한 나무를 휘어잡아 까닭 없이 흔들어 보기도 했다.<br>(ssileum-edo jichigo maltagido silhjeung-i namyeon, san-eul hyanghae goham-eul jilleo, dol-aoneun mealie gwileul giul-yeo bogido hago, manmanhan namuleul hwieojab-a kkadalg eobs-i heundeul-eo bogido haessda.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv05/original/mv05_t01_s24.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv05/reference/mv05_t18_s05.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv05/random/2019-10-07_02-52-51.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv05/autoencoder/2019-10-07_02-53-06.wav"></audio></td>
+            </tr>
+
+
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">마을 사람들은 거지반 돌아간 뒤요, 팔리지 못한 나무꾼 패가 길거리에 궁싯거리고들 있으나, 석윳병이나 받고 고깃마리나 사면 족할 이 축들을 바라고 언제까지든지 버티고 있을 법은 없다.<br>(ma-eul salamdeul-eun geojiban dol-agan dwiyo, palliji moshan namukkun paega gilgeolie gungsisgeoligodeul iss-euna, seog-yusbyeong-ina badgo gogismalina samyeon joghal i chugdeul-eul balago eonjekkajideunji beotigo iss-eul beob-eun eobsda.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv02/original/mv02_t08_s02.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv02/reference/mv02_t18_s05.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv02/random/2019-10-07_02-45-47.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv02/autoencoder/2019-10-07_02-45-59.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">사람이 어려서는 가정 교육을 통하여, 좀 자라서는 학교 교육을 통하여, 그리고 성인이 되어서는 사회 교육에 의하여 지식을 배우게 되나, 도저히 그 전부를 배울 수는 없는 일이다.<br>(salam-i eolyeoseoneun gajeong gyoyug-eul tonghayeo, jom jalaseoneun haggyo gyoyug-eul tonghayeo, geuligo seong-in-i doeeoseoneun sahoe gyoyug-e uihayeo jisig-eul baeuge doena, dojeohi geu jeonbuleul baeul suneun eobsneun il-ida.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv01/original/mv01_t06_s52.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv01/reference/mv01_t18_s20.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv01/random/2019-10-07_02-41-28.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv01/autoencoder/2019-10-07_02-40-51.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">마음이 급한 오누이는 두 손을 모으고 하나님, 저희를 도우사 새 동아줄을 내려 주세요! 하고 기도하자 하늘에선 튼튼한 새 동아줄이 내려왔어요.<br>(ma-eum-i geubhan onu-ineun du son-eul mo-eugo hananim, jeohuileul dousa sae dong-ajul-eul naelyeo juseyo! hago gidohaja haneul-eseon teunteunhan sae dong-ajul-i naelyeowass-eoyo.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fz06/original/fz06_t12_s20.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fz06/reference/fz06_t18_s23.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fz06/random/2019-10-07_02-37-26.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fz06/autoencoder/2019-10-07_02-37-51.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">아득히 이어지는 산골짜기의 꼬불꼬불한 산길과 고개를 넘어 집에 닿으면, 해는 서산에 기울고 호롱불 밑에서 숙제를 하다 졸면서 잠드는 아이들이다.<br>(adeughi ieojineun sangoljjagiui kkobulkkobulhan sangilgwa gogaeleul neom-eo jib-e dah-eumyeon, haeneun seosan-e giulgo holongbul mit-eseo sugjeleul hada jolmyeonseo jamdeuneun aideul-ida.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fz05/original/fz05_t18_s19.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fz05/reference/fz05_t19_s19.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fz05/random/2019-10-07_02-35-41.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fz05/autoencoder/2019-10-07_02-35-38.wav"></audio></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section2 -->
+        <br>
+        <div>
+          <a id="sec2"><h3 style="display:inline">2. Sentence prosody generation from the unseen speaker onto a multi-speaker model(Korean)</h3> &nbsp<a href="#contents">&ltTop&gt</a></a>
+          <div style="padding-left: 10px;">
+            <p>We compare the speeches synthesized with prosody embedding(baseline) and sentence prosody embedding(proposed method) from unseen utterances of the unseen speakers. During the inference, we utilize long utterance for prosody and synthesize with longer sentence to evaluate robustness toward the length of sentence.</p>
+          </div>
+
+           <!-- <p><b> Sentence :</b> 안녕하세요 모두들 반갑습니다.</p>-->
+          <table cellpadding="15">
+            <tbody>
+            <tr>
+              <td align="left" valign="center" style="padding-right:10px"><b>Korean sentence <br>(English pronounciation)</b><img width="400" /></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+              <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">한편 창가에 있던 호랑이는 곶감? 곶감이란 놈이 나보다 더 무서운 모양이구나.  여기 있다가는 그 곶감이란 놈한테 잡혀먹을지도 모르겠다.  하고는 뒤도 돌아보지 않고 산을 향해서 뛰었습니다.<br>(hanpyeon chang-ga-e issdeon holang-ineun gojgam? gojgam-ilan nom-i naboda deo museoun moyang-iguna.  yeogi issdaganeun geu gojgam-ilan nomhante jabhyeomeog-euljido moleugessda.  hagoneun dwido dol-aboji anhgo san-eul hyanghaeseo ttwieossseubnida.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv11/original/fv11_t11_s40.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv11/reference/fv11_t19_s02.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv11/random/2019-10-14_14-08-25.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv11/autoencoder/2019-10-14_14-08-41.wav"></audio></td>
+            </tr>
+
+
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">이 나무꾼은 매일 산에 올라가 나무를 하는데, 나무를 하다가 힘이 들어 쉬고 있을 때면, 새들이 지저귀며 곁으로 날아 들고, 작은 짐승들도 다가와 속삭이는 거였어요.<br>(i namukkun-eun maeil san-e ollaga namuleul haneunde, namuleul hadaga him-i deul-eo swigo iss-eul ttaemyeon, saedeul-i jijeogwimyeo gyeot-eulo nal-a deulgo, jag-eun jimseungdeuldo dagawa sogsag-ineun geoyeoss-eoyo.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv06/original/fy06_t10_s02.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv06/reference/fy06_t18_s20.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv06/random/2019-10-14_13-10-48.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/fv06/autoencoder/2019-10-14_13-11-03.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">지하철 5호선이 개통된 뒤에는 노점들이 더 많아져서 꽃이며 비디오, 가방 같은 것들도 지하도 한 귀퉁이를 차지하고 있는데, 내가 자주 찾는 곳은 신문을 파는 곳이다.<br>(jihacheol 5hoseon-i gaetongdoen dwieneun nojeomdeul-i deo manh-ajyeoseo kkoch-imyeo bidio, gabang gat-eun geosdeuldo jihado han gwitung-ileul chajihago issneunde, naega jaju chajneun gos-eun sinmun-eul paneun gos-ida.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv08/original/mv08_t14_s04.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv08/reference/mv08_t19_s02.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv08/random/2019-10-14_13-46-32.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv08/autoencoder/2019-10-14_13-46-48.wav"></audio></td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="center" style="padding-right:10px"><img width="400" /></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Original</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Reference</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Baseline</b></td>
+                <td align="center" valign="center" style="padding-right:30px"><b>Proposed</b></td>
+            </tr>
+            <tr>
+                <td style="padding-right:50px; font-size:13px;">씨름에도 지치고 말타기도 싫증이 나면, 산을 향해 고함을 질러, 돌아오는 메아리에 귀를 기울여 보기도 하고, 만만한 나무를 휘어잡아 까닭 없이 흔들어 보기도 했다.<br>(ssileum-edo jichigo maltagido silhjeung-i namyeon, san-eul hyanghae goham-eul jilleo, dol-aoneun mealie gwileul giul-yeo bogido hago, manmanhan namuleul hwieojab-a kkadalg eobs-i heundeul-eo bogido haessda.)</td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv12/original/mv12_t01_s24.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv12/reference/mv12_t19_s05.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv12/random/2019-10-14_15-19-39.wav"></audio></td>
+                <td align="center" style="padding-right:30px"><audio controls=""><source src="static/wav/mv12/autoencoder/2019-10-14_15-19-52.wav"></audio></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+      <script src="static/jquery/jquery-3.3.1.min.js"></script>
+      <script src="static/bootstrap-4.1.3-dist/js/bootstrap.js"></script>
+
+    </body>
+</html>
