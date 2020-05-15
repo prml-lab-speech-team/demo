@@ -14,345 +14,763 @@
     padding-left:10px;
     }
 
+    table{
+        display: inline-table;
+    }
     td{
         width:400px;
         text-align:center;
         white-space:nowrap;
-        padding-left:15px;
+        padding:3px;
     }
 </style>
 </head>
 
 <body style='padding-left: 20px'>
-  <h1 style="display:inline">Few-shot Speaker Adaptation With Geometric Constraints</h1>
-  <br></br>
-  <br></br>
-  <h2>Authors</h2>
-  <p style="width:65%">Ji-Hoon Kim(Korea University), jihoon_kim@korea.ac.kr</p>
-  <p style="width:65%">Sang-Hoon Lee(Korea University), sh_lee@korea.ac.kr</p>
-  <p style="width:65%">Hyeong-Rae Noh(Korea University), hr_noh@korea.ac.kr</p>
-  <p style="width:65%">Hong-Gyu Jung(Korea University), hkjung00@korea.ac.kr</p>
-  <p style="width:65%">Seong-Whan Lee(Korea University), sw.lee@korea.ac.kr</p>
+<h1 style="display:inline"><b>Few-shot Speaker Adaptation with Geometric Constraints</b></h1>
+  <br>
+  <br>
 
-  <br></br>
-<h2>Abstract</h2>
-  <p style="width:65%"> While speaker adaptation is highly desired for end-to-end Text-To-Speech (TTS) system, it requires a large amount of adaptation data for adapting novel speakers to pre-trained multi-speaker TTS system. We present few-shot speaker adaptive TTS system with two geometric constraints, which can generate speech in the voice of novel speakers from only a few samples. We introduce a two-stage learning procedure, where the network is trained for base speakers with a large number of data and then fine-tuned for novel speakers with only a few data. By introducing two geometric constraints, we can extract discriminative speaker embedding for the novel speakers while preserving the embedding space well learned for the base speakers. The experiments show that the proposed method achieves high performance in terms of speech naturalness and speaker similarity to the real speech from the target speaker. Particularly, we demonstrate that the speaker similarity is improved over standard techniques by utilizing subjective and objective metric.</p>
-  <h2>Audio Samples</h2>
-<p style="width:80%">All of the mel-spectrogram are converted by deq FloWaveNet<br>
-    (<a href="">Audio Dequantization for High Fidelity Audio Generation in Flow-based Neural Vocoder</a>)</p>
-  <h3>Speech naturalness</h3>	
+  <p style="font-size: 120%"><b>Paper:</b> <a href=""> Link </a></p>
   <br>
-    <p style="width:65%">All of the generated sentences are not used during training</p>
-  <p style="width:80%">1. <i>By The President's Commission on the Assassination of President Kennedy. Chapter 8. The Protection of the President. Part 5.</i></p>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center">Raw Audio</th>
-  <th width="200" style="text-align: center">Mel + deq FloWaveNet</th>
-  <th width="200" style="text-align: center">Tacotron2</th>
-  </tr>
-  </thead>
+  <p style="font-size: 120%"><b>Authors</b></p>
+  <p style="width:65%">Ji-Hoon Kim (Korea University), jihoon_kim@korea.ac.kr</p>
+  <p style="width:65%">Sang-Hoon Lee (Korea University), sh_lee@korea.ac.kr</p>
+  <p style="width:65%">Hyeong-Rae Noh (Korea University), hr_noh@korea.ac.kr</p>
+  <p style="width:65%">Hong-Gyu Jung (Korea University), hkjung00@korea.ac.kr</p>
+  <p style="width:65%">Seong-Whan Lee (Korea University), sw.lee@korea.ac.kr</p>
   <br>
+
+<p style="font-size: 120%"><b>Abstract</b></p>
+  <p style="width:75%"> We present two geometric constraints for few-shot speaker adaptive Text-To-Speech (TTS) system. Here, a TTS model is trained for base speakers with sufficient amount of training data, and then fine-tuned for novel speakers with a few adaptation data using two geometric constraints. By applying two geometric constraints, we can extract discriminative speaker embedding of the novel speakers even from a small amount of adaptation data without contaminating the embedding space well learned for the base speakers. The experiments show that the proposed method achieves high performance in terms of speech naturalness and speaker similarity of synthesized and real speech. Particularly, we demonstrate that the speaker similarity is improved over standard techniques by utilizing subjective and objective evaluation methods.</p>
   <br>
-  <br>
-    <p style="width:80%">2. <i>The assistant to the Director of the FBI testified that</i></p>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center">Raw Audio</th>
-  <th width="200" style="text-align: center">Mel + deq FloWaveNet</th>
-  <th width="200" style="text-align: center">Tacotron2</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="text-align: center">
-  <audio controls><source src="./demo_page/sample2/raw_audio2.wav"></audio>		
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src="./demo_page/sample2/mel2.wav"></audio>		
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src="./demo_page/sample2/tacotron2.wav"></audio>		
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  <br>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center">FastSpeech</th>
-  <th width="200" style="text-align: center">SpectroGAN(base)</th>
-  <th width="200" style="text-align: center">SpectroGAN</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="text-align: center">
-  <audio controls><source src="./demo_page/sample2/fastspeech2.wav"></audio>		
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src="./demo_page/sample2/spectrogan_base2.wav"></audio>		
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src="./demo_page/sample2/spectrogan2.wav"></audio>		
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  <br>
-  <br>
-  <br>
-    <p style="width:80%">3. <i>With the active cooperation of the responsible agencies and with the understanding of the people of the United States in their demands upon their President</i></p>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center">Raw Audio</th>
-  <th width="200" style="text-align: center">Mel + deq FloWaveNet</th>
-  <th width="200" style="text-align: center">Tacotron2</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="text-align: center">
-  <audio controls><source src="./demo_page/sample3/raw_audio3.wav"></audio>		
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src="./demo_page/sample3/mel_audio3.wav"></audio>		
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src="./demo_page/sample3/tacotron3.wav"></audio>		
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  <br>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center">FastSpeech</th>
-  <th width="200" style="text-align: center">SpectroGAN(base)</th>
-  <th width="200" style="text-align: center">SpectroGAN</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="text-align: center">
-  <audio controls><source src="./demo_page/sample3/fastspeech3.wav"></audio>		
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src="./demo_page/sample3/spectrogan_base3.wav"></audio>		
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src="./demo_page/sample3/spectrogan3.wav"></audio>		
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  <br>
-  <br>
-  <br>
-    <p style="width:80%">4. <i>Such instructions will not fit all circumstances of course</i></p>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center">Raw Audio</th>
-  <th width="200" style="text-align: center">Mel + deq FloWaveNet</th>
-  <th width="200" style="text-align: center">Tacotron2</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  <br>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center"></th>
-  <th width="200" style="text-align: center"></th>
-  <th width="200" style="text-align: center"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  <br>
-  <br>
-  <br>
-    <p style="width:80%">5. <i> </i></p>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center"></th>
-  <th width="200" style="text-align: center"></th>
-  <th width="200" style="text-align: center"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  <br>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center"></th>
-  <th width="200" style="text-align: center"></th>
-  <th width="200" style="text-align: center"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  <br>  
-<h3>D methods)</h3>
-  <br>
-  <p style="width:80%"> </p>
-<p style="width:80%">1. <i></i><br>(<b></b>)</p>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center">x0.50</th>
-  <th width="200" style="text-align: center">x0.75</th>
-  <th width="200" style="text-align: center">x1.00</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  <br>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center">x1.25</th>
-  <th width="200" style="text-align: center">x1.50</th>
-  <th width="200" style="text-align: center"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src=""></audio>
-  </td>
-    <td style="text-align: center">
- 		
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  <br>
-  <br>
-  <p style="width:80%">2. <i>Pr present concerned</i><br>(<b>Without converting zero-length</b>)</p>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center">x0.50</th>
-  <th width="200" style="text-align: center">x0.75</th>
-  <th width="200" style="text-align: center">x1.00</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="text-align: center">
-  <audio controls><source src="./demo_page/durationbase/050.wav"></audio>		
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src="./demo_page/durationbase/075.wav"></audio>		
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src="./demo_page/durationbase/100.wav"></audio>		
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  <br>
-  <table width="600">
-  <thead>
-  <tr>
-  <th width="200" style="text-align: center">x1.25</th>
-  <th width="200" style="text-align: center">x1.50</th>
-  <th width="200" style="text-align: center"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td style="text-align: center">
-  <audio controls><source src="./demo_page/durationbase/125.wav"></audio>		
-  </td>
-    <td style="text-align: center">
-  <audio controls><source src="./demo_page/durationbase/150.wav"></audio>		
-  </td>
-    <td style="text-align: center">
- 		
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  <br>
-<h2>Model</h2>
-  <h3></h3>
-  <td><img src="" width="1000"></td>
-  <br>
-  <h3> details</h3>
-  <br>
-<td><img src="" width="700"></td>
+
+  <h2><b>Audio Samples</b></h2>
+<p style="width:80%">  These samples are generated on the evalutation set. <br>
+<!--    All of the mel-spectrogram are converted by deq FloWaveNet [0].<br>-->
+<!--    (<a href="">Audio Dequantization for High Fidelity Audio Generation in Flow-based Neural Vocoder</a>)</p>-->
+  <h3><b> Audio samples for Novel Speakers</b></h3>
+    <table width="800" >
+      <tbody>
+      <tr>
+        <td colspan="2" style="padding-top:8px; padding-bottom:10px" ><i>0. It can't just be a cynical marketing exercise.</i></td>
+      </tr>
+
+      <tr>
+        <td style="text-align:center" width="300">
+            <b>Method</b>
+        </td>
+        <td class="transcript" style="text-align: center">
+            <b>VCTK p255 (male)</b>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="text-align: center">Ground Truth</td>
+        <td style="text-align: center"><audio controls><source src="./audio/GT/p255%20(3).wav"></audio></td>
+      </tr>
+
+      <tr>
+        <td style="text-align: center">Ground Truth + Vocoder</td>
+        <td style="text-align: center"><audio controls><source src="./audio/GT_Vocoder/p255%20(3).wav"></audio></td>
+      </tr>
+
+      <tr>
+        <td style="text-align: center">Tacotron2</td>
+        <td style="text-align: center"><audio controls><source src="./audio/Taco/p255%20(3).wav"></audio></td>
+      </tr>
+
+      <tr>
+        <td style="text-align: center">Jia et al. [1]</td>
+        <td style="text-align: center"><audio controls><source src="./audio/SV2TTS/p255%20(3).wav"></audio></td>
+      </tr>
+
+      <tr>
+        <td style="text-align: center">Fine-tuning 1sample</td>
+        <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/1sample/p255%20(3).wav"></audio></td>
+      </tr>
+
+      <tr>
+        <td style="text-align: center">Fine-tuning 5sample</td>
+        <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/5sample/p255%20(3).wav"></audio></td>
+      </tr>
+
+      <tr>
+        <td style="text-align: center">Fine-tuning 10sample</td>
+        <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/10sample/p255%20(3).wav"></audio></td>
+      </tr>
+
+      <tr>
+        <td style="text-align: center">Proposed 1sample</td>
+        <td style="text-align: center"><audio controls><source src="./audio/proposed/1sample/p255%20(3).wav"></audio></td>
+      </tr>
+
+      <tr>
+        <td style="text-align: center">Proposed 5sample</td>
+        <td style="text-align: center"><audio controls><source src="./audio/proposed/5sample/p255%20(3).wav"></audio></td>
+      </tr>
+
+      <tr>
+        <td style="text-align: center">Proposed 10sample</td>
+        <td style="text-align: center"><audio controls><source src="./audio/proposed/10sample/p255%20(3).wav"></audio></td>
+      </tr>
+
+      </tbody>
+    </table>
+    <table width="800" >
+        <tbody>
+
+        <tr>
+          <td colspan="2" style="padding-top:10px; padding-bottom:10px; padding-left: 10px" ><i>1. That's why the ministers resigned.</i></td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center" width="300">
+              <b>Method</b>
+          </td>
+          <td class="transcript" style="text-align: center">
+              <b>VCTK p318 (female)</b>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td style="text-align: center">Ground Truth</td>
+          <td style="text-align: center"><audio controls><source src="./audio/GT/p318%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Ground Truth + Vocoder</td>
+          <td style="text-align: center"><audio controls><source src="./audio/GT_Vocoder/p318%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Tacotron2</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Taco/p318%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Jia et al. [1]</td>
+          <td style="text-align: center"><audio controls><source src="./audio/SV2TTS/p318%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/1sample/p318%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/5sample/p318%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/10sample/p318%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/proposed/1sample/p318%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/proposed/5sample/p318%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/proposed/10sample/p318%20(2).wav"></audio></td>
+        </tr>
+
+        </tbody>
+    </table>
+      <br>
+      <br>
+      <br>
+    <table width="800" >
+        <tbody>
+
+        <tr>
+          <td colspan="2" style="padding-top:10px; padding-bottom:10px; padding-left: 10px" ><i>2. She took them for a term.</i></td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center" width="300">
+              <b>Method</b>
+          </td>
+          <td class="transcript" style="text-align: center">
+              <b>VCTK p336 (female)</b>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td style="text-align: center">Ground Truth</td>
+          <td style="text-align: center"><audio controls><source src="./audio/GT/p336%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Ground Truth + Vocoder</td>
+          <td style="text-align: center"><audio controls><source src="./audio/GT_Vocoder/p336%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Tacotron2</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Taco/p336%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Jia et al. [1]</td>
+          <td style="text-align: center"><audio controls><source src="./audio/SV2TTS/p336%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/1sample/p336%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/5sample/p336%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/10sample/p336%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/proposed/1sample/p336%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/proposed/5sample/p336%20(2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/proposed/10sample/p336%20(2).wav"></audio></td>
+        </tr>
+
+        </tbody>
+    </table>
+    <table width="800" >
+        <tbody>
+
+        <tr>
+          <td colspan="2" style="padding-top:10px; padding-bottom:10px; padding-left: 10px" ><i>3. No casualties were reported.</i></td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center" width="300">
+              <b>Method</b>
+          </td>
+          <td class="transcript" style="text-align: center">
+              <b>VCTK p345 (male)</b>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td style="text-align: center">Ground Truth</td>
+          <td style="text-align: center"><audio controls><source src="./audio/GT/p345%20(3).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Ground Truth + Vocoder</td>
+          <td style="text-align: center"><audio controls><source src="./audio/GT_Vocoder/p345%20(3).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Tacotron2</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Taco/p345%20(3).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Jia et al. [1]</td>
+          <td style="text-align: center"><audio controls><source src="./audio/SV2TTS/p345%20(3).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/1sample/p345%20(3).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/5sample/p345%20(3).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/10sample/p345%20(3).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/proposed/1sample/p345%20(3).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/proposed/5sample/p345%20(3).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/proposed/10sample/p345%20(3).wav"></audio></td>
+        </tr>
+
+        </tbody>
+    </table>
+      <br>
+      <br>
+      <br>
+    <table width="800" >
+        <tbody>
+
+        <tr>
+          <td colspan="2" style="padding-top:10px; padding-bottom:10px; padding-left: 10px" ><i>4. Ask her to bring these things with her from the store.</i></td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center" width="300">
+              <b>Method</b>
+          </td>
+          <td class="transcript" style="text-align: center">
+              <b>VCTK p376 (male)</b>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td style="text-align: center">Ground Truth</td>
+          <td style="text-align: center"><audio controls><source src="./audio/GT/p376%20(1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Ground Truth + Vocoder</td>
+          <td style="text-align: center"><audio controls><source src="./audio/GT_Vocoder/p376%20(1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Tacotron2</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Taco/p376%20(1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Jia et al. [1]</td>
+          <td style="text-align: center"><audio controls><source src="./audio/SV2TTS/p376%20(1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/1sample/p376%20(1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/5sample/p376%20(1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/fine-tuning/10sample/p376%20(1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/proposed/1sample/p376%20(1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/proposed/5sample/p376%20(1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/proposed/10sample/p376%20(1).wav"></audio></td>
+        </tr>
+
+        </tbody>
+    </table>
+      <br>
+      <br>
+      <br>
+  <h3><b> Audio samples for Base Speakers</b></h3>
+    <table width="800" >
+        <tbody>
+
+        <tr>
+          <td colspan="2" style="padding-top:10px; padding-bottom:10px; padding-left: 10px" ><i>0. When the sunlight strikes the raindrops in the air, they act as a prism and form a rainbow.</i></td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center" width="300">
+              <b>Method</b>
+          </td>
+          <td class="transcript" style="text-align: center">
+              <b>VCTK p310 (female)</b>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td style="text-align: center">Ground Truth</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/GT/p310 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Ground Truth + Vocoder</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/GT_Vocoder/p310_1-mel.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Tacotron2</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Taco/p310 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Jia et al. [1]</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/SV2TTS/p310-mel.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/1sample/p310 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/5sample/p310 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/10sample/p310 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p310 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p310 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p310 (1).wav"></audio></td>
+        </tr>
+
+        </tbody>
+    </table>
+    <table width="800" >
+        <tbody>
+
+        <tr>
+          <td colspan="2" style="padding-top:10px; padding-bottom:10px; padding-left: 10px" ><i>1. These take the shape of a long round arch, with its path high above, and these two ends apparently beyond the horizon.</i></td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center" width="300">
+              <b>Method</b>
+          </td>
+          <td class="transcript" style="text-align: center">
+              <b>VCTK p314 (female)</b>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td style="text-align: center">Ground Truth</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/GT/p314 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Ground Truth + Vocoder</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/GT_Vocoder/p314_1-mel.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Tacotron2</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Taco/p314 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Jia et al. [1]</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/SV2TTS/p314-mel.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/1sample/p314 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/5sample/p314 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/10sample/p314 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p314 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p314 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p314 (1).wav"></audio></td>
+        </tr>
+
+        </tbody>
+    </table>
+      <br>
+      <br>
+      <br>
+    <table width="800" >
+        <tbody>
+
+        <tr>
+          <td colspan="2" style="padding-top:10px; padding-bottom:10px; padding-left: 10px" ><i>2. It's not one for the purist.</i></td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center" width="300">
+              <b>Method</b>
+          </td>
+          <td class="transcript" style="text-align: center">
+              <b>VCTK p334 (male)</b>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td style="text-align: center">Ground Truth</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/GT/p334 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Ground Truth + Vocoder</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/GT_Vocoder/p334_1-mel.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Tacotron2</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Taco/p334 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Jia et al. [1]</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/SV2TTS/p334-mel.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/1sample/p334 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/5sample/p334 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/10sample/p334 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p334 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p334 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p334 (1).wav"></audio></td>
+        </tr>
+
+        </tbody>
+    </table>
+    <table width="800" >
+        <tbody>
+
+        <tr>
+          <td colspan="2" style="padding-top:10px; padding-bottom:10px; padding-left: 10px" ><i>3. The results are very positive.</i></td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center" width="300">
+              <b>Method</b>
+          </td>
+          <td class="transcript" style="text-align: center">
+              <b>VCTK p361 (female)</b>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td style="text-align: center">Ground Truth</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/GT/p361 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Ground Truth + Vocoder</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/GT_Vocoder/p361_1-mel.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Tacotron2</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Taco/p361 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Jia et al. [1]</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/SV2TTS/p361-mel.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/1sample/p361 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/5sample/p361 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/10sample/p361 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p361 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p361 (1).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p361 (1).wav"></audio></td>
+        </tr>
+
+        </tbody>
+    </table>
+      <br>
+      <br>
+      <br>
+    <table width="800" >
+        <tbody>
+
+        <tr>
+          <td colspan="2" style="padding-top:10px; padding-bottom:10px; padding-left: 10px" ><i>4. Does it make a profit?.</i></td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center" width="300">
+              <b>Method</b>
+          </td>
+          <td class="transcript" style="text-align: center">
+              <b>VCTK p374 (male)</b>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td style="text-align: center">Ground Truth</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/GT/p374 (2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Ground Truth + Vocoder</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/GT_Vocoder/p374_2-mel.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Tacotron2</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Taco/p374 (2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Jia et al. [1]</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/SV2TTS/p374-mel.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/1sample/p374 (2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/5sample/p374 (2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Fine-tuning 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/fine-tune/10sample/p374 (2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 1sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p374 (2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 5sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p374 (2).wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">Proposed 10sample</td>
+          <td style="text-align: center"><audio controls><source src="./audio/Base/Proposed/p374 (2).wav"></audio></td>
+        </tr>
+
+        </tbody>
+    </table>
+      <br>
+      <br>
+      <br>
+<p style="width: 1800px">[1] Y. Jia, Y. Zhang, R. Weiss, Q. Wang, J. Shen, F. Ren, Z. Chen, R. Ngyuyen, R. Pang, I. L. Moreno, and Y. Wu, "Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis" in <i>Advances in Neural Informantion Processsing Systems</i>, 2018, pp. 4480-4490</p>
+  <h3><b> Model architecture</b></h3>
+  <img src="./figure/model.png" width="1000">
+
+
+
 </body>
 </html>
