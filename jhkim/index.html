@@ -23,32 +23,33 @@
         white-space:nowrap;
         padding:3px;
     }
+      p{width: 1500px}
+
 </style>
 </head>
 
 <body style='padding-left: 20px'>
-<h1 style="display:inline"><b>Few-shot Speaker Adaptation with Geometric Constraints</b></h1>
-  <br>
+<h1 style= "width:1500px"><b>Few-shot Speaker Adaptation with Geometric Constraints</b></h1>
   <br>
 
   <p style="font-size: 120%"><b>Paper:</b> <a href=""> Link </a></p>
   <br>
   <p style="font-size: 120%"><b>Authors</b></p>
-  <p style="width:65%">Ji-Hoon Kim (Korea University), jihoon_kim@korea.ac.kr</p>
-  <p style="width:65%">Sang-Hoon Lee (Korea University), sh_lee@korea.ac.kr</p>
-  <p style="width:65%">Hyeong-Rae Noh (Korea University), hr_noh@korea.ac.kr</p>
-  <p style="width:65%">Hong-Gyu Jung (Korea University), hkjung00@korea.ac.kr</p>
-  <p style="width:65%">Seong-Whan Lee (Korea University), sw.lee@korea.ac.kr</p>
+  <p>Ji-Hoon Kim (Korea University), jihoon_kim@korea.ac.kr</p>
+  <p>Sang-Hoon Lee (Korea University), sh_lee@korea.ac.kr</p>
+  <p>Hyeong-Rae Noh (Korea University), hr_noh@korea.ac.kr</p>
+  <p>Hong-Gyu Jung (Korea University), hkjung00@korea.ac.kr</p>
+  <p>Seong-Whan Lee (Korea University), sw.lee@korea.ac.kr</p>
   <br>
 
 <p style="font-size: 120%"><b>Abstract</b></p>
-  <p style="width:75%"> We present two geometric constraints for few-shot speaker adaptive Text-To-Speech (TTS) system. Here, a TTS model is trained for base speakers with sufficient amount of training data, and then fine-tuned for novel speakers with a few adaptation data using two geometric constraints. By applying two geometric constraints, we can extract discriminative speaker embedding of the novel speakers even from a small amount of adaptation data without contaminating the embedding space well learned for the base speakers. The experiments show that the proposed method achieves high performance in terms of speech naturalness and speaker similarity of synthesized and real speech. Particularly, we demonstrate that the speaker similarity is improved over standard techniques by utilizing subjective and objective evaluation methods.</p>
+  <p > We present two geometric constraints for few-shot speaker adaptive Text-To-Speech (TTS) system. Here, a TTS model is trained for base speakers with sufficient amount of training data, and then fine-tuned for novel speakers with a few adaptation data using two geometric constraints. By applying two geometric constraints, we can extract discriminative speaker embedding of the novel speakers even from a small amount of adaptation data without contaminating the embedding space well learned for the base speakers. The experiments show that the proposed method achieves high performance in terms of speech naturalness and speaker similarity of synthesized and real speech. Particularly, we demonstrate that the speaker similarity is improved over standard techniques by utilizing subjective and objective evaluation methods.</p>
   <br>
 
   <h2><b>Audio Samples</b></h2>
-<p style="width:80%">  These samples are generated on the evalutation set. <br>
-<!--    All of the mel-spectrogram are converted by deq FloWaveNet [0].<br>-->
-<!--    (<a href="">Audio Dequantization for High Fidelity Audio Generation in Flow-based Neural Vocoder</a>)</p>-->
+<p >  These samples are generated on the evalutation set. <br>
+    We invert syntheized mel-spectrograms into time-domain waveforms by using audio dequantized FloWaveNet.<br>
+    (<a href="https://claudin92.github.io/deqflow_webdemo/">Submitted to INTERSPEECH 2020: Audio Dequantization for High Fidelity Audio Generation in Flow-based Neural Vocoder</a>)</p>
   <h3><b> Audio samples for Novel Speakers</b></h3>
     <table width="800" >
       <tbody>
@@ -767,8 +768,17 @@
       <br>
       <br>
 <p style="width: 1800px">[1] Y. Jia, Y. Zhang, R. Weiss, Q. Wang, J. Shen, F. Ren, Z. Chen, R. Ngyuyen, R. Pang, I. L. Moreno, and Y. Wu, "Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis" in <i>Advances in Neural Informantion Processsing Systems</i>, 2018, pp. 4480-4490</p>
-  <h3><b> Model architecture</b></h3>
-  <img src="./figure/model.png" width="1000">
+    <br>
+    <h3><b> Model architecture</b></h3>
+    <p style="width: 1800px">
+        <div style="text-align: center;  width: 1500px"><img src="./figure/model1.jpg" width="800" class="centering"> </div> <br>
+<div style="margin-left: 10px"> In this paper, we introduce two geometric constraints for few-shot speaker adaptive TTS system. </div>
+        <ol style="width: 1500px; margin-bottom: 30px; margin-left: 10px">
+            <li> <b>Weight-Centric Embedding Clustering</b>, when used with cross-entropy loss, enables speaker embedding of novel speaker to cluster near the speaker weights.</li>
+            <li> <b>Angular Weights Separation</b> maintains the weights of a novel speaker far from the other speakers.</li>
+        </ol>
+
+    </p>
 
 
 
