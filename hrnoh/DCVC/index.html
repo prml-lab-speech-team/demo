@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>DCVC Demo</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!-- Fonts CSS-->
+        <link rel="stylesheet" href="css/heading.css">
+        <link rel="stylesheet" href="css/body.css">
+    </head>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">DCVC DEMO</a>
+                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#traditional">TRADITIONAL VC</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zeroshot">ZERO-SHOT VC</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#duration">DURATION CONTROL</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading mb-0">Non-parallel Duration Controllable Voice Conversion via Frame-level Phoneme Prediction based Information Bottleneck</h1>
+                <!-- Masthead Subheading-->
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Hyeong-Rae Noh, Sang-Hoon Lee, Hyun-Wook Yoon, In-Sun Hwang, Seong-Whan Lee</p>
+            </div>
+        </header>
+
+        <!-- Abstraction -->
+        <section class="page-section portfolio" id="abstract">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">ABSTRACT</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 ml-auto">
+                        <p class="pre-wrap lead">Recently, several Voice Conversion (VC) methods using a simple autoencoder with a carefully designed information bottleneck have been studied. However, their performance is highly dependent on the information bottleneck with a suitable downsampling factor. Besides, such frame-by-frame conversion methods cannot convert speaking styles associated with the length of utterance, such as duration. On the other hand, Sequence-to-sequence (Seq2seq) based VC can convert them by leveraging Seq2seq modeling, but it has a slower inference speed due to generating samples in an autoregressive way. In this paper, we propose a novel Duration Controllable VC model, called DCVC, which can perform many-to-many voice conversion with a duration transfer and control by a frame-level phoneme prediction based information bottleneck. In our experiments, DCVC shows comparable results compared with the baseline models on the several metrics as well as outperforms them with a 3.78 MOS and a 3.83 similarity score. Also, it can smoothly control the duration while achieving an 11x speedup compared with Seq2seq-based VC in inference speed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="page-section bg-primary text-white mb-0" id="traditional">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">TRADITIONAL VC</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-12 ml-auto">
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th style="width: 40%">Source Speaker</th>
+                              <th style="width: 40%">Target Speaker</th>
+                              <th style="width: 33.33%">Converted</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td rowspan="8" style="vertical-align: top;"><p>p227 (Male)</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/M2M/p227_005.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td rowspan="4" style="vertical-align: top;"><p>p232 (Male)</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/M2M/p232_005.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>StarGAN-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/M2M/StarGAN-VC_p227_005-to-p232_005.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/M2M/AutoVC_p227_005-to-p232_005.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/M2M/Seq2seq-VC_p227_005-to-p232_005.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/M2M/DCVC_p227_005-to-p232_005.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <!-- /Male-to-female -->
+                            <tr>
+                              <td rowspan="4" style="vertical-align: top;"><p>p303 (Female)</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/M2F/p303_005.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>StarGAN-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/M2F/StarGAN-VC_p227_005-to-p303_005.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/M2F/AutoVC_p227_005-to-p303_005.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/M2F/Seq2seq-VC_p227_005-to-p303_005.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/M2F/DCVC_p227_005-to-p303_005.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+
+                            <!-- Female-to-male -->
+                            <!-- Male-to-male -->
+                            <tr>
+                              <td rowspan="8" style="vertical-align: top;"><p>p303 (Female)</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/F2M/p303_009.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td rowspan="4" style="vertical-align: top;"><p>p227 (Male)</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/F2M/p227_009.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>StarGAN-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/F2M/StarGAN-VC_p303_009-to-p227_009.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/F2M/AutoVC_p303_009-to-p227_009.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/F2M/Seq2seq-VC_p303_009-to-p227_009.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/F2M/DCVC_p303_009-to-p227_009.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <!-- /Male-to-male -->
+                            <tr>
+                              <td rowspan="4" style="vertical-align: top;"><p>p228 (Female)</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/F2F/p228_009.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>StarGAN-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/F2F/StarGAN-VC_p303_009-to-p228_009.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/F2F/AutoVC_p303_009-to-p228_009.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/F2F/Seq2seq-VC_p303_009-to-p228_009.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/traditional/F2F/DCVC_p303_009-to-p228_009.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zero-shot VC -->
+        <section class="page-section" id="zeroshot">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block">ZERO-SHOT VC</h2>
+                </div>
+
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+                <div class="text-left">
+                    <h3>SEEN-TO-UNSEEN</h3>
+                </div>
+
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-12 ml-auto">
+                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th style="width: 40%">Source Speaker</th>
+                              <th style="width: 40%">Target Speaker</th>
+                              <th style="width: 33.33%">Converted</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td rowspan="6" style="vertical-align: top;"><p>p232 (Male)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/M2M/p232_012.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td rowspan="3" style="vertical-align: top;"><p>p246 (Male)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/M2M/p246_012.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/M2M/AutoVC_p232_012-to-p246_012.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/M2M/Seq2seq-VC_p232_012-to-p246_012.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/M2M/DCVC_p232_012-to-p246_012.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <!-- /Male-to-female -->
+                            <tr>
+                              <td rowspan="3" style="vertical-align: top;"><p>p335 (Female)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/M2F/p335_012.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/M2F/AutoVC_p232_012-to-p335_012.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/M2F/Seq2seq-VC_p232_012-to-p335_012.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/M2F/DCVC_p232_012-to-p335_012.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+
+                            <!-- Female-to-male -->
+                            <!-- Male-to-male -->
+                            <tr>
+                              <td rowspan="6" style="vertical-align: top;"><p>p228 (Female)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/F2M/p228_014.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td rowspan="3" style="vertical-align: top;"><p>p246 (Male)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/F2M/p246_014.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/F2M/AutoVC_p228_014-to-p246_014.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/F2M/Seq2seq-VC_p228_014-to-p246_014.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/F2M/DCVC_p228_014-to-p246_014.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <!-- /Male-to-male -->
+                            <tr>
+                              <td rowspan="3" style="vertical-align: top;"><p>p335 (Female)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/F2F/p335_014.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/F2F/AutoVC_p228_014-to-p335_014.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/F2F/Seq2seq-VC_p228_014-to-p335_014.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/S2U/F2F/DCVC_p228_014-to-p335_014.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Unseen to seen conversion -->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+                <div class="text-left">
+                    <h3>UNSEEN-TO-SEEN</h3>
+                </div>
+
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-12 ml-auto">
+                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th style="width: 40%">Source Speaker</th>
+                              <th style="width: 40%">Target Speaker</th>
+                              <th style="width: 33.33%">Converted</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td rowspan="6" style="vertical-align: top;"><p>p246 (Male)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/M2M/p246_008.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td rowspan="3" style="vertical-align: top;"><p>p232 (Male)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/M2M/p232_008.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/M2M/AutoVC_p246_008-to-p232_008.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/M2M/Seq2seq-VC_p246_008-to-p232_008.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/M2M/DCVC_p246_008-to-p232_008.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <!-- /Male-to-female -->
+                            <tr>
+                              <td rowspan="3" style="vertical-align: top;"><p>p228 (Female)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/M2F/p228_008.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/M2F/AutoVC_p246_008-to-p228_008.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/M2F/Seq2seq-VC_p246_008-to-p228_008.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/M2F/DCVC_p246_008-to-p228_008.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+
+                            <!-- Female-to-male -->
+                            <!-- Male-to-male -->
+                            <tr>
+                              <td rowspan="6" style="vertical-align: top;"><p>p335 (Female)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/F2M/p335_021.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td rowspan="3" style="vertical-align: top;"><p>p232 (Male)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/F2M/p232_021.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/F2M/AutoVC_p335_021-to-p232_021.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/F2M/Seq2seq-VC_p335_021-to-p232_021.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/F2M/DCVC_p335_021-to-p232_021.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <!-- /Male-to-male -->
+                            <tr>
+                              <td rowspan="3" style="vertical-align: top;"><p>p228 (Female)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/F2F/p228_021.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/F2F/AutoVC_p335_021-to-p228_021.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/F2F/Seq2seq-VC_p335_021-to-p228_021.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2S/F2F/DCVC_p335_021-to-p228_021.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Unseen to unseen conversion -->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+                <div class="text-left">
+                    <h3>UNSEEN-TO-UNSEEN</h3>
+                </div>
+
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-12 ml-auto">
+                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th style="width: 40%">Source Speaker</th>
+                              <th style="width: 40%">Target Speaker</th>
+                              <th style="width: 33.33%">Converted</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td rowspan="6" style="vertical-align: top;"><p>p245 (Male)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/M2M/p245_010.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td rowspan="3" style="vertical-align: top;"><p>p246 (Male)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/M2M/p246_010.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/M2M/AutoVC_p245_010-to-p246_010.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/M2M/Seq2seq-VC_p245_010-to-p246_010.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/M2M/DCVC_p245_010-to-p246_010.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <!-- /Male-to-female -->
+                            <tr>
+                              <td rowspan="3" style="vertical-align: top;"><p>p335 (Female)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/M2F/p335_010.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/M2F/AutoVC_p245_010-to-p335_010.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/M2F/Seq2seq-VC_p245_010-to-p335_010.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/M2F/DCVC_p245_010-to-p335_010.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+
+                            <!-- Female-to-male -->
+                            <!-- Male-to-male -->
+                            <tr>
+                              <td rowspan="6" style="vertical-align: top;"><p>p261 (Female)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/F2M/p261_003.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td rowspan="3" style="vertical-align: top;"><p>p246 (Male)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/F2M/p246_003.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/F2M/AutoVC_p261_003-to-p246_003.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/F2M/Seq2seq-VC_p261_003-to-p246_003.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/F2M/DCVC_p261_003-to-p246_003.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <!-- /Male-to-male -->
+                            <tr>
+                              <td rowspan="3" style="vertical-align: top;"><p>p335 (Female)</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/F2F/p335_003.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>AutoVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/F2F/AutoVC_p261_003-to-p335_003.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>Seq2seq-VC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/F2F/Seq2seq-VC_p261_003-to-p335_003.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>DCVC</p>
+                                <audio controls="controls">
+                                    <source src="wav/zeroshot/U2U/F2F/DCVC_p261_003-to-p335_003.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-primary text-white mb-0" id="duration">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">DURATION CONTROL</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-12 ml-auto">
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th style="width: 40%">Source Speaker</th>
+                              <th style="width: 40%">Target Speaker</th>
+                              <th style="width: 33.33%">Converted</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-Male -->
+                            <tr>
+                              <td rowspan="3" style="vertical-align: top;"><p>p226</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                              <td rowspan="3" style="vertical-align: top;"><p>p253</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                              <td><p>SLOW</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>NORMAL</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>FAST</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <!-- /Male-to-Male -->
+
+                            <!-- Male-to-Female -->
+                            <tr>
+                              <td rowspan="3" style="vertical-align: top;"><p>p226</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                              <td rowspan="3" style="vertical-align: top;"><p>p253</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                              <td><p>SLOW</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>NORMAL</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>FAST</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <!-- /Male-to-Female -->
+
+                            <!-- Female-to-Male -->
+                            <tr>
+                              <td rowspan="3" style="vertical-align: top;"><p>p226</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                              <td rowspan="3" style="vertical-align: top;"><p>p253</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                              <td><p>SLOW</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>NORMAL</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>FAST</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <!-- /Female-to-Male -->
+
+                            <!-- Feale-to-Female -->
+                            <tr>
+                              <td rowspan="3" style="vertical-align: top;"><p>p226</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                              <td rowspan="3" style="vertical-align: top;"><p>p253</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                              <td><p>SLOW</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>NORMAL</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><p>FAST</p>
+                                <audio controls="controls">
+                                    <source src="Kalimba.mp3" type="audio/mp3" />
+                                    <source src="Kalimba.ogg" type="audio/ogg" />
+                                </audio>
+                              </td>
+                            </tr>
+                            <!-- /Female-to-Female -->
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright Section-->
+        <section class="copyright py-4 text-center text-white">
+            <div class="container"><small class="pre-wrap">Copyright © Korea University</small></div>
+        </section>
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
