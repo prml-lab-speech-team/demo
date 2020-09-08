@@ -33,7 +33,7 @@
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading mb-0">Non-parallel Duration Controllable Voice Conversion via Frame-level Phoneme Prediction based Information Bottleneck</h1>
                 <!-- Masthead Subheading-->
-                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Hyeong-Rae Noh, Sang-Hoon Lee, Hyun-Wook Yoon, In-Sun Hwang, Seong-Whan Lee</p>
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">BLIND</p>
             </div>
         </header>
 
@@ -683,7 +683,7 @@
         </section>
 
         <section class="page-section bg-primary text-white mb-0" id="duration">
-            <div class="container">
+            <div class="container-fluid">
                 <!-- About Section Heading-->
                 <div class="text-center">
                     <h2 class="page-section-heading d-inline-block text-white">DURATION CONTROL</h2>
@@ -698,9 +698,10 @@
                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
                           <thead>
                             <tr>
-                              <th style="width: 40%">Source Speaker</th>
-                              <th style="width: 40%">Target Speaker</th>
-                              <th style="width: 33.33%">Converted</th>
+                              <th style="width: 40%"><div class="text-center"> Source Speaker</div></th>
+                              <th style="width: 40%"><div class="text-center"> Target Speaker</div></th>
+                              <th style="width: 33.33%"><div class="text-center"> Converted (AutoVC)</div></th>
+                              <th style="width: 33.33%"><div class="text-center"> Converted (DCVC)</div></th>
                             </tr>
                           </thead>
                           <tbody>
@@ -708,45 +709,101 @@
                             <tr>
                               <td rowspan="10" style="vertical-align: top;"><p>p227 (Male)</p>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p227_005.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/DCVC/M2M/p227_005.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <td rowspan="5" style="vertical-align: top;"><p>p232 (Male)</p>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p232_005.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/DCVC/M2M/p232_005.wav" type="audio/wav" />
+                                </audio>
                                 </audio>
                               </td>
                               <td><p>VERY SLOW</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/M2M/p227_005-to-p232_005-1.5.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p227_005-to-p232_005-1.25.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/M2M/p227_005-to-p232_005-1.5.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/M2M/p227_005-to-p232_005-1.25.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/M2M/p227_005-to-p232_005-1.25.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>SLOW</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/M2M/p227_005-to-p232_005-1.25.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p227_005-to-p232_005-1.1.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/M2M/p227_005-to-p232_005-1.25.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/M2M/p227_005-to-p232_005-1.1.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/M2M/p227_005-to-p232_005-1.1.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>NORMAL</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/M2M/p227_005-to-p232_005-1.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p227_005-to-p232_005-1.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/M2M/p227_005-to-p232_005-1.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/M2M/p227_005-to-p232_005-1.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/M2M/p227_005-to-p232_005-1.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>FAST</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/M2M/p227_005-to-p232_005-0.75.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p227_005-to-p232_005-0.9.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/M2M/p227_005-to-p232_005-0.75.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/M2M/p227_005-to-p232_005-0.9.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/M2M/p227_005-to-p232_005-0.9.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>VERY FAST</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/M2M/p227_005-to-p232_005-0.5.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2M/p227_005-to-p232_005-0.75.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/M2M/p227_005-to-p232_005-0.5.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/M2M/p227_005-to-p232_005-0.75.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/M2M/p227_005-to-p232_005-0.75.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
@@ -754,40 +811,95 @@
                             <tr>
                               <td rowspan="5" style="vertical-align: top;"><p>p303 (Female)</p>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2F/p303_016.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/DCVC/M2F/p303_016.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <td><p>VERY SLOW</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/M2F/p232_016-to-p303_016-1.5.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2F/p232_016-to-p303_016-1.25.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/M2F/p232_016-to-p303_016-1.5.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/M2F/p232_016-to-p303_016-1.25.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/M2F/p232_016-to-p303_016-1.25.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>SLOW</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/M2F/p232_016-to-p303_016-1.25.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2F/p232_016-to-p303_016-1.1.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/M2F/p232_016-to-p303_016-1.25.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/M2F/p232_016-to-p303_016-1.1.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/M2F/p232_016-to-p303_016-1.1.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>NORMAL</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/M2F/p232_016-to-p303_016-1.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2F/p232_016-to-p303_016-1.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/M2F/p232_016-to-p303_016-1.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/M2F/p232_016-to-p303_016-1.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/M2F/p232_016-to-p303_016-1.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>FAST</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/M2F/p232_016-to-p303_016-0.75.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2F/p232_016-to-p303_016-0.9.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/M2F/p232_016-to-p303_016-0.75.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/M2F/p232_016-to-p303_016-0.9.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/M2F/p232_016-to-p303_016-0.9.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>VERY FAST</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/M2F/p232_016-to-p303_016-0.5.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/M2F/p232_016-to-p303_016-0.75.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/M2F/p232_016-to-p303_016-0.5.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/M2F/p232_016-to-p303_016-0.75.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/M2F/p232_016-to-p303_016-0.75.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
@@ -795,45 +907,100 @@
                             <tr>
                               <td rowspan="10" style="vertical-align: top;"><p>p303 (Female)</p>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p303_009.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/DCVC/F2M/p303_009.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <td rowspan="5" style="vertical-align: top;"><p>p227 (Male)</p>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p227_009.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/DCVC/F2M/p227_009.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <td><p>VERY SLOW</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/F2M/p303_009-to-p227_009-1.5.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p303_009-to-p227_009-1.25.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/F2M/p303_009-to-p227_009-1.5.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/F2M/p303_009-to-p227_009-1.25.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/F2M/p303_009-to-p227_009-1.25.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>SLOW</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/F2M/p303_009-to-p227_009-1.25.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p303_009-to-p227_009-1.1.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/F2M/p303_009-to-p227_009-1.25.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/F2M/p303_009-to-p227_009-1.1.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/F2M/p303_009-to-p227_009-1.1.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>NORMAL</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/F2M/p303_009-to-p227_009-1.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p303_009-to-p227_009-1.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/F2M/p303_009-to-p227_009-1.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/F2M/p303_009-to-p227_009-1.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/F2M/p303_009-to-p227_009-1.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>FAST</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/F2M/p303_009-to-p227_009-0.75.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p303_009-to-p227_009-0.9.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/F2M/p303_009-to-p227_009-0.75.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/F2M/p303_009-to-p227_009-0.9.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/F2M/p303_009-to-p227_009-0.9.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>VERY FAST</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/F2M/p303_009-to-p227_009-0.5.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2M/p303_009-to-p227_009-0.75.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/F2M/p303_009-to-p227_009-0.5.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/F2M/p303_009-to-p227_009-0.75.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/F2M/p303_009-to-p227_009-0.75.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
@@ -841,40 +1008,95 @@
                             <tr>
                               <td rowspan="5" style="vertical-align: top;"><p>p228 (Female)</p>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2F/p228_009.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/DCVC/F2F/p228_009.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <td><p>VERY SLOW</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/F2F/p303_009-to-p228_009-1.5.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2F/p303_009-to-p228_009-1.25.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/F2F/p303_009-to-p228_009-1.5.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/F2F/p303_009-to-p228_009-1.25.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/F2F/p303_009-to-p228_009-1.25.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>SLOW</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/F2F/p303_009-to-p228_009-1.25.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2F/p303_009-to-p228_009-1.1.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/F2F/p303_009-to-p228_009-1.25.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/F2F/p303_009-to-p228_009-1.1.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/F2F/p303_009-to-p228_009-1.1.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>NORMAL</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/F2F/p303_009-to-p228_009-1.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2F/p303_009-to-p228_009-1.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/F2F/p303_009-to-p228_009-1.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/F2F/p303_009-to-p228_009-1.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/F2F/p303_009-to-p228_009-1.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>FAST</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/F2F/p303_009-to-p228_009-0.75.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2F/p303_009-to-p228_009-0.9.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/F2F/p303_009-to-p228_009-0.75.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/F2F/p303_009-to-p228_009-0.9.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/F2F/p303_009-to-p228_009-0.9.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
                               <td><p>VERY FAST</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/AutoVC/F2F/p303_009-to-p228_009-0.5.png" width="200" height="150">
+                                </div>
                                 <audio controls="controls">
-                                    <source src="wav/duration_control/F2F/p303_009-to-p228_009-0.75.wav" type="audio/wav" />
+                                    <source src="wav/duration_control/AutoVC/F2F/p303_009-to-p228_009-0.5.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p>&nbsp</p>
+                                <div class="text-center">
+                                  <img src="img/duration_control/DCVC/F2F/p303_009-to-p228_009-0.75.png" width="200" height="150">
+                                </div>
+                                <audio controls="controls">
+                                    <source src="wav/duration_control/DCVC/F2F/p303_009-to-p228_009-0.75.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
@@ -887,7 +1109,7 @@
 
         <!-- Copyright Section-->
         <section class="copyright py-4 text-center text-white">
-            <div class="container"><small class="pre-wrap">Copyright © Korea University</small></div>
+            <div class="container"><small class="pre-wrap">BLIND</small></div>
         </section>
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
         <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
