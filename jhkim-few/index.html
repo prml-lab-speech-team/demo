@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+        <meta charset="utf-8">
+          <style type="text/css">
+                 a:link { color: black; text-decoration: none;}
+                 a:visited { color: black; text-decoration: none;}
+                 a:hover { color: blue; text-decoration: underline;}
+           </style>
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Audio demo</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!-- Fonts CSS-->
+        <link rel="stylesheet" href="css/heading.css">
+        <link rel="stylesheet" href="css/body.css">
+        <!-- Bootstrap slider CSS -->
+        <!-- <link rel="stylesheet" href="css/bootstrap-slider.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" />
+    </head>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Audio demo</a>
+                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#NOVEL-SPEAKERS">AUDIOS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ABLATION">ABLATION STUDIES</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#REFERENCES">REFERENCES</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading mb-0">FEW-SHOT SPEAKER ADAPTATION WITH GEOMETRIC CONSTRAINTS</h1>
+                <!-- Masthead Subheading-->
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Ji-Hoon Kim, Sang-Hoon Lee, Ji-Hyun Lee, Hong-Gyu Jung, Seong-Whan Lee</p>
+            </div>
+        </header>
+
+        <!-- Abstraction -->
+        <section class="page-section portfolio" id="abstract">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">ABSTRACT</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 ml-auto">
+                        <p class="pre-wrap lead">Despite recent advances in a few-shot speaker adaptation system that reproduces novel speakers' voice with a few data, there is still a gap in terms of speaker similarity to the target speaker depending on the amount of data. To mitigate this, we employ two geometric constraints. Here, a TTS model is pre-trained for base speakers with a sufficient amount of data, then fine-tuned for novel speakers on a few minutes of data with two geometric constraints. Two geometric constraints enable the model to extract discriminative speaker embeddings from limited data, which leads to the synthesis of intelligible speech. From our experiments, the proposed model generates high-quality speech, outperforming standard techniques in terms of speaker similarity to the target speaker.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-primary text-white mb-0" id="NOVEL-SPEAKERS">
+            <div class="container-fluid">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">Audio samples for novel speakers</h2>
+                    <br><br>
+                    <h5>These samples are generated on the evalutation set.<br> <i>1m</i> and <i>5m</i> represent 1 and 5 minutes of audio, respectively.</h5>
+
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-auto ml-auto">
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p248 (Female)</p>
+                                  <div class="text-left">Script : <i>A ceasefire is a ceasefire is a ceasefire.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/0_GT/p248 (1).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/1_Vocoded/p248 (1).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/2_Tacotron/p248 (1).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Jia et al. &nbsp;<a class="rounded js-scroll-trigger" href="#GE2E">[1]</a></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/3_GE2E/p248 (1).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Cooper et al. &nbsp; <a class="rounded js-scroll-trigger" href="#LDE">[2]</a> </p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/4_LDE/p248 (1).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                                <td style="vertical-align: top;"><p>Fine-tuning (<i><1m)</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/5_Finetune-1m/p248 (1).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Proposed (<i><1m</i>)</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/6_Proposed-1m/p248 (1).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fine-tuning (<i><5m</i>)</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/7_Finetune-5m/p248 (1).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Proposed (<i><5m</i>)</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/8_Proposed-5m/p248 (1).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;">
+                                <div class="text-center">
+                                    <img />
+                                </div>
+                              </td>
+
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p255 (Male)</p>
+                                  <div class="text-left">Script : <i>The casualties were not named.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/0_GT/p255%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/1_Vocoded/p255%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/2_Tacotron/p255%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Jia et al. &nbsp;<a class="rounded js-scroll-trigger" href="#GE2E">[1]</a></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/3_GE2E/p255%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Cooper et al. &nbsp; <a class="rounded js-scroll-trigger" href="#LDE">[2]</a> </p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/4_LDE/p255%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                                <td style="vertical-align: top;"><p>Fine-tuning (<i><1m)</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/5_Finetune-1m/p255%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Proposed (<i><1m</i>)</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/6_Proposed-1m/p255%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fine-tuning (<i><5m</i>)</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/7_Finetune-5m/p255%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Proposed (<i><5m</i>)</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/8_Proposed-5m/p255%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;">
+                                <div class="text-center">
+                                    <img />
+                                </div>
+                              </td>
+
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p279 (Male)</p>
+                                  <div class="text-left">Script : <i>The visual arts committee took this decision in December.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/0_GT/p279%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/1_Vocoded/p279%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/2_Tacotron/p279%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Jia et al. &nbsp;<a class="rounded js-scroll-trigger" href="#GE2E">[1]</a></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/3_GE2E/p279%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Cooper et al. &nbsp; <a class="rounded js-scroll-trigger" href="#LDE">[2]</a> </p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/4_LDE/p279%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                                <td style="vertical-align: top;"><p>Fine-tuning (<i><1m)</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/5_Finetune-1m/p279%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Proposed (<i><1m</i>)</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/6_Proposed-1m/p279%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fine-tuning (<i><5m</i>)</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/7_Finetune-5m/p279%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Proposed (<i><5m</i>)</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/8_Proposed-5m/p279%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;">
+                                <div class="text-center">
+                                    <img />
+                                </div>
+                              </td>
+
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p312 (Female)</p>
+                                  <div class="text-left">Script : <i>I have to say, for me, the game was not.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/0_GT/p312%20(3).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/1_Vocoded/p312%20(3).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/2_Tacotron/p312%20(3).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Jia et al. &nbsp;<a class="rounded js-scroll-trigger" href="#GE2E">[1]</a></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/3_GE2E/p312%20(3).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Cooper et al. &nbsp; <a class="rounded js-scroll-trigger" href="#LDE">[2]</a> </p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/4_LDE/p312%20(3).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                                <td style="vertical-align: top;"><p>Fine-tuning (<i><1m)</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/5_Finetune-1m/p312%20(3).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Proposed (<i><1m</i>)</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/6_Proposed-1m/p312%20(3).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fine-tuning (<i><5m</i>)</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/7_Finetune-5m/p312%20(3).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Proposed (<i><5m</i>)</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wav/novel/8_Proposed-5m/p312%20(3).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;">
+                                <div class="text-center">
+                                    <img />
+                                </div>
+                              </td>
+
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABLATION -->
+        <section class="page-section bg-info text-white mb-0" id="ABLATION">
+            <div class="container-fluid">
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block">Ablation study</h2>
+                    <br><br>
+                    <h5>All samples are from the model trained with 10samples (representing less than 1 minute of data) from each novel speaker.</h5>
+                </div>
+
+
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-auto ml-auto">
+
+                        <div class="text-left">
+
+                            <h3> Geometric constaints</h3>
+                            <p style="font-size: large"> <b>Investigating the effect of each geometric constraint. </b></p>
+                            <br>
+                        </div>
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p241 (Male)</p>
+                                  <div class="text-left">Script : <i>Talks are progressing.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/0_GT/p241%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                              <td style="vertical-align: top;"><p><b>Proposed</b></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/7_Proposed-1m/p241 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                              <td style="vertical-align: top;"><p><img src="https://latex.codecogs.com/gif.latex?-\mathcal{L}_{WCEC}" title="-\mathcal{L}_{WCEC}" /></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/no-loss2/p241 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p><img src="https://latex.codecogs.com/gif.latex?-\mathcal{L}_{AWS}" title="-\mathcal{L}_{AWS}" /></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/no-loss3/p241 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p><img src="https://latex.codecogs.com/gif.latex?-\mathcal{L}_{WCEC}-\mathcal{L}_{AWS}" title="-\mathcal{L}_{WCEC}-\mathcal{L}_{AWS}" /></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/no-loss2-no-loss3/p241 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p246 (Male)</p>
+                                  <div class="text-left">Script : <i>We have to create a climate of trust, which is not easy.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                             <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/0_GT/p246%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                              <td style="vertical-align: top;"><p><b>Proposed</b></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/7_Proposed-1m/p246 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                              <td style="vertical-align: top;"><p><img src="https://latex.codecogs.com/gif.latex?-\mathcal{L}_{WCEC}" title="-\mathcal{L}_{WCEC}" /></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/no-loss2/p246 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p><img src="https://latex.codecogs.com/gif.latex?-\mathcal{L}_{AWS}" title="-\mathcal{L}_{AWS}" /></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/no-loss3/p246 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p><img src="https://latex.codecogs.com/gif.latex?-\mathcal{L}_{WCEC}-\mathcal{L}_{AWS}" title="-\mathcal{L}_{WCEC}-\mathcal{L}_{AWS}" /></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/no-loss2-no-loss3/p246 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p318 (Female)</p>
+                                  <div class="text-left">Script : <i>The whole nation will be delighted.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                                <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/0_GT/p318%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                              <td style="vertical-align: top;"><p><b>Proposed</b></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/7_Proposed-1m/p318 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                              <td style="vertical-align: top;"><p><img src="https://latex.codecogs.com/gif.latex?-\mathcal{L}_{WCEC}" title="-\mathcal{L}_{WCEC}" /></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/no-loss2/p318 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p><img src="https://latex.codecogs.com/gif.latex?-\mathcal{L}_{AWS}" title="-\mathcal{L}_{AWS}" /></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/no-loss3/p318 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p><img src="https://latex.codecogs.com/gif.latex?-\mathcal{L}_{WCEC}-\mathcal{L}_{AWS}" title="-\mathcal{L}_{WCEC}-\mathcal{L}_{AWS}" /></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/no-loss2-no-loss3/p318 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p323 (Female)</p>
+                                  <div class="text-left">Script : <i>I wish it well.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+
+                             <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/0_GT/p323%20(2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                              <td style="vertical-align: top;"><p><b>Proposed</b></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/7_Proposed-1m/p323 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                              <td style="vertical-align: top;"><p><img src="https://latex.codecogs.com/gif.latex?-\mathcal{L}_{WCEC}" title="-\mathcal{L}_{WCEC}" /></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/no-loss2/p323 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p><img src="https://latex.codecogs.com/gif.latex?-\mathcal{L}_{AWS}" title="-\mathcal{L}_{AWS}" /></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/no-loss3/p323 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p><img src="https://latex.codecogs.com/gif.latex?-\mathcal{L}_{WCEC}-\mathcal{L}_{AWS}" title="-\mathcal{L}_{WCEC}-\mathcal{L}_{AWS}" /></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/loss/no-loss2-no-loss3/p323 (2).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <div class="text-left">
+                            <br>
+                            <br>
+                            <h3>Frozen weights</h3>
+                            <p style="font-size: large"><b>Investigating the effect of freezing the weights of <i>K</i> bottom convolution blocks in the speaker encoder. &nbsp;&nbsp;
+                                Here,&nbsp; <i>"SPK-ENC K"</i> represents freezing <i>K</i> bottom convolution blocks in the speaker encoder.</b></p>
+                            <br>
+                        </div>
+
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p260 (Male)</p>
+                                  <div class="text-left">Script : <i>Eight months later, he was dead.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/0_GT/p260%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 0</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/1_0/p260%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p><i>SPK-ENC 1</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/2_1/p260%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 2</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/3_2/p260%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 3</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/4_3/p260%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                                <td style="vertical-align: top;"><p><i><b>SPK-ENC 4 (Proposed)</b></i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/5_4/p260%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 5</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/6_5/p260%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 6</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/7_6/p260%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p274 (Male)</p>
+                                  <div class="text-left">Script : <i>Phil Mickelson did that last year.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/0_GT/p274%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 0</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/1_0/p274%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p><i>SPK-ENC 1</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/2_1/p274%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 2</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/3_2/p274%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 3</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/4_3/p274%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                                <td style="vertical-align: top;"><p><i><b>SPK-ENC 4 (Proposed)</b></i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/5_4/p274%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 5</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/6_5/p274%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 6</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/7_6/p274%20(5).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p293 (Female)</p>
+                                  <div class="text-left">Script : <i>What kind of person is he?</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/0_GT/p293%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 0</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/1_0/p293%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p><i>SPK-ENC 1</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/2_1/p293%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 2</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/3_2/p293%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 3</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/4_3/p293%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                                <td style="vertical-align: top;"><p><i><b>SPK-ENC 4 (Proposed)</b></i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/5_4/p293%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 5</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/6_5/p293%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 6</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/7_6/p293%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p302 (Male)</p>
+                                  <div class="text-left">Script : <i>To all intents and purposes, he ran the show.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/0_GT/p302%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 0</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/1_0/p302%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p><i>SPK-ENC 1</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/2_1/p302%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 2</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/3_2/p302%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 3</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/4_3/p302%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                                <td style="vertical-align: top;"><p><i><b>SPK-ENC 4 (Proposed)</b></i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/5_4/p302%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 5</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/6_5/p302%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><i>SPK-ENC 6</i></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="wav/ablation/frz/7_6/p302%20(4).npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <!-- t-SNE-->
+                        <div class="text-left">
+                            <br>
+                            <br>
+                            <h3> t-SNE Visualization</h3>
+                            <p style="font-size: large"> <b>Visualizing speaker embedding space. The label of (<i>B</i>) refers to the base speakers and (<i>N</i>) represents the novel speakers.</b></p>
+                            <br>
+                        </div>
+
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                            <thead>
+                                <tr>
+                                    <th colspan="1" style="width: 35%" class="text-center" > <h5>Trained with base speakers</h5> </th>
+                                    <th colspan="1" style="width: 35%" class="text-center"> <h5>Fine-tuned without geometric constraints</h5> </th>
+                                    <th colspan="1" style="width: 35%" class="text-center"> <h5>Fine-tuned with geometric constraints</h5> </th>
+                                    <th colspan="1" style="width: 20%" class="text-center"> <h5>labels</h5> </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                   <td >
+                                        <img style=" display: block; margin: 0px auto;" src="img/tsne/base.gif ">
+                                  </td>
+
+                                    <td >
+                                        <img style=" display: block; margin: 0px auto;" src="img/tsne/finetune.gif">
+                                    </td>
+
+                                    <td >
+                                        <img style=" display: block; margin: 0px auto;" src="img/tsne/proposed.gif">
+                                    </td>
+
+                                    <td >
+                                        <img  style="display: block; margin: 0px auto; height: 66%" src="img/tsne/tsne-label.png">
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-primary text-white mb-0" id="REFERENCES">
+        <div class="container-fluid">
+        <!-- About Section Heading-->
+        <div class="text-center">
+            <h2 class="page-section-heading d-inline-block text-white">References</h2>
+        </div>
+            <br><br><br>
+            <div class="text-left" style="font-size: large">
+
+                <a id="GE2E">[1] Ye Jia, Yu Zhang, Ron Weiss, Quan Wang, Jonathan Shen, Fei Ren, Zhifeng Chen, Patrick Nguyen, Ruoming Pang, Ignacio Lopez Moreno, and Yonghui Wu, “Transfer learning from speaker verification to
+                multispeaker text-to-speech synthesis,” in Advances in Neural Information Processing Systems, 2018.</a><br><br>
+
+                <a id="LDE">[2] Erica Cooper, Cheng-I Lai, Yusuke Yasuda, Fuming Fang, Xin Wang, Nanxin Chen, and Junichi Yamagishi,
+                “Zero-shot multi-speaker text-to-speech with state-of-the-art neural speaker embeddings,” in 2020 IEEE International Conference on Acoustics, Speech and Signal Processing. 2020. </a>
+
+
+            </div>
+
+
+    </div>
+</section>
+
+
+
+
+
+
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+        <script src="js/scripts.js"></script>
+        <!-- Bootstrap slider JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
+
+        <!-- slider JS -->
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>
