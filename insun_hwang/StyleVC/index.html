@@ -73,7 +73,8 @@
             <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">TRADITIONAL VC</h2>
+                    <h2 class="page-section-heading d-inline-block text-white">TRADITIONAL VC</h2> <br>
+                    <h3 font-size:3rem ine-height:2.5rem> Sample 1 </h3>
                 </div>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
@@ -96,35 +97,35 @@
                             <!-- Test!! -->
                             <tr>                              
                               <td rowspan="8" style="vertical-align: top;">
-                                <img src="insun_hwang/StyleVC/images/test01.png" id="big">  <!-- width="100" height="200"> -->
-                                <img src="images/test01.png" class="small" width="100" height="100">
-                                <img src="images/test02.png" class="small" width="100" height="100">
-                                <img src="images/test03.png" class="small" width="100" height="100">
-                              </td>
+                                <img src="images/test01.PNG" id="big">  <!-- width="100" height="200"> -->
+                                <img src="images/test01.PNG" class="small" width="100" height="100">
+                                <img src="images/test02.PNG" class="small" width="100" height="100">
+                                <img src="images/test03.PNG" class="small" width="100" height="100">
+                              </td>                              
 
                               <!-- Source Speaker -->  <!--  이거는 target이라 source 로 추후에 바꿔야 한다!!--> 
                               <td rowspan="8" style="vertical-align: top;"><p>p232 (Male)</p>
-                                <audio controls="controls" class="demo">
-                                    <source src="insun_hwang/StyleVC/wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                <audio controls="controls" class="demo" onplay="changeImage('test01')">
+                                    <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               
                               <!-- 각 row에 대한 정보임!!! source -> target !! -->
                               <!-- Target Speaker -->
                               <td><p>pAAA (Male)</p>
-                                <audio controls="controls" class="demo" id="target1">
+                                <audio controls="controls" class="demo" onplay="changeImage('test01')"> 
                                     <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio> 
                               </td>
                               <!-- AutoVC -->
                               <td><p>pBBB -> pBBB'</p>
-                                <audio controls="controls" class="demo" id="target1">
+                                <audio controls="controls" class="demo" onplay="changeImage('test02')">
                                     <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <!-- StyleVC -->
                               <td><p>pCCC -> pCCC'</p>
-                                <audio controls="controls" class="demo" id="target1">
+                                <audio controls="controls" class="demo" onplay="changeImage('test03')">
                                     <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
@@ -135,19 +136,19 @@
                               <!-- 각 row에 대한 정보임!!! source -> target !! -->
                               <!-- Target Speaker -->
                               <td><p>pAAA (Male)</p>
-                                <audio controls="controls" class="demo" id="target2">
+                                <audio controls="controls" class="demo" id="target2" onclick="changePic(1)">
                                     <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <!-- AutoVC -->
                               <td><p>pBBB -> pBBB'</p>
-                                <audio controls="controls" class="demo" id="target2">
+                                <audio controls="controls" class="demo" id="target2" onclick="changePic(1)">
                                     <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <!-- StyleVC -->
                               <td><p>pCCC -> pCCC'</p>
-                                <audio controls="controls" class="demo" id="target2">
+                                <audio controls="controls" class="demo" id="target2" onclick="changePic(1)">
                                     <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
@@ -157,19 +158,19 @@
                               <!-- 각 row에 대한 정보임!!! source -> target !! -->
                               <!-- Target Speaker -->
                               <td><p>pAAA (Male)</p>
-                                <audio controls="controls" class="demo" id="target3">
+                                <audio controls="controls" class="demo" id="target3" onclick="changePic(2)">
                                     <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <!-- AutoVC -->
                               <td><p>pBBB -> pBBB'</p>
-                                <audio controls="controls" class="demo" id="target3">
+                                <audio controls="controls" class="demo" id="target3" onclick="changePic(2)">
                                     <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <!-- StyleVC -->
                               <td><p>pCCC -> pCCC'</p>
-                                <audio controls="controls" class="demo" id="target3">
+                                <audio controls="controls" class="demo" id="target3" onclick="changePic(2)">
                                     <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
@@ -908,5 +909,22 @@
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script src="js/change.js"></script>
+        <script>
+          function changeImage(path) {
+            alert("hiiiiiii");
+            document.getElementById("big").src = "images/" + path + ".PNG"
+          }
+          function changeImage1() {
+            alert("hi");
+            document.getElementById("big").src = "images/test01.PNG"
+          }
+          function changeImage2() {
+            document.getElementById("big").src = "images/test02.PNG"
+          }
+          function changeImage3() {
+            document.getElementById("big").src = "images/test03.PNG"
+          }
+        </script>
     </body>
 </html>
