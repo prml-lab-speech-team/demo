@@ -13,6 +13,12 @@
         <!-- Fonts CSS-->
         <link rel="stylesheet" href="css/heading.css">
         <link rel="stylesheet" href="css/body.css">
+        <!-- my CSS -->
+        <style>
+        .demo {
+          width: 220px;
+        }
+        </style>
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
@@ -31,10 +37,12 @@
         <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading mb-0">Non-parallel Duration Controllable Voice Conversion via Frame-level Phoneme Prediction based Information Bottleneck</h1>
+                <h1 class="masthead-heading mb-0">StyleVC: Non-parallel Voice Conversion with Perceptual Guidance</h1>
                 <!-- Masthead Subheading-->
-<!--                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Hyeong-Rae Noh, Sang-Hoon Lee, Hyun-Wook Yoon, In-Sun Hwang, Seong-Whan Lee</p>-->
-                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">BLIND</p>
+<!--                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">In-Sun Hwang, Sang-Hoon Lee, Seong-Whan Lee</p>-->
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">
+                In-Sun Hwang, Sang-Hoon Lee, Seong-Whan Lee
+                </p>
             </div>
         </header>
 
@@ -52,13 +60,15 @@
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     <div class="col-lg-12 ml-auto">
-                        <p class="pre-wrap lead"> Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract Abstract </p>
+                        <p class="pre-wrap lead"> 
+                        Abstract보다 애니메이션을 넣어서 이해하기 쉽게 만들어 보자
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-
+		<!-- traditional -->
         <section class="page-section bg-primary text-white mb-0" id="traditional">
             <div class="container">
                 <!-- About Section Heading-->
@@ -71,164 +81,158 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-12 ml-auto">
+                    <div class="col-lg-15 ml-auto">
                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
                           <thead>
                             <tr>
-                              <th style="width: 40%">Source Speaker</th>
-                              <th style="width: 40%">Target Speaker</th>
-                              <th style="width: 33.33%">Converted</th>
+                              <th style="width: 30%">Mel-spectrogram</th>
+                              <th style="width: 17.5%">Source Speaker</th>
+                              <th style="width: 17.5%">Target Speaker</th>
+                              <th style="width: 17.5%">AutoVC</th>
+                              <th style="width: 17.5%">StyleVC(Ours)</th>
                             </tr>
                           </thead>
                           <tbody>
-                            <!-- Male-to-male & female-->
-                            <tr>
-                              <td rowspan="8" style="vertical-align: top;"><p>p227 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2M/p227_005.wav" type="audio/wav" />
+                            <!-- Test!! -->
+                            <tr>                              
+                              <td rowspan="8" style="vertical-align: top;">
+                                <img src="images/test01.png" id="big">  <!-- width="100" height="200"> -->
+                                <img src="images/test01.png" class="small" width="100" height="100">
+                                <img src="images/test02.png" class="small" width="100" height="100">
+                                <img src="images/test03.png" class="small" width="100" height="100">
+                              </td>
+
+                              <!-- Source Speaker -->  <!--  이거는 target이라 source 로 추후에 바꿔야 한다!!--> 
+                              <td rowspan="8" style="vertical-align: top;"><p>p232 (Male)</p>
+                                <audio controls="controls" class="demo">
+                                    <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
-                              <td rowspan="4" style="vertical-align: top;"><p>p232 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2M/p232_005.wav" type="audio/wav" />
+                              
+                              <!-- 각 row에 대한 정보임!!! source -> target !! -->
+                              <!-- Target Speaker -->
+                              <td><p>pAAA (Male)</p>
+                                <audio controls="controls" class="demo" id="target1">
+                                    <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio> 
+                              </td>
+                              <!-- AutoVC -->
+                              <td><p>pBBB -> pBBB'</p>
+                                <audio controls="controls" class="demo" id="target1">
+                                    <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
-                              <td><p>StarGAN-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2M/StarGAN-VC_p227_005-to-p232_005.wav" type="audio/wav" />
+                              <!-- StyleVC -->
+                              <td><p>pCCC -> pCCC'</p>
+                                <audio controls="controls" class="demo" id="target1">
+                                    <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
+                              <script src="js/change.js"> </script> <!-- js 파일 연결 -->                             
                             </tr>
+
                             <tr>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2M/AutoVC_p227_005-to-p232_005.wav" type="audio/wav" />
+                              <!-- 각 row에 대한 정보임!!! source -> target !! -->
+                              <!-- Target Speaker -->
+                              <td><p>pAAA (Male)</p>
+                                <audio controls="controls" class="demo" id="target2">
+                                    <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2M/Seq2seq-VC_p227_005-to-p232_005.wav" type="audio/wav" />
+                              <!-- AutoVC -->
+                              <td><p>pBBB -> pBBB'</p>
+                                <audio controls="controls" class="demo" id="target2">
+                                    <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2M/DCVC_p227_005-to-p232_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <!-- /Male-to-female -->
-                            <tr>
-                              <td rowspan="4" style="vertical-align: top;"><p>p303 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2F/p303_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>StarGAN-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2F/StarGAN-VC_p227_005-to-p303_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2F/AutoVC_p227_005-to-p303_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2F/Seq2seq-VC_p227_005-to-p303_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/M2F/DCVC_p227_005-to-p303_005.wav" type="audio/wav" />
+                              <!-- StyleVC -->
+                              <td><p>pCCC -> pCCC'</p>
+                                <audio controls="controls" class="demo" id="target2">
+                                    <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
 
+                            <tr>
+                              <!-- 각 row에 대한 정보임!!! source -> target !! -->
+                              <!-- Target Speaker -->
+                              <td><p>pAAA (Male)</p>
+                                <audio controls="controls" class="demo" id="target3">
+                                    <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <!-- AutoVC -->
+                              <td><p>pBBB -> pBBB'</p>
+                                <audio controls="controls" class="demo" id="target3">
+                                    <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <!-- StyleVC -->
+                              <td><p>pCCC -> pCCC'</p>
+                                <audio controls="controls" class="demo" id="target3">
+                                    <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <!-- 각 row에 대한 정보임!!! source -> target !! -->
+                              <!-- Target Speaker -->
+                              <td><p>pAAA (Male)</p>
+                                <audio controls="controls" class="demo">
+                                    <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <!-- AutoVC -->
+                              <td><p>pBBB -> pBBB'</p>
+                                <audio controls="controls" class="demo">
+                                    <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <!-- StyleVC -->
+                              <td><p>pCCC -> pCCC'</p>
+                                <audio controls="controls" class="demo">
+                                    <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <!-- 각 row에 대한 정보임!!! source -> target !! -->
+                              <!-- Target Speaker -->
+                              <td><p>pAAA (Male)</p>
+                                <audio controls="controls" class="demo">
+                                    <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <!-- AutoVC -->
+                              <td><p>pBBB -> pBBB'</p>
+                                <audio controls="controls" class="demo">
+                                    <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <!-- StyleVC -->
+                              <td><p>pCCC -> pCCC'</p>
+                                <audio controls="controls" class="demo">
+                                    <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
+
+                            <!-- Test!! -->
+
+                            <!-- Male-to-male & female-->
+
+                            <!-- /Male-to-female -->
+                            
+
+
                             <!-- Female-to-male -->
                             <!-- Male-to-male -->
-                            <tr>
-                              <td rowspan="8" style="vertical-align: top;"><p>p303 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2M/p303_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td rowspan="4" style="vertical-align: top;"><p>p227 (Male)</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2M/p227_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>StarGAN-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2M/StarGAN-VC_p303_009-to-p227_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2M/AutoVC_p303_009-to-p227_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2M/Seq2seq-VC_p303_009-to-p227_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2M/DCVC_p303_009-to-p227_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
+                            
+
                             <!-- /Male-to-male -->
-                            <tr>
-                              <td rowspan="4" style="vertical-align: top;"><p>p228 (Female)</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2F/p228_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>StarGAN-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2F/StarGAN-VC_p303_009-to-p228_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>AutoVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2F/AutoVC_p303_009-to-p228_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>Seq2seq-VC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2F/Seq2seq-VC_p303_009-to-p228_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>DCVC</p>
-                                <audio controls="controls">
-                                    <source src="wav/traditional/F2F/DCVC_p303_009-to-p228_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
+                            
                           </tbody>
                         </table>
                     </div>
@@ -682,7 +686,8 @@
                 </div>
             </div>
         </section>
-
+		
+		<!-- duration -->
         <section class="page-section bg-primary text-white mb-0" id="duration">
             <div class="container">
                 <!-- About Section Heading-->
