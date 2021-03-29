@@ -2,7 +2,7 @@
 
 
 function changeImage(picture_id, path) {
-    alert("hiiiiiii");
+    // alert("hiiiiiii");
     // document.getElementById("big").src = "images/" + path + ".PNG"
     // document.getElementById(string(picture_pos)).src = "images/" + path + ".PNG"
     document.getElementById(picture_id).src = "images/" + path + ".PNG"
