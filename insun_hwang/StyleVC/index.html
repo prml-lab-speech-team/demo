@@ -68,12 +68,14 @@
             </div>
         </section>
 
+
+
 		<!-- traditional -->
         <section class="page-section bg-primary text-white mb-0" id="traditional">
             <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">TRADITIONAL VC</h2> <br>
+                    <h2 class="page-section-heading d-inline-block text-white">Seen speakers</h2> <br>
                     <h3 font-size:3rem ine-height:2.5rem> Sample 1 </h3>
                 </div>
                 <!-- Icon Divider-->
@@ -97,109 +99,83 @@
                             <!-- Test!! -->
                             <tr>                              
                               <td rowspan="8" style="vertical-align: top;">
-                                <img src="images/test01.PNG" id="big">  <!-- width="100" height="200"> -->
-                                <img src="images/test01.PNG" class="small" width="100" height="100">
-                                <img src="images/test02.PNG" class="small" width="100" height="100">
-                                <img src="images/test03.PNG" class="small" width="100" height="100">
+                                <img src="images/test01.PNG" id="sample01">  <!-- width="100" height="200"> -->
                               </td>                              
 
                               <!-- Source Speaker -->  <!--  이거는 target이라 source 로 추후에 바꿔야 한다!!--> 
-                              <td rowspan="8" style="vertical-align: top;"><p>p232 (Male)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('test01')">
+                              <td rowspan="8" style="vertical-align: top;"><p>p225 (Male)</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'test01')">
                                     <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               
-                              <!-- 각 row에 대한 정보임!!! source -> target !! -->
+                              <!-- Row1: 각 row에 대한 정보임!!! source -> target !! -->
                               <!-- Target Speaker -->
-                              <td><p>pAAA (Male)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('test01')"> 
-                                    <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                              <td><p>226 (Male)</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'test01')"> 
+                                    <source src="wav/seen/GT/p225_004-to-p226_004_generated.wav" type="audio/wav" />
                                 </audio> 
                               </td>
                               <!-- AutoVC -->
-                              <td><p>pBBB -> pBBB'</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('test02')">
-                                    <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                              <td><p>p225 -> p226</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'test02')">
+                                    <source src="wav/seen/AutoVC/p225_004-to-p226_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <!-- StyleVC -->
-                              <td><p>pCCC -> pCCC'</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('test03')">
-                                    <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                              <td><p>p225 -> p226</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'test03')">
+                                    <source src="wav/seen/StyleVC/p225_004-to-p226_004_generated.wav" type="audio/wav" />
                                 </audio>
-                              </td>
-                              <script src="js/change.js"> </script> <!-- js 파일 연결 -->                             
+                              </td>                                                    
                             </tr>
 
                             <tr>
-                              <!-- 각 row에 대한 정보임!!! source -> target !! -->
+                              <!-- Row2: 각 row에 대한 정보임!!! source -> target !! -->
                               <!-- Target Speaker -->
-                              <td><p>pAAA (Male)</p>
+                              <td><p>p227 (Male)</p>
                                 <audio controls="controls" class="demo" id="target2" onclick="changePic(1)">
-                                    <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                    <source src="wav/seen/GT/p225_004-to-p227_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <!-- AutoVC -->
-                              <td><p>pBBB -> pBBB'</p>
+                              <td><p>p225 -> p227</p>
                                 <audio controls="controls" class="demo" id="target2" onclick="changePic(1)">
-                                    <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                    <source src="wav/seen/AutoVC/p225_004-to-p227_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <!-- StyleVC -->
-                              <td><p>pCCC -> pCCC'</p>
+                              <td><p>p225 -> p227</p>
                                 <audio controls="controls" class="demo" id="target2" onclick="changePic(1)">
-                                    <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                    <source src="wav/seen/StyleVC/p225_004-to-p227_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
 
                             <tr>
-                              <!-- 각 row에 대한 정보임!!! source -> target !! -->
+                              <!-- Row3: 각 row에 대한 정보임!!! source -> target !! -->
                               <!-- Target Speaker -->
-                              <td><p>pAAA (Male)</p>
+                              <td><p>p231 (Male)</p>
                                 <audio controls="controls" class="demo" id="target3" onclick="changePic(2)">
-                                    <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                    <source src="wav/seen/GT/p225_004-to-p231_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <!-- AutoVC -->
-                              <td><p>pBBB -> pBBB'</p>
+                              <td><p>p225 -> p231</p>
                                 <audio controls="controls" class="demo" id="target3" onclick="changePic(2)">
-                                    <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                    <source src="wav/seen/AutoVC/p225_004-to-p231_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <!-- StyleVC -->
-                              <td><p>pCCC -> pCCC'</p>
+                              <td><p>p225 -> p231</p>
                                 <audio controls="controls" class="demo" id="target3" onclick="changePic(2)">
-                                    <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                    <source src="wav/seen/StyleVC/p225_004-to-p231_004_generated.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
 
                             <tr>
-                              <!-- 각 row에 대한 정보임!!! source -> target !! -->
-                              <!-- Target Speaker -->
-                              <td><p>pAAA (Male)</p>
-                                <audio controls="controls" class="demo">
-                                    <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>pBBB -> pBBB'</p>
-                                <audio controls="controls" class="demo">
-                                    <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>pCCC -> pCCC'</p>
-                                <audio controls="controls" class="demo">
-                                    <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <!-- 각 row에 대한 정보임!!! source -> target !! -->
+                              <!-- Row4: 각 row에 대한 정보임!!! source -> target !! -->
                               <!-- Target Speaker -->
                               <td><p>pAAA (Male)</p>
                                 <audio controls="controls" class="demo">
@@ -220,25 +196,35 @@
                               </td>
                             </tr>
 
-                            <!-- Test!! -->
-
-                            <!-- Male-to-male & female-->
-
-                            <!-- /Male-to-female -->
-                            
-
-
-                            <!-- Female-to-male -->
-                            <!-- Male-to-male -->
-                            
-
-                            <!-- /Male-to-male -->
-                            
+                            <tr>
+                              <!-- Row5:  각 row에 대한 정보임!!! source -> target !! -->
+                              <!-- Target Speaker -->
+                              <td><p>pAAA (Male)</p>
+                                <audio controls="controls" class="demo">
+                                    <source src="wav/seen/GT/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <!-- AutoVC -->
+                              <td><p>pBBB -> pBBB'</p>
+                                <audio controls="controls" class="demo">
+                                    <source src="wav/seen/AutoVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <!-- StyleVC -->
+                              <td><p>pCCC -> pCCC'</p>
+                                <audio controls="controls" class="demo">
+                                    <source src="wav/seen/StyleVC/p225_004-to-p225_004_generated.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+
+            <br><br><br><br><br><br>
+            
         </section>
 
         <!-- Zero-shot VC -->
@@ -910,21 +896,6 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script src="js/change.js"></script>
-        <script>
-          function changeImage(path) {
-            alert("hiiiiiii");
-            document.getElementById("big").src = "images/" + path + ".PNG"
-          }
-          function changeImage1() {
-            alert("hi");
-            document.getElementById("big").src = "images/test01.PNG"
-          }
-          function changeImage2() {
-            document.getElementById("big").src = "images/test02.PNG"
-          }
-          function changeImage3() {
-            document.getElementById("big").src = "images/test03.PNG"
-          }
-        </script>
+
     </body>
 </html>
