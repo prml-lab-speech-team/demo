@@ -777,7 +777,27 @@
                     <div class="divider-custom"></div>
                 </div>
                 <!-- About Section Content-->
-                here!!!!!!!!!!!!!!!!!
+                <center><img src="images/additional_figure.png" width="1500px"></center> <br>
+                <p> 
+                &nbsp&nbsp&nbsp&nbsp The figure above shows the training strategy learning to perform voice conversion in a training scenario. <br>
+                Our model, StyleVC, proposes a novelty training strategy that can effectively 
+                learn the source's content and target's style information while using target audio. <br><br>
+
+                &nbsp&nbsp&nbsp&nbspWe used two experimental models to prove the performance of our proposed method. <br>
+                The consistency loss and perceptual loss were applied to AutoVC, respectively, and used as experimental models.
+                These two methods were used by referring to previous studies. <br>
+
+                &nbsp&nbsp&nbsp&nbspThe experimental model applying the consistency loss to AutoVC generated speech naturally, but the conversion performance was poor. <br>
+                Since only the finally produced spectral features were used, it would have been challenging to learn low and high-level features. <br>
+
+                &nbsp&nbsp&nbsp&nbspOn the other hand, the experimental model applying Loss Network to AutoVC converted style while generating voice unnaturally. <br>
+                This is because it is possible to learn high-level features for the source's content and target's style through the loss network. <br>
+                However, the performance was low because it was not possible to learn features from low to high-level. <br>
+
+                &nbsp&nbsp&nbsp&nbspUsing our novel training strategy, the decoder learns features for low and high-level. <br>
+                Therefore, the decoder can reflect the source's content and target's style information while producing speech. <br>
+                Through this, the conversion performance in the inference scenario was improved. 
+                Also, the performance of inter-gender conversion was improved.</p>
 
             </div>
         </section>
