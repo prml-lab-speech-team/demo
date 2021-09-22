@@ -24,14 +24,14 @@
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">StyleVC DEMO</a>
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">RCVC DEMO</a>
                 <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#flow">FLOW DIAGRAM</a>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#seen_speakers">SEEN SPEAKERS</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zeroshot">UNSEEN SPEAKERS</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#aditional_figure">ADDITIONAL FIGURE</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Abstract">ABSTRACT</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#FlowDiagram">FLOW DIAGRAM</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#EnglishDemo">ENGLISH DEMO</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#KoreanDemo">KOREAN DEMO</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,58 +39,76 @@
         <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading mb-0">StyleVC: Non-parallel Voice Conversion with Perceptual Guidance</h1><br>
+                  <h1 class="masthead-heading mb-0"><center>RCVC: RHYTHM CONTROLLABLE VOICE CONVERSION WITH DYNAMIC INFORMATION BOTTLENECK</center></h1><br>
                 <!-- Masthead Subheading-->
                 <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">In-Sun Hwang, Sang-Hoon Lee, Seong-Whan Lee</p>
             </div>
         </header>
 
+
+
         <!-- Abstraction -->
         
-        <section class="page-section portfolio" id="flow">
+        <section class="page-section portfolio" id="Abstract">
             <div class="container">
                 <!-- Portfolio Section Heading-->
                 <div class="text-center">
-                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Flow diagram</h2> <br> <br>
-                    <h5> We used perceptual guidance, adversarial speaker classifier, and speaker classifier. <br>
-                    Using these methods, a novel training strategy was used to improve the performance of voice conversion. <br>
-                    The flow diagram below shows how to guide the decoder to learn low and high-level using perceptual guidance.
-                    </h5>
-                </div>
-
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom"></div>
-                </div>
-
-                <!-- Portfolio Grid Items-->  
-                <div class="row justify-content-center">
-                    <div class="col-lg-12 ml-auto">
-                      <center><img src="StyleVC_flow.gif" alt="animated" width="1000px">
-                              &nbsp &nbsp &nbsp &nbsp &nbsp <img src="flow_legend.PNG" width="200px"> </center>
-                    </div>
-                </div>
-                
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Abstract</h2> <br> <br>
+                    <h5> Recently, there has been significant progress in non-parallel many-to-many voice conversion with a simple autoencoder, which can disentangle content and speaker information from the speech. However, a trade-off exists between speech quality and speaker similarity because previous methods lose the linguistic information in the process of disentanglement. Besides, they do not reflect the rhythm of target speech even though rhythm plays an important role in determining the speaker's characteristics. In this paper, we introduce RCVC, which is a rhythm controllable voice conversion model. Furthermore, we propose the dynamic information bottleneck to transfer rhythm, generating the content embedding utilizing speaking speed. The experimental results also show the superiority of our proposed method.
+                    </h5><br>                    
+                    <h5>The code will be released at http://....</h5>
+                </div>                
             </div>
         </section>
-       
+        
+
+
+        <!-- Flow diagram -->
+
+        <section class="page-section portfolio" id="FlowDiagram">
+          <div class="container">
+              <!-- Portfolio Section Heading-->
+              <div class="text-center">
+                  <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Flow Diagram</h2> <br> <br>
+                  <!-- <h5> Recently, there has been significant progress in non-parallel many-to-many voice conversion with a simple autoencoder, which can disentangle content and speaker information from the speech. However, a trade-off exists between speech quality and speaker similarity because previous methods lose the linguistic information in the process of disentanglement. Besides, they do not reflect the rhythm of target speech even though rhythm plays an important role in determining the speaker's characteristics. In this paper, we introduce RCVC, which is a rhythm controllable voice conversion model. Furthermore, we propose the dynamic information bottleneck to transfer rhythm, generating the content embedding utilizing speaking speed. The experimental results also show the superiority of our proposed method. -->
+                  </h5>
+              </div>
+
+              <!-- Icon Divider-->
+              <div class="divider-custom">
+                  <div class="divider-custom"></div>
+              </div>
+
+              <!-- Portfolio Grid Items-->  
+              <div class="row justify-content-center">
+                  <div class="col-lg-12 ml-auto">
+                    <center><img src="StyleVC_flow.gif" alt="animated" width="1000px">
+                            &nbsp &nbsp &nbsp &nbsp &nbsp <img src="flow_legend.PNG" width="200px"> </center>
+                  </div>
+              </div>
+              
+          </div>
+        </section>
+
+
 
 		    <!-- traditional -->
-        <section class="page-section bg-primary text-white mb-0" id="seen_speakers">
+        <section class="page-section bg-primary text-white mb-0" id="EnglishDemo">
             <div class="container">
 
             
                 <!-- About Section Heading-->
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">Seen speakers</h2> <br>
+                    <h2 class="page-section-heading d-inline-block text-white">Engliish Demo</h2> <br>
                     <h3 font-size:3rem ine-height:2.5rem> Sample 1 </h3>
-                    <h6> AutoVC has good performance when reconstructing the same speaker, but the style is less changed when converting to another speaker. <br>
-                         However, by using the novel training strategy we proposed, performance can be improved even in inter-gender.</h6>
                 </div>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom"></div>
                 </div>
+
+
+                <!-- 1개 데모 시작 -->
                 <!-- About Section Content-->
                 <div class="row">
                     <div class="col-lg-14 ml-auto">
@@ -208,275 +226,10 @@
                         </table>
                     </div>
                 </div>
+                <!-- 1개 데모 끝-->
+                
 
-
-
-
-                <br><br><br><br><br><br>
-                <!-- About Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">Seen speakers</h2> <br>
-                    <h3 font-size:3rem ine-height:2.5rem> Sample 2 </h3>
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-15 ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th style="width: 30%">Mel-spectrogram</th>
-                              <th style="width: 17.5%">Source Speaker</th>
-                              <th style="width: 17.5%">Target Speaker</th>
-                              <th style="width: 17.5%">AutoVC</th>
-                              <th style="width: 17.5%">StyleVC(Ours)</th>
-                            </tr>
-                          </thead>
-
-                          <tbody>
-                            <!-- Test!! -->
-                            <tr>                              
-                              <td rowspan="4" style="vertical-align: top;">
-                                <img src="images/plot/p241_009-to-p241_009.PNG" id="sample02" width=600pt><br>
-                                <center><img src="images/legend.PNG" id="None" width=300pt></center>
-                              </td>                              
-
-                              <!-- Source Speaker -->
-                              <td rowspan="4" style="vertical-align: top;"><p><span style="color:Blue">p241 (Male)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p241_009')">
-                                    <source src="wav/seen/GT_source/p241_009-to-p241_009_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              
-                              <!-- Row1: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Blue">p241 (Male)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p241_009')"> 
-                                    <source src="wav/seen/GT_target/p241_009-to-p241_009_generated.wav" type="audio/wav" />
-                                </audio> 
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p241 -> p241 (Reconstruction)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p241_009')">
-                                    <source src="wav/seen/AutoVC/p241_009-to-p241_009_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p241 -> p241 (Reconstruction)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p241_009')">
-                                    <source src="wav/seen/StyleVC/p241_009-to-p241_009_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>                                                    
-                            </tr>
-
-                            <tr>
-                              <!-- Row2: 각 row에 대한 정보임!!!-->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Red">p230 (Female)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p230_009')"> 
-                                    <source src="wav/seen/GT_target/p241_009-to-p230_009_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p241 -> p230</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p230_009')"> 
-                                    <source src="wav/seen/AutoVC/p241_009-to-p230_009_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p241 -> p230</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p230_009')"> 
-                                    <source src="wav/seen/StyleVC/p241_009-to-p230_009_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <!-- Row3: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Red">p234 (Female)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p234_009')"> 
-                                    <source src="wav/seen/GT_target/p241_009-to-p234_009_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p241 -> p234</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p234_009')"> 
-                                    <source src="wav/seen/AutoVC/p241_009-to-p234_009_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p241 -> p234</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p234_009')"> 
-                                    <source src="wav/seen/StyleVC/p241_009-to-p234_009_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <!-- Row4: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Blue">p226 (Male)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p226_009')"> 
-                                    <source src="wav/seen/GT_target/p241_009-to-p226_009_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p241 -> p226</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p226_009')"> 
-                                    <source src="wav/seen/AutoVC/p241_009-to-p226_009_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p241 -> p226</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p241_009-to-p226_009')"> 
-                                    <source src="wav/seen/StyleVC/p241_009-to-p226_009_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                    </div>
-                </div>
-
-
-
-
-                <br><br><br><br><br><br>
-                <!-- About Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">Seen speakers</h2> <br>
-                    <h3 font-size:3rem ine-height:2.5rem> Sample 3 </h3>
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
-                </div>
-
-
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-15 ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th style="width: 30%">Mel-spectrogram</th>
-                              <th style="width: 17.5%">Source Speaker</th>
-                              <th style="width: 17.5%">Target Speaker</th>
-                              <th style="width: 17.5%">AutoVC</th>
-                              <th style="width: 17.5%">StyleVC(Ours)</th>
-                            </tr>
-                          </thead>
-
-                          <tbody>
-                            <!-- Test!! -->
-                            <tr>                              
-                              <td rowspan="4" style="vertical-align: top;">
-                                <img src="images/plot/p246_007-to-p246_007.PNG" id="sample03" width=600pt><br>
-                                <center><img src="images/legend.PNG" id="None" width=300pt></center>
-                              </td>                              
-
-                              <!-- Source Speaker -->
-                              <td rowspan="4" style="vertical-align: top;"><p><span style="color:Blue">p246 (Male)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p246_007')">
-                                    <source src="wav/seen/GT_source/p246_007-to-p246_007_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              
-                              <!-- Row1: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Blue">p246 (Male)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p246_007')"> 
-                                    <source src="wav/seen/GT_target/p246_007-to-p246_007_generated.wav" type="audio/wav" />
-                                </audio> 
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p246 -> p246 (Reconstruction)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p246_007')">
-                                    <source src="wav/seen/AutoVC/p246_007-to-p246_007_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p246 -> p246 (Reconstruction)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p246_007')">
-                                    <source src="wav/seen/StyleVC/p246_007-to-p246_007_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>                                                    
-                            </tr>
-
-                            <tr>
-                              <!-- Row2: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Red">p229 (Female)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p229_007')"> 
-                                    <source src="wav/seen/GT_target/p246_007-to-p229_007_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p246 -> p229</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p229_007')"> 
-                                    <source src="wav/seen/AutoVC/p246_007-to-p229_007_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p246 -> p229</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p229_007')"> 
-                                    <source src="wav/seen/StyleVC/p246_007-to-p229_007_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <!-- Row3: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Red">p239 (Female)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p239_007')"> 
-                                    <source src="wav/seen/GT_target/p246_007-to-p239_007_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p246 -> p239</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p239_007')"> 
-                                    <source src="wav/seen/AutoVC/p246_007-to-p239_007_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p246 -> p239</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p239_007')"> 
-                                    <source src="wav/seen/StyleVC/p246_007-to-p239_007_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <!-- Row4: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Blue">p237 (Male)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p237_007')"> 
-                                    <source src="wav/seen/GT_target/p246_007-to-p237_007_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p246 -> p237</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p237_007')"> 
-                                    <source src="wav/seen/AutoVC/p246_007-to-p237_007_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p246 -> p237</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p246_007-to-p237_007')"> 
-                                    <source src="wav/seen/StyleVC/p246_007-to-p237_007_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                    </div>
-                </div>
-
+                <!-- 나중에 <br> 추가하자 -->
 
                 
 
@@ -495,20 +248,22 @@
         
         
         <!-- zeroshot -->
-        <section class="page-section" id="zeroshot">
+        <section class="page-section" id="KoreanDemo">
             <div class="container">
 
 
                 <!-- About Section Heading-->
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-black">Unseen speakers</h2> <br>
+                    <h2 class="page-section-heading d-inline-block text-black">Korean Demo</h2> <br>
                     <h3 font-size:3rem ine-height:2.5rem> Sample 1 </h3>
                 </div>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom"></div>
                 </div>
+                  
 
+                <!-- 1개 데모 시작 -->
                 <!-- About Section Content-->
                 <div class="row">
                     <div class="col-lg-15 ml-auto">
@@ -627,138 +382,7 @@
                         </table>
                     </div>
                 </div>
-
-
-
-            <br><br><br><br><br><br>
-            <!-- About Section Heading-->
-            <div class="text-center">
-                <h2 class="page-section-heading d-inline-block text-black">Unseen speakers</h2> <br>
-                <h3 font-size:3rem ine-height:2.5rem> Sample 2 </h3>
-            </div>
-            <!-- Icon Divider-->
-            <div class="divider-custom divider-light">
-                <div class="divider-custom"></div>
-            </div>
-
-            <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-15 ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th style="width: 30%">Mel-spectrogram</th>
-                              <th style="width: 17.5%">Source Speaker</th>
-                              <th style="width: 17.5%">Target Speaker</th>
-                              <th style="width: 17.5%">AutoVC</th>
-                              <th style="width: 17.5%">StyleVC(Ours)</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <!-- Test!! -->
-                            <tr>                              
-                              <td rowspan="4" style="vertical-align: top;">
-                                <img src="images/plot/p334_002-to-p334_002.PNG" id="sample12" width=600pt><br>
-                                <center><img src="images/legend.PNG" id="None" width=300pt></center>
-                              </td>                              
-
-                              <!-- Source Speaker --> 
-                              <td rowspan="4" style="vertical-align: top;"><p><span style="color:Blue">p334 (Male)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p334_002')">
-                                    <source src="wav/unseen/GT_source/p334_002-to-p334_002_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              
-                              <!-- Row1: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Blue">p334 (Male)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p334_002')"> 
-                                    <source src="wav/unseen/GT_target/p334_002-to-p334_002_generated.wav" type="audio/wav" />
-                                </audio> 
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p334 -> p334 (Reconstruction)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p334_002')">
-                                    <source src="wav/unseen/AutoVC/p334_002-to-p334_002_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p334 -> p334 (Reconstruction)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p334_002')">
-                                    <source src="wav/unseen/StyleVC/p334_002-to-p334_002_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>                                                    
-                            </tr>
-
-                            <tr>
-                              <!-- Row2: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Red">p257 (Female)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p257_002')"> 
-                                    <source src="wav/unseen/GT_target/p334_002-to-p257_002_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p334 -> p257</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p257_002')"> 
-                                    <source src="wav/unseen/AutoVC/p334_002-to-p257_002_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p334 -> p257</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p257_002')"> 
-                                    <source src="wav/unseen/StyleVC/p334_002-to-p257_002_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <!-- Row3: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Red">p336 (Female)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p336_002')"> 
-                                    <source src="wav/unseen/GT_target/p334_002-to-p336_002_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p334 -> p336</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p336_002')"> 
-                                    <source src="wav/unseen/AutoVC/p334_002-to-p336_002_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p334 -> p336</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p336_002')"> 
-                                    <source src="wav/unseen/StyleVC/p334_002-to-p336_002_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <!-- Row4: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Blue">p247 (Male)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p247_002')"> 
-                                    <source src="wav/unseen/GT_target/p334_002-to-p247_002_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p334 -> p247</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p247_002')"> 
-                                    <source src="wav/unseen/AutoVC/p334_002-to-p247_002_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p334 -> p247</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample12', 'p334_002-to-p247_002')"> 
-                                    <source src="wav/unseen/StyleVC/p334_002-to-p247_002_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                    </div>
-                </div>
+                <!-- 1개 데모 끝-->
 
 
             <!--
@@ -768,45 +392,6 @@
         </section>
 
 
-
-
-
-        <!-- aditional figure -->
-        <section class="page-section" id="aditional_figure">
-            <div class="container">
-                <!-- About Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-black">Additional Figure</h2> <br>
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
-                </div>
-                <!-- About Section Content-->
-                <center><img src="images/additional_figure.png" width="1500px"></center> <br>
-                <p> 
-                &nbsp&nbsp&nbsp&nbsp The figure above shows the training strategy learning to perform voice conversion in a training scenario. <br>
-                Our model, StyleVC, proposes a novelty training strategy that can effectively 
-                learn the source's content and target's style information while using target audio. <br><br>
-
-                &nbsp&nbsp&nbsp&nbspWe used two experimental models to prove the performance of our proposed method. <br>
-                The consistency loss and perceptual loss were applied to AutoVC, respectively, and used as experimental models.
-                These two methods were used by referring to previous studies. <br>
-
-                &nbsp&nbsp&nbsp&nbspThe experimental model applying the consistency loss to AutoVC generated speech naturally, but the conversion performance was poor. <br>
-                Since only the finally produced spectral features were used, it would have been challenging to learn low and high-level features. <br>
-
-                &nbsp&nbsp&nbsp&nbspOn the other hand, the experimental model applying Loss Network to AutoVC converted style while generating voice unnaturally. <br>
-                This is because it is possible to learn high-level features for the source's content and target's style through the loss network. <br>
-                However, the performance was low because it was not possible to learn features from low to high-level. <br>
-
-                &nbsp&nbsp&nbsp&nbspUsing our novel training strategy, the decoder learns features for low and high-level. <br>
-                Therefore, the decoder can reflect the source's content and target's style information while producing speech. <br>
-                Through this, the conversion performance in the inference scenario was improved. 
-                Also, the performance of inter-gender conversion was improved.</p>
-
-            </div>
-        </section>
 
 
 
