@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 
@@ -8,13 +9,14 @@
                  a:link { color: black; text-decoration: none;}
                  a:visited { color: black; text-decoration: none;}
                  a:hover { color: blue; text-decoration: underline;}
+				 #player {width: 250px;}​
            </style>
 
 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Audio samples from "Fre-GAN"</title>
+        <title>EmoQ-TTS Demo</title>
         <!-- Font Awesome icons (free version)-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -33,8 +35,8 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audios">AUDIOS</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ABLATION">ABLATION STUDIES</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#many-to-many">Audio Samples</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zero-shot">Ablation Study</a></li>
                     </ul>
                 </div>
             </div>
@@ -42,9 +44,9 @@
         <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading mb-0">Fre-GAN2: Adversarial Frequency-consistent Audio Synthesis</h1>
+                <h1 class="masthead-heading mb-0">EmoQ-TTS: Emotion intensity Quantization for Fine-grained Controllable Emotional Text-to-Speech</h1>
                 <!-- Masthead Subheading-->
-                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Ji-Hoon Kim, Sang-Hoon Lee, Ji-Hyun Lee, Seong-Whan Lee</p>
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Chae-Bin Im, Sang-Hoon Lee, Seung-Bin Kim, Seong-Whan Lee</p>
             </div>
         </header>
 
@@ -62,32 +64,34 @@
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     <div class="col-lg-12 ml-auto">
-                        <p class="pre-wrap lead">Although recent works on neural vocoder have improved the quality of synthesized audio, there still exists a gap between generated and ground-truth audio in frequency space. This difference leads to spectral artifacts such as hissing noise or reverberation, and thus degrades the sample quality. In this paper, we propose Fre-GAN which achieves frequency-consistent audio synthesis with highly improved generation quality. Specifically, we first present resolution-connected generator and resolution-wise discriminators, which help learn various scales of spectral distributions over multiple frequency bands. Additionally, to reproduce high-frequency components accurately, we leverage discrete wavelet transform in the discriminators. From our experiments, Fre-GAN achieves high-fidelity waveform generation with a gap of only 0.03 MOS compared to ground-truth audio while outperforming standard models in quality. </p>
-                        <br>
-                        <br>
-                    </div>
+                      <p class="pre-wrap lead"> Although recent advances in text-to-speech (TTS) have shown significant improvement, it is still limited to emotional speech synthesis. To produce emotional speech, most works utilize emotion information extracted from emotion labels or reference audio. However, they result in monotonous emotional expression due to the utterance-level emotion conditions. In this paper, we propose EmoQ-TTS, which synthesizes expressive emotional speech by conditioning phoneme-wise emotion information with fine-grained emotion intensity. Here, the intensity of emotion information is rendered by distance-based intensity quantization without human labeling. We can also control the emotional expression of synthesized speech by conditioning intensity labels manually. The experimental results demonstrate the superiority of EmoQ-TTS in emotional expressiveness and controllability. </p>
+
+                  </div>
                 </div>
             </div>
         </section>
 
-        <section class="page-section bg-primary text-white mb-0" id="audios">
-            <div class="container-fluid">
+        <section class="page-section bg-primary text-white mb-0" id="many-to-many">
+            <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">Audio samples </h2>
+                  <h2 class="page-section-heading d-inline-block text-white">Audio Samples</h2>
+<!--                                         <p class="pre-wrap lead">&nbsp;</p> -->
                 </div>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom"></div>
                 </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 ml-auto">
+                      <p class="pre-wrap lead"> All the audio sample use FreGAN as a vocoder. </p>
 
+                  </div>
+                <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-auto ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i><span style="color: red">The forms</span> of printed letters should be beautiful and that their arrangement on the page <span style="color: red">should be</span> reasonable and a help to the shapeliness of the letters themselves.</i></div>
+                    <div class="col-lg-12 ml-auto">
+          <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script : <i>Printing in the only sense with which we are at present concerned differs from most if not from all the arts and crafts represented in the Exhibition .</i></div>
                               </th>
                             </tr>
                           </thead>
@@ -95,70 +99,103 @@
                             <tr>
                               <td style="vertical-align: top;"><p>Ground Truth</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/GT/LJ001-0015.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/gt/LJ001-0001.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>WaveNet</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/wavenet/LJ001-0015.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/wavenet/LJ001-0001.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-                              <td style="vertical-align: top;"><p>WaveGlow</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/waveglow/LJ001-0015.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
+                         
                                 <td style="vertical-align: top;"><p>HiFi-GAN V1</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/hifi_v1/LJ001-0015.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/hifigan_v1_subjective/LJ001-0001.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-                                <td style="vertical-align: top;"><p><b>Fre-GAN V1 (Proposed)</b></p>
+                              <td style="vertical-align: top;"><p>HiFi-GAN V2</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/fre_v1/LJ001-0015.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/hifigan_v2_subjective/LJ001-0001.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-                                <td style="vertical-align: top;"><p>HiFi-GAN V2</p>
+                                     </tr>
+
+                            <tr>
+                                <td style="vertical-align: top;"><p>Fre-GAN V1</p>
+                                  <p>&nbsp;</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/hifi_v2/LJ001-0015.wav" type="audio/wav" />
-                                    </audio>
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan_v1_subjective/LJ001-0001.wav" type="audio/wav" />
+                                  </audio>
                                 </div>
                               </td>
-                                <td style="vertical-align: top;"><p><b>Fre-GAN V2 (Proposed)</b></p>
+                          
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V1</p>
+                                  <p>(Single-level iDWT)</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/fre_v2/LJ001-0015.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan2_single_v1_subjective/LJ001-0001.wav" type="audio/wav" />
                                     </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;">
-                                <div class="text-center">
-                                    <img />
                                 </div>
                               </td>
 
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V1 </p>
+                                  <p>(Multi-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan2_multi_v1_subjective/LJ001-0001.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
                             </tr>
-                          </tbody>
+                              <tr>
+
+                                <td style="vertical-align: top;"><p>Fre-GAN V2 </p>
+                                  <p>&nbsp;</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan_v2_subjective/LJ001-0001.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V2</p>
+                                  <p>(Single-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan2_single_v2_subjective/LJ001-0001.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V2</p>
+                                  <p>(Multi-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan2_multi_v2_subjective/LJ001-0001.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+<td style="vertical-align: top;"><p>Fre-GAN 2* V2</p>
+                                  <p>(Multi-level iDWT, APFD)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/apfm_subjective/LJ001-0001.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>    
+                              </tr>                           
                         </table>
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i><span style="color: red">Printings in the only sense</span> with which we are at present concerned <span style="color: red">differs</span> from most if not from all the arts and crafts represented in the Exhibition.</i></div>
+                        
+                      <p> </p>  
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script : <i>This is best furthered by the avoidance of irrational swellings and spiky projections  and by the using of careful purity of line..</i></div>
                               </th>
                             </tr>
                           </thead>
@@ -166,70 +203,102 @@
                             <tr>
                               <td style="vertical-align: top;"><p>Ground Truth</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/GT/LJ001-0001.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/gt/LJ001-0109.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>WaveNet</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/wavenet/LJ001-0001.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/wavenet/LJ001-0109.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-                              <td style="vertical-align: top;"><p>WaveGlow</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/waveglow/LJ001-0001.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
+                         
                                 <td style="vertical-align: top;"><p>HiFi-GAN V1</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/hifi_v1/LJ001-0001.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/hifigan_v1_subjective/LJ001-0109.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-                                <td style="vertical-align: top;"><p><b>Fre-GAN V1 (Proposed)</b></p>
+                              <td style="vertical-align: top;"><p>HiFi-GAN V2</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/fre_v1/LJ001-0001.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/hifigan_v2_subjective/LJ001-0109.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-                                <td style="vertical-align: top;"><p>HiFi-GAN V2</p>
+                            </tr>
+
+                            <tr>
+                                <td style="vertical-align: top;"><p>Fre-GAN V1</p>
+                                  <p>&nbsp;</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/hifi_v2/LJ001-0001.wav" type="audio/wav" />
-                                    </audio>
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan_v1_subjective/LJ001-0109.wav" type="audio/wav" />
+                                  </audio>
                                 </div>
                               </td>
-                                <td style="vertical-align: top;"><p><b>Fre-GAN V2 (Proposed)</b></p>
+                          
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V1</p>
+                                  <p>(Single-level iDWT)</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/fre_v2/LJ001-0001.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan2_single_v1_subjective/LJ001-0109.wav" type="audio/wav" />
                                     </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;">
-                                <div class="text-center">
-                                    <img />
                                 </div>
                               </td>
 
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V1 </p>
+                                  <p>(Multi-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan2_multi_v1_subjective/LJ001-0109.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
                             </tr>
-                          </tbody>
+                              <tr>
+
+                                <td style="vertical-align: top;"><p>Fre-GAN V2 </p>
+                                  <p>&nbsp;</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan_v2_subjective/LJ001-0109.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V2</p>
+                                  <p>(Single-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan2_single_v2_subjective/LJ001-0109.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V2</p>
+                                  <p>(Multi-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan2_multi_v2_subjective/LJ001-0109.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+<td style="vertical-align: top;"><p>Fre-GAN 2* V2</p>
+                                  <p>(Multi-level iDWT, APFD)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/apfm_subjective/LJ001-0109.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>    
+                              </tr>                           
                         </table>
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i><span style="color: red">The squalor</span> and uncleanness of the debtors' side was intensified by constant overcrowding.</i></div>
+                        <p></p>
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script : <i>The supply of which was, however, limited, and there were not always enough to give bedding to all. The stock was diminished by theft.</i></div>
                               </th>
                             </tr>
                           </thead>
@@ -237,141 +306,102 @@
                             <tr>
                               <td style="vertical-align: top;"><p>Ground Truth</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/GT/LJ003-0002.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/gt/LJ002-0329.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>WaveNet</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/wavenet/LJ003-0002.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/wavenet/LJ002-0329.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-                              <td style="vertical-align: top;"><p>WaveGlow</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/waveglow/LJ003-0002.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
+                         
                                 <td style="vertical-align: top;"><p>HiFi-GAN V1</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/hifi_v1/LJ003-0002.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/hifigan_v1_subjective/LJ002-0329.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-                                <td style="vertical-align: top;"><p><b>Fre-GAN V1 (Proposed)</b></p>
+                              <td style="vertical-align: top;"><p>HiFi-GAN V2</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/fre_v1/LJ003-0002.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/hifigan_v2_subjective/LJ002-0329.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-                                <td style="vertical-align: top;"><p>HiFi-GAN V2</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/hifi_v2/LJ003-0002.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;"><p><b>Fre-GAN V2 (Proposed)</b></p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/fre_v2/LJ003-0002.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;">
-                                <div class="text-center">
-                                    <img />
-                                </div>
-                              </td>
-
                             </tr>
-                          </tbody>
-                        </table>
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                        <thead>
-                        <tr>
-                        <th colspan="5" style="width: 40%">
-                            <div class="text-left">Script : <i><span style="color: red">The association</span> was organized under the most promising auspices.</i></div>
-                        </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                        <td style="vertical-align: top;"><p>Ground Truth</p>
-                        <div class="text-center">
-                        <audio controls="controls">
-                        <source src="./wav/audio/GT/LJ004-0042.wav" type="audio/wav" />
-                        </audio>
-                        </div>
-                        </td>
-                        <td style="vertical-align: top;"><p>WaveNet</p>
-                        <div class="text-center">
-                        <audio controls="controls">
-                        <source src="./wav/audio/wavenet/LJ004-0042.wav" type="audio/wav" />
-                        </audio>
-                        </div>
-                        </td>
-                        <td style="vertical-align: top;"><p>WaveGlow</p>
-                        <div class="text-center">
-                        <audio controls="controls">
-                        <source src="./wav/audio/waveglow/LJ004-0042.wav" type="audio/wav" />
-                        </audio>
-                        </div>
-                        </td>
-                        </tr>
 
-                        <tr>
-                        <td style="vertical-align: top;"><p>HiFi-GAN V1</p>
-                        <div class="text-center">
-                        <audio controls="controls">
-                        <source src="./wav/audio/hifi_v1/LJ004-0042.wav" type="audio/wav" />
-                        </audio>
-                        </div>
-                        </td>
-                            <td style="vertical-align: top;"><p><b>Fre-GAN V1 (Proposed)</b></p>
-                        <div class="text-center">
-                        <audio controls="controls">
-                        <source src="./wav/audio/fre_v1/LJ004-0042.wav" type="audio/wav" />
-                        </audio>
-                        </div>
-                        </td>
-                        <td style="vertical-align: top;"><p>HiFi-GAN V2</p>
-                        <div class="text-center">
-                        <audio controls="controls">
-                        <source src="./wav/audio/hifi_v2/LJ004-0042.wav" type="audio/wav" />
-                        </audio>
-                        </div>
-                        </td>
-                            <td style="vertical-align: top;"><p><b>Fre-GAN V2 (Proposed)</b></p>
-                        <div class="text-center">
-                        <audio controls="controls">
-                        <source src="./wav/audio/fre_v2/LJ004-0042.wav" type="audio/wav" />
-                        </audio>
-                        </div>
-                        </td>
-                        <td style="vertical-align: top;">
-                        <div class="text-center">
-                        <img />
-                        </div>
-                        </td>
-
-                        </tr>
-                        </tbody>
-                        </table>
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
                             <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i><span style="color: red">The Roman type</span> of all these printers is similar in character.</i></div>
+                                <td style="vertical-align: top;"><p>Fre-GAN V1</p>
+                                  <p>&nbsp;</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan_v1_subjective/LJ002-0329.wav" type="audio/wav" />
+                                  </audio>
+                                </div>
+                              </td>
+                          
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V1</p>
+                                  <p>(Single-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan2_single_v1_subjective/LJ002-0329.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V1 </p>
+                                  <p>(Multi-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan2_multi_v1_subjective/LJ002-0329.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                              <tr>
+
+                                <td style="vertical-align: top;"><p>Fre-GAN V2 </p>
+                                  <p>&nbsp;</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan_v2_subjective/LJ002-0329.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V2</p>
+                                  <p>(Single-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan2_single_v2_subjective/LJ002-0329.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V2</p>
+                                  <p>(Multi-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/fregan2_multi_v2_subjective/LJ002-0329.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+<td style="vertical-align: top;"><p>Fre-GAN 2* V2</p>
+                                  <p>(Multi-level iDWT, APFD)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/apfm_subjective/LJ002-0329.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>    
+                              </tr>                           
+                        </table>
+                        <p></p>
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script : <i>He slept in the same bed with a highwayman on one side and a man charged with murder on the other.</i></div>
                               </th>
                             </tr>
                           </thead>
@@ -379,481 +409,315 @@
                             <tr>
                               <td style="vertical-align: top;"><p>Ground Truth</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/GT/LJ001-0039.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                      <source src="./audio/gt/LJ003-0107.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>WaveNet</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/wavenet/LJ001-0039.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                      <source src="./audio/wavenet/LJ003-0107.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-                              <td style="vertical-align: top;"><p>WaveGlow</p>
+                         
+                                <td style="vertical-align: top;"><p>HiFi-GAN V1</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/waveglow/LJ001-0039.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                      <source src="./audio/hifigan_v1_subjective/LJ003-0107.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>HiFi-GAN V2</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/hifigan_v2_subjective/LJ003-0107.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                             </tr>
 
                             <tr>
-                                <td style="vertical-align: top;"><p>HiFi-GAN V1</p>
+                                <td style="vertical-align: top;"><p>Fre-GAN V1</p>
+                                  <p>&nbsp;</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/hifi_v1/LJ001-0039.wav" type="audio/wav" />
-                                    </audio>
+                                    <audio id="player" controls>
+                                      <source src="./audio/fregan_v1_subjective/LJ003-0107.wav" type="audio/wav" />
+                                  </audio>
                                 </div>
                               </td>
-                                <td style="vertical-align: top;"><p><b>Fre-GAN V1 (Proposed)</b></p>
+                          
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V1</p>
+                                  <p>(Single-level iDWT)</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/fre_v1/LJ001-0039.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                      <source src="./audio/fregan2_single_v1_subjective/LJ003-0107.wav" type="audio/wav" />
                                     </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;"><p>HiFi-GAN V2</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/hifi_v2/LJ001-0039.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;"><p><b>Fre-GAN V2 (Proposed)</b></p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/fre_v2/LJ001-0039.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;">
-                                <div class="text-center">
-                                    <img />
                                 </div>
                               </td>
 
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V1 </p>
+                                  <p>(Multi-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/fregan2_multi_v1_subjective/LJ003-0107.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
                             </tr>
-                          </tbody>
+                              <tr>
+
+                                <td style="vertical-align: top;"><p>Fre-GAN V2 </p>
+                                  <p>&nbsp;</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/fregan_v2_subjective/LJ003-0107.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V2</p>
+                                  <p>(Single-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/fregan2_single_v2_subjective/LJ003-0107.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V2</p>
+                                  <p>(Multi-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/fregan2_multi_v2_subjective/LJ003-0107.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+<td style="vertical-align: top;"><p>Fre-GAN 2* V2</p>
+                                  <p>(Multi-level iDWT, APFD)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/apfm_subjective/LJ003-0107.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>    
+                              </tr>                           
                         </table>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script : <i>The committee seems to have fully realized even at this early date eighteen fifteen.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/gt/LJ003-0295.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>WaveNet</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/wavenet/LJ003-0295.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>HiFi-GAN V1</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/hifigan_v1_subjective/LJ003-0295.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>HiFi-GAN V2</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/hifigan_v2_subjective/LJ003-0295.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                                <td style="vertical-align: top;"><p>Fre-GAN V1</p>
+                                  <p>&nbsp;</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/fregan_v1_subjective/LJ003-0295.wav" type="audio/wav" />
+                                  </audio>
+                                </div>
+                              </td>
+                          
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V1</p>
+                                  <p>(Single-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/fregan2_single_v1_subjective/LJ003-0295.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V1 </p>
+                                  <p>(Multi-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/fregan2_multi_v1_subjective/LJ003-0295.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                              <tr>
+
+                                <td style="vertical-align: top;"><p>Fre-GAN V2 </p>
+                                  <p>&nbsp;</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/fregan_v2_subjective/LJ003-0295.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V2</p>
+                                  <p>(Single-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/fregan2_single_v2_subjective/LJ003-0295.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>Fre-GAN 2 V2</p>
+                                  <p>(Multi-level iDWT)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/fregan2_multi_v2_subjective/LJ003-0295.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+<td style="vertical-align: top;"><p>Fre-GAN 2* V2</p>
+                                  <p>(Multi-level iDWT, APFD)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                      <source src="./audio/apfm_subjective/LJ003-0295.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>    
+                              </tr>                           
+                        </table>
+</section>
 
         <!-- ABLATION -->
-        <section class="page-section bg-info text-white mb-0" id="ABLATION">
-            <div class="container-fluid">
+        <section class="page-section bg-info text-white mb-0" id="zero-shot">
+            <div class="container">
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block">Ablation studies</h2>
+                    <h2 class="page-section-heading d-inline-block">Ablation Study</h2>
                 </div>
 
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
+    <div class="divider-custom divider-light">
+                  <div class="divider-custom"></div>
                 </div>
-
                 <div class="row">
                     <div class="col-lg-auto ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i><span style="color: red">The Roman letter</span> was used side by side with the Gothic.</i></div>
+               
+<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+<p>Components of reference encoder</p>
+<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script : <i>안녕하세요</i></div>
                               </th>
                             </tr>
                           </thead>
-
                           <tbody>
                             <tr>
-                                <td style="vertical-align: top;"><p>Ground Truth</p>
+                              <td style="vertical-align: top;"><p>EmoQ-TTS</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/GT/LJ001-0061.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/ablation/fregan2_multi_v2_subjective_ablation/LJ001-0046.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-
-                              <td style="vertical-align: top;"><p>Fre-GAN V2 (500k steps)</p>
+                              <td style="vertical-align: top;"><p>w/o Phoneme Clssifier</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/fre_v2/LJ001-0061.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/ablation/fregan2_multi_v2_subjective_ablation_apfm/LJ001-0046.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-
-                              <td style="vertical-align: top;"><p>w/o RCG</p>
+                         
+                                <td style="vertical-align: top;"><p>w/o Auxiliary Predictors</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/wo_rcg/LJ001-0061.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/ablation/fregan2_multi_v2_subjective_ablation_l1/LJ001-0046.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-                              <td style="vertical-align: top;"><p>w/o NN upsampler</p>
+                              <td style="vertical-align: top;"><p>w/o Both Clssifier and Predictors</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/wo_nn/LJ001-0061.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/ablation/fregan2_multi_v2_subjective_ablation/LJ001-0046.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-                            </tr>
-                            <tr>
-                                  <td style="vertical-align: top;"><p>w/o mel condition</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/wo_condition/LJ001-0061.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-
-                                  <td style="vertical-align: top;"><p>w/o RPD & RSD</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/wo_resdis/LJ001-0061.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-                                  <td style="vertical-align: top;"><p>w/o DWT</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/wo_dwt/LJ001-0061.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-
-                                  <td style="vertical-align: top;"><p>HiFi-GAN V2 (500k steps)</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/hifi_v2/LJ001-0061.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-
-                                </tr>
-                          </tbody>
-                        </table>
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-  <thead>
-    <tr>
-      <th colspan="5" style="width: 40%">
-          <div class="text-left">Script : <i><span style="color: red">One</span> very important matter in "setting up" for fine printing is <span style="color: red">the spacing. That is,</span> the lateral distance of words from one another.</i></div>
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-        <td style="vertical-align: top;"><p>Ground Truth</p>
-        <div class="text-center">
-            <audio controls="controls">
-                <source src="wav/ablation/GT/LJ001-0133.wav" type="audio/wav" />
-            </audio>
-        </div>
-      </td>
-
-      <td style="vertical-align: top;"><p>Fre-GAN V2 (500k steps)</p>
-        <div class="text-center">
-            <audio controls="controls">
-                <source src="wav/ablation/fre_v2/LJ001-0133.wav" type="audio/wav" />
-            </audio>
-        </div>
-      </td>
-
-      <td style="vertical-align: top;"><p>w/o RCG</p>
-        <div class="text-center">
-            <audio controls="controls">
-                <source src="wav/ablation/wo_rcg/LJ001-0133.wav" type="audio/wav" />
-            </audio>
-        </div>
-      </td>
-      <td style="vertical-align: top;"><p>w/o NN upsampler</p>
-        <div class="text-center">
-            <audio controls="controls">
-                <source src="wav/ablation/wo_nn/LJ001-0133.wav" type="audio/wav" />
-            </audio>
-        </div>
-      </td>
-    </tr>
-    <tr>
-          <td style="vertical-align: top;"><p>w/o mel condition</p>
-            <div class="text-center">
-                <audio controls="controls">
-                    <source src="wav/ablation/wo_condition/LJ001-0133.wav" type="audio/wav" />
-                </audio>
-            </div>
-          </td>
-
-          <td style="vertical-align: top;"><p>w/o RPD & RSD</p>
-            <div class="text-center">
-                <audio controls="controls">
-                    <source src="wav/ablation/wo_resdis/LJ001-0133.wav" type="audio/wav" />
-                </audio>
-            </div>
-          </td>
-          <td style="vertical-align: top;"><p>w/o DWT</p>
-            <div class="text-center">
-                <audio controls="controls">
-                    <source src="wav/ablation/wo_dwt/LJ001-0133.wav" type="audio/wav" />
-                </audio>
-            </div>
-          </td>
-
-          <td style="vertical-align: top;"><p>HiFi-GAN V2 (500k steps)</p>
-            <div class="text-center">
-                <audio controls="controls">
-                    <source src="wav/ablation/hifi_v2/LJ001-0133.wav" type="audio/wav" />
-                </audio>
-            </div>
-          </td>
-
-        </tr>
-  </tbody>
-</table>
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i><span style="color:red">He</span> seems to <span style="color:red">have taken the letter</span> of the Elzevirs of the seventeenth century for his model.</i></div>
+            </tr>
+            </tbody>
+            </table>
+<p>Projection method</p>
+<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script :<i>안녕하세요</i></div>
                               </th>
                             </tr>
                           </thead>
-
                           <tbody>
                             <tr>
-                                <td style="vertical-align: top;"><p>Ground Truth</p>
+                              <td style="vertical-align: top;"><p>EmoQ-TTS (LDA)</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/GT/LJ001-0080.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/ablation/fregan2_multi_v2_subjective_ablation/LJ003-0295.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-
-                              <td style="vertical-align: top;"><p>Fre-GAN V2 (500k steps)</p>
+                              <td style="vertical-align: top;"><p>PCA projection</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/fre_v2/LJ001-0080.wav" type="audio/wav" />
-                                    </audio>
+                                    <audio id="player" controls>
+                                        <source src="./audio/ablation/pqmf_subjective/LJ003-0295.wav" type="audio/wav" /></audio>
                                 </div>
-                              </td>
-
-                              <td style="vertical-align: top;"><p>w/o RCG</p>
+                              </td>    
+							 <td style="vertical-align: top;"><p>L1 distance w/o projection</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/wo_rcg/LJ001-0080.wav" type="audio/wav" />
-                                    </audio>
+                                    <audio id="player" controls>
+                                        <source src="./audio/ablation/pqmf_subjective/LJ003-0295.wav" type="audio/wav" /></audio>
                                 </div>
-                              </td>
-                              <td style="vertical-align: top;"><p>w/o NN upsampler</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/wo_nn/LJ001-0080.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                                  <td style="vertical-align: top;"><p>w/o mel condition</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/wo_condition/LJ001-0080.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-
-                                  <td style="vertical-align: top;"><p>w/o RPD & RSD</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/wo_resdis/LJ001-0080.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-                                  <td style="vertical-align: top;"><p>w/o DWT</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/wo_dwt/LJ001-0080.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-
-                                  <td style="vertical-align: top;"><p>HiFi-GAN V2 (500k steps)</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/hifi_v2/LJ001-0080.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-
-                                </tr>
-                          </tbody>
-                        </table>
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i><span style="color: red">The general solidity</span> of a page is much to be sought for.</i></div>
+                              </td>    
+            </tr>
+            </tbody>
+            </table>
+<p>Intensity quantization</p>
+<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script :<i>안녕하세요</i></div>
                               </th>
                             </tr>
                           </thead>
-
                           <tbody>
                             <tr>
-                                <td style="vertical-align: top;"><p>Ground Truth</p>
+                              <td style="vertical-align: top;"><p>EmoQ-TTS</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/GT/LJ001-0141.wav" type="audio/wav" />
+                                    <audio id="player" controls>
+                                        <source src="./audio/ablation/fregan2_multi_v2_subjective_ablation/LJ003-0295.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
-
-                              <td style="vertical-align: top;"><p>Fre-GAN V2 (500k steps)</p>
+                              <td style="vertical-align: top;"><p>w/o intensity quantization</p>
                                 <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/fre_v2/LJ001-0141.wav" type="audio/wav" />
-                                    </audio>
+                                    <audio id="player" controls>
+                                        <source src="./audio/ablation/pqmf_subjective/LJ003-0295.wav" type="audio/wav" /></audio>
                                 </div>
-                              </td>
-
-                              <td style="vertical-align: top;"><p>w/o RCG</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/wo_rcg/LJ001-0141.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                              <td style="vertical-align: top;"><p>w/o NN upsampler</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/wo_nn/LJ001-0141.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                                  <td style="vertical-align: top;"><p>w/o mel condition</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/wo_condition/LJ001-0141.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-
-                                  <td style="vertical-align: top;"><p>w/o RPD & RSD</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/wo_resdis/LJ001-0141.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-                                  <td style="vertical-align: top;"><p>w/o DWT</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/wo_dwt/LJ001-0141.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-
-                                  <td style="vertical-align: top;"><p>HiFi-GAN V2 (500k steps)</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/hifi_v2/LJ001-0141.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-
-                                </tr>
-                          </tbody>
-                        </table>
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i><span style="color: red">A further development</span> of the Roman letter took place at Venice.</i></div>
-                              </th>
-                            </tr>
-                          </thead>
-
-                          <tbody>
-                            <tr>
-                                <td style="vertical-align: top;"><p>Ground Truth</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/GT/LJ001-0043.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-
-                              <td style="vertical-align: top;"><p>Fre-GAN V2 (500k steps)</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/fre_v2/LJ001-0043.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-
-                              <td style="vertical-align: top;"><p>w/o RCG</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/wo_rcg/LJ001-0043.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                              <td style="vertical-align: top;"><p>w/o NN upsampler</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="wav/ablation/wo_nn/LJ001-0043.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                                  <td style="vertical-align: top;"><p>w/o mel condition</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/wo_condition/LJ001-0043.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-
-                                  <td style="vertical-align: top;"><p>w/o RPD & RSD</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/wo_resdis/LJ001-0043.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-                                  <td style="vertical-align: top;"><p>w/o DWT</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/wo_dwt/LJ001-0043.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-
-                                  <td style="vertical-align: top;"><p>HiFi-GAN V2 (500k steps)</p>
-                                    <div class="text-center">
-                                        <audio controls="controls">
-                                            <source src="wav/ablation/hifi_v2/LJ001-0043.wav" type="audio/wav" />
-                                        </audio>
-                                    </div>
-                                  </td>
-
-                                </tr>
-                          </tbody>
-                        </table>
-
-                    </div>
-                </div>
-            </div>
-        </section>
+                              </td>    
+            </tr>
+            </tbody>
+            </table>
+</section>
 
 
-
-
-
-
-
-        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+    <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
