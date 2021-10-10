@@ -35,9 +35,11 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#many-to-many">Audio Samples</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zero-shot">Ablation Study</a></li>
-                    </ul>
+					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#single_speaker">Single Speaker</a></li>
+					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#multi_speaker">Multi Speaker</a></li>
+<!-- 					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#emotion_control">Emotion control</a></li> -->
+					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation_study">Ablation Study</a></li>                    
+					</ul>
                 </div>
             </div>
         </nav>
@@ -71,11 +73,11 @@
             </div>
         </section>
 
-        <section class="page-section bg-primary text-white mb-0" id="many-to-many">
+        <section class="page-section bg-primary text-white mb-0" id="single_speaker">
             <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                  <h2 class="page-section-heading d-inline-block text-white">Audio Samples</h2>
+                  <h2 class="page-section-heading d-inline-block text-white">single-speaker synthesis</h2>
 <!--                                         <p class="pre-wrap lead">&nbsp;</p> -->
                 </div>
                 <!-- Icon Divider-->
@@ -90,11 +92,61 @@
                 <!-- About Section Content-->
                 <div class="row">
                     <div class="col-lg-12 ml-auto">
-          <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
-								  <div class="text-left">Script&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>산성비를 많이 맞으면 대머리가 될 수도 있어. </i></div>
-								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>If you get a lot of acid rain, you can go bald. </i></div>
-								  <div class="text-left">Pronunciation : &nbsp; <i>Sanseongbileul manh-i maj-eumyeon daemeoliga doel sudo iss-eo.</i></div>
-                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Neutral</div>
+<!--           <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%"> -->
+<!-- 								  <div class="text-left">Script&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>산성비를 많이 맞으면 대머리가 될 수도 있어. </i></div> -->
+<!-- 								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>If you get a lot of acid rain, you can go bald. </i></div> -->
+<!-- 								  <div class="text-left">Pronunciation : &nbsp; <i>Sanseongbileul manh-i maj-eumyeon daemeoliga doel sudo iss-eo.</i></div> -->
+<!--                                   <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Neutral</div> -->
+<!--                               </th> -->
+<!--                             </tr> -->
+<!--                           </thead> -->
+<!--                           <tbody> -->
+<!--                             <tr> -->
+<!--                               <td style="vertical-align: top;"><p>Ground Truth</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/single/neu/acriil_neu_00002245.wav" type="audio/wav" /> -->
+<!--                                     </audio> -->
+<!--                                 </div> -->
+<!--                               </td> -->
+<!--                               <td style="vertical-align: top;"><p>Vocoded</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/single/neu/acriil_neu_00002245_reconstruction.wav" type="audio/wav" /> -->
+<!--                                     </audio> -->
+<!--                                 </div> -->
+<!--                               </td> -->
+<!--                           -->
+<!--                                 <td style="vertical-align: top;"><p>TP-GST</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/single/neu/acriil_neu_00002245_synthesized_tpgst.wav" type="audio/wav" /> -->
+<!--                                     </audio> -->
+<!--                                 </div> -->
+<!--                               </td> -->
+<!--                               <td style="vertical-align: top;"><p>FEP</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/single/neu/acriil_neu_00002245_synthesized_fep.wav" type="audio/wav" /> -->
+<!--                                     </audio> -->
+<!--                                 </div> -->
+<!--                               </td> -->
+<!--                               <td style="vertical-align: top;"><p>EmoQ-TTS</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/single/neu/acriil_neu_00002245_synthesized_emoq.wav" type="audio/wav" /> -->
+<!--                                     </audio> -->
+<!--                                 </div> -->
+<!--                               </td> -->
+<!--                             </tr>                           -->
+<!--                         </table> -->
+<!--                          -->
+<!--                       <p> </p>   -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>그렇게 항상 음식을 남기다 벌 받으면 어쩌려구. </i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>What if you get punished for leaving food like that? </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>Geuleohge hangsang eumsig-eul namgida beol bad-eumyeon eojjeolyeogu.</i></div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Angry</div>
                               </th>
                             </tr>
                           </thead>
@@ -103,14 +155,14 @@
                               <td style="vertical-align: top;"><p>Ground Truth</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/neu/acriil_neu_00002245.wav" type="audio/wav" />
+                                        <source src="./audio/single/ang/acriil_ang_00002632.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>Vocoded</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/neu/acriil_neu_00002245_reconstruction.wav" type="audio/wav" />
+                                        <source src="./audio/single/ang/acriil_ang_00002632_reconstruction.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
@@ -118,21 +170,21 @@
                                 <td style="vertical-align: top;"><p>TP-GST</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/neu/acriil_neu_00002245_synthesized_tpgst.wav" type="audio/wav" />
+                                        <source src="./audio/single/ang/acriil_ang_00002632_synthesized_tpgst.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>FEP</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/neu/acriil_neu_00002245_synthesized_fep.wav" type="audio/wav" />
+                                        <source src="./audio/single/ang/acriil_ang_00002632_synthesized_fep.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>EmoQ-TTS</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/neu/acriil_neu_00002245_synthesized_emoq.wav" type="audio/wav" />
+                                        <source src="./audio/single/ang/acriil_ang_00002632_synthesized_emoq.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
@@ -140,6 +192,110 @@
                         </table>
                         
                       <p> </p>  
+
+
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>친구에게 큰 돈을 빌려달라고 부탁했는데 고맙게도 선뜻 빌려주었다. </i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>I asked my friend to lend me a lot of money, but thankfully, he lent it. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>Chinguege keun don-eul billyeodallago butaghaessneunde gomabgedo seontteus billyeojueossda.</i></div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Disgusted</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/single/dis/acriil_dis_00002593.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/single/dis/acriil_dis_00002593_reconstruction.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>TP-GST</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/single/dis/acriil_dis_00002593_synthesized_tpgst.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FEP</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/single/dis/acriil_dis_00002593_synthesized_fep.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>EmoQ-TTS</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/single/dis/acriil_dis_00002593_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>                          
+                        </table>
+
+
+                      <p> </p>  
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>기대를 가지고 파칭코에 갔지만 돈을 하나도 따지 못했다.</i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>I went to Pachinko with anticipation, but I didn't win any money. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>Gidaeleul gajigo pachingko-e gassjiman don-eul hanado ttaji moshaessda.</i></div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Fear</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/single/fea/acriil_fea_00002634.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/single/fea/acriil_fea_00002634_reconstruction.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>TP-GST</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/single/fea/acriil_fea_00002634_synthesized_tpgst.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FEP</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/single/fea/acriil_fea_00002634_synthesized_fep.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>EmoQ-TTS</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/single/fea/acriil_fea_00002634_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  
+
                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
                                   <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>업체는 이익을 위해 무제한 서비스를 선호한다. </i></div>
 								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>Companies prefer unlimited services for profit. </i></div>
@@ -240,56 +396,8 @@
                         </table>
                         
                       <p> </p>  
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
-                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>그렇게 항상 음식을 남기다 벌 받으면 어쩌려구. </i></div>
-								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>What if you get punished for leaving food like that? </i></div>
-								  <div class="text-left">Pronunciation : &nbsp; <i>Geuleohge hangsang eumsig-eul namgida beol bad-eumyeon eojjeolyeogu.</i></div>
-                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Angry</div>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td style="vertical-align: top;"><p>Ground Truth</p>
-                                <div class="text-center">
-                                    <audio id="player" controls>
-                                        <source src="./audio/single/ang/acriil_ang_00002632.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                              <td style="vertical-align: top;"><p>Vocoded</p>
-                                <div class="text-center">
-                                    <audio id="player" controls>
-                                        <source src="./audio/single/ang/acriil_ang_00002632_reconstruction.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                         
-                                <td style="vertical-align: top;"><p>TP-GST</p>
-                                <div class="text-center">
-                                    <audio id="player" controls>
-                                        <source src="./audio/single/ang/acriil_ang_00002632_synthesized_tpgst.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                              <td style="vertical-align: top;"><p>FEP</p>
-                                <div class="text-center">
-                                    <audio id="player" controls>
-                                        <source src="./audio/single/ang/acriil_ang_00002632_synthesized_fep.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                              <td style="vertical-align: top;"><p>EmoQ-TTS</p>
-                                <div class="text-center">
-                                    <audio id="player" controls>
-                                        <source src="./audio/single/ang/acriil_ang_00002632_synthesized_emoq.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                            </tr>                          
-                        </table>
-                        
-                      <p> </p>  
+
+
                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
                                   <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>돈을 받고 피를 팔던 매혈자가 국립보건원 검사결과 후천성면역결핍증 감염자로 밝혀졌다. </i></div>
 								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>A blood-pulling person who was selling blood for money was found to be infected with acquired immunodeficiency disease as a result of a test conducted by the National Institutes of Health.</i></div>
@@ -337,14 +445,38 @@
                                 </div>
                               </td>
                             </tr>                          
-                        </table>
-                        
-                      <p> </p>  
+                        </table>                        
+
+
+</section>
+
+
+
+        <section class="page-section bg-primary text-white mb-0" id="multi_speaker">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                  <h2 class="page-section-heading d-inline-block text-white">Multi-speaker synthesis</h2>
+<!--                                         <p class="pre-wrap lead">&nbsp;</p> -->
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 ml-auto">
+                      <p class="pre-wrap lead"> All the audio sample use FreGAN as a vocoder. </p>
+
+                  </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-12 ml-auto">
                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
-                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>기대를 가지고 파칭코에 갔지만 돈을 하나도 따지 못했다.</i></div>
-								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>I went to Pachinko with anticipation, but I didn't win any money. </i></div>
-								  <div class="text-left">Pronunciation : &nbsp; <i>Gidaeleul gajigo pachingko-e gassjiman don-eul hanado ttaji moshaessda.</i></div>
-                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Fear</div>
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>건물주의 오만하고 뻔뻔한 태도에 기가 찹니다. </i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>I'm amazed by the arrogant and shameless attitude of the building owner. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>Geonmuljuui omanhago ppeonppeonhan taedo-e giga chabnida.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Female (nec)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Angry</div>
                               </th>
                             </tr>
                           </thead>
@@ -353,14 +485,14 @@
                               <td style="vertical-align: top;"><p>Ground Truth</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/fea/acriil_fea_00002634.wav" type="audio/wav" />
+                                        <source src="./audio/multi/ang/nec_nec00339.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>Vocoded</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/fea/acriil_fea_00002634_reconstruction.wav" type="audio/wav" />
+                                        <source src="./audio/multi/ang/nec_nec00339_reconstruction.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
@@ -368,21 +500,21 @@
                                 <td style="vertical-align: top;"><p>TP-GST</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/fea/acriil_fea_00002634_synthesized_tpgst.wav" type="audio/wav" />
+                                        <source src="./audio/multi/ang/nec_nec00339_synthesized_tpgst.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>FEP</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/fea/acriil_fea_00002634_synthesized_fep.wav" type="audio/wav" />
+                                        <source src="./audio/multi/ang/nec_nec00339_synthesized_fep.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>EmoQ-TTS</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/fea/acriil_fea_00002634_synthesized_emoq.wav" type="audio/wav" />
+                                        <source src="./audio/multi/ang/nec_nec00339_synthesized_emoq.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
@@ -390,11 +522,13 @@
                         </table>
                         
                       <p> </p>  
+					 
                         <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
-                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>친구에게 큰 돈을 빌려달라고 부탁했는데 고맙게도 선뜻 빌려주었다. </i></div>
-								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>I asked my friend to lend me a lot of money, but thankfully, he lent it. </i></div>
-								  <div class="text-left">Pronunciation : &nbsp; <i>Chinguege keun don-eul billyeodallago butaghaessneunde gomabgedo seontteus billyeojueossda.</i></div>
-                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Disgusted</div>
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>점심 메뉴를 본인 마음대로 결정하는 상사를 볼 때마다 정말 못마땅해. </i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>Whenever I see my boss deciding on the lunch menu at his disposal, I don't like it. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>Jeomsim menyuleul bon-in ma-eumdaelo gyeoljeonghaneun sangsaleul bol ttaemada jeongmal mosmattanghae.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Male (nek)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Angry</div>
                               </th>
                             </tr>
                           </thead>
@@ -403,14 +537,14 @@
                               <td style="vertical-align: top;"><p>Ground Truth</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/dis/acriil_dis_00002593.wav" type="audio/wav" />
+                                        <source src="./audio/multi/ang/nek_nek00385.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>Vocoded</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/dis/acriil_dis_00002593_reconstruction.wav" type="audio/wav" />
+                                        <source src="./audio/multi/ang/nek_nek00385_reconstruction.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
@@ -418,21 +552,230 @@
                                 <td style="vertical-align: top;"><p>TP-GST</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/dis/acriil_dis_00002593_synthesized_tpgst.wav" type="audio/wav" />
+                                        <source src="./audio/multi/ang/nek_nek00385_synthesized_tpgst.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>FEP</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/dis/acriil_dis_00002593_synthesized_fep.wav" type="audio/wav" />
+                                        <source src="./audio/multi/ang/nek_nek00385_synthesized_fep.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
                               <td style="vertical-align: top;"><p>EmoQ-TTS</p>
                                 <div class="text-center">
                                     <audio id="player" controls>
-                                        <source src="./audio/single/dis/acriil_dis_00002593_synthesized_emoq.wav" type="audio/wav" />
+                                        <source src="./audio/multi/ang/nek_nek00385_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  
+
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>엄청나게 배고팠는데 이제야 살 것 같아. </i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>I was really hungry, but now I feel like I'm going to live. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>Eomcheongnage baegopassneunde ijeya sal geos gat-a.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Female (nec)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Happy</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/hap/nec_nec00181.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/hap/nec_nec00181_reconstruction.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>TP-GST</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/hap/nec_nec00181_synthesized_tpgst.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FEP</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/hap/nec_nec00181_synthesized_fep.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>EmoQ-TTS</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/hap/nec_nec00181_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  
+
+
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>흥겨워서 노래가 절로 나는구먼! </i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>I can't help but sing because I'm so excited. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>Heung-gyeowoseo nolaega jeollo naneungumeon!</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Male (nel)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Happy</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/hap/nel_nel00143.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/hap/nel_nel00143_reconstruction.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>TP-GST</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/hap/nel_nel00143_synthesized_tpgst.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FEP</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/hap/nel_nel00143_synthesized_fep.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>EmoQ-TTS</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/hap/nel_nel00143_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  
+						
+						<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>신축성이 강한 긴 장대를 쥐고 도움닫기를 하여 가로대를 넘는 종목이다. </i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>It is an event that crosses the street pole by holding a long pole with strong elasticity and running. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>Sinchugseong-i ganghan gin jangdaeleul jwigo doumdadgileul hayeo galodaeleul neomneun jongmog-ida.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Female (emb)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Sad</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/sad/emb_emb00232.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/sad/emb_emb00232_reconstruction.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>TP-GST</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/sad/emb_emb00232_synthesized_tpgst.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FEP</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/sad/emb_emb00232_synthesized_fep.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>EmoQ-TTS</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/sad/emb_emb00232_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  
+
+						<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>주로 물이 차가운 곳에 서식하며 밤에는 작은 물고기나 수생곤충 등을 잡아먹습니다. </i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>It mainly lives in cold places and eats small fish or aquatic insects at night. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>Julo mul-i chagaun gos-e seosighamyeo bam-eneun jag-eun mulgogina susaeng-gonchung deung-eul jab-ameogseubnida.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Male (emf)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Sad</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/sad/emf_emf00271.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/sad/emf_emf00271_reconstruction.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>TP-GST</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/sad/emf_emf00271_synthesized_tpgst.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FEP</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/sad/emf_emf00271_synthesized_fep.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>EmoQ-TTS</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/multi/sad/emf_emf00271_synthesized_emoq.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
@@ -441,8 +784,131 @@
 
 </section>
 
+<!--  -->
+<!--         <!-- ABLATION --> -->
+<!--         <section class="page-section bg-info text-white mb-0" id="emotion_control"> -->
+<!--             <div class="container"> -->
+<!--                 <div class="text-center"> -->
+<!--                     <h2 class="page-section-heading d-inline-block">Emotion control</h2> -->
+<!--                 </div> -->
+<!--  -->
+<!--     <div class="divider-custom divider-light"> -->
+<!--                   <div class="divider-custom"></div> -->
+<!--                 </div> -->
+<!--                 <div class="row"> -->
+<!--                     <div class="col-lg-auto ml-auto"> -->
+<!--                 -->
+<!-- <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"> -->
+<!-- <p>Components of reference encoder</p> -->
+<!-- <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%"> -->
+<!--                                   <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>니가 뿌린 향수 참 달콤하고 좋은 향이 나. </i></div> -->
+<!-- 								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>The perfume you sprayed smells so sweet and nice.</i></div> -->
+<!-- 								  <div class="text-left">Pronunciation : &nbsp; <i>Niga ppulin hyangsu cham dalkomhago joh-eun hyang-i na.</i></div> -->
+<!--                                   <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Disgusted</div> -->
+<!--                               </th> -->
+<!--                             </tr> -->
+<!--                           </thead> -->
+<!--                           <tbody> -->
+<!--                             <tr> -->
+<!--                               <td style="vertical-align: top;"><p>w/o Both Clssifier and Predictors</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/ablation/auxil/acriil_dis_00002222_synthesized_neither.wav" type="audio/wav" /> -->
+<!--                                     </audio> -->
+<!--                                 </div> -->
+<!--                               </td> -->
+<!--                               <td style="vertical-align: top;"><p>w/o Phoneme Clssifier</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/ablation/auxil/acriil_dis_00002222_synthesized_phograd.wav" type="audio/wav" /> -->
+<!--                                     </audio> -->
+<!--                                 </div> -->
+<!--                               </td> -->
+<!--                           -->
+<!--                                 <td style="vertical-align: top;"><p>w/o Auxiliary Predictors</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/ablation/auxil/acriil_dis_00002222_synthesized_pe.wav" type="audio/wav" /> -->
+<!--                                     </audio> -->
+<!--                                 </div> -->
+<!--                               </td> -->
+<!--                               <td style="vertical-align: top;"><p>EmoQ-TTS</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/ablation/auxil/acriil_dis_00002222_synthesized_emoq.wav" type="audio/wav" /> -->
+<!--                                     </audio> -->
+<!--                                 </div> -->
+<!--                               </td> -->
+<!--             </tr> -->
+<!--             </tbody> -->
+<!--             </table> -->
+<!-- <p>Projection method</p> -->
+<!-- <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%"> -->
+<!--                                   <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>형이 말하는 걸 들어보면 참 근사해.</i></div> -->
+<!-- 								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>It's really cool to hear what you're saying.</i></div> -->
+<!-- 								  <div class="text-left">Pronunciation : &nbsp; <i>Hyeong-i malhaneun geol deul-eobomyeon cham geunsahae.</i></div> -->
+<!--                                   <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Happy</div> -->
+<!--                               </th> -->
+<!--                             </tr> -->
+<!--                           </thead> -->
+<!--                           <tbody> -->
+<!--                             <tr> -->
+<!--                               <td style="vertical-align: top;"><p>L1 distance w/o projection</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/ablation/proj/acriil_hap_00002853_synthesized_l1.wav" type="audio/wav" /> -->
+<!--                                     </audio> -->
+<!--                                 </div> -->
+<!--                               </td> -->
+<!--                               <td style="vertical-align: top;"><p>PCA projection</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/ablation/proj/acriil_hap_00002853_synthesized_pca.wav" type="audio/wav" /> -->
+<!-- 										</audio> -->
+<!--                                 </div> -->
+<!--                               </td>     -->
+<!-- 							 <td style="vertical-align: top;"><p>EmoQ-TTS (LDA)</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/ablation/proj/acriil_hap_00002853_synthesized_lda.wav" type="audio/wav" /> -->
+<!-- 										</audio> -->
+<!--                                 </div> -->
+<!--                               </td>     -->
+<!--             </tr> -->
+<!--             </tbody> -->
+<!--             </table> -->
+<!-- <p>Intensity quantization</p> -->
+<!-- <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%"> -->
+<!--                                   <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>그러나 이제는 이런 단순대결구도에만 집착해서는 안됩니다. </i></div> -->
+<!-- 								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>But now we shouldn't stick to this simple confrontation structure.</i></div> -->
+<!-- 								  <div class="text-left">Pronunciation : &nbsp; <i>Geuleona ijeneun ileon dansundaegyeolgudo-eman jibchaghaeseoneun andoebnida.</i></div> -->
+<!--                                   <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Surprised</div> -->
+<!--                               </th> -->
+<!--                             </tr> -->
+<!--                           </thead> -->
+<!--                           <tbody> -->
+<!--                             <tr> -->
+<!--                               <td style="vertical-align: top;"><p>w/o intensity quantization</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/ablation/quan/acriil_sur_00000032_synthesized_continuous.wav" type="audio/wav" /> -->
+<!--                                     </audio> -->
+<!--                                 </div> -->
+<!--                               </td> -->
+<!--                               <td style="vertical-align: top;"><p>EmoQ-TTS</p> -->
+<!--                                 <div class="text-center"> -->
+<!--                                     <audio id="player" controls> -->
+<!--                                         <source src="./audio/ablation/quan/acriil_sur_00000032_synthesized_emoq.wav" type="audio/wav" /> -->
+<!-- 										</audio> -->
+<!--                                 </div> -->
+<!--                               </td>     -->
+<!--             </tr> -->
+<!--             </tbody> -->
+<!--             </table> -->
+<!-- </section> -->
+
         <!-- ABLATION -->
-        <section class="page-section bg-info text-white mb-0" id="zero-shot">
+        <section class="page-section bg-info text-white mb-0" id="ablation_study">
             <div class="container">
                 <div class="text-center">
                     <h2 class="page-section-heading d-inline-block">Ablation Study</h2>
