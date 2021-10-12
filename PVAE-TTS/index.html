@@ -35,9 +35,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audios-multi">Multi-Speaker TTS</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audios-zero">Zero-Shot Adaptation</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audios-few">Few-shot Adaptation</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audios-multi">Multi-Speaker TTS</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation">Ablation Study</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#samples"># Adaptation Samples</a></li>
 <!--                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audios-multi">Audio Samples <br>(Multi-Speaker TTS)</a></li>-->
@@ -81,254 +81,7 @@
             </div>
         </section>
 
-        <section class="page-section bg-primary text-white mb-0" id="audios-multi">
-            <div class="container">
-                <!-- About Section Heading-->
-                <div class="text-center">
-                  <h2 class="page-section-heading d-inline-block text-white">Multi-Speaker TTS</h2>
-                                        <p class="pre-wrap lead">&nbsp;</p>
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-auto ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i>So, at least, everyone said.</i></div>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td style="vertical-align: top;"><p>Ground Truth</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/GT/1.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                              <td style="vertical-align: top;"><p>Vocoded</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/Vocoded/1.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                                <td style="vertical-align: top;"><p>Meta-StyleSpeech</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/Meta-StyleSpeech/1.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;"><p>FastSpeech 2</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/FastSpeech2/1.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;"><p><b>PVAE-TTS (Proposed)</b></p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/PVAE-TTS/1.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;">
-                                <div class="text-center">
-                                    <img />
-                                </div>
-                              </td>
-
-                            </tr>
-                          </tbody>
-                        </table>
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i>There are four umbrellas up already.</i></div>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td style="vertical-align: top;"><p>Ground Truth</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/GT/2~1.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                              <td style="vertical-align: top;"><p>Vocoded</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/Vocoded/2~1.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                                <td style="vertical-align: top;"><p>Meta-StyleSpeech</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/Meta-StyleSpeech/2~1.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                                </td>
-                                <td style="vertical-align: top;"><p>FastSpeech 2</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/FastSpeech2/2~1.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                                </td>
-                                <td style="vertical-align: top;"><p><b>PVAE-TTS (Proposed)</b></p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/PVAE-TTS/2~1.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                                </td>
-                                <td style="vertical-align: top;">
-                                <div class="text-center">
-                                    <img />
-                                </div>
-                                </td>
-
-                            </tr>
-                          </tbody>
-                        </table>
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i>When he reached the end of the train he lay on his stomach and looked down.</i></div>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td style="vertical-align: top;"><p>Ground Truth</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/GT/3.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                              <td style="vertical-align: top;"><p>Vocoded</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/Vocoded/3.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                                <td style="vertical-align: top;"><p>Meta-StyleSpeech</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/Meta-StyleSpeech/3.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;"><p>FastSpeech 2</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/FastSpeech2/3.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;"><p><b>PVAE-TTS (Proposed)</b></p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/PVAE-TTS/3.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;">
-                                <div class="text-center">
-                                    <img />
-                                </div>
-                              </td>
-
-                            </tr>
-                          </tbody>
-                        </table>
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i>Surely we are too much given to follow the tracks of each other.</i></div>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td style="vertical-align: top;"><p>Ground Truth</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/GT/4.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                              <td style="vertical-align: top;"><p>Vocoded</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/Vocoded/4.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                                <td style="vertical-align: top;"><p>Meta-StyleSpeech</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/Meta-StyleSpeech/4.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;"><p>FastSpeech 2</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/FastSpeech2/4.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;"><p><b>PVAE-TTS (Proposed)</b></p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wavs/multi-speaker/PVAE-TTS/4.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;">
-                                <div class="text-center">
-                                    <img />
-                                </div>
-                              </td>
-
-                            </tr>
-                          </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="page-section bg-info text-white mb-0" id="audios-zero">
+        <section class="page-section bg-primary text-white mb-0" id="audios-zero">
             <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
@@ -574,7 +327,7 @@
             </div>
         </section>
 
-        <section class="page-section bg-primary text-white mb-0" id="audios-few">
+        <section class="page-section bg-info text-white mb-0" id="audios-few">
             <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
@@ -803,6 +556,253 @@
                                 <div class="text-center">
                                     <audio controls="controls">
                                         <source src="./wavs/few-shot/PVAE-TTS/4.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;">
+                                <div class="text-center">
+                                    <img />
+                                </div>
+                              </td>
+
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-primary text-white mb-0" id="audios-multi">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                  <h2 class="page-section-heading d-inline-block text-white">Multi-Speaker TTS</h2>
+                                        <p class="pre-wrap lead">&nbsp;</p>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-auto ml-auto">
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <div class="text-left">Script : <i>So, at least, everyone said.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/GT/1.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/Vocoded/1.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                                <td style="vertical-align: top;"><p>Meta-StyleSpeech</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/Meta-StyleSpeech/1.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>FastSpeech 2</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/FastSpeech2/1.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><b>PVAE-TTS (Proposed)</b></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/PVAE-TTS/1.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;">
+                                <div class="text-center">
+                                    <img />
+                                </div>
+                              </td>
+
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <div class="text-left">Script : <i>There are four umbrellas up already.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/GT/2~1.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/Vocoded/2~1.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                                <td style="vertical-align: top;"><p>Meta-StyleSpeech</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/Meta-StyleSpeech/2~1.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                                </td>
+                                <td style="vertical-align: top;"><p>FastSpeech 2</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/FastSpeech2/2~1.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                                </td>
+                                <td style="vertical-align: top;"><p><b>PVAE-TTS (Proposed)</b></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/PVAE-TTS/2~1.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                                </td>
+                                <td style="vertical-align: top;">
+                                <div class="text-center">
+                                    <img />
+                                </div>
+                                </td>
+
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <div class="text-left">Script : <i>When he reached the end of the train he lay on his stomach and looked down.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/GT/3.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/Vocoded/3.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                                <td style="vertical-align: top;"><p>Meta-StyleSpeech</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/Meta-StyleSpeech/3.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>FastSpeech 2</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/FastSpeech2/3.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><b>PVAE-TTS (Proposed)</b></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/PVAE-TTS/3.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;">
+                                <div class="text-center">
+                                    <img />
+                                </div>
+                              </td>
+
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <div class="text-left">Script : <i>Surely we are too much given to follow the tracks of each other.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Ground Truth</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/GT/4.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Vocoded</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/Vocoded/4.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                                <td style="vertical-align: top;"><p>Meta-StyleSpeech</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/Meta-StyleSpeech/4.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p>FastSpeech 2</p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/FastSpeech2/4.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                                <td style="vertical-align: top;"><p><b>PVAE-TTS (Proposed)</b></p>
+                                <div class="text-center">
+                                    <audio controls="controls">
+                                        <source src="./wavs/multi-speaker/PVAE-TTS/4.wav" type="audio/wav" />
                                     </audio>
                                 </div>
                               </td>
