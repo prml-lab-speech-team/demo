@@ -35,9 +35,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
+					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#emotion_control">Emotion Control</a></li>
 					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#single_speaker">Single-Speaker TTS</a></li>
 					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#multi_speaker">Multi-Speaker TTS</a></li>
-					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#emotion_control">Emotion Control</a></li>
 					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation_study">Ablation Study</a></li>                    
 					</ul>
                 </div>
@@ -73,7 +73,79 @@
             </div>
         </section>
 
-        <section class="page-section bg-primary text-white mb-0" id="single_speaker">
+
+
+
+        <!-- ABLATION -->
+        <section class="page-section bg-primary text-white mb-0" id="emotion_control">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block">Emotion Control</h2>
+                </div>
+
+    <div class="divider-custom divider-light">
+                  <div class="divider-custom"></div>
+                </div>
+
+
+                <!-- About Section Content-->
+                <div class="row text-center">
+                    <div class="col-lg-12 ml-auto">
+                        <h3>Style</h3>
+                    </div>
+<!--                    <div class="col-lg-12 ml-auto">-->
+<!--                        <span>All: </span>&nbsp;&nbsp;-->
+<!--                        <input id="all" type="input" data-slider-min="0" data-slider-max="1"-->
+<!--                               data-slider-step="0.1" data-slider-value="0"/>&nbsp;&nbsp;-->
+<!--                        <span id="all-val">0</span>-->
+<!--                    </div>-->
+
+                    <div id="emo_button" class="col-lg-12 ml-auto">
+                        <h5>Emotion</h5>
+						<input id="emo0" type='button' value='neutral' onclick="emo_click0(0);"/>
+						<input id="emo1" type='button' value='happy' onclick="emo_click(1);"/>
+						<input id="emo2" type='button' value='sad' onclick="emo_click(2);"/>
+						<input id="emo3" type='button' value='angry' onclick="emo_click(3);"/>
+						<input id="emo4" type='button' value='surprised' onclick="emo_click(4);"/>
+						<input id="emo5" type='button' value='fear' onclick="emo_click(5);"/>
+						<input id="emo6" type='button' value='disgusted' onclick="emo_click(6);"/>
+                    </div>
+                    <div class="col-lg-12 ml-auto">
+                        <h5>Intensity</h5>
+                        <span id="intensity-val1">0</span>&nbsp;&nbsp;
+                        <input id="intensity" type="input" data-slider-min="0" data-slider-max="1"
+                               data-slider-step="0.1" data-slider-value="0" data-slider-enabled="false"/>&nbsp;&nbsp;
+                        <span id="intensity-val2">1</span>
+						<br>
+						<input  id="inten0" type='button' value='gradually increasing' onclick="inten_click(0);" disabled/>
+						<input id="inten1" type='button' value='gradually decreasing' onclick="inten_click(1);" disabled/>
+
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="text-center col-lg-12"><h3>Script</h3></div>
+                </div>
+
+
+				<th colspan="4" style="width: 40%">
+					  <div class="text-center">Script : <i>그는 초등학교때부터 담배를 피웠다고 해서 모두를 경악하게 했다. </i></div>
+					  <div class="text-center">Translation : <i>He shocked everyone because he had smoked since elementary school.</i></div>
+					  <div class="text-center">Pronunciation : <i>Geuneun chodeunghaggyottaebuteo dambaeleul piwossdago haeseo moduleul gyeong-aghage haessda.</i></div>
+				  </th>
+
+                <div class="row">
+                    <div class="text-center col-lg-12">
+                        <br/>
+                        <audio id="audio_panel" controls>
+                            <source id="audio_src" src="./audio/control/acriil_sur_00002618_0.wav" type="audio/wav" />
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-info text-white mb-0" id="single_speaker">
             <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
@@ -786,82 +858,6 @@
 
 
         <!-- ABLATION -->
-        <section class="page-section bg-info text-white mb-0" id="emotion_control">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block">Emotion Control</h2>
-                </div>
-
-    <div class="divider-custom divider-light">
-                  <div class="divider-custom"></div>
-                </div>
-
-
-                <!-- About Section Content-->
-                <div class="row text-center">
-                    <div class="col-lg-12 ml-auto">
-                        <h3>Style</h3>
-                    </div>
-<!--                    <div class="col-lg-12 ml-auto">-->
-<!--                        <span>All: </span>&nbsp;&nbsp;-->
-<!--                        <input id="all" type="input" data-slider-min="0" data-slider-max="1"-->
-<!--                               data-slider-step="0.1" data-slider-value="0"/>&nbsp;&nbsp;-->
-<!--                        <span id="all-val">0</span>-->
-<!--                    </div>-->
-
-                    <div class="col-lg-12 ml-auto">
-                        <h5>Emotion</h5>
-							<input id="emo1" type='button' value='happy' onclick="emo_click(1);"/>
-							<input id="emo2" type='button' value='sad' onclick="emo_click(2);"/>
-							<input id="emo3" type='button' value='angry' onclick="emo_click(3);"/>
-							<input id="emo4" type='button' value='surprised' onclick="emo_click(4);"/>
-							<input id="emo5" type='button' value='fear' onclick="emo_click(5);"/>
-							<input id="emo6" type='button' value='disgusted' onclick="emo_click(6);"/>
-                    </div>
-                    <div class="col-lg-12 ml-auto">
-                        <h5>Intensity</h5>
-                        <span id="intensity-val1">0</span>&nbsp;&nbsp;
-                        <input id="intensity" type="input" data-slider-min="0" data-slider-max="15"
-                               data-slider-step="1" data-slider-value="0"/>&nbsp;&nbsp;
-                        <span id="intensity-val2">15</span>
-                    </div>
-
-                </div>
-
-                <br>
-                <div class="row">
-                    <div class="text-center col-lg-12"><h3>Script</h3></div>
-<!-- 					<div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>니가 뿌린 향수 참 달콤하고 좋은 향이 나. </i></div> -->
-<!-- 				    <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>The perfume you sprayed smells so sweet and nice.</i></div> -->
-<!-- 				    <div class="text-left">Pronunciation : &nbsp; <i>Niga ppulin hyangsu cham dalkomhago joh-eun hyang-i na.</i></div> -->
-<!-- 				    <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Disgusted</div> -->
-                </div>
-
-<!--                 <div class="row"> -->
-<!--                     <div class="text-center col-lg-4"> -->
-<!--                         <br/> -->
-<!--                         <img src="./audio/control/acriil_sur_00002618_1_0.png" width="95%"> -->
-<!--                     </div> -->
-<!--                 </div> -->
-
-							<th colspan="4" style="width: 40%">
-                                  <div class="text-center">Script : <i>그는 초등학교때부터 담배를 피웠다고 해서 모두를 경악하게 했다. </i></div>
-								  <div class="text-center">Translation : <i>He shocked everyone because he had smoked since elementary school.</i></div>
-								  <div class="text-center">Pronunciation : <i>Geuneun chodeunghaggyottaebuteo dambaeleul piwossdago haeseo moduleul gyeong-aghage haessda.</i></div>
-                              </th>
-
-                <div class="row">
-                    <div class="text-center col-lg-12">
-                        <br/>
-                        <audio id="audio_panel" controls>
-                            <source id="audio_src" src="./audio/control/acriil_sur_00002618_1_0.wav" type="audio/wav" />
-                        </audio>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ABLATION -->
         <section class="page-section bg-info text-white mb-0" id="ablation_study">
             <div class="container">
                 <div class="text-center">
@@ -997,34 +993,131 @@
 
         <!-- slider JS -->
         <script type="text/javascript">
-			var emotion = 1
-			function emo_click(i){
-					emotion = i;
+			var emotion = 0
+			var intensity = 0
+			var up = 0
+			var down = 0
+				function emo_click0(i){
+					emotion = 0;
+					intensity = 0;
+					$('#emo0').css("background-color", "greenyellow")
+					
+						
+					for (j=0;j<7;j++)
+					{
+						if (j!=i)
+						{	
+							console.log(j)
+							console.log(i)
+							$('#emo'+j).css("background-color", "")
+						}	
+					}
+
+					$('#intensity').slider('disable')
+					$('#inten0').css("background-color", "")
+					$('#inten1').css("background-color", "")
+					$('#inten0').prop('disabled', true);
+					$('#inten1').prop('disabled', true);
+
 					audio_reload()
 				}
+
+
+			function emo_click(i){
+					emotion = i;
+
+					$('#emo'+i).css("background-color", "greenyellow")
+
+					for (j=0;j<7;j++)
+					{
+						if (j!=i)
+						{	
+							console.log(j)
+							console.log(i)
+							$('#emo'+j).css("background-color", "")
+						}	
+					}
+					
+					$('#intensity').slider('enable')
+					$('#inten0').prop('disabled', false);
+					$('#inten1').prop('disabled', false);
+
+					audio_reload()
+				}
+
+
+
+			function inten_click(i){
+				if (i==0)
+				{
+					$('#inten0').css("background-color", "skyblue")
+					$('#inten1').css("background-color", "")
+					up = 1
+					down = 0
+				}
+				else
+				{
+					$('#inten0').css("background-color", "")
+					$('#inten1').css("background-color", "skyblue")
+					up = 0
+					down = 1
+				}
+				audio_reload()
+			}
+
 
 
             function audio_reload() {
 				
 					emotion = Number(emotion);
-                    var intensity = Number($("#intensity").val());
-					
-					console.log(emotion)
-					console.log(intensity)
+					up = Number(up);
+					down = Number(down);
 
-//                    var img_name = "./audio/control/acriil_sur_00002618_" + emotion + "_" + intensity + ".png";
-                    var audio_name = "./audio/control/acriil_sur_00002618_" + emotion + "_" + intensity + ".wav";
-
+					if (emotion ==0)
+					{
+						console.log(emotion)
+						console.log(intensity)
+//	                    var img_name = "./audio/control/acriil_sur_00002618_0.png";
+						var audio_name = "./audio/control/acriil_sur_00002618_0.wav";
 //                    console.log(img_name)
-                    console.log(audio_name)
-
+						console.log(audio_name)
 //                    $('#img_src').attr("src", img_name);
-                    $('#audio_src').attr("src", audio_name);
+						$('#audio_src').attr("src", audio_name);
+						$('#audio_panel')[0].load();
+					}
 
-                    //console.log($('#audio_src').val());
-                    //console.log($("#audio_panel"))
-                    $('#audio_panel')[0].load();
+					else {
+						
+						if (up == 1)
+						{
+							var img_name = "./audio/control/acriil_sur_00002618_" + emotion + "_up.png";
+							var audio_name = "./audio/control/acriil_sur_00002618_" + emotion + "_up.wav";
+						}
+						else if(down==1)
+						{
+							var img_name = "./audio/control/acriil_sur_00002618_" + emotion + "_down.png";
+							var audio_name = "./audio/control/acriil_sur_00002618_" + emotion + "_down.wav";
+						}
+						else{
+							intensity = Number($("#intensity").val()) * 10;
+							
+							console.log(emotion)
+							console.log(intensity)
 
+							var img_name = "./audio/control/acriil_sur_00002618_" + emotion + "_" + intensity + ".png";
+							var audio_name = "./audio/control/acriil_sur_00002618_" + emotion + "_" + intensity + ".wav";
+						}
+	//                    console.log(img_name)
+						console.log(audio_name)
+
+	//                    $('#img_src').attr("src", img_name);
+						$('#audio_src').attr("src", audio_name);
+
+						//console.log($('#audio_src').val());
+						//console.log($("#audio_panel"))
+						$('#audio_panel')[0].load();
+					
+					}
                 };
 
             $(function() {
@@ -1039,10 +1132,14 @@
 
                 $('#intensity').slider({
                     formatter: function(value) {
-                        var intensity_val2 = 15;
-                        var intensity_val1 = 0;
-                        $("#intensity-val1").text(intensity_val1);
-                        $("#intensity-val2").text(intensity_val2);
+//                        var intensity_val2 = 15;
+//                        var intensity_val1 = 0;
+//                        $("#intensity-val1").text(intensity_val1);
+//                        $("#intensity-val2").text(intensity_val2);
+						up = 0
+						down = 0
+						$('#inten0').css("background-color", "")
+						$('#inten1').css("background-color", "")
                         return 'intensity: ' + value;
                     }
                 });
