@@ -134,6 +134,14 @@
 					  <div class="text-center">Pronunciation : <i>Geuneun chodeunghaggyottaebuteo dambaeleul piwossdago haeseo moduleul gyeong-aghage haessda.</i></div>
 				  </th>
 
+
+	            <div class="row">
+                    <div class="text-center col-lg-12">
+                        <br/>
+                        <img id="img_src" src="./audio/control/acriil_sur_00002618_0.png" width="40%">
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="text-center col-lg-12">
                         <br/>
@@ -1007,8 +1015,6 @@
 					{
 						if (j!=i)
 						{	
-							console.log(j)
-							console.log(i)
 							$('#emo'+j).css("background-color", "")
 						}	
 					}
@@ -1032,8 +1038,6 @@
 					{
 						if (j!=i)
 						{	
-							console.log(j)
-							console.log(i)
 							$('#emo'+j).css("background-color", "")
 						}	
 					}
@@ -1077,24 +1081,21 @@
 					{
 						console.log(emotion)
 						console.log(intensity)
-//	                    var img_name = "./audio/control/acriil_sur_00002618_0.png";
+	                    var img_name = "./audio/control/acriil_sur_00002618_0.png";
 						var audio_name = "./audio/control/acriil_sur_00002618_0.wav";
-//                    console.log(img_name)
-						console.log(audio_name)
-//                    $('#img_src').attr("src", img_name);
-						$('#audio_src').attr("src", audio_name);
-						$('#audio_panel')[0].load();
 					}
 
 					else {
 						
 						if (up == 1)
 						{
+							console.log(emotion)
 							var img_name = "./audio/control/acriil_sur_00002618_" + emotion + "_up.png";
 							var audio_name = "./audio/control/acriil_sur_00002618_" + emotion + "_up.wav";
 						}
 						else if(down==1)
 						{
+							console.log(emotion)
 							var img_name = "./audio/control/acriil_sur_00002618_" + emotion + "_down.png";
 							var audio_name = "./audio/control/acriil_sur_00002618_" + emotion + "_down.wav";
 						}
@@ -1107,17 +1108,18 @@
 							var img_name = "./audio/control/acriil_sur_00002618_" + emotion + "_" + intensity + ".png";
 							var audio_name = "./audio/control/acriil_sur_00002618_" + emotion + "_" + intensity + ".wav";
 						}
-	//                    console.log(img_name)
-						console.log(audio_name)
-
-	//                    $('#img_src').attr("src", img_name);
-						$('#audio_src').attr("src", audio_name);
-
-						//console.log($('#audio_src').val());
-						//console.log($("#audio_panel"))
-						$('#audio_panel')[0].load();
-					
 					}
+					console.log(img_name)
+					console.log(audio_name)
+
+					$('#img_src').attr("src", img_name);
+					$('#audio_src').attr("src", audio_name);
+
+					console.log($('#audio_src').val());
+					console.log($("#audio_panel"))
+					$('#audio_panel')[0].load();
+				
+
                 };
 
             $(function() {

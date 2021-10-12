@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Multi-SpectroGAN Demo</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!-- Fonts CSS-->
+        <link rel="stylesheet" href="css/heading.css">
+        <link rel="stylesheet" href="css/body.css">
+        <!-- Bootstrap slider CSS -->
+        <!-- <link rel="stylesheet" href="css/bootstrap-slider.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" />
+    </head>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">MSG DEMO</a>
+                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#style-recombination">STYLE RECOMBINATION</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#multi-speaker">MULTI-SPEAKER TTS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zeroshot">ZERO-SHOT TTS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading mb-0">Multi-SpectroGAN: High-Diversity and High-Fidelity Spectrogram Generation with Adversarial Style Recombination for Speech Synthesis</h1>
+                <!-- Masthead Subheading-->
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">BLIND</p>
+            </div>
+        </header>
+
+        <!-- Abstraction -->
+        <section class="page-section portfolio" id="abstract">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">ABSTRACT</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 ml-auto">
+                        <p class="pre-wrap lead">While generative adversarial networks (GANs) based neural text-to-speech (TTS) systems have shown significant improvement in neural speech synthesis, there is no TTS system to learn to synthesize speech from text sequences with only adversarial feedback. Because adversarial feedback alone is not sufficient to train the generator, current models still require the reconstruction loss compared with the ground-truth and the generated mel-spectrogram directly. In this paper, we present Multi-SpectroGAN (MSG), which can train the multi-speaker model with only the adversarial feedback by conditioning a self-supervised hidden representation of the generator to a conditional discriminator. This leads to better guidance for generator training. Moreover, we also propose  adversarial style recombination (ASR) for better generalization in the unseen speaking style and transcript, which can learn latent representations of the combined style embedding from multiple mel-spectrograms. Trained with ASR and feature matching, the MSG synthesizes a high-diversity mel-spectrogram by controlling and mixing the individual speaking styles (e.g., duration, pitch, and energy). The result shows that the MSG synthesizes a high-fidelity mel-spectrogram, which has almost the same naturalness MOS score as the ground-truth mel-spectrogram.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recombination -->
+        <section class="page-section bg-info text-white mb-0" id="style-recombination">
+            <div class="container-fluid">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">STYLE RECOMBINATION</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+                <!-- About Section Content-->
+                <div class="row text-center">
+                    <div class="col-lg-12 ml-auto">
+                        <h3>Style</h3>
+                    </div>
+<!--                    <div class="col-lg-12 ml-auto">-->
+<!--                        <span>All: </span>&nbsp;&nbsp;-->
+<!--                        <input id="all" type="input" data-slider-min="0" data-slider-max="1"-->
+<!--                               data-slider-step="0.1" data-slider-value="0"/>&nbsp;&nbsp;-->
+<!--                        <span id="all-val">0</span>-->
+<!--                    </div>-->
+
+                    <div class="col-lg-12 ml-auto">
+                        <h5>Duration</h5>
+                        <span id="duration-val1">1</span>&nbsp;&nbsp;
+                        <input id="duration" type="input" data-slider-min="0" data-slider-max="1"
+                               data-slider-step="0.1" data-slider-value="0"/>&nbsp;&nbsp;
+                        <span id="duration-val2">0</span>
+                    </div>
+
+                    <div class="col-lg-12 ml-auto">
+                        <h5>Pitch</h5>
+                        <span id="pitch-val1">1</span>&nbsp;&nbsp;
+                        <input id="pitch" type="input" data-slider-min="0" data-slider-max="1"
+                               data-slider-step="0.1" data-slider-value="0"/>&nbsp;&nbsp;
+                        <span id="pitch-val2">0</span>
+                    </div>
+
+                    <div class="col-lg-12 ml-auto">
+                        <h5>Energy</h5>
+                        <span id="energy-val1">1</span>&nbsp;&nbsp;
+                        <input id="energy" type="input" data-slider-min="0" data-slider-max="1"
+                               data-slider-step="0.1" data-slider-value="0"/>&nbsp;&nbsp;
+                        <span id="energy-val2">0</span>
+                    </div>
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="text-center col-lg-4"><h3>p237 (Male)</h3></div>
+                    <div class="text-center col-lg-4"><h3>Mixed</h3></div>
+                    <div class="text-center col-lg-4"><h3>p305 (Female)</h3></div>
+                </div>
+
+                <div class="row">
+                    <div class="text-center col-lg-4">
+                        <br/>
+                        <img src="img/recombination/p305_005-p237_005-d0-p0-e0.npy_gen.png" width="95%">
+                    </div>
+
+                    <div class="text-center col-lg-4">
+                        <br/>
+                        <img id="img_src" src="img/recombination/p305_005-p237_005-d0-p0-e0.npy_gen.png" width="95%">
+                    </div>
+
+                    <div class="text-center col-lg-4">
+                        <br/>
+                        <img src="img/recombination/p305_005-p237_005-d10-p10-e10.npy_gen.png" width="95%">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="text-center col-lg-4">
+                        <br/>
+                        <audio controls="controls">
+                            <source src="wav/recombination/p305_005-p237_005-d0-p0-e0.npy_gen.wav" type="audio/wav" />
+                        </audio>
+                    </div>
+
+                    <div class="text-center col-lg-4">
+                        <br/>
+                        <audio id="audio_panel" controls="controls">
+                            <source id="audio_src" src="wav/recombination/p305_005-p237_005-d0-p0-e0.npy_gen.wav" type="audio/wav" />
+                        </audio>
+                    </div>
+
+                    <div class="text-center col-lg-4">
+                        <br/>
+                        <audio controls="controls">
+                            <source src="wav/recombination/p305_005-p237_005-d10-p10-e10.npy_gen.wav" type="audio/wav" />
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-primary text-white mb-0" id="multi-speaker">
+            <div class="container-fluid">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">MULTI-SPEAKER TTS</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+<!--                <div class="text-left">-->
+<!--                    <h3>Blank</h3>-->
+<!--                </div>-->
+
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-auto ml-auto">
+                        <!-- p229 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p229 (Female)</p>
+                                  <div class="text-left">Script : <i>The actual primary rainbow observed is said to be the effect of super-imposition of a number of bows.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/seen/01_gt/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/01_gt/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/02_gt_pwg/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/02_gt_pwg/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/03_tacotron/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/03_tacotron/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/seen/04_gst/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/04_gst/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/05_fs2/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/05_fs2/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/06_msg/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/06_msg/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/07_msg_asr1/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/07_msg_asr1/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/08_msg_asr2/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/08_msg_asr2/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/09_msg_asr3/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/09_msg_asr3/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/10_msg_asr4/p229_022.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/10_msg_asr4/p229_022.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p243 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p243 (Male)</p>
+                                  <div class="text-left">Script : <i>Ask her to bring these things with her from the store.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/seen/01_gt/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/01_gt/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/02_gt_pwg/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/02_gt_pwg/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/03_tacotron/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/03_tacotron/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/seen/04_gst/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/04_gst/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/05_fs2/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/05_fs2/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/06_msg/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/06_msg/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/07_msg_asr1/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/07_msg_asr1/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/08_msg_asr2/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/08_msg_asr2/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/09_msg_asr3/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/09_msg_asr3/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/10_msg_asr4/p243_002.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/10_msg_asr4/p243_002.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p228 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p228 (Female)</p>
+                                  <div class="text-left">Script : <i>People look, but no one ever finds it.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/seen/01_gt/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/01_gt/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/02_gt_pwg/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/02_gt_pwg/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/03_tacotron/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/03_tacotron/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/seen/04_gst/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/04_gst/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/05_fs2/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/05_fs2/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/06_msg/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/06_msg/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/07_msg_asr1/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/07_msg_asr1/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/08_msg_asr2/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/08_msg_asr2/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/09_msg_asr3/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/09_msg_asr3/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/10_msg_asr4/p228_010.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/10_msg_asr4/p228_010.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p237 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p237 (Male)</p>
+                                  <div class="text-left">Script : <i>If the red of the second bow falls upon the green of the first, the result is to give a bow with an abnormally wide yellow band, since red and green light when mixed form yellow.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/seen/01_gt/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/01_gt/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/02_gt_pwg/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/02_gt_pwg/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/03_tacotron/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/03_tacotron/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/seen/04_gst/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/04_gst/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/05_fs2/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/05_fs2/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/06_msg/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/06_msg/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/07_msg_asr1/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/07_msg_asr1/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/08_msg_asr2/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/08_msg_asr2/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/09_msg_asr3/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/09_msg_asr3/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/10_msg_asr4/p237_023.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/10_msg_asr4/p237_023.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p301 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p301 (Female)</p>
+                                  <div class="text-left">Script : <i>There is, according to legend, a boiling pot of gold at one end.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/seen/01_gt/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/01_gt/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/02_gt_pwg/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/02_gt_pwg/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/03_tacotron/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/03_tacotron/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/seen/04_gst/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/04_gst/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/05_fs2/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/05_fs2/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/06_msg/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/06_msg/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/07_msg_asr1/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/07_msg_asr1/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/08_msg_asr2/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/08_msg_asr2/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/09_msg_asr3/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/09_msg_asr3/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/10_msg_asr4/p301_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/10_msg_asr4/p301_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p252 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p252 (Male)</p>
+                                  <div class="text-left">Script : <i>There is, according to legend, a boiling pot of gold at one end.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/seen/01_gt/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/01_gt/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/02_gt_pwg/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/02_gt_pwg/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/03_tacotron/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/03_tacotron/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/seen/04_gst/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/04_gst/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/seen/05_fs2/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/05_fs2/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/seen/06_msg/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/06_msg/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/07_msg_asr1/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/07_msg_asr1/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/08_msg_asr2/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/08_msg_asr2/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/09_msg_asr3/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/09_msg_asr3/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/seen/10_msg_asr4/p252_009.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/seen/10_msg_asr4/p252_009.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zero-shot VC -->
+        <section class="page-section bg-info text-white mb-0" id="zeroshot">
+            <div class="container-fluid">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block">ZERO-SHOT TTS</h2>
+                </div>
+
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+<!--                <div class="text-left">-->
+<!--                    <h3>Blank</h3>-->
+<!--                </div>-->
+
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-auto ml-auto">
+                        <!-- p236 -->
+                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p236 (Female)</p>
+                                  <div class="text-left">Script : <i>Some have accepted it as a miracle without physical explanation.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/01_gt/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/01_gt/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/02_gt_pwg/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/02_gt_pwg/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/03_tacotron/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/03_tacotron/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/04_gst/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/04_gst/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/05_fs2/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/05_fs2/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/06_msg/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/06_msg/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/07_msg_asr1/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/07_msg_asr1/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/08_msg_asr2/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/08_msg_asr2/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/09_msg_asr3/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/09_msg_asr3/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/10_msg_asr4/p236_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/10_msg_asr4/p236_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p241 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p241 (Male)</p>
+                                  <div class="text-left">Script : <i>Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/01_gt/p241_018.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/01_gt/p241_018.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/02_gt_pwg/p241_018.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/02_gt_pwg/p241_018.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/03_tacotron/p241_018.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/03_tacotron/p241_018.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/04_gst/p241_018.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/04_gst/p241_018.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/05_fs2/p241_018.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/05_fs2/p241_018.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/06_msg/p241_018.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/06_msg/p241_018.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/07_msg_asr1/p241_018.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/07_msg_asr1/p241_018.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/08_msg_asr2/p241_018.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/08_msg_asr2/p241_018.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/09_msg_asr3/p241_018.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/09_msg_asr3/p241_018.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/10_msg_asr4/p241_018.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/10_msg_asr4/p241_018.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p240 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p240 (Female)</p>
+                                  <div class="text-left">Script : <i>When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/01_gt/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/01_gt/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/02_gt_pwg/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/02_gt_pwg/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/03_tacotron/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/03_tacotron/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/04_gst/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/04_gst/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/05_fs2/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/05_fs2/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/06_msg/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/06_msg/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/07_msg_asr1/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/07_msg_asr1/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/08_msg_asr2/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/08_msg_asr2/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/09_msg_asr3/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/09_msg_asr3/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/10_msg_asr4/p240_011.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/10_msg_asr4/p240_011.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p246 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p246 (Male)</p>
+                                  <div class="text-left">Script : <i>Since then physicists have found that it is not reflection, but refraction by the raindrops which causes the rainbows.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/01_gt/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/01_gt/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/02_gt_pwg/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/02_gt_pwg/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/03_tacotron/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/03_tacotron/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/04_gst/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/04_gst/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/05_fs2/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/05_fs2/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/06_msg/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/06_msg/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/07_msg_asr1/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/07_msg_asr1/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/08_msg_asr2/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/08_msg_asr2/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/09_msg_asr3/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/09_msg_asr3/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/10_msg_asr4/p246_019.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/10_msg_asr4/p246_019.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p265 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p265 (Female)</p>
+                                  <div class="text-left">Script : <i>Others have tried to explain the phenomenon physically.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/01_gt/p265_017.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/01_gt/p265_017.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/02_gt_pwg/p265_017.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/02_gt_pwg/p265_017.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/03_tacotron/p265_017.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/03_tacotron/p265_017.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/04_gst/p265_017.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/04_gst/p265_017.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/05_fs2/p265_017.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/05_fs2/p265_017.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/06_msg/p265_017.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/06_msg/p265_017.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/07_msg_asr1/p265_017.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/07_msg_asr1/p265_017.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/08_msg_asr2/p265_017.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/08_msg_asr2/p265_017.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/09_msg_asr3/p265_017.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/09_msg_asr3/p265_017.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/10_msg_asr4/p265_017.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/10_msg_asr4/p265_017.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- p363 -->
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="width: 40%">
+                                  <p>p363 (Male)</p>
+                                  <div class="text-left">Script : <i>Some have accepted it as a miracle without physical explanation.</i></div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Male-to-male & female-->
+                            <tr>
+                              <td style="vertical-align: top;"><p>GT</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/01_gt/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/01_gt/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GT + PWG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/02_gt_pwg/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/02_gt_pwg/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Tacotron2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/03_tacotron/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/03_tacotron/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>GST</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/04_gst/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/04_gst/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>FastSpeech2</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/05_fs2/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/05_fs2/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align: top;"><p>MSG</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/06_msg/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/06_msg/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/07_msg_asr1/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/07_msg_asr1/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, same ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/08_msg_asr2/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/08_msg_asr2/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Bern, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/09_msg_asr3/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/09_msg_asr3/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>MSG+ASR (Mixup, different ratios)</p>
+                                <div class="text-center">
+                                    <img src="img/unseen/10_msg_asr4/p363_013.npy_gen.png" width="80%">
+
+                                    <audio controls="controls">
+                                        <source src="wav/unseen/10_msg_asr4/p363_013.npy_gen.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright Section-->
+<!--        <section class="copyright py-4 text-center text-white">-->
+<!--            <div class="container"><small class="pre-wrap">Copyright © Korea University</small></div>-->
+<!--        </section>-->
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+<!--        <script src="assets/mail/jqBootstrapValidation.js"></script>-->
+<!--        <script src="assets/mail/contact_me.js"></script>-->
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- Bootstrap slider JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
+
+        <!-- slider JS -->
+        <script type="text/javascript">
+            function audio_reload() {
+                    var duration = Number($("#duration-val2").text()) * 10;
+                    var pitch = Number($("#pitch-val2").text()) * 10;
+                    var energy = Number($("#energy-val2").text()) * 10;
+
+                    var img_name = "img/recombination/p305_005-p237_005-d" + duration + "-p" + pitch + "-e" + energy + ".npy_gen.png";
+                    var audio_name = "wav/recombination/p305_005-p237_005-d" + duration + "-p" + pitch + "-e" + energy + ".npy_gen.wav";
+
+                    console.log(img_name)
+                    console.log(audio_name)
+
+                    $('#img_src').attr("src", img_name);
+                    $('#audio_src').attr("src", audio_name);
+
+                    //console.log($('#audio_src').val());
+                    //console.log($("#audio_panel"))
+                    $('#audio_panel')[0].load();
+
+                };
+
+            $(function() {
+                // 값을 선택할 수 있는 슬라이더 출력
+                // $('#all').slider({
+                //     formatter: function(value) {
+                //         $("#all-val").text(value);
+                //         $("#duration").slider(value)
+                //         return 'total: ' + value;
+                //     }
+                // });
+
+                $('#duration').slider({
+                    formatter: function(value) {
+                        var duration_val2 = Number(value);
+                        var duration_val1 = Math.round((1 - duration_val2) * 10) / 10;
+                        $("#duration-val1").text(duration_val1);
+                        $("#duration-val2").text(duration_val2);
+                        return 'duration: ' + value;
+                    }
+                });
+
+                $('#pitch').slider({
+                    formatter: function(value) {
+                        var pitch_val2 = Number(value);
+                        var pitch_val1 = Math.round((1 - pitch_val2) * 10) / 10;
+                        $("#pitch-val1").text(pitch_val1);
+                        $("#pitch-val2").text(pitch_val2);
+                        return 'pitch: ' + value;
+                    }
+                });
+
+                $('#energy').slider({
+                    formatter: function(value) {
+                        var energy_val2 = Number(value);
+                        var energy_val1 = Math.round((1 - energy_val2) * 10) / 10;
+                        $("#energy-val1").text(energy_val1);
+                        $("#energy-val2").text(energy_val2);
+                        return 'energy: ' + value;
+                    }
+                });
+
+                // 슬라이더에서 선택한 값을 출력하는 부분
+                $('#duration').on("slide click", function () {
+                   audio_reload()
+                });
+                //
+                //
+                $('#pitch').on("slide click", function () {
+                   audio_reload()
+                });
+                //
+                $('#energy').on("slide click", function () {
+                   audio_reload()
+                });
+
+            });
+        </script>
+    </body>
+</html>
