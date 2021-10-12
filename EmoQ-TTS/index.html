@@ -35,9 +35,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
-					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#single_speaker">Single Speaker</a></li>
-					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#multi_speaker">Multi Speaker</a></li>
-<!-- 					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#emotion_control">Emotion control</a></li> -->
+					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#single_speaker">Single-Speaker TTS</a></li>
+					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#multi_speaker">Multi-Speaker TTS</a></li>
+					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#emotion_control">Emotion Control</a></li>
 					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation_study">Ablation Study</a></li>                    
 					</ul>
                 </div>
@@ -77,7 +77,7 @@
             <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                  <h2 class="page-section-heading d-inline-block text-white">single-speaker synthesis</h2>
+                  <h2 class="page-section-heading d-inline-block text-white">single-speaker TTS</h2>
 <!--                                         <p class="pre-wrap lead">&nbsp;</p> -->
                 </div>
                 <!-- Icon Divider-->
@@ -456,7 +456,7 @@
             <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                  <h2 class="page-section-heading d-inline-block text-white">Multi-speaker synthesis</h2>
+                  <h2 class="page-section-heading d-inline-block text-white">Multi-speaker TTS</h2>
 <!--                                         <p class="pre-wrap lead">&nbsp;</p> -->
                 </div>
                 <!-- Icon Divider-->
@@ -784,128 +784,82 @@
 
 </section>
 
-<!--  -->
-<!--         <!-- ABLATION --> -->
-<!--         <section class="page-section bg-info text-white mb-0" id="emotion_control"> -->
-<!--             <div class="container"> -->
-<!--                 <div class="text-center"> -->
-<!--                     <h2 class="page-section-heading d-inline-block">Emotion control</h2> -->
-<!--                 </div> -->
-<!--  -->
-<!--     <div class="divider-custom divider-light"> -->
-<!--                   <div class="divider-custom"></div> -->
-<!--                 </div> -->
+
+        <!-- ABLATION -->
+        <section class="page-section bg-info text-white mb-0" id="emotion_control">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block">Emotion Control</h2>
+                </div>
+
+    <div class="divider-custom divider-light">
+                  <div class="divider-custom"></div>
+                </div>
+
+
+                <!-- About Section Content-->
+                <div class="row text-center">
+                    <div class="col-lg-12 ml-auto">
+                        <h3>Style</h3>
+                    </div>
+<!--                    <div class="col-lg-12 ml-auto">-->
+<!--                        <span>All: </span>&nbsp;&nbsp;-->
+<!--                        <input id="all" type="input" data-slider-min="0" data-slider-max="1"-->
+<!--                               data-slider-step="0.1" data-slider-value="0"/>&nbsp;&nbsp;-->
+<!--                        <span id="all-val">0</span>-->
+<!--                    </div>-->
+
+                    <div class="col-lg-12 ml-auto">
+                        <h5>Emotion</h5>
+							<input id="emo1" type='button' value='happy' onclick="emo_click(1);"/>
+							<input id="emo2" type='button' value='sad' onclick="emo_click(2);"/>
+							<input id="emo3" type='button' value='angry' onclick="emo_click(3);"/>
+							<input id="emo4" type='button' value='surprised' onclick="emo_click(4);"/>
+							<input id="emo5" type='button' value='fear' onclick="emo_click(5);"/>
+							<input id="emo6" type='button' value='disgusted' onclick="emo_click(6);"/>
+                    </div>
+                    <div class="col-lg-12 ml-auto">
+                        <h5>Intensity</h5>
+                        <span id="intensity-val1">0</span>&nbsp;&nbsp;
+                        <input id="intensity" type="input" data-slider-min="0" data-slider-max="15"
+                               data-slider-step="1" data-slider-value="0"/>&nbsp;&nbsp;
+                        <span id="intensity-val2">15</span>
+                    </div>
+
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="text-center col-lg-12"><h3>Script</h3></div>
+<!-- 					<div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>니가 뿌린 향수 참 달콤하고 좋은 향이 나. </i></div> -->
+<!-- 				    <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>The perfume you sprayed smells so sweet and nice.</i></div> -->
+<!-- 				    <div class="text-left">Pronunciation : &nbsp; <i>Niga ppulin hyangsu cham dalkomhago joh-eun hyang-i na.</i></div> -->
+<!-- 				    <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Disgusted</div> -->
+                </div>
+
 <!--                 <div class="row"> -->
-<!--                     <div class="col-lg-auto ml-auto"> -->
-<!--                 -->
-<!-- <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"> -->
-<!-- <p>Components of reference encoder</p> -->
-<!-- <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%"> -->
-<!--                                   <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>니가 뿌린 향수 참 달콤하고 좋은 향이 나. </i></div> -->
-<!-- 								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>The perfume you sprayed smells so sweet and nice.</i></div> -->
-<!-- 								  <div class="text-left">Pronunciation : &nbsp; <i>Niga ppulin hyangsu cham dalkomhago joh-eun hyang-i na.</i></div> -->
-<!--                                   <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Disgusted</div> -->
-<!--                               </th> -->
-<!--                             </tr> -->
-<!--                           </thead> -->
-<!--                           <tbody> -->
-<!--                             <tr> -->
-<!--                               <td style="vertical-align: top;"><p>w/o Both Clssifier and Predictors</p> -->
-<!--                                 <div class="text-center"> -->
-<!--                                     <audio id="player" controls> -->
-<!--                                         <source src="./audio/ablation/auxil/acriil_dis_00002222_synthesized_neither.wav" type="audio/wav" /> -->
-<!--                                     </audio> -->
-<!--                                 </div> -->
-<!--                               </td> -->
-<!--                               <td style="vertical-align: top;"><p>w/o Phoneme Clssifier</p> -->
-<!--                                 <div class="text-center"> -->
-<!--                                     <audio id="player" controls> -->
-<!--                                         <source src="./audio/ablation/auxil/acriil_dis_00002222_synthesized_phograd.wav" type="audio/wav" /> -->
-<!--                                     </audio> -->
-<!--                                 </div> -->
-<!--                               </td> -->
-<!--                           -->
-<!--                                 <td style="vertical-align: top;"><p>w/o Auxiliary Predictors</p> -->
-<!--                                 <div class="text-center"> -->
-<!--                                     <audio id="player" controls> -->
-<!--                                         <source src="./audio/ablation/auxil/acriil_dis_00002222_synthesized_pe.wav" type="audio/wav" /> -->
-<!--                                     </audio> -->
-<!--                                 </div> -->
-<!--                               </td> -->
-<!--                               <td style="vertical-align: top;"><p>EmoQ-TTS</p> -->
-<!--                                 <div class="text-center"> -->
-<!--                                     <audio id="player" controls> -->
-<!--                                         <source src="./audio/ablation/auxil/acriil_dis_00002222_synthesized_emoq.wav" type="audio/wav" /> -->
-<!--                                     </audio> -->
-<!--                                 </div> -->
-<!--                               </td> -->
-<!--             </tr> -->
-<!--             </tbody> -->
-<!--             </table> -->
-<!-- <p>Projection method</p> -->
-<!-- <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%"> -->
-<!--                                   <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>형이 말하는 걸 들어보면 참 근사해.</i></div> -->
-<!-- 								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>It's really cool to hear what you're saying.</i></div> -->
-<!-- 								  <div class="text-left">Pronunciation : &nbsp; <i>Hyeong-i malhaneun geol deul-eobomyeon cham geunsahae.</i></div> -->
-<!--                                   <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Happy</div> -->
-<!--                               </th> -->
-<!--                             </tr> -->
-<!--                           </thead> -->
-<!--                           <tbody> -->
-<!--                             <tr> -->
-<!--                               <td style="vertical-align: top;"><p>L1 distance w/o projection</p> -->
-<!--                                 <div class="text-center"> -->
-<!--                                     <audio id="player" controls> -->
-<!--                                         <source src="./audio/ablation/proj/acriil_hap_00002853_synthesized_l1.wav" type="audio/wav" /> -->
-<!--                                     </audio> -->
-<!--                                 </div> -->
-<!--                               </td> -->
-<!--                               <td style="vertical-align: top;"><p>PCA projection</p> -->
-<!--                                 <div class="text-center"> -->
-<!--                                     <audio id="player" controls> -->
-<!--                                         <source src="./audio/ablation/proj/acriil_hap_00002853_synthesized_pca.wav" type="audio/wav" /> -->
-<!-- 										</audio> -->
-<!--                                 </div> -->
-<!--                               </td>     -->
-<!-- 							 <td style="vertical-align: top;"><p>EmoQ-TTS (LDA)</p> -->
-<!--                                 <div class="text-center"> -->
-<!--                                     <audio id="player" controls> -->
-<!--                                         <source src="./audio/ablation/proj/acriil_hap_00002853_synthesized_lda.wav" type="audio/wav" /> -->
-<!-- 										</audio> -->
-<!--                                 </div> -->
-<!--                               </td>     -->
-<!--             </tr> -->
-<!--             </tbody> -->
-<!--             </table> -->
-<!-- <p>Intensity quantization</p> -->
-<!-- <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%"> -->
-<!--                                   <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>그러나 이제는 이런 단순대결구도에만 집착해서는 안됩니다. </i></div> -->
-<!-- 								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>But now we shouldn't stick to this simple confrontation structure.</i></div> -->
-<!-- 								  <div class="text-left">Pronunciation : &nbsp; <i>Geuleona ijeneun ileon dansundaegyeolgudo-eman jibchaghaeseoneun andoebnida.</i></div> -->
-<!--                                   <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Surprised</div> -->
-<!--                               </th> -->
-<!--                             </tr> -->
-<!--                           </thead> -->
-<!--                           <tbody> -->
-<!--                             <tr> -->
-<!--                               <td style="vertical-align: top;"><p>w/o intensity quantization</p> -->
-<!--                                 <div class="text-center"> -->
-<!--                                     <audio id="player" controls> -->
-<!--                                         <source src="./audio/ablation/quan/acriil_sur_00000032_synthesized_continuous.wav" type="audio/wav" /> -->
-<!--                                     </audio> -->
-<!--                                 </div> -->
-<!--                               </td> -->
-<!--                               <td style="vertical-align: top;"><p>EmoQ-TTS</p> -->
-<!--                                 <div class="text-center"> -->
-<!--                                     <audio id="player" controls> -->
-<!--                                         <source src="./audio/ablation/quan/acriil_sur_00000032_synthesized_emoq.wav" type="audio/wav" /> -->
-<!-- 										</audio> -->
-<!--                                 </div> -->
-<!--                               </td>     -->
-<!--             </tr> -->
-<!--             </tbody> -->
-<!--             </table> -->
-<!-- </section> -->
+<!--                     <div class="text-center col-lg-4"> -->
+<!--                         <br/> -->
+<!--                         <img src="./audio/control/acriil_sur_00002618_1_0.png" width="95%"> -->
+<!--                     </div> -->
+<!--                 </div> -->
+
+							<th colspan="4" style="width: 40%">
+                                  <div class="text-center">Script : <i>그는 초등학교때부터 담배를 피웠다고 해서 모두를 경악하게 했다. </i></div>
+								  <div class="text-center">Translation : <i>He shocked everyone because he had smoked since elementary school.</i></div>
+								  <div class="text-center">Pronunciation : <i>Geuneun chodeunghaggyottaebuteo dambaeleul piwossdago haeseo moduleul gyeong-aghage haessda.</i></div>
+                              </th>
+
+                <div class="row">
+                    <div class="text-center col-lg-12">
+                        <br/>
+                        <audio id="audio_panel" controls>
+                            <source id="audio_src" src="./audio/control/acriil_sur_00002618_1_0.wav" type="audio/wav" />
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- ABLATION -->
         <section class="page-section bg-info text-white mb-0" id="ablation_study">
@@ -1043,6 +997,62 @@
 
         <!-- slider JS -->
         <script type="text/javascript">
+			var emotion = 1
+			function emo_click(i){
+					emotion = i;
+					audio_reload()
+				}
+
+
+            function audio_reload() {
+				
+					emotion = Number(emotion);
+                    var intensity = Number($("#intensity").val());
+					
+					console.log(emotion)
+					console.log(intensity)
+
+//                    var img_name = "./audio/control/acriil_sur_00002618_" + emotion + "_" + intensity + ".png";
+                    var audio_name = "./audio/control/acriil_sur_00002618_" + emotion + "_" + intensity + ".wav";
+
+//                    console.log(img_name)
+                    console.log(audio_name)
+
+//                    $('#img_src').attr("src", img_name);
+                    $('#audio_src').attr("src", audio_name);
+
+                    //console.log($('#audio_src').val());
+                    //console.log($("#audio_panel"))
+                    $('#audio_panel')[0].load();
+
+                };
+
+            $(function() {
+                // 값을 선택할 수 있는 슬라이더 출력
+                // $('#all').slider({
+                //     formatter: function(value) {
+                //         $("#all-val").text(value);
+                //         $("#duration").slider(value)
+                //         return 'total: ' + value;
+                //     }
+                // });
+
+                $('#intensity').slider({
+                    formatter: function(value) {
+                        var intensity_val2 = 15;
+                        var intensity_val1 = 0;
+                        $("#intensity-val1").text(intensity_val1);
+                        $("#intensity-val2").text(intensity_val2);
+                        return 'intensity: ' + value;
+                    }
+                });
+
+                $('#intensity').on("slide click", function () {
+                   audio_reload()
+                });
+
+
+            });
         </script>
     </body>
 </html>
