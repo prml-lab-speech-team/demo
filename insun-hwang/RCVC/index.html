@@ -30,10 +30,10 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Abstract">ABSTRACT</a>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#FlowDiagram">FLOW DIAGRAM</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Rhythm">RHYTHM</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#EnglishDemo">ENGLISH DEMO</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#KoreanDemo">KOREAN DEMO</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#KoreanDemo">CONTROL SPEED</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ControlRhythm">CONTROL RHYTHM</a></li>
                     </ul>
                 </div>
             </div>
@@ -53,12 +53,11 @@
         
         <section class="page-section portfolio" id="Abstract">
             <div class="container">
-                <!-- Portfolio Section Heading-->
                 <div class="text-center">
                     <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Abstract</h2> <br> <br>
-                    <h5> There has been significant progress in non-parallel many-to-many voice conversion with a simple autoencoder, which can disentangle content and speaker information from the speech. Although rhythm has recently received attention and plays a vital role in determining the characteristics of a speaker, it is not yet utilized well. Moreover, the information bottleneck could degrade separation performance because it does not consider each speaker's different phoneme duration. In this paper, we introduce RCVC, which is a rhythm controllable voice conversion model. First, we propose a duration predictor to predict phoneme sequence length using speaking speed in order to transfer rhythm. Second, we propose a dynamic information bottleneck to generate content embedding where rhythm is removed. The experimental results also show the superiority of our proposed method.
+                    <h5>There has been significant progress in non-parallel many-to-many voice conversion with a simple autoencoder, which can disentangle content and speaker information from the speech. Although rhythm has recently received attention and plays a vital role in determining the characteristics of a speaker, it is not yet utilized well. Moreover, the information bottleneck could degrade separation performance because it does not consider each speaker's different phoneme duration. In this paper, we introduce RCVC, which is a rhythm controllable voice conversion model. First, we propose a duration predictor to predict phoneme sequence length using speaking speed in order to transfer rhythm. Second, we propose a dynamic information bottleneck to generate content embedding where rhythm is removed. The experimental results also show the superiority of our proposed method.
                     </h5><br>                    
-                    <h5>The code will be released at http://....</h5>
+                    <h5>The code will be released.</h5>
                 </div>                
             </div>
         </section>
@@ -67,11 +66,11 @@
 
         <!-- Flow diagram -->
 
-        <section class="page-section portfolio" id="FlowDiagram">
+        <section class="page-section portfolio" id="Rhythm">
           <div class="container">
               <!-- Portfolio Section Heading-->
               <div class="text-center">
-                  <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Flow Diagram</h2> <br> <br>
+                  <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Rhythm definition and role of rhythm in speech.</h2> <br> <br>
                   <!-- <h5> Recently, there has been significant progress in non-parallel many-to-many voice conversion with a simple autoencoder, which can disentangle content and speaker information from the speech. However, a trade-off exists between speech quality and speaker similarity because previous methods lose the linguistic information in the process of disentanglement. Besides, they do not reflect the rhythm of target speech even though rhythm plays an important role in determining the speaker's characteristics. In this paper, we introduce RCVC, which is a rhythm controllable voice conversion model. Furthermore, we propose the dynamic information bottleneck to transfer rhythm, generating the content embedding utilizing speaking speed. The experimental results also show the superiority of our proposed method. -->
                   </h5>
               </div>
@@ -95,21 +94,55 @@
 
         <!--
 
-          후보군 (Inter)
+                    
+          # 내꺼 못함
+          p268_p268_010_to_p275_p275_010
+          
+          # 둘다 못함
+          p256_p256_017_to_p340_p340_017
+
+          후보군
           p231_p231_002_to_p254_p254_002 (세모)
           p240_p240_017_to_p347_p347_017 (마지막 순서정도?)
           p240_p240_018_to_p241_p241_018
           p244_p244_003_to_p285_p285_003
-          p256_p256_017_to_p340_p340_017
-          p259_p259_017_to_p283_p283_017 (3)V
-          p267_p267_012_to_p274_p274_012 (4)
-          p268_p268_010_to_p275_p275_010 (2) 
-          p269_p269_001_to_p256_p256_001 
+          p256_p256_017_to_p340_p340_017          
+          p267_p267_012_to_p274_p274_012 (4)          
           p282_p282_003_to_p254_p254_003 (끝에 애매)
           p237_p237_001_to_p301_p301_001 (1)
           p240_p240_001_to_p285_p285_001 ( 
           p244_p244_001_to_p260_p260_001
           p269_p269_001_to_p256_p256_001 (1) VV
+          
+          # 
+          p259_p259_017_to_p283_p283_017 V -- inter 3점 괜찮은데 음질이 구림
+          p268_p268_010_to_p275_p275_010 V -- inter 3점 괜찮은데 내그림이 더 약간 안좋음
+         
+
+          VCTK (위에 3개 선택)
+          p343_p343_012_to_p237_p237_012 V -- inter 5점. AutoPST는 stop token issue있음, AutoVC mixing문제
+          p343_p343_010_to_p311_p311_010 V -- inter 5점. 좋음.. AutoPST랑 비슷하긴 한데 고민좀
+          p293_p293_001_to_p284_p284_001 -- inter 4.6점 -- p300_p300_001_to_p252_p252_001  보다 더 잘함
+
+          p241_p241_012_to_p256_p256_012 V -- intra -- 5점.. 잘하네.. AutoPST는 stop token issue있음
+          p256_p256_016_to_p239_p239_016 V -- inter 4점? 비교모델이 너무 못하네. 근데 리듬은 확실히 보여주는듯. 근데 이거 무슨 말인지 들리나?
+          
+          p238_p238_001_to_p232_p232_001 -- inter 3점 -- 그림이 좀 아쉬움
+          p300_p300_001_to_p252_p252_001 -- inter 4.5점 -- 둘다 잘함.
+          p343_p343_004_to_p334_p334_004 ?
+          
+          NIKL (위에 3개 선택)
+          mw01_mw01_t01_s02_to_mw02_mw02_t01_s02 -- VV intra -- 4점 .. 잘하는데 그림이 좀 아쉬움. 
+          fv05_fv05_t01_s01_to_mw02_mw02_t01_s01 -- VV inter 4점.. 이건 말을 하는데 그림이 약간 아쉽네.. AutoPST도 좀 한다
+          fv13_fv13_t01_s03_to_mw06_mw06_t01_s03 -- inter 3.7점 .. 뒤에서 말을 좀 못해서 약간 아쉬움.
+
+          fx01_fx01_t01_s02_to_mv17_mv17_t01_s02 -- VV inter 3.9점 .. 그나마 짤아서 갠찮음.
+
+          fx02_fx02_t01_s01_to_mv01_mv01_t01_s01 -- inter -- 2점.. 말을 못한다
+          fx02_fx02_t01_s11_to_mv19_mv19_t01_s11 -- inter -- 4점.. 말을 약간 못하네
+          fv17_fv17_t01_s01_to_mw02_mw02_t01_s01 -- inter -- 3.6점 .. AgainVC 끝에서 튀는게 있네.. 이거 쓰러면 잘라야할듯. AutoPST 말못함
+          fv17_fv17_t01_s01_to_mv06_mv06_t01_s01 -- inter 3.9점 .. 말을 하는데 둘다 잘함. 약간 발음 씹히긴함          
+          
 
         -->
 
@@ -136,9 +169,9 @@
                           <thead>
                             <tr>
                               <th style="width: 30%">Mel-spectrogram</th>
-                              <th style="width: 23.3%">Source Speaker</th>
-                              <th style="width: 23.3%">Target Speaker</th>
-                              <th style="width: 23.3%">Converted</th>
+                              <th style="width: 23.3%">Source speech</th>
+                              <th style="width: 23.3%">Target speech</th>
+                              <th style="width: 23.3%">Converted speech</th>
                             </tr>
                           </thead>
                           
@@ -146,60 +179,60 @@
                             <tr>          
                               <!-- Melspectrogram-->
                               <td rowspan="5" style="vertical-align: top;">
-                                <img src="images/plot/p269_p269_001_to_p256_p256_001.PNG" id="sample01" width=600pt> 
-                                <center><img src="images/legend.PNG" id="None" width=300pt></center>
+                                <img src="wav/melspec/p343_p343_012_to_p237_p237_012.PNG" id="sample01" width=600pt> 
+                                <!-- <center><img src="images/legend.PNG" id="None" width=300pt></center> -->
                               </td>                        
                               
                               <!-- Source Speaker --> 
-                              <td rowspan="5" style="vertical-align: top;"><p><b>p269 (Female)</b></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'p269_p269_001_to_p256_p256_001')"> 
-                                    <source src="wav/inter_parallel_VCTK/GT_source/p269_p269_001_to_p256_p256_001.wav" type="audio/wav" />
+                              <td rowspan="5" style="vertical-align: top;"><p><b>p343 (Female)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/GT_source/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               
                               <!-- Target Speaker -->
-                              <td rowspan="5" style="vertical-align: top;"><p><b>p256 (Male)</b></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'p269_p269_001_to_p256_p256_001')"> 
-                                    <source src="wav/inter_parallel_VCTK/GT_target/p269_p269_001_to_p256_p256_001.wav" type="audio/wav" />
+                              <td rowspan="5" style="vertical-align: top;"><p><b>p237 (Male)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/GT_target/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               
                               <!-- Models -->
                               <td><p>AgainVC</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'p269_p269_001_to_p256_p256_001')"> 
-                                    <source src="wav/inter_parallel_VCTK/AgainVC/p269_p269_001_to_p256_p256_001.wav" type="audio/wav" />
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/AgainVC/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio>
                               </td>  
                             </tr>
 
                             <tr>
                               <td><p>AutoVC(freg16)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'p269_p269_001_to_p256_p256_001')"> 
-                                    <source src="wav/inter_parallel_VCTK/AutoVC_freq16/p269_p269_001_to_p256_p256_001.wav" type="audio/wav" />
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/AutoVC_freq16/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
                             </tr>
 
                             <tr>
                               <td><p>AutoVC(freg32)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'p269_p269_001_to_p256_p256_001')"> 
-                                    <source src="wav/inter_parallel_VCTK/AutoVC_freq32/p269_p269_001_to_p256_p256_001.wav" type="audio/wav" />
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/AutoVC_freq32/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
                             </tr>
 
                             <tr>
                               <td><p>AutoPST</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'p269_p269_001_to_p256_p256_001')"> 
-                                    <source src="wav/inter_parallel_VCTK/AutoPST/p269_p269_001_to_p256_p256_001.wav" type="audio/wav" />
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/AutoPST/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
                             </tr>
 
                             <tr>
                               <td><p><b>RCVC(Ours)</b></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'p269_p269_001_to_p256_p256_001')"> 
-                                    <source src="wav/inter_parallel_VCTK/RCVC_dim6/p269_p269_001_to_p256_p256_001.wav" type="audio/wav" />
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/RCVC_dim6/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
                             </tr>
@@ -211,6 +244,9 @@
                 </div>
                 <!-- 1개 데모 끝-->
 
+
+
+
                 <!-- 1개 데모 시작 -->
                 <div class="row">
                   <div class="col-lg-14 ml-auto">
@@ -218,9 +254,9 @@
                         <thead>
                           <tr>
                             <th style="width: 30%">Mel-spectrogram</th>
-                            <th style="width: 23.3%">Source Speaker</th>
-                            <th style="width: 23.3%">Target Speaker</th>
-                            <th style="width: 23.3%">Converted</th>
+                            <th style="width: 23.3%">Source speech</th>
+                            <th style="width: 23.3%">Target speech</th>
+                            <th style="width: 23.3%">Converted speech</th>
                           </tr>
                         </thead>
                         
@@ -228,60 +264,60 @@
                           <tr>          
                             <!-- Melspectrogram-->
                             <td rowspan="5" style="vertical-align: top;">
-                              <img src="images/plot/p268_p268_010_to_p275_p275_010.PNG" id="sample02" width=600pt> 
-                              <center><img src="images/legend.PNG" id="None" width=300pt></center>
+                              <img src="wav/melspec/p343_p343_010_to_p311_p311_010.PNG" id="sample02" width=600pt> 
+                              <!-- <center><img src="images/legend.PNG" id="None" width=300pt></center> -->
                             </td>                        
                             
                             <!-- Source Speaker --> 
-                            <td rowspan="5" style="vertical-align: top;"><p><b>p268 (Female)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p268_p268_010_to_p275_p275_010')"> 
-                                  <source src="wav/inter_parallel_VCTK/GT_source/p268_p268_010_to_p275_p275_010.wav" type="audio/wav" />
+                            <td rowspan="5" style="vertical-align: top;"><p><b>p343 (Female)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/GT_source/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Target Speaker -->
-                            <td rowspan="5" style="vertical-align: top;"><p><b>p275 (Male)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p268_p268_010_to_p275_p275_010')"> 
-                                  <source src="wav/inter_parallel_VCTK/GT_target/p268_p268_010_to_p275_p275_010.wav" type="audio/wav" />
+                            <td rowspan="5" style="vertical-align: top;"><p><b>p311 (Male)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/GT_target/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Models -->
                             <td><p>AgainVC</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p268_p268_010_to_p275_p275_010')"> 
-                                  <source src="wav/inter_parallel_VCTK/AgainVC/p268_p268_010_to_p275_p275_010.wav" type="audio/wav" />
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/AgainVC/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio>
                             </td>  
                           </tr>
 
                           <tr>
                             <td><p>AutoVC(freg16)</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p268_p268_010_to_p275_p275_010')"> 
-                                  <source src="wav/inter_parallel_VCTK/AutoVC_freq16/p268_p268_010_to_p275_p275_010.wav" type="audio/wav" />
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/AutoVC_freq16/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
                           </tr>
 
                           <tr>
                             <td><p>AutoVC(freg32)</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p268_p268_010_to_p275_p275_010')"> 
-                                  <source src="wav/inter_parallel_VCTK/AutoVC_freq32/p268_p268_010_to_p275_p275_010.wav" type="audio/wav" />
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/AutoVC_freq32/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
                           </tr>
 
                           <tr>
                             <td><p>AutoPST</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p268_p268_010_to_p275_p275_010')"> 
-                                  <source src="wav/inter_parallel_VCTK/AutoPST/p268_p268_010_to_p275_p275_010.wav" type="audio/wav" />
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/AutoPST/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
                           </tr>
 
                           <tr>
                             <td><p><b>RCVC(Ours)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'p268_p268_010_to_p275_p275_010')"> 
-                                  <source src="wav/inter_parallel_VCTK/RCVC_dim6/p268_p268_010_to_p275_p275_010.wav" type="audio/wav" />
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/RCVC_dim6/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
                           </tr>
@@ -290,11 +326,94 @@
                       </table>
                   </div>
 
-              </div>
-              <!-- 1개 데모 끝-->
+                </div>
+                <!-- 1개 데모 끝-->
 
-                
+              
 
+              
+                <!-- 1개 데모 시작 -->
+                <div class="row">
+                  <div class="col-lg-14 ml-auto">
+                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                        <thead>
+                          <tr>
+                            <th style="width: 30%">Mel-spectrogram</th>
+                            <th style="width: 23.3%">Source speech</th>
+                            <th style="width: 23.3%">Target speech</th>
+                            <th style="width: 23.3%">Converted speech</th>
+                          </tr>
+                        </thead>
+                        
+                        <tbody>
+                          <tr>          
+                            <!-- Melspectrogram-->
+                            <td rowspan="5" style="vertical-align: top;">
+                              <img src="wav/melspec/p256_p256_016_to_p239_p239_016.PNG" id="sample03" width=600pt> 
+                              <!-- <center><img src="images/legend.PNG" id="None" width=300pt></center> -->
+                            </td>                        
+                            
+                            <!-- Source Speaker --> 
+                            <td rowspan="5" style="vertical-align: top;"><p><b>p256 (Male)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/GT_source/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
+                              </audio>
+                            </td>
+                            
+                            <!-- Target Speaker -->
+                            <td rowspan="5" style="vertical-align: top;"><p><b>p239 (Female)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/GT_target/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
+                              </audio>
+                            </td>
+                            
+                            <!-- Models -->
+                            <td><p>AgainVC</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/AgainVC/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
+                              </audio>
+                            </td>  
+                          </tr>
+
+                          <tr>
+                            <td><p>AutoVC(freg16)</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/AutoVC_freq16/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
+                              </audio> 
+                            </td>                                                                                
+                          </tr>
+
+                          <tr>
+                            <td><p>AutoVC(freg32)</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/AutoVC_freq32/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
+                              </audio> 
+                            </td>                                                                                
+                          </tr>
+
+                          <tr>
+                            <td><p>AutoPST</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/AutoPST/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
+                              </audio> 
+                            </td>                                                                                
+                          </tr>
+
+                          <tr>
+                            <td><p><b>RCVC(Ours)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                                  <source src="wav/inter_parallel_VCTK/RCVC_dim6/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
+                              </audio> 
+                            </td>                                                                                
+                          </tr>
+
+                        </tbody>
+                      </table>
+                  </div>
+
+                </div>
+                <!-- 1개 데모 끝-->
+              
 
 
             <!--
@@ -307,9 +426,6 @@
 
 
 
-        
-        
-        <!-- zeroshot -->
         <section class="page-section" id="KoreanDemo">
             <div class="container">
 
@@ -317,7 +433,7 @@
                 <!-- About Section Heading-->
                 <div class="text-center">
                     <h2 class="page-section-heading d-inline-block text-black">Korean Demo</h2> <br>
-                    <h3 font-size:3rem ine-height:2.5rem> Sample 1 </h3>
+                    <!-- <h3 font-size:3rem ine-height:2.5rem> Sample 1 </h3> -->
                 </div>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
@@ -333,118 +449,253 @@
                           <thead>
                             <tr>
                               <th style="width: 30%">Mel-spectrogram</th>
-                              <th style="width: 17.5%">Source Speaker</th>
-                              <th style="width: 17.5%">Target Speaker</th>
-                              <th style="width: 17.5%">AutoVC</th>
-                              <th style="width: 17.5%">StyleVC(Ours)</th>
+                              <th style="width: 23.3%">Source speech</th>
+                              <th style="width: 23.3%">Target speech</th>
+                              <th style="width: 23.3%">Converted speech</th>
                             </tr>
                           </thead>
+                          
+                          
                           <tbody>
-                            <!-- Test!! -->
-                            <tr>                              
-                              <td rowspan="4" style="vertical-align: top;">
-                                <img src="images/plot/p240_006-to-p240_006.PNG" id="sample11" width=600pt><br>
-                                <center><img src="images/legend.PNG" id="None" width=300pt></center>
-                              </td>                              
-
+                            <tr>          
+                              <!-- Melspectrogram-->
+                              <td rowspan="5" style="vertical-align: top;">
+                                <img src="wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG" id="sample11" width=600pt> 
+                                <!-- <center><img src="images/legend.PNG" id="None" width=300pt></center> -->
+                              </td>                        
+                              
                               <!-- Source Speaker --> 
-                              <td rowspan="4" style="vertical-align: top;"><p><span style="color:Red">p240 (Female)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p240_006')">
-                                    <source src="wav/unseen/GT_source/p240_006-to-p240_006_generated.wav" type="audio/wav" />
+                              <td rowspan="5" style="vertical-align: top;"><p><b>mw01 (Male)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/GT_source/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               
-                              <!-- Row1: 각 row에 대한 정보임!!! -->
                               <!-- Target Speaker -->
-                              <td><p><span style="color:Red">p240 (Female)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p240_006')"> 
-                                    <source src="wav/unseen/GT_target/p240_006-to-p240_006_generated.wav" type="audio/wav" />
+                              <td rowspan="5" style="vertical-align: top;"><p><b>mw02 (Male)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/GT_target/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              
+                              <!-- Models -->
+                              <td><p>AgainVC</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/AgainVC/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio>
+                              </td>  
+                            </tr>
+  
+                            <tr>
+                              <td><p>AutoVC(freg16)</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/AutoVC_freq16/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
                                 </audio> 
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p240 -> p240 (Reconstruction)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p240_006')">
-                                    <source src="wav/unseen/AutoVC/p240_006-to-p240_006_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p240 -> p240 (Reconstruction)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p240_006')">
-                                    <source src="wav/unseen/StyleVC/p240_006-to-p240_006_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>                                                    
+                              </td>                                                                                
                             </tr>
-
+  
                             <tr>
-                              <!-- Row2: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Blue">p247 (Male)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p247_006')"> 
-                                    <source src="wav/unseen/GT_target/p240_006-to-p247_006_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p240 -> p247</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p247_006')"> 
-                                    <source src="wav/unseen/AutoVC/p240_006-to-p247_006_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p240 -> p247</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p247_006')"> 
-                                    <source src="wav/unseen/StyleVC/p240_006-to-p247_006_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
+                              <td><p>AutoVC(freg32)</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/AutoVC_freq32/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
                             </tr>
-
+  
                             <tr>
-                              <!-- Row3: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Blue">p311 (Male)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p311_006')"> 
-                                    <source src="wav/unseen/GT_target/p240_006-to-p311_006_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p240 -> p311</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p311_006')"> 
-                                    <source src="wav/unseen/AutoVC/p240_006-to-p311_006_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p240 -> p311</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p311_006')"> 
-                                    <source src="wav/unseen/StyleVC/p240_006-to-p311_006_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
+                              <td><p>AutoPST</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/AutoPST/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
                             </tr>
-
+  
                             <tr>
-                              <!-- Row4: 각 row에 대한 정보임!!! -->
-                              <!-- Target Speaker -->
-                              <td><p><span style="color:Red">p307 (Female)</span></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p307_006')"> 
-                                    <source src="wav/unseen/GT_target/p240_006-to-p307_006_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- AutoVC -->
-                              <td><p>p240 -> p307</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p307_006')"> 
-                                    <source src="wav/unseen/AutoVC/p240_006-to-p307_006_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <!-- StyleVC -->
-                              <td><p>p240 -> p307</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'p240_006-to-p307_006')"> 
-                                    <source src="wav/unseen/StyleVC/p240_006-to-p307_006_generated.wav" type="audio/wav" />
-                                </audio>
-                              </td>
+                              <td><p><b>RCVC(Ours)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/RCVC_dim6/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
                             </tr>
-                          </tbody>
+  
+                          </tbody>                          
                         </table>
                     </div>
                 </div>
                 <!-- 1개 데모 끝-->
+                
+
+
+
+                <!-- 1개 데모 시작 -->
+                <!-- About Section Content-->
+                <div class="row">
+                  <div class="col-lg-15 ml-auto">
+                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                        <thead>
+                          <tr>
+                            <th style="width: 30%">Mel-spectrogram</th>
+                            <th style="width: 23.3%">Source speech</th>
+                            <th style="width: 23.3%">Target speech</th>
+                            <th style="width: 23.3%">Converted speech</th>
+                          </tr>
+                        </thead>
+                        
+                        
+                        <tbody>
+                          <tr>          
+                            <!-- Melspectrogram-->
+                            <td rowspan="5" style="vertical-align: top;">
+                              <img src="wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG" id="sample12" width=600pt> 
+                              <!-- <center><img src="images/legend.PNG" id="None" width=300pt></center> -->
+                            </td>                        
+                            
+                            <!-- Source Speaker --> 
+                            <td rowspan="5" style="vertical-align: top;"><p><b>fv05 (Female)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/GT_source/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
+                              </audio>
+                            </td>
+                            
+                            <!-- Target Speaker -->
+                            <td rowspan="5" style="vertical-align: top;"><p><b>mw02 (Male)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/GT_target/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
+                              </audio>
+                            </td>
+                            
+                            <!-- Models -->
+                            <td><p>AgainVC</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/AgainVC/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
+                              </audio>
+                            </td>  
+                          </tr>
+
+                          <tr>
+                            <td><p>AutoVC(freg16)</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/AutoVC_freq16/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
+                              </audio> 
+                            </td>                                                                                
+                          </tr>
+
+                          <tr>
+                            <td><p>AutoVC(freg32)</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/AutoVC_freq32/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
+                              </audio> 
+                            </td>                                                                                
+                          </tr>
+
+                          <tr>
+                            <td><p>AutoPST</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/AutoPST/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
+                              </audio> 
+                            </td>                                                                                
+                          </tr>
+
+                          <tr>
+                            <td><p><b>RCVC(Ours)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/RCVC_dim6/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
+                              </audio> 
+                            </td>                                                                                
+                          </tr>
+
+                        </tbody>                          
+                      </table>
+                  </div>
+                </div>
+                <!-- 1개 데모 끝-->
+
+
+
+              
+                <!-- 1개 데모 시작 -->
+                <!-- About Section Content-->
+                <div class="row">
+                  <div class="col-lg-15 ml-auto">
+                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                        <thead>
+                          <tr>
+                            <th style="width: 30%">Mel-spectrogram</th>
+                            <th style="width: 23.3%">Source speech</th>
+                            <th style="width: 23.3%">Target speech</th>
+                            <th style="width: 23.3%">Converted speech</th>
+                          </tr>
+                        </thead>
+                        
+                        
+                        <tbody>
+                          <tr>          
+                            <!-- Melspectrogram-->
+                            <td rowspan="5" style="vertical-align: top;">
+                              <img src="wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG" id="sample13" width=600pt> 
+                              <!-- <center><img src="images/legend.PNG" id="None" width=300pt></center> -->
+                            </td>                        
+                            
+                            <!-- Source Speaker --> 
+                            <td rowspan="5" style="vertical-align: top;"><p><b>fv13 (Female)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/GT_source/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
+                              </audio>
+                            </td>
+                            
+                            <!-- Target Speaker -->
+                            <td rowspan="5" style="vertical-align: top;"><p><b>mw06 (Male)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/GT_target/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
+                              </audio>
+                            </td>
+                            
+                            <!-- Models -->
+                            <td><p>AgainVC</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/AgainVC/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
+                              </audio>
+                            </td>  
+                          </tr>
+
+                          <tr>
+                            <td><p>AutoVC(freg16)</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/AutoVC_freq16/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
+                              </audio> 
+                            </td>                                                                                
+                          </tr>
+
+                          <tr>
+                            <td><p>AutoVC(freg32)</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/AutoVC_freq32/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
+                              </audio> 
+                            </td>                                                                                
+                          </tr>
+
+                          <tr>
+                            <td><p>AutoPST</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/AutoPST/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
+                              </audio> 
+                            </td>                                                                                
+                          </tr>
+
+                          <tr>
+                            <td><p><b>RCVC(Ours)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                                  <source src="wav/inter_parallel_NIKL/RCVC_dim6/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
+                              </audio> 
+                            </td>                                                                                
+                          </tr>
+
+                        </tbody>                          
+                      </table>
+                  </div>
+                </div>
+                <!-- 1개 데모 끝-->
+
 
 
             <!--
