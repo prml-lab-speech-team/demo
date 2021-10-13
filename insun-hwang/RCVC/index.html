@@ -122,10 +122,11 @@
           VCTK (위에 3개 선택)
           p343_p343_012_to_p237_p237_012 V -- inter 5점. AutoPST는 stop token issue있음, AutoVC mixing문제
           p343_p343_010_to_p311_p311_010 V -- inter 5점. 좋음.. AutoPST랑 비슷하긴 한데 고민좀
-          p293_p293_001_to_p284_p284_001 -- inter 4.6점 -- p300_p300_001_to_p252_p252_001  보다 더 잘함
-
-          p241_p241_012_to_p256_p256_012 V -- intra -- 5점.. 잘하네.. AutoPST는 stop token issue있음
           p256_p256_016_to_p239_p239_016 V -- inter 4점? 비교모델이 너무 못하네. 근데 리듬은 확실히 보여주는듯. 근데 이거 무슨 말인지 들리나?
+
+          p293_p293_001_to_p284_p284_001 -- inter 4.6점 -- p300_p300_001_to_p252_p252_001  보다 더 잘함
+          p241_p241_012_to_p256_p256_012 V -- intra -- 5점.. 잘하네.. AutoPST는 stop token issue있음
+          
           
           p238_p238_001_to_p232_p232_001 -- inter 3점 -- 그림이 좀 아쉬움
           p300_p300_001_to_p252_p252_001 -- inter 4.5점 -- 둘다 잘함.
@@ -355,14 +356,14 @@
                             
                             <!-- Source Speaker --> 
                             <td rowspan="5" style="vertical-align: top;"><p><b>p256 (Male)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p256_p256_016_to_p239_p239_016')"> 
                                   <source src="wav/inter_parallel_VCTK/GT_source/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Target Speaker -->
                             <td rowspan="5" style="vertical-align: top;"><p><b>p239 (Female)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'p256_p256_016_to_p239_p239_016')"> 
                                   <source src="wav/inter_parallel_VCTK/GT_target/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
                               </audio>
                             </td>
