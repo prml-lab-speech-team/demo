@@ -38,6 +38,8 @@
                 </div>
             </div>
         </nav>
+
+
         <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
@@ -49,8 +51,7 @@
 
 
 
-        <!-- Abstraction -->
-        
+        <!-- Abstraction -->        
         <section class="page-section portfolio" id="Abstract">
             <div class="container">
                 <div class="text-center">
@@ -64,13 +65,12 @@
         
 
 
-        <!-- Flow diagram -->
-
+        <!-- Rhythm 소개 -->
         <section class="page-section portfolio" id="Rhythm">
           <div class="container">
               <!-- Portfolio Section Heading-->
               <div class="text-center">
-                  <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Rhythm definition and role of rhythm in speech.</h2> <br> <br>
+                  <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Why does rhythm play an important role in conversion?</h2> <br> <br>
                   <!-- <h5> Recently, there has been significant progress in non-parallel many-to-many voice conversion with a simple autoencoder, which can disentangle content and speaker information from the speech. However, a trade-off exists between speech quality and speaker similarity because previous methods lose the linguistic information in the process of disentanglement. Besides, they do not reflect the rhythm of target speech even though rhythm plays an important role in determining the speaker's characteristics. In this paper, we introduce RCVC, which is a rhythm controllable voice conversion model. Furthermore, we propose the dynamic information bottleneck to transfer rhythm, generating the content embedding utilizing speaking speed. The experimental results also show the superiority of our proposed method. -->
                   </h5>
               </div>
@@ -81,12 +81,81 @@
               </div>
 
               <!-- Portfolio Grid Items-->  
-              <div class="row justify-content-center">
+              <!-- <div class="row justify-content-center">
                   <div class="col-lg-12 ml-auto">
                     <center><img src="StyleVC_flow.gif" alt="animated" width="1000px">
                             &nbsp &nbsp &nbsp &nbsp &nbsp <img src="flow_legend.PNG" width="200px"> </center>
                   </div>
+              </div> -->
+
+              <!--
+
+                p293_p293_001_to_p284_p284_001  # 그림 아쉬움
+                p229_p229_001_to_p232_p232_001
+                p343_p343_012_to_p237_p237_012
+                p282_p282_018_to_p241_p241_018
+                p323_p323_010_to_p263_p263_010
+              -->
+              
+                <!-- 1개 데모 시작 -->
+                <div class="row">
+                  <div class="col-lg-14 ml-auto">
+                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                        <thead>
+                          <tr>
+                            <th style="width: 30%">Mel-spectrogram</th>
+                            <th style="width: 23.3%">Source speech</th>
+                            <th style="width: 23.3%">Target speech</th>
+                            <th style="width: 23.3%">Converted speech</th>
+                          </tr>
+                        </thead>
+                        
+                        <tbody>
+                          <tr>          
+                            <!-- Melspectrogram-->
+                            <td rowspan="5" style="vertical-align: top;">
+                              <img src="rhythm/images/p229_p229_016_to_p285_p285_016.PNG" id="sample001" width=600pt> 
+                              <!-- <center><img src="images/legend.PNG" id="None" width=300pt></center> -->
+                            </td>                        
+                            
+                            <!-- Source Speaker --> 
+                            <td rowspan="5" style="vertical-align: top;"><p><b>p343 (Female)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p229_p229_016_to_p285_p285_016.PNG')"> 
+                                  <source src="rhythm/conversion/p229_p229_016_to_p285_p285_016_source.wav" type="audio/wav" />
+                              </audio>
+                            </td>
+                            
+                            <!-- Target Speaker -->
+                            <td rowspan="5" style="vertical-align: top;"><p><b>p237 (Male)</b></p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p229_p229_016_to_p285_p285_016.PNG')"> 
+                                  <source src="rhythm/conversion/p229_p229_016_to_p285_p285_016_target.wav" type="audio/wav" />
+                              </audio>
+                            </td>
+                            
+                            <!-- Models -->
+                            <tr>
+                              <td><p>Model not considering the rhythm</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p229_p229_016_to_p285_p285_016.PNG')"> 
+                                    <source src="rhythm/conversion/p229_p229_016_to_p285_p285_016_AutoVC.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+
+                            <tr>
+                              <td><p><b>Model considering the rhythm(Ours)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p229_p229_016_to_p285_p285_016.PNG')"> 
+                                    <source src="rhythm/conversion/p229_p229_016_to_p285_p285_016.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+
+                        </tbody>
+                      </table>
+                  </div>
+
               </div>
+              <!-- 1개 데모 끝-->
+
               
           </div>
         </section>
