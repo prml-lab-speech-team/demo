@@ -6,8 +6,8 @@ function changeImage(picture_id, path) {
     // document.getElementById(picture_id).src = "images/plot/" + path + ".PNG"
     // alert("wav/melspec/" + path + ".PNG");
     // alert("wav/melsepc/" + path + ".PNG");
-    document.getElementById(picture_id).src = 'wav/melsepc/' + path + '.PNG'
-    // document.getElementById(picture_id).src = path
+    // document.getElementById(picture_id).src = 'wav/melsepc/' + path + '.PNG'
+    document.getElementById(picture_id).src = path
 
     // alert("wav/melsepc/" + path + ".PNG"); # 'wav/melsepc/p269_p269_001_to_p256_p256_001.PNG'
     // document.getElementById(picture_id).src = 'wav/melspec/p269_p269_001_to_p256_p256_001.PNG'
