@@ -56,7 +56,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Abstract</h2> <br> <br>
-                    <h5>There has been significant progress in non-parallel many-to-many voice conversion with a simple autoencoder, which can disentangle content and speaker information from the speech. Although rhythm has recently received attention and plays a vital role in determining the characteristics of a speaker, it is not yet utilized well. Moreover, the information bottleneck could degrade separation performance because it does not consider each speaker's different phoneme duration. In this paper, we introduce RCVC, which is a rhythm controllable voice conversion model. First, we propose a duration predictor to predict phoneme sequence length using speaking speed in order to transfer rhythm. Second, we propose a dynamic information bottleneck to generate content embedding where rhythm is removed. The experimental results also show the superiority of our proposed method.
+                    <h5>There have been significant improvements in non-parallel many-to-many voice conversion with a simple autoencoder, which can disentangle content and style information from the speech. However, the separation process could damage the linguistic representation, or the generated speech may be utterly different from the target speech's rhythm because they rarely consider the rhythm. Rhythm expresses the speed of speech and plays a significant role in determining the style. Although the rhythm recently received attention to solve this problem, it is still challenging to separate content and style in speech and to control the rhythm. In this paper, we introduce RCVC, which controls the rhythm to generate high-quality speech similar to the target speech's rhythm. The proposed model could encode the content using source speech's rhythm and upsample content to frame sequences using target speech's rhythm. The experimental results also show the superiority of our proposed method.
                     </h5><br>                    
                     <h5>The code will be released.</h5>
                 </div>                
@@ -143,8 +143,8 @@
 
                             <tr>
                               <td><p><b>Model considering the rhythm(Ours)</b></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p229_p229_016_to_p285_p285_016.PNG')"> 
-                                    <source src="rhythm/conversion/p229_p229_016_to_p285_p285_016.wav" type="audio/wav" />
+                                <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p229_p229_016_to_p285_p285_016_AutoVC.PNG')"> 
+                                    <source src="rhythm/conversion/p229_p229_016_to_p285_p285_016_AutoVC.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
                             </tr>
