@@ -89,12 +89,14 @@
               </div> -->
 
               <!--
-
+                p229_p229_001_to_p232_p232_001 # 약간아쉬움
+                p229_p229_016_to_p285_p285_016
                 p293_p293_001_to_p284_p284_001  # 그림 아쉬움
-                p229_p229_001_to_p232_p232_001
-                p343_p343_012_to_p237_p237_012
-                p282_p282_018_to_p241_p241_018
-                p323_p323_010_to_p263_p263_010
+                p229_p229_001_to_p232_p232_001  말을잘못함
+                p343_p343_012_to_p237_p237_012 
+                p282_p282_018_to_p241_p241_018 ##>?>
+                p323_p323_010_to_p263_p263_010 # 말을 잘못함
+                p343_p343_001_to_p263_p263_001 # 이거 선택
               -->
               
                 <!-- 1개 데모 시작 -->
@@ -114,37 +116,37 @@
                           <tr>          
                             <!-- Melspectrogram-->
                             <td rowspan="5" style="vertical-align: top;">
-                              <img src="rhythm/images/p229_p229_016_to_p285_p285_016.PNG" id="sample001" width=600pt> 
+                              <img src="rhythm/images/p343_p343_001_to_p263_p263_001.PNG" id="sample001" width=600pt> 
                               <!-- <center><img src="images/legend.PNG" id="None" width=300pt></center> -->
                             </td>                        
                             
                             <!-- Source Speaker --> 
-                            <td rowspan="5" style="vertical-align: top;"><p><b>p343 (Female)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p229_p229_016_to_p285_p285_016.PNG')"> 
-                                  <source src="rhythm/conversion/p229_p229_016_to_p285_p285_016_source.wav" type="audio/wav" />
+                            <td rowspan="5" style="vertical-align: top;"><p><b>p343 (Female): </b><br> faster than target speaker.</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p343_p343_001_to_p263_p263_001_a.PNG')"> 
+                                  <source src="rhythm/conversion/p343_p343_001_to_p263_p263_001_source.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Target Speaker -->
-                            <td rowspan="5" style="vertical-align: top;"><p><b>p237 (Male)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p229_p229_016_to_p285_p285_016.PNG')"> 
-                                  <source src="rhythm/conversion/p229_p229_016_to_p285_p285_016_target.wav" type="audio/wav" />
+                            <td rowspan="5" style="vertical-align: top;"><p><b>p237 (Male): </b><br> slower than source speaker.</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p343_p343_001_to_p263_p263_001_b.PNG')"> 
+                                  <source src="rhythm/conversion/p343_p343_001_to_p263_p263_001_target.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Models -->
                             <tr>
-                              <td><p>Model not considering the rhythm</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p229_p229_016_to_p285_p285_016.PNG')"> 
-                                    <source src="rhythm/conversion/p229_p229_016_to_p285_p285_016_AutoVC.wav" type="audio/wav" />
+                              <td><p><b>Model not considering the rhythm: </b><br> Since the generated voice does not reflect the rhythm, it speaks at the same speed as the source speaker.</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p343_p343_001_to_p263_p263_001_c.PNG')"> 
+                                    <source src="rhythm/conversion/p343_p343_001_to_p263_p263_001_AutoVC.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
                             </tr>
 
                             <tr>
-                              <td><p><b>Model considering the rhythm(Ours)</b></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p229_p229_016_to_p285_p285_016_AutoVC.PNG')"> 
-                                    <source src="rhythm/conversion/p229_p229_016_to_p285_p285_016_AutoVC.wav" type="audio/wav" />
+                              <td><p><b>Model considering the rhythm(Ours): </b><br> Since the generated voice reflects the rhythm, it is similar to the target speaker's rhythm and voice characteristics.</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p343_p343_001_to_p263_p263_001_d.PNG')"> 
+                                    <source src="rhythm/conversion/p343_p343_001_to_p263_p263_001.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
                             </tr>
@@ -215,21 +217,21 @@
                               
                               <!-- Source Speaker --> 
                               <td rowspan="5" style="vertical-align: top;"><p><b>p343 (Female)</b></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_a.PNG')"> 
                                     <source src="wav/inter_parallel_VCTK/GT_source/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               
                               <!-- Target Speaker -->
                               <td rowspan="5" style="vertical-align: top;"><p><b>p237 (Male)</b></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_g.PNG')"> 
                                     <source src="wav/inter_parallel_VCTK/GT_target/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               
                               <!-- Models -->
                               <td><p>AgainVC</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_b.PNG')"> 
                                     <source src="wav/inter_parallel_VCTK/AgainVC/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio>
                               </td>  
@@ -237,7 +239,7 @@
 
                             <tr>
                               <td><p>AutoVC(freg16)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_c.PNG')"> 
                                     <source src="wav/inter_parallel_VCTK/AutoVC_freq16/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
@@ -245,7 +247,7 @@
 
                             <tr>
                               <td><p>AutoVC(freg32)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_d.PNG')"> 
                                     <source src="wav/inter_parallel_VCTK/AutoVC_freq32/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
@@ -253,7 +255,7 @@
 
                             <tr>
                               <td><p>AutoPST</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_e.PNG')"> 
                                     <source src="wav/inter_parallel_VCTK/AutoPST/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
@@ -261,7 +263,7 @@
 
                             <tr>
                               <td><p><b>RCVC(Ours)</b></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_f.PNG')"> 
                                     <source src="wav/inter_parallel_VCTK/RCVC_dim6/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
@@ -300,21 +302,21 @@
                             
                             <!-- Source Speaker --> 
                             <td rowspan="5" style="vertical-align: top;"><p><b>p343 (Female)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010_a.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/GT_source/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Target Speaker -->
                             <td rowspan="5" style="vertical-align: top;"><p><b>p311 (Male)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010_g.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/GT_target/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Models -->
                             <td><p>AgainVC</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010_b.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/AgainVC/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio>
                             </td>  
@@ -322,7 +324,7 @@
 
                           <tr>
                             <td><p>AutoVC(freg16)</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010_c.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/AutoVC_freq16/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -330,7 +332,7 @@
 
                           <tr>
                             <td><p>AutoVC(freg32)</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010_d.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/AutoVC_freq32/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -338,7 +340,7 @@
 
                           <tr>
                             <td><p>AutoPST</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010_e.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/AutoPST/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -346,7 +348,7 @@
 
                           <tr>
                             <td><p><b>RCVC(Ours)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample02', 'wav/melspec/p343_p343_010_to_p311_p311_010_f.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/RCVC_dim6/p343_p343_010_to_p311_p311_010.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -385,21 +387,21 @@
                             
                             <!-- Source Speaker --> 
                             <td rowspan="5" style="vertical-align: top;"><p><b>p256 (Male)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016_a.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/GT_source/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Target Speaker -->
                             <td rowspan="5" style="vertical-align: top;"><p><b>p239 (Female)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016_g.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/GT_target/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Models -->
                             <td><p>AgainVC</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016_b.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/AgainVC/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
                               </audio>
                             </td>  
@@ -407,7 +409,7 @@
 
                           <tr>
                             <td><p>AutoVC(freg16)</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016_c.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/AutoVC_freq16/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -415,7 +417,7 @@
 
                           <tr>
                             <td><p>AutoVC(freg32)</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016_d.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/AutoVC_freq32/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -423,7 +425,7 @@
 
                           <tr>
                             <td><p>AutoPST</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016_e.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/AutoPST/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -431,7 +433,7 @@
 
                           <tr>
                             <td><p><b>RCVC(Ours)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample03', 'wav/melspec/p256_p256_016_to_p239_p239_016_f.PNG')"> 
                                   <source src="wav/inter_parallel_VCTK/RCVC_dim6/p256_p256_016_to_p239_p239_016.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -496,21 +498,21 @@
                               
                               <!-- Source Speaker --> 
                               <td rowspan="5" style="vertical-align: top;"><p><b>mw01 (Male)</b></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_a.PNG')"> 
                                     <source src="wav/intra_parallel_NIKL/GT_source/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               
                               <!-- Target Speaker -->
                               <td rowspan="5" style="vertical-align: top;"><p><b>mw02 (Male)</b></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_g.PNG')"> 
                                     <source src="wav/intra_parallel_NIKL/GT_target/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               
                               <!-- Models -->
                               <td><p>AgainVC</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_b.PNG')"> 
                                     <source src="wav/intra_parallel_NIKL/AgainVC/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
                                 </audio>
                               </td>  
@@ -518,7 +520,7 @@
   
                             <tr>
                               <td><p>AutoVC(freg16)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_c.PNG')"> 
                                     <source src="wav/intra_parallel_NIKL/AutoVC_freq16/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
@@ -526,7 +528,7 @@
   
                             <tr>
                               <td><p>AutoVC(freg32)</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_d.PNG')"> 
                                     <source src="wav/intra_parallel_NIKL/AutoVC_freq32/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
@@ -534,7 +536,7 @@
   
                             <tr>
                               <td><p>AutoPST</p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_e.PNG')"> 
                                     <source src="wav/intra_parallel_NIKL/AutoPST/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
@@ -542,7 +544,7 @@
   
                             <tr>
                               <td><p><b>RCVC(Ours)</b></p>
-                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG')"> 
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_f.PNG')"> 
                                     <source src="wav/intra_parallel_NIKL/RCVC_dim6/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
                                 </audio> 
                               </td>                                                                                
@@ -582,21 +584,21 @@
                             
                             <!-- Source Speaker --> 
                             <td rowspan="5" style="vertical-align: top;"><p><b>fv05 (Female)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01_a.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/GT_source/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Target Speaker -->
                             <td rowspan="5" style="vertical-align: top;"><p><b>mw02 (Male)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01_g.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/GT_target/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Models -->
                             <td><p>AgainVC</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01_b.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/AgainVC/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
                               </audio>
                             </td>  
@@ -604,7 +606,7 @@
 
                           <tr>
                             <td><p>AutoVC(freg16)</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01_c.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/AutoVC_freq16/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -612,7 +614,7 @@
 
                           <tr>
                             <td><p>AutoVC(freg32)</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01_d.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/AutoVC_freq32/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -620,7 +622,7 @@
 
                           <tr>
                             <td><p>AutoPST</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01_e.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/AutoPST/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -628,7 +630,7 @@
 
                           <tr>
                             <td><p><b>RCVC(Ours)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample12', 'wav/melspec/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01_f.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/RCVC_dim6/fv05_fv05_t01_s01_to_mw02_mw02_t01_s01.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -668,21 +670,21 @@
                             
                             <!-- Source Speaker --> 
                             <td rowspan="5" style="vertical-align: top;"><p><b>fv13 (Female)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03_a.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/GT_source/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Target Speaker -->
                             <td rowspan="5" style="vertical-align: top;"><p><b>mw06 (Male)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03_g.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/GT_target/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
                               </audio>
                             </td>
                             
                             <!-- Models -->
                             <td><p>AgainVC</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03_b.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/AgainVC/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
                               </audio>
                             </td>  
@@ -690,7 +692,7 @@
 
                           <tr>
                             <td><p>AutoVC(freg16)</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03_c.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/AutoVC_freq16/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -698,7 +700,7 @@
 
                           <tr>
                             <td><p>AutoVC(freg32)</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03_d.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/AutoVC_freq32/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -706,7 +708,7 @@
 
                           <tr>
                             <td><p>AutoPST</p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03_e.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/AutoPST/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -714,7 +716,7 @@
 
                           <tr>
                             <td><p><b>RCVC(Ours)</b></p>
-                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.PNG')"> 
+                              <audio controls="controls" class="demo" onplay="changeImage('sample13', 'wav/melspec/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03_f.PNG')"> 
                                   <source src="wav/inter_parallel_NIKL/RCVC_dim6/fv13_fv13_t01_s03_to_mw06_mw06_t01_s03.wav" type="audio/wav" />
                               </audio> 
                             </td>                                                                                
@@ -786,21 +788,21 @@
                           
                           <!-- Source Speaker --> 
                           <td rowspan="5" style="vertical-align: top;"><p><b>p247 (Male)</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017_a.PNG')"> 
                                 <source src="control/conversion/p247_p247_017_to_p300_p300_017_source.wav" type="audio/wav" />
                             </audio>
                           </td>
                           
                           <!-- Target Speaker -->
                           <td rowspan="5" style="vertical-align: top;"><p><b>p300 (Female)</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017_g.PNG')"> 
                                 <source src="control/conversion/p247_p247_017_to_p300_p300_017_target.wav" type="audio/wav" />
                             </audio>
                           </td>
                           
                           <!-- Models -->
                           <td><p><b>x0.6</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017_b.PNG')"> 
                                 <source src="control/conversion/p247_p247_017_to_p300_p300_017_case1.wav" type="audio/wav" />
                             </audio>
                           </td>  
@@ -808,7 +810,7 @@
 
                         <tr>
                           <td><p><b>x0.8</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017_c.PNG')"> 
                                 <source src="control/conversion/p247_p247_017_to_p300_p300_017_case2.wav" type="audio/wav" />
                             </audio> 
                           </td>                                                                                
@@ -816,7 +818,7 @@
 
                         <tr>
                           <td><p><b>x1.0</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017_d.PNG')"> 
                                 <source src="control/conversion/p247_p247_017_to_p300_p300_017_case3.wav" type="audio/wav" />
                             </audio> 
                           </td>                                                                                
@@ -824,7 +826,7 @@
 
                         <tr>
                           <td><p><b>x1.2</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017_e.PNG')"> 
                                 <source src="control/conversion/p247_p247_017_to_p300_p300_017_case4.wav" type="audio/wav" />
                             </audio> 
                           </td>                                                                                
@@ -832,7 +834,7 @@
 
                         <tr>
                           <td><p><b>x1.4</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample21', 'control/image/p247_p247_017_to_p300_p300_017_f.PNG')"> 
                                 <source src="control/conversion/p247_p247_017_to_p300_p300_017_case5.wav" type="audio/wav" />
                             </audio> 
                           </td>                                                                                
@@ -870,21 +872,21 @@
                           
                           <!-- Source Speaker --> 
                           <td rowspan="5" style="vertical-align: top;"><p><b>p234 (Female)</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002_a.PNG')"> 
                                 <source src="control/conversion/p234_p234_002_to_p271_p271_002_source.wav" type="audio/wav" />
                             </audio>
                           </td>
                           
                           <!-- Target Speaker -->
                           <td rowspan="5" style="vertical-align: top;"><p><b>p271 (Male)</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002_g.PNG')"> 
                                 <source src="control/conversion/p234_p234_002_to_p271_p271_002_target.wav" type="audio/wav" />
                             </audio>
                           </td>
                           
                           <!-- Models -->
                           <td><p><b>x0.6</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002_b.PNG')"> 
                                 <source src="control/conversion/p234_p234_002_to_p271_p271_002_case1.wav" type="audio/wav" />
                             </audio>
                           </td>  
@@ -892,7 +894,7 @@
 
                         <tr>
                           <td><p><b>x0.8</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002_c.PNG')"> 
                                 <source src="control/conversion/p234_p234_002_to_p271_p271_002_case2.wav" type="audio/wav" />
                             </audio> 
                           </td>                                                                                
@@ -900,7 +902,7 @@
 
                         <tr>
                           <td><p><b>x1.0</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002_d.PNG')"> 
                                 <source src="control/conversion/p234_p234_002_to_p271_p271_002_case3.wav" type="audio/wav" />
                             </audio> 
                           </td>                                                                                
@@ -908,7 +910,7 @@
 
                         <tr>
                           <td><p><b>x1.2</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002_e.PNG')"> 
                                 <source src="control/conversion/p234_p234_002_to_p271_p271_002_case4.wav" type="audio/wav" />
                             </audio> 
                           </td>                                                                                
@@ -916,7 +918,7 @@
 
                         <tr>
                           <td><p><b>x1.4</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample22', 'control/image/p234_p234_002_to_p271_p271_002_f.PNG')"> 
                                 <source src="control/conversion/p234_p234_002_to_p271_p271_002_case5.wav" type="audio/wav" />
                             </audio> 
                           </td>                                                                                
@@ -955,21 +957,21 @@
                           
                           <!-- Source Speaker --> 
                           <td rowspan="5" style="vertical-align: top;"><p><b>p299 (Female)</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010_a.PNG')"> 
                                 <source src="control/conversion/p299_p299_010_to_p316_p316_010_source.wav" type="audio/wav" />
                             </audio>
                           </td>
                           
                           <!-- Target Speaker -->
                           <td rowspan="5" style="vertical-align: top;"><p><b>p316 (Male)</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010_g.PNG')"> 
                                 <source src="control/conversion/p299_p299_010_to_p316_p316_010_target.wav" type="audio/wav" />
                             </audio>
                           </td>
                           
                           <!-- Models -->
                           <td><p><b>x0.6</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010_b.PNG')"> 
                                 <source src="control/conversion/p299_p299_010_to_p316_p316_010_case1.wav" type="audio/wav" />
                             </audio>
                           </td>  
@@ -977,7 +979,7 @@
 
                         <tr>
                           <td><p><b>x0.8</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010_c.PNG')"> 
                                 <source src="control/conversion/p299_p299_010_to_p316_p316_010_case2.wav" type="audio/wav" />
                             </audio> 
                           </td>                                                                                
@@ -985,7 +987,7 @@
 
                         <tr>
                           <td><p><b>x1.0</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010_d.PNG')"> 
                                 <source src="control/conversion/p299_p299_010_to_p316_p316_010_case3.wav" type="audio/wav" />
                             </audio> 
                           </td>                                                                                
@@ -993,7 +995,7 @@
 
                         <tr>
                           <td><p><b>x1.2</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010_e.PNG')"> 
                                 <source src="control/conversion/p299_p299_010_to_p316_p316_010_case4.wav" type="audio/wav" />
                             </audio> 
                           </td>                                                                                
@@ -1001,7 +1003,7 @@
 
                         <tr>
                           <td><p><b>x1.4</b></p>
-                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010.PNG')"> 
+                            <audio controls="controls" class="demo" onplay="changeImage('sample23', 'control/image/p299_p299_010_to_p316_p316_010_f.PNG')"> 
                                 <source src="control/conversion/p299_p299_010_to_p316_p316_010_case5.wav" type="audio/wav" />
                             </audio> 
                           </td>                                                                                
