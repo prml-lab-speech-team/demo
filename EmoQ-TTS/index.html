@@ -38,7 +38,9 @@
 					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#emotion_control">Emotion Control</a></li>
 					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#single_speaker">Single-Speaker TTS</a></li>
 					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#multi_speaker">Multi-Speaker TTS</a></li>
-					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation_study">Ablation Study</a></li>                    
+					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation_study">Ablation Study</a></li>
+						<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#vocoder_finetune">Vocoder Finetuning</a></li>                    
+
 					</ul>
                 </div>
             </div>
@@ -995,6 +997,739 @@
             </tbody>
             </table>
 </section>
+
+
+
+
+
+        <section class="page-section bg-primary text-white mb-0" id="vocoder_finetune">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                  <h2 class="page-section-heading d-inline-block text-white">Vocoder Finetuning</h2>
+<!--                                         <p class="pre-wrap lead">&nbsp;</p> -->
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 ml-auto">
+                      <p class="pre-wrap lead"> All the audio sample use FreGAN as a vocoder. </p>
+
+                  </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-12 ml-auto">
+
+
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>노란빛 파라솔 밑에서 그녀는 웃는다. </i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>Under the yellow parasol, she laughs. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>nolanbich palasol mit-eseo geunyeoneun usneunda.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Single</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Happy</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_hap_00000190_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_hap_00000190_1_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_hap_00000190_1_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_hap_00000190_1_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_hap_00000190_1_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_hap_00000190_1_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  
+						<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>공급체계의 합리화도 요긴한 과제다.</i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>The rationalization of the supply system is also a useful task. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>gong-geubchegyeui hablihwado yoginhan gwajeda.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Single</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Sad</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_sad_00001372_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_sad_00001372_2_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_sad_00001372_2_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_sad_00001372_2_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_sad_00001372_2_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_sad_00001372_2_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>북한이 이처럼 남한 적화가 가능하다는 희망을 갖고 있는 한 대화는 대남 혁명노선의 한 방편일 뿐입니다.</i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>As long as North Korea has the hope that South Korea can be reinforced, dialogue is only one way to revolutionize the South. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>bughan-i icheoleom namhan jeoghwaga ganeunghadaneun huimang-eul gajgo issneun han daehwaneun daenam hyeogmyeongnoseon-ui han bangpyeon-il ppun-ibnida.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Single</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Angry</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_ang_00000164_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_ang_00000164_3_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_ang_00000164_3_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_ang_00000164_3_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_ang_00000164_3_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_ang_00000164_3_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>금융실명제가 실시되면 기존 경제질서에 충격을 줄 뿐 아니라 지금의 해외유출 등 여러가지 부작용이 예상되는데요. </i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>If the real-name financial system is implemented, it will not only impact the existing economic order, but also have various side effects such as the current overseas outflow.</i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>geum-yungsilmyeongjega silsidoemyeon gijon gyeongjejilseoe chung-gyeog-eul jul ppun anila jigeum-ui haeoeyuchul deung yeoleogaji bujag-yong-i yesangdoeneundeyo.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Single</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Surprised</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_sur_00000640_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_sur_00000640_4_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_sur_00000640_4_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_sur_00000640_4_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_sur_00000640_4_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_sur_00000640_4_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>콘텍트 렌즈를 오래 착용했더니 눈이 빨갛게 충혈되었다.</i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>After wearing contact lenses for a long time, my eyes were red. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>kontegteu lenjeuleul olae chag-yonghaessdeoni nun-i ppalgahge chunghyeoldoeeossda.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Single</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Fear</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_fea_00002124_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_fea_00002124_5_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_fea_00002124_5_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_fea_00002124_5_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_fea_00002124_5_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_fea_00002124_5_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>유럽공동체는 오는 구십이년이면 통합을 완료 완전히 단일 시장화 될 예정인데 한국기업들은 어떻게 대처해야 할 것인지.</i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>The European community will complete the integration in the next ninety-nine years and become a completely single market, and how Korean companies will cope with it. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>yuleobgongdongcheneun oneun gusib-inyeon-imyeon tonghab-eul wanlyo wanjeonhi dan-il sijanghwa doel yejeong-inde hanguggieobdeul-eun eotteohge daecheohaeya hal geos-inji.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Single</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Disgusted</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_dis_00001070_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_dis_00001070_6_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_dis_00001070_6_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_dis_00001070_6_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_dis_00001070_6_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/single/acriil_dis_00001070_6_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  
+					  <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>천구백사십사년 여름까지 영국에서 계속 훈련을 받았으며, 병력은 약 사천 명까지 늘어났다.</i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>He continued to train in England until the summer of the nineteen forty-four years, and the number of troops increased to about four thousand. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>cheongubaegsasibsanyeon yeoleumkkaji yeong-gug-eseo gyesog hunlyeon-eul bad-ass-eumyeo, byeonglyeog-eun yag sacheon myeongkkaji neul-eonassda.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Female (ema)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Happy</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/ema_ema00163_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/ema_ema00163_1_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/ema_ema00163_1_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/ema_ema00163_1_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/ema_ema00163_1_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/ema_ema00163_1_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  
+					  <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>너와 함께 하는 모든 시간이 즐거워!</i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>All the time I spend with you is fun! </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>neowa hamkke haneun modeun sigan-i jeulgeowo!</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Male (nem)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Happy</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/nem_nem00146_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/nem_nem00146_1_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/nem_nem00146_1_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/nem_nem00146_1_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/nem_nem00146_1_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/nem_nem00146_1_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  
+					  <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>사랑하지만 보내줘야 하는 그녀 앞에서 눈물이 나려는 걸 몇 번이고 참았어.</i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>I held back tears several times in front of her, who I love but had to let her go. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>salanghajiman bonaejwoya haneun geunyeo ap-eseo nunmul-i nalyeoneun geol myeoch beon-igo cham-ass-eo.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Female (neb)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Sad</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/neb_neb00272_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/neb_neb00272_2_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/neb_neb00272_2_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/neb_neb00272_2_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/neb_neb00272_2_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/neb_neb00272_2_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  
+					  <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>낙담하지 말라는 말을 들어도 어쩔 수가 없는걸.</i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>I can't help it even if I'm told not to be discouraged.</i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>nagdamhaji mallaneun mal-eul deul-eodo eojjeol suga eobsneungeol.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Male (nen)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Sad</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/nen_nen00238_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/nen_nen00238_2_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/nen_nen00238_2_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/nen_nen00238_2_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/nen_nen00238_2_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/nen_nen00238_2_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  
+					  <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>내 동생은 내가 다이어트만 시작하면 야식을 시켜 먹는다니까, 왠수가 따로 없어.</i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>My brother orders late-night snacks whenever I start dieting, so there's no other reason. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>nae dongsaeng-eun naega daieoteuman sijaghamyeon yasig-eul sikyeo meogneundanikka, waensuga ttalo eobs-eo.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Female (ned)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Angry</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/ned_ned00372_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/ned_ned00372_3_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/ned_ned00372_3_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/ned_ned00372_3_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/ned_ned00372_3_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/ned_ned00372_3_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+                        
+                      <p> </p>  
+					  <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>주로 호수에서 물고기를 잡거나 수경 재배로 야채나 방울토마토를 생산합니다.</i></div>
+								  <div class="text-left">Translation  &nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; <i>They mainly produce vegetables or cherry tomatoes by catching fish in lakes or cultivating hydroponics. </i></div>
+								  <div class="text-left">Pronunciation : &nbsp; <i>julo hosueseo mulgogileul jabgeona sugyeong jaebaelo yachaena bang-ultomatoleul saengsanhabnida.
+</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Male (emf)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Angry</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/emf_emf00329_synthesized_emoq.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/emf_emf00329_3_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/emf_emf00329_3_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/emf_emf00329_3_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/emf_emf00329_3_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/vocoder/multi/emf_emf00329_3_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+                        
+
+</section>
+
 
 
     <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
