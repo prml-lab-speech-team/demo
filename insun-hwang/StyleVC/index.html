@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>RCVC Demo</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!-- Fonts CSS-->
+        <link rel="stylesheet" href="css/heading.css">
+        <link rel="stylesheet" href="css/body.css">
+        <!-- my CSS -->
+        <!-- 전체 가로 폭을 조절하고 싶다면 style.css에서 1540을 검색해서, 이숫자를 원하는 width로 바꿔준다! (원래는 1140이었음)-->
+        <!-- 왼쪽 마진 변경 margin-left:  -1.5(초기값) ->
+        <!-- 220은 table 길이임! demo라는 이름으로 받아와서 쓴다! -->
+        <style>        
+        .demo {
+          width: 220px;
+        }
+        </style>
+    </head>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">StyleVC DEMO</a>
+                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Abstract">ABSTRACT</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Scenario">SCENARIO</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Augmentation">AUGMENTATION</a></li>                        
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#SeenDemo">SEEN DEMO</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#UnseenDemo">UNSEEN DEMO</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Heading-->
+                  <h1 class="masthead-heading mb-0"><center>StyleVC: Non-parallel Voice Conversion with Adversarial Style Generalization</center></h1><br>
+                <!-- Masthead Subheading-->
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">In-Sun Hwang, Sang-Hoon Lee, Seong-Whan Lee</p>
+            </div>
+        </header>
+
+
+
+        <!-- Abstraction -->        
+        <section class="page-section portfolio" id="Abstract">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Abstract</h2> <br> <br>
+                    <h5>Voice conversion uses two samples to synthesize speech: the source sample is used for content, the target sample is used to style representation. Therefore, it has been progressed to design information flow to disentangle content and style in a speech. However, separated representation is damaged due to passing through sparse subspace. Besides, VC models suffer from the training-inference mismatch problem that only uses one sample in training; in inference, accordingly, the model extracts inappropriate content and style representation and generates low-quality speech. To address this problem, we introduce a StyleVC, which proposes adversarial style generalization. We propose style generalization, which captures global style representation and restricts the model from copying style information. Besides, we further utilize adversarial training to make the model generate more realistic speech. Moreover, we use a pitch predictor to estimate pitch information according to content and style representation. Finally, we demonstrate our proposed model to generate natural speech. The experimental results also show the superiority of our proposed method.
+                    </h5><br>                    
+                    <h5>The code will be released.</h5>
+                </div>                
+            </div>
+        </section>
+        
+        
+        <!-- Abstraction -->        
+        <section class="page-section portfolio" id="Scenario">
+          <div class="container">
+              <div class="text-center">
+                  <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Scenario</h2> <br> <br>
+                  <h5> training, infernece scenario 흐름도 그리기
+                  </h5><br>                    
+                  
+              </div>
+              <!-- Portfolio Grid Items-->  
+              <!-- <div class="row justify-content-center">
+                  <div class="col-lg-12 ml-auto">
+                    <center><img src="StyleVC_flow.gif" alt="animated" width="1000px">
+                            &nbsp &nbsp &nbsp &nbsp &nbsp <img src="flow_legend.PNG" width="200px"> </center>
+                  </div>
+              </div> -->                
+          </div>
+      </section>
+
+
+        <!-- content encoding process 소개 -->
+        <section class="page-section portfolio" id="Augmentation">
+          <div class="container">
+              <!-- Portfolio Section Heading-->
+              <div class="text-center">
+                  <h2 class="page-section-heading text-secondary mb-0 d-inline-block">content encoding process 소개</h2> <br> <br>
+                  <!-- <h5> Recently, there has been significant progress in non-parallel many-to-many voice conversion with a simple autoencoder, which can disentangle content and speaker information from the speech. However, a trade-off exists between speech quality and speaker similarity because previous methods lose the linguistic information in the process of disentanglement. Besides, they do not reflect the rhythm of target speech even though rhythm plays an important role in determining the speaker's characteristics. In this paper, we introduce RCVC, which is a rhythm controllable voice conversion model. Furthermore, we propose the dynamic information bottleneck to transfer rhythm, generating the content embedding utilizing speaking speed. The experimental results also show the superiority of our proposed method. -->
+                  </h5>
+              </div>
+
+              <!-- Icon Divider-->
+              <div class="divider-custom">
+                  <div class="divider-custom"></div>
+              </div>
+              
+                <!-- 1개 데모 시작 -->
+                <div class="row">
+                  <div class="col-lg-14 ml-auto">
+                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                        <thead>
+                          <tr>
+                            <th style="width: 30%">Mel-spectrogram</th>
+                            <th style="width: 23.3%">Source speech</th>
+                            <th style="width: 23.3%">Target speech</th>
+                            <th style="width: 23.3%">Converted speech</th>
+                          </tr>
+                        </thead>
+                        
+                        <tbody>
+                          <tr>          
+                            <!-- Melspectrogram-->
+                            <td rowspan="5" style="vertical-align: top;">
+                              <img src="rhythm/images/p343_p343_001_to_p263_p263_001.PNG" id="sample001" width=600pt> 
+                              <!-- <center><img src="images/legend.PNG" id="None" width=300pt></center> -->
+                            </td>                        
+                            
+                            <!-- Source Speaker --> 
+                            <td rowspan="5" style="vertical-align: top;"><p><b>p343 (Female): </b><br> faster than target speaker.</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p343_p343_001_to_p263_p263_001_a.PNG')"> 
+                                  <source src="rhythm/conversion/p343_p343_001_to_p263_p263_001_source.wav" type="audio/wav" />
+                              </audio>
+                            </td>
+                            
+                            <!-- Target Speaker -->
+                            <td rowspan="5" style="vertical-align: top;"><p><b>p237 (Male): </b><br> slower than source speaker.</p>
+                              <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p343_p343_001_to_p263_p263_001_d.PNG')"> 
+                                  <source src="rhythm/conversion/p343_p343_001_to_p263_p263_001_target.wav" type="audio/wav" />
+                              </audio>
+                            </td>
+                            
+                            <!-- Models -->
+                            <tr>
+                              <td><p><b>Model not considering the rhythm: </b><br> Since the generated voice does not reflect the rhythm, it speaks at the same speed as the source speaker.</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p343_p343_001_to_p263_p263_001_b.PNG')"> 
+                                    <source src="rhythm/conversion/p343_p343_001_to_p263_p263_001_AutoVC.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+
+                            <tr>
+                              <td><p><b>Model considering the rhythm(Ours): </b><br> Since the generated voice reflects the rhythm, it is similar to the target speaker's rhythm and voice characteristics.</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample001', 'rhythm/images/p343_p343_001_to_p263_p263_001_c.PNG')"> 
+                                    <source src="rhythm/conversion/p343_p343_001_to_p263_p263_001.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+
+                        </tbody>
+                      </table>
+                  </div>
+
+              </div>
+              <!-- 1개 데모 끝-->
+
+              
+          </div>
+        </section>
+        
+
+        <!--
+          
+          VCTK
+          p343_p343_012_to_p237_p237_012 V -- inter 5점. AutoPST는 stop token issue있음, AutoVC mixing문제
+          p343_p343_010_to_p311_p311_010 V -- inter 5점. 좋음.. AutoPST랑 비슷하긴 한데 고민좀
+          p256_p256_016_to_p239_p239_016 V -- inter 4점? 비교모델이 너무 못하네. 근데 리듬은 확실히 보여주는듯. 근데 이거 무슨 말인지 들리나?
+
+          
+          NIKL
+          mw01_mw01_t01_s02_to_mw02_mw02_t01_s02 -- VV intra -- 4점 .. 잘하는데 그림이 좀 아쉬움. 
+          fv05_fv05_t01_s01_to_mw02_mw02_t01_s01 -- VV inter 4점.. 이건 말을 하는데 그림이 약간 아쉽네.. AutoPST도 좀 한다
+          fv13_fv13_t01_s03_to_mw06_mw06_t01_s03 -- inter 3.7점 .. 뒤에서 말을 좀 못해서 약간 아쉬움.
+
+        -->
+
+		    
+        <section class="page-section bg-primary text-white mb-0" id="SeenDemo">
+            <div class="container">
+
+            
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">Seen Demo(Non-parallel data)</h2> <br>
+                    <!-- <h3 font-size:3rem ine-height:2.5rem> Sample 1 </h3> -->
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+
+                <!-- 1개 데모 시작 -->
+                <div class="row">
+                    <div class="col-lg-14 ml-auto">
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th style="width: 30%">Mel-spectrogram</th>
+                              <th style="width: 23.3%">Source speech</th>
+                              <th style="width: 23.3%">Target speech</th>
+                              <th style="width: 23.3%">Converted speech</th>
+                            </tr>
+                          </thead>
+                          
+                          <tbody>
+                            <tr>          
+                              <!-- Melspectrogram-->
+                              <td rowspan="5" style="vertical-align: top;">
+                                <img src="wav/melspec/p343_p343_012_to_p237_p237_012.PNG" id="sample01" width=600pt> 
+                                <!-- <center><img src="images/legend.PNG" id="None" width=300pt></center> -->
+                              </td>                        
+                              
+                              <!-- Source Speaker --> 
+                              <td rowspan="5" style="vertical-align: top;"><p><b>p343 (Female)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_a.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/GT_source/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              
+                              <!-- Target Speaker -->
+                              <td rowspan="5" style="vertical-align: top;"><p><b>p237 (Male)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_g.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/GT_target/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              
+                              <!-- Models -->
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_b.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/AgainVC/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
+                                </audio>
+                              </td>  
+                            </tr>
+
+                            <tr>
+                              <td><p>AutoVC(freq16)</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_c.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/AutoVC_freq16/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+
+                            <tr>
+                              <td><p>AutoVC(freq32)</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_d.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/AutoVC_freq32/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+
+                            <tr>
+                              <td><p>AutoPST</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_e.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/AutoPST/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+
+                            <tr>
+                              <td><p><b>RCVC(Ours)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample01', 'wav/melspec/p343_p343_012_to_p237_p237_012_f.PNG')"> 
+                                    <source src="wav/inter_parallel_VCTK/RCVC_dim6/p343_p343_012_to_p237_p237_012.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+
+                          </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <!-- 1개 데모 끝-->
+
+
+
+
+            <!--
+              Set 종료
+            -->
+            </div>
+        </section>
+        
+
+
+
+
+        <section class="page-section" id="UnseenDemo">
+            <div class="container">
+
+
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-black">Unseen Demo(Non-parallel data)</h2> <br>
+                    <!-- <h3 font-size:3rem ine-height:2.5rem> Sample 1 </h3> -->
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+                  
+
+                <!-- 1개 데모 시작 -->
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-15 ml-auto">
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                          <thead>
+                            <tr>
+                              <th style="width: 30%">Mel-spectrogram</th>
+                              <th style="width: 23.3%">Source speech</th>
+                              <th style="width: 23.3%">Target speech</th>
+                              <th style="width: 23.3%">Converted speech</th>
+                            </tr>
+                          </thead>
+                          
+                          
+                          <tbody>
+                            <tr>          
+                              <!-- Melspectrogram-->
+                              <td rowspan="5" style="vertical-align: top;">
+                                <img src="wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.PNG" id="sample11" width=600pt> 
+                                <!-- <center><img src="images/legend.PNG" id="None" width=300pt></center> -->
+                              </td>                        
+                              
+                              <!-- Source Speaker --> 
+                              <td rowspan="5" style="vertical-align: top;"><p><b>mw01 (Male)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_a.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/GT_source/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              
+                              <!-- Target Speaker -->
+                              <td rowspan="5" style="vertical-align: top;"><p><b>mw02 (Male)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_g.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/GT_target/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              
+                              <!-- Models -->
+                              <td><p>AGAIN-VC</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_b.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/AgainVC/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio>
+                              </td>  
+                            </tr>
+  
+                            <tr>
+                              <td><p>AutoVC(freq16)</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_c.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/AutoVC_freq16/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+  
+                            <tr>
+                              <td><p>AutoVC(freq32)</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_d.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/AutoVC_freq32/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+  
+                            <tr>
+                              <td><p>AutoPST</p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_e.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/AutoPST/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+  
+                            <tr>
+                              <td><p><b>RCVC(Ours)</b></p>
+                                <audio controls="controls" class="demo" onplay="changeImage('sample11', 'wav/melspec/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02_f.PNG')"> 
+                                    <source src="wav/intra_parallel_NIKL/RCVC_dim6/mw01_mw01_t01_s02_to_mw02_mw02_t01_s02.wav" type="audio/wav" />
+                                </audio> 
+                              </td>                                                                                
+                            </tr>
+  
+                          </tbody>                          
+                        </table>
+                    </div>
+                </div>
+                <!-- 1개 데모 끝-->
+                
+
+
+            <!--
+              Set 종료!
+            -->
+            </div>
+        </section>
+
+
+        
+        <!--
+
+          p234_p234_002_to_p271_p271_002  -- 발표자료
+          p299_p299_010_to_p274_p274_010
+          p247_p247_017_to_p300_p300_017
+
+        -->
+
+
+
+
+        <!-- Copyright Section-->
+        <section class="copyright py-4 text-center text-white">
+<!--            <div class="container"><small class="pre-wrap">Copyright © Korea University</small></div>-->
+            <div class="container"><big class="pre-wrap">If the picture or audio does not work properly, please use the latest chrome version.</big></div>
+        </section>
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/change.js"></script>
+
+    </body>
+</html>
