@@ -40,6 +40,7 @@
 					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#multi_speaker">Multi-Speaker TTS</a></li>
 					    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation_study">Ablation Study</a></li>
 						<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#vocoder_finetune">Vocoder Finetuning</a></li>                    
+						<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#english_test">English dataset</a></li>                    
 
 					</ul>
                 </div>
@@ -1730,7 +1731,202 @@
 
 </section>
 
+        <section class="page-section bg-primary text-white mb-0" id="english_test">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                  <h2 class="page-section-heading d-inline-block text-white">English test</h2>
+<!--                                         <p class="pre-wrap lead">&nbsp;</p> -->
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 ml-auto">
+                      <p class="pre-wrap lead"> All the audio sample use FreGAN as a vocoder. </p>
 
+                  </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-12 ml-auto">
+
+
+                       <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>The football teams give a tea party.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Female (0015)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Happy</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/hap/0015_000724_synthesized.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/hap/0015_000724_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/hap/0015_000724_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/hap/0015_000724_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/hap/0015_000724_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/hap/0015_000724_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+
+
+                        
+                      <p> </p>  
+						<table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>All my gum tips gone as well.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Male (0020)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Angry</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/ang/0020_000429_synthesized.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/ang/0020_000429_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/ang/0020_000429_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/ang/0020_000429_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/ang/0020_000429_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/ang/0020_000429_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+
+
+                        
+                      <p> </p>  <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px"><th colspan="4" style="width: 40%">
+                                  <div class="text-left">Script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; <i>I chose the right way.</i></div>
+                                  <div class="text-left"></i>Speaker  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Female (0016)</div>
+                                  <div class="text-left"></i>Emotion  &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;: &nbsp; Sad</div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align: top;"><p>Predicted</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/sad/0016_001091_synthesized.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (weak)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/sad/0016_001091_0.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                         
+                                <td style="vertical-align: top;"><p>Control (medium)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/sad/0016_001091_6.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (strong)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/sad/0016_001091_11.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+                              <td style="vertical-align: top;"><p>Control (increasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/sad/0016_001091_up.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+							  <td style="vertical-align: top;"><p>Control (decreasing)</p>
+                                <div class="text-center">
+                                    <audio id="player" controls>
+                                        <source src="./audio/english/sad/0016_001091_down.wav" type="audio/wav" />
+                                    </audio>
+                                </div>
+                              </td>
+
+                            </tr>                          
+                        </table>
+
+
+</section>
 
     <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
         <!-- Bootstrap core JS-->
