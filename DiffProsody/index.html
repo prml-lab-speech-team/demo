@@ -24,21 +24,53 @@
         <link rel="stylesheet" href="css/body.css">
         <!-- Bootstrap slider CSS -->
         <!-- <link rel="stylesheet" href="css/bootstrap-slider.css"> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" /> -->
+        <script>
+            function createTable(dir, exp, audio, script){
+                html = "<table class=\"table table-responsive align-content-center\" style=\"background-color: white; border-radius: 20px\">"
+                html +="<thead><tr><th colspan=\"5\" style=\"width: 40%\">"
+                html +="<div class=\"text-left\">Script : <i>"
+                html += script["script"]
+                html +="</i></div></th></tr></thead><tbody><tr>"
+                idx = 1;
+                for(var key in exp){
+                    if (idx % 3 == 0){
+                        html += "<tr>"    
+                    }
+                    html +="<td style=\"vertical-align: top;\"><p></p>"
+                    html +=key
+                    // html +="<p><em>ASR: "
+                    // html +=script[exp[key]]
+                    // html +="</em></p>"
+                    html +="<div class=\"text-center\"><audio controls=\"controls\"><source src="
+                    f = dir + "/" + exp[key] + "/" + audio + ".wav"
+                    html += f
+                    html +=" type=\"audio/wav\" /></audio></div></td>"
+                    idx += 1
+                    if (idx % 3 == 0){
+                        html += "</tr>"    
+                    }
+                }
+                html +="</tr></tbody></table>"
+                return html
+            }
+        </script>
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Audio demos</a>
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">DiffProsody</a>
                 <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audios">AUDIOS</a></li>
-                        <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ABLATION">ABLATION STUDIES</a></li> -->
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">Abstact</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audio">Audio</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#pcd">Ablation 1<br>PCD</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#pg">Ablation 2<br>PG</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        
         <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
@@ -53,7 +85,7 @@
             <div class="container">
                 <!-- Portfolio Section Heading-->
                 <div class="text-center">
-                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">ABSTRACT</h2>
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Abstract</h2>
                 </div>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
@@ -70,11 +102,11 @@
             </div>
         </section>
 
-        <section class="page-section bg-primary text-white mb-0" id="audios">
-            <div class="container-fluid">
+        <section class="page-section bg-info text-white mb-0" id="audio">
+            <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">Audio samples </h2>
+                    <h2 class="page-section-heading d-inline-block text-white">Audio</h2>
                 </div>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
@@ -82,64 +114,151 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-auto ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="5" style="width: 40%">
-                                  <div class="text-left">Script : <i><span style="color: red">The forms</span> of printed letters should be beautiful and that their arrangement on the page <span style="color: red">should be</span> reasonable and a help to the shapeliness of the letters themselves.</i></div>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td style="vertical-align: top;"><p>Ground Truth</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/GT/LJ001-0015.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                              <td style="vertical-align: top;"><p>Ground Truth Vocoded</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/wavenet/LJ001-0015.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                              <td style="vertical-align: top;"><p>FastSpeech2</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/waveglow/LJ001-0015.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                            </tr>
+                    <div id="div1" class="col-lg-auto ml-auto">
+                        <script>
+                            dir = "./wavs/audio"
+                            exp = {"GT": "gt",
+                                    "Vocoded": "gt_vocoded",
+                                    "FastSpeech 2": "fs2",
+                                    "ProsoSpeech": "prs",
+                                    "DiffProsody": "dp",
+                                }
+                            audios = {
+                                "p237_002": {
+                                "script":"Ask her to bring these things with her from the store."
+                                },
+                                "p257_009": {
+                                "script":"There is , according to legend, a boiling pot of gold at one end."
+                                },
+                                "p259_002": {
+                                "script":"Ask her to bring these things with her from the store."
+                                },
+                                "p293_015": {
+                                "script":"The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain."
+                                },
+                                "p313_007": {
+                                "script":"The rainbow is a division of white light into many beautiful colors."
+                                },
+                                "p334_004": {
+                                "script":"We also need a small plastic snake and a big toy frog for the kids."
+                                },
+                                "p360_002": {
+                                "script":"Ask her to bring these things with her from the store."
+                                },
+                                "p362_005": {
+                                "script":"She can scoop these things into three red bags, and we will go meet her Wednesday at the train station."
+                                },
+                            }
+                            for(var audio in audios){
+                                div = document.getElementById("div1")
+                                script=audios[audio]
+                                html = createTable(dir, exp, audio, script)
+                                // console.log(html)
+                                div.insertAdjacentHTML("afterend", html);
+                            }
 
-                            <tr>
-                                <td style="vertical-align: top;"><p>ProsoSpeech</p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/hifi_v1/LJ001-0015.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;"><p><b>DiffProsody</b></p>
-                                <div class="text-center">
-                                    <audio controls="controls">
-                                        <source src="./wav/audio/fre_v1/LJ001-0015.wav" type="audio/wav" />
-                                    </audio>
-                                </div>
-                              </td>
-                                <td style="vertical-align: top;">
-                                <div class="text-center">
-                                    <img />
-                                </div>
-                              </td>
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                            </tr>
-                          </tbody>
-                        </table>
+        <section class="page-section bg-primary text-white mb-0" id="pcd">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">Ablation 1</h2>
+                    <br><h3 class="d-inline-block text-white">Prosody Conditional Discriminator</h3>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+                <div class="row">
+                    <div id="div2" class="col-lg-auto ml-auto">
+                        <script>
+                            dir = "./wavs/pcd"
+                            exp = {"GT": "gt",
+                                    "Vocoded": "gt_vocoded",
+                                    "DiffProsody (uncond.)": "uncond",
+                                    "DiffProsody (cond.)": "cond",
+                                }
+                            audios = {
+                                "p225_001": {
+                                "script":"Please call Stella."
+                                },
+                                "p227_004": {
+                                "script":"We also need a small plastic snake and a big toy frog for the kids."
+                                },
+                                "p228_002": {
+                                "script":"Ask her to bring these things with her from the store."
+                                },
+                                "p243_003": {
+                                "script":"Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob."
+                                },
+
+                            }
+                            for(var audio in audios){
+                                div = document.getElementById("div2")
+                                script=audios[audio]
+                                html = createTable(dir, exp, audio, script)
+                                // console.log(html)
+                                div.insertAdjacentHTML("afterend", html);
+                            }
+
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-info text-white mb-0" id="pg">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">Ablation 2</h2>
+                    <br><h3 class="d-inline-block text-white">Latent Diffusion-based Prosody Generator</h3>
+
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom"></div>
+                </div>
+
+                <div class="row">
+                    <div id="div3" class="col-lg-auto ml-auto">
+                        <script>
+                            dir = "./wavs/pg"
+                            exp = {"GT": "gt",
+                                    "Vocoded": "gt_vocoded",
+                                    "AR": "ar",
+                                    "DDPM": "ddpm",
+                                    "DDGAN": "ddgan",
+                                }
+                            audios = {
+                                "p300_018": {
+                                "script":"Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain."
+                                },
+                                "p301_013": {
+                                "script":"Some have accepted it as a miracle without physical explanation."
+                                },
+                                "p302_017": {
+                                "script":"Others have tried to explain the phenomenon physically."
+                                },
+                                "p330_011": {
+                                "script":"When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow."
+                                },
+                            }
+                            for(var audio in audios){
+                                div = document.getElementById("div3")
+                                script=audios[audio]
+                                html = createTable(dir, exp, audio, script)
+                                // console.log(html)
+                                div.insertAdjacentHTML("afterend", html);
+                            }
+
+                        </script>
                     </div>
                 </div>
             </div>
