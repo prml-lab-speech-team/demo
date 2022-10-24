@@ -96,11 +96,11 @@
                               <th colspan="3"><p><em>Audio: p253_144 </em></p>
                                 <div id="emo_button" class="col-lg-12 ml-auto">
                         <h7>Sampling rate</h7>
-						<input id="sr0" type='button' value='2kHz' onclick="sr_click(0);"/>
-						<input id="sr1" type='button' value='4kHz' onclick="sr_click(1);"/>
-						<input id="sr2" type='button' value='8kHz' onclick="sr_click(2);"/>
-						<input id="sr3" type='button' value='12kHz' onclick="sr_click(3);"/>
-						<input id="sr4" type='button' value='16kHz' onclick="sr_click(4);"/>
+						<input id="sr2000" type='button' value='2kHz' onclick="sr_click(2000);"/>
+						<input id="sr4000" type='button' value='4kHz' onclick="sr_click(4000);"/>
+						<input id="sr8000" type='button' value='8kHz' onclick="sr_click(8000);"/>
+						<input id="sr12000" type='button' value='12kHz' onclick="sr_click(12000);"/>
+						<input id="sr16000" type='button' value='16kHz' onclick="sr_click(16000);"/>
                     </div>
                               <!--<p><em>When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</em></p></th>-->
                             </tr>
@@ -108,411 +108,45 @@
                           <tbody>
                             <tr>
                               <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <audio id="player" controls >
-                                    <source src="audio/audiosr/gt/p253_144.wav" type="audio/wav" />
+                                <audio id="asr_gt" controls >
+                                    <source id="asr_src_gt" src="audio/audiosr/gt/2000/p253_144.wav" type="audio/wav" />
                                 </audio>
                               </td>
-                              <td><p><strong>GT (HiFi-GAN)</strong></p>
-                                <p><em>ASR: When a man looks for something beyond his reach his friends say he is looking for the pot of gold at the end of the <span style="color:red">rinbo</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vocoded/generated_p238_011.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>Tacotron 2</strong></p>
-                                <p><em>ASR: When a man looks for something beyond his reach his friends say he is looking for the pot of gold at the end of the rainbow.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/tacotron2/generated_p238_011.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>Glow-TTS</strong></p>
-                                <p><em>ASR: When a man looks for something beyond his reach his friends say he is looking for the pot of gold at the end of the rainbow.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/glow-tts/generated_p238_011.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>PortaSpeech</strong></p>
-                                <p><em>ASR: <span style="color:red">While</span> a man looks for something beyond his reach his <span style="color:red">fenceay</span> he is looking for the pot of <span style="color:red">gord</span> at the end of the rainbow.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/portaspeech/generated_p238_011.wav" type="audio/wav" />
+                              <td><p><strong>GT (degraded)</strong></p>
+                                <audio id="asr_src" controls >
+                                    <source id="asr_src_src" src="audio/audiosr/src/2000/p253_144.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: <span style="color:red">Ur</span> man looks for something beyond his reach his friends <span style="color:red">see</span> he is looking for the pot of gold at the end of the rainbow.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vits/generated_p238_011.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: When a man looks for something beyond his reach his friends say he is looking for the pot of gold at the end of the rainbow.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/hierspeech/generated_p238_011.wav" type="audio/wav" />
-                                </audio>
-                              </td>
+                              <td><img id="asr_img_gt" src="audio/audiosr/gt/2000/p253_144.png" width="100%"></td>
+                              <td><img id="asr_img_src" src="audio/audiosr/src/2000/p253_144.png" width="100%"></td>
                             </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 2 (p243): </em></p>
-                              <p><em>Throughout the centuries people have explained the rainbow in various ways.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: <span style="color:red">Oughout</span> the <span style="color:red">senturies</span> people have explained the rainbow in various <span style="color:red">way</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/gt/generated_p243_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>GT (HiFi-GAN)</strong></p>
-                                <p><em>ASR: <span style="color:red">Oughout</span> the <span style="color:red">senturies</span> people have explained the rainbow in various <span style="color:red">wa</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vocoded/generated_p243_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>Tacotron 2</strong></p>
-                                <p><em>ASR: <span style="color:red">Roughout</span> the centuries people have explained the rainbow in various <span style="color:red">way</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/tacotron2/generated_p243_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>Glow-TTS</strong></p>
-                                <p><em>ASR: <span style="color:red">Ura</span> <span style="color:red">de</span> <span style="color:red">senchis</span> people have explained the rainbow in various <span style="color:red">way</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/glow-tts/generated_p243_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>PortaSpeech</strong></p>
-                                <p><em>ASR: <span style="color:red">Ou</span> <span style="color:red">at</span> the <span style="color:red">senturies</span> people have explained the rainbow <span style="color:red">(in)</span> various <span style="color:red">way</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/portaspeech/generated_p243_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: <span style="color:red">Hroughout</span> the centuries people have explained <span style="color:red">a</span> rainbow <span style="color:red">(in)</span> various <span style="color:red">way</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vits/generated_p243_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: <span style="color:red">Roughout</span> <span style="color:red">te</span> <span style="color:red">centus</span> people have <span style="color:red">expplained</span> the rainbow <span style="color:red">i</span> various <span style="color:red">way</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/hierspeech/generated_p243_012.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
 
 
-                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
                             <tr>
-                              <th colspan="3"><p><em>Sentence 3 (p362): </em></p>
-                              <p><em>We are being realistic about the challenges ahead.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: We are being realistic about the challenges ahead.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/gt/generated_p362_025.wav" type="audio/wav" />
+                              <td rowspan="1" style="vertical-align: top;"><p><strong>HiFi-GAN</strong></p>
+                                <audio id="asr_hifigan" controls >
+                                    <source id="asr_src_hifigan" src="audio/audiosr/hifigan/2000/p253_144.wav" type="audio/wav" />
                                 </audio>
                               </td>
-                              <td><p><strong>GT (HiFi-GAN)</strong></p>
-                                <p><em>ASR: We are being realistic about the challenges ahead.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vocoded/generated_p362_025.wav" type="audio/wav" />
+                              <td><p><strong>NU-Wave 2</strong></p>
+                                <audio id="asr_nu" controls >
+                                    <source id="asr_src_nu" src="audio/audiosr/nu/2000/p253_144.wav" type="audio/wav" />
+                                </audio>
+                              </td>
+                              <td><p><strong>Fre-Painter</strong></p>
+                                <audio id="asr_ours" controls >
+                                    <source id="asr_src_ours" src="audio/audiosr/ours/2000/p253_144.wav" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
-                            <tr>
-                              <td><p><strong>Tacotron 2</strong></p>
-                                <p><em>ASR: We are being realistic about the challenges ahead.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/tacotron2/generated_p362_025.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>Glow-TTS</strong></p>
-                                <p><em>ASR: <span style="color:red">W</span> are being realistic about the challenges <span style="color:red">a</span> <span style="color:red">hea</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/glow-tts/generated_p362_025.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>PortaSpeech</strong></p>
-                                <p><em>ASR: Weare being realistic about the challenges <span style="color:red">ahea</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/portaspeech/generated_p362_025.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: We are being realistic about the challenges <span style="color:red">a</span> <span style="color:red">it</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vits/generated_p362_025.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: We are being realistic about the challenges ahead.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/hierspeech/generated_p362_025.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
 
-                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 4 (p256): </em></p>
-                              <p><em>This is a very common type of bow, one showing mainly red and yellow, with little or no green or blue.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: This is a very common type of <span style="color:red">bo</span> one showing mainly red and yellow with little or no green or blue.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/gt/generated_p256_024.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>GT (HiFi-GAN)</strong></p>
-                                <p><em>ASR: This is a very common type of bow one showing mainly red and yellow with little or no green or blue.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vocoded/generated_p256_024.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>Tacotron 2</strong></p>
-                                <p><em>ASR: This is a very common type of bow one showing mainly red and yellow with little or no green or blue.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/tacotron2/generated_p256_024.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>Glow-TTS</strong></p>
-                                <p><em>ASR: <span style="color:red">His</span> is a very common type of bow one showing mainly red and yellow with little or no green or blue.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/glow-tts/generated_p256_024.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>PortaSpeech</strong></p>
-                                <p><em>ASR: <span style="color:red">His</span> is a very common type of bow one showing mainly red and <span style="color:red">yelow</span> with little or no green or <span style="color:red">ble</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/portaspeech/generated_p256_024.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: This is a very common type of bow one showing mainly red and yellow with <span style="color:red">lessel</span> <span style="color:red">ar</span> no green <span style="color:red">ubli</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vits/generated_p256_024.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: This is a very common type of bow one showing mainly red and yellow with little or no green or blue.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/hierspeech/generated_p256_024.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
 
-                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
                             <tr>
-                              <th colspan="3"><p><em>Sentence 5 (p282): </em></p>
-                              <p><em>We also need a small plastic snake and a big toy frog for the kids.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: We also need a small <span style="color:red">plastick</span> snake and a big toy frog for the <span style="color:red">k</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/gt/generated_p282_004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>GT (HiFi-GAN)</strong></p>
-                                <p><em>ASR: We also need a small <span style="color:red">plastick</span> snake and a big toy frog for the <span style="color:red">c</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vocoded/generated_p282_004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>Tacotron 2</strong></p>
-                                <p><em>ASR: <span style="color:red">E</span> also need a small <span style="color:red">plasick</span> snake and <span style="color:red"></span> big toy frog for the <span style="color:red">ka</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/tacotron2/generated_p282_004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>Glow-TTS</strong></p>
-                                <p><em>ASR: We also need a small plastic <span style="color:red">smake</span> and a big <span style="color:red">ty</span> <span style="color:red">frock</span> for the <span style="color:red">ti</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/glow-tts/generated_p282_004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>PortaSpeech</strong></p>
-                                <p><em>ASR: We also <span style="color:red">kneed</span> a small plastic snake and a <span style="color:red">beg</span> <span style="color:red">to</span> <span style="color:red">frok</span> for the <span style="color:red">ca</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/portaspeech/generated_p282_004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: We also need a small <span style="color:red">plasteck</span> snake and a big toy <span style="color:red">frolk</span> for the <span style="color:red">ki</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vits/generated_p282_004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: We also need a small plastic snake and a big toy frog for the kids.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/hierspeech/generated_p282_004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 6 (p245): </em></p>
-                              <p><em>The rainbow is a division of white light into many beautiful colors.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: The rainbow is a division of white <span style="color:red">lice</span> into many beautiful colors.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/gt/generated_p245_007.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>GT (HiFi-GAN)</strong></p>
-                                <p><em>ASR: The rainbow is a division of white <span style="color:red">lices</span> into many beautiful colors.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vocoded/generated_p245_007.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>Tacotron 2</strong></p>
-                                <p><em>ASR: The rainbow is a division <span style="color:red">o</span> <span style="color:red"></span> white light into many beautiful <span style="color:red">colours</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/tacotron2/generated_p245_007.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>Glow-TTS</strong></p>
-                                <p><em>ASR: The <span style="color:red">rainbor</span> is a division of white light into many beautiful colors.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/glow-tts/generated_p245_007.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>PortaSpeech</strong></p>
-                                <p><em>ASR: <span style="color:red">Th</span> <span style="color:red">e</span> rainbow is a division of white <span style="color:red">like</span> <span style="color:red">in</span> <span style="color:red">too</span> many beautiful colors.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/portaspeech/generated_p245_007.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: The rainbow is a division of white light into many beautiful colors.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vits/generated_p245_007.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: The rainbow is a division of white light into many beautiful colors.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/hierspeech/generated_p245_007.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 7 (p276): </em></p>
-                              <p><em>Ask her to bring these things with her from the store.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: Ask her to bring these things with her from the store.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/gt/generated_p276_002.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>GT (HiFi-GAN)</strong></p>
-                                <p><em>ASR: Askher to bring these things with her from the store.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vocoded/generated_p276_002.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>Tacotron 2</strong></p>
-                                <p><em>ASR: Ask her to bring these things <span style="color:red">wither</span> from the store.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/tacotron2/generated_p276_002.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>Glow-TTS</strong></p>
-                                <p><em>ASR: Ask her to bring these things with her from the store.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/glow-tts/generated_p276_002.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>PortaSpeech</strong></p>
-                                <p><em>ASR: <span style="color:red">Asked</span> her to bring these things with her from the store.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/portaspeech/generated_p276_002.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: Ask her to bring these things with her <span style="color:red">friend</span> the store.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/vits/generated_p276_002.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: Ask <span style="color:red"></span> her to bring these things with her from the store.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/vctk/hierspeech/generated_p276_002.wav" type="audio/wav" />
-                                </audio>
-                              </td>
+                              <td><img id="asr_img_hifigan" src="audio/audiosr/hifigan/2000/p253_144.png" width="100%"></td>
+                              <td><img id="asr_img_nu" src="audio/audiosr/nu/2000/p253_144.png" width="100%"></td>
+                              <td><img id="asr_img_ours" src="audio/audiosr/ours/2000/p253_144.png" width="100%"></td>
                             </tr>
                           </tbody>
                         </table>
@@ -1554,7 +1188,7 @@
 
             $('#sr'+i).css("background-color", "greenyellow")
 
-            for (j=0;j<5;j++)
+            for (j=0;j<18000;j +=2000)
             {
               if (j!=i)
               {	
@@ -1570,50 +1204,68 @@
         function audio_reload() {
 				
         sr = Number(sr);
-
-
-        if (sr ==0)
-        {
-          console.log(emotion)
-                    var img_name = "./audio/audiosr/2000/p253_144.png";
-          var audio_name = "./audio/audiosr/2000/p253_144.wav";
-        }
-
-        else {
+        console.log(sr)
+          var img_gt = "./audio/audiosr/gt//" + sr + "/p253_144.png";
+          var src_gt = "./audio/audiosr/gt/" + sr + "/p253_144.wav";
+        
+          var img_src = "audio/audiosr/src/" + sr + "/p253_144.png";
+          var src_src = "audio/audiosr/src/" + sr + "/p253_144.wav";
           
-          if (sr == 1)
-          {
-            console.log(emotion)
-            console.log(emotion)
-                    var img_name = "./audio/audiosr/4000/p253_144.png";
-          var audio_name = "./audio/audiosr/4000/p253_144.wav";
-          }
-          else if(sr==2)
-          {
-            console.log(emotion)
-            var img_name = "./audio/audiosr/8000/p253_144.png";
-          var audio_name = "./audio/audiosr/8000/p253_144.wav";
-          }
-          else if(sr==3)
-          {
-            console.log(emotion)
-            var img_name = "./audio/audiosr/12000/p253_144.png";
-          var audio_name = "./audio/audiosr/12000/p253_144.wav";
-          }
-          else{
-            console.log(emotion)
-            var img_name = "./audio/audiosr/16000/p253_144.png";
-          var audio_name = "./audio/audiosr/16000/p253_144.wav";
-        }
-        console.log(img_name)
-        console.log(audio_name)
+          var img_hifigan = "./audio/audiosr/hifigan/" + sr + "/p253_144.png";
+          var src_hifigan = "./audio/audiosr/hifigan/" + sr + "/p253_144.wav";
 
-        $('#img_src').attr("src", img_name);
-        $('#audio_src').attr("src", audio_name);
+          var img_nu = "./audio/audiosr/nu/" + sr + "/p253_144.png";
+          var src_nu = "./audio/audiosr/nu/" + sr + "/p253_144.wav";
 
-        console.log($('#audio_src').val());
-        console.log($("#audio_panel"))
-        $('#audio_panel')[0].load();
+          var img_ours = "./audio/audiosr/ours/" + sr + "/p253_144.png";
+          var src_ours = "./audio/audiosr/ours/" + sr + "/p253_144.wav";
+       
+        console.log(img_gt)
+        console.log(src_gt)
+        
+        console.log(img_src)
+        console.log(src_src)
+
+        console.log(img_hifigan)
+        console.log(src_hifigan)
+
+        console.log(img_nu)
+        console.log(src_nu)
+
+        console.log(img_ours)
+        console.log(src_ours)
+
+
+        $('#asr_img_src').attr("src", img_src);
+        $('#asr_src_src').attr("src", src_src);
+
+        console.log($('#asr_src_src').val());
+        console.log($("#asr_src"))
+        $('#asr_src')[0].load();
+
+
+        $('#asr_img_hifigan').attr("src", img_hifigan);
+        $('#asr_src_hifigan').attr("src", src_hifigan);
+
+        console.log($('#asr_src_hifigan').val());
+        console.log($("#asr_hifigan"))
+        $('#asr_hifigan')[0].load();
+
+
+        $('#asr_img_nu').attr("src", img_nu);
+        $('#asr_src_nu').attr("src", src_nu);
+
+        console.log($('#asr_src_nu').val());
+        console.log($("#asr_nu"))
+        $('#asr_nu')[0].load();
+
+
+        $('#asr_img_ours').attr("src", img_ours);
+        $('#asr_src_ours').attr("src", src_ours);
+
+        console.log($('#asr_src_ours').val());
+        console.log($("#asr_ours"))
+        $('#asr_ours')[0].load();
       
 
               };
