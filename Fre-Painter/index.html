@@ -35,11 +35,12 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#vctk">VCTK</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#libritts">LibriTTS</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#adaptation">Speaker Adaptation</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#conversion">Voice Conversion</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation">Ablation Study</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audiosr">Audio Super-Resolution</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation">Ablation Study</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#tts">Text-to-Speech</a></li>
+                        <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#adaptation">Speaker Adaptation</a></li> -->
+                        <!--<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#conversion">Voice Conversion</a></li>-->
+                          <!--<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation">Ablation Study</a></li>-->
                     </ul>
                 </div>
             </div>
@@ -50,7 +51,7 @@
                 <h1 class="masthead-heading mb-0">FRE-PAINTER: AUDIO FREQUENCY INPAINTING WITH ROBUST SPEECH REPRESENTATION LEARNING OF MASKED AUTOENCODER
 </h1>
                 <!-- Masthead Subheading-->
-                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Anonymous</p>
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Seung-Bin Kim, Sang-Hoon Lee, Ha-Yeoung Choi, and Seong-Whan Lee</p>
             </div>
         </header>
 
@@ -69,26 +70,17 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12 ml-auto">
                       <p class="pre-wrap lead">This paper presents Fre-Painter, a high-fidelity audio frequency inpainting system which is neural audio super-resolution by utilizing robust speech representation learning with various masking strategies. Recently, masked autoencoder has been found beneficial in learning robust representations of audio for speech classification tasks. Following these studies, we leverage these representations and investigate several masking strategies for neural audio superresolution. For the audio frequency inpainting, we propose upperband masking strategy with initialization of masking token which is simple but efficient for upsampling task. Furthermore, we also present mixed-ratio masking strategy which makes model robust for input speech with various sampling rates. Specifically, the experimental results demonstrate that Fre-Painter outperforms other neural audio super-resolution models.</p>
-                        /* <p class="pre-wrap lead">&nbsp;</p>
-                        <p class="pre-wrap lead">&nbsp;</p>
-                        <p class="pre-wrap lead">We compare HierSpeech with several TTS models as:</p>
-                        <p class="pre-wrap lead"> 1. Tacotron2: Autoregressive TTS model <a href="https://google.github.io/tacotron/publications/tacotron2/index.html">[Official Demo page]</a><a href="https://github.com/NVIDIA/tacotron2">[Unofficial Code]</a></a></p>
-                        <p class="pre-wrap lead"> 2. Glow-TTS: Flow-based TTS model with Monotonic Alignment Search and normalizing flow <a href="https://jaywalnut310.github.io/glow-tts-demo/index.html">[Official Demo page]</a><a href="https://google.github.io/tacotron/publications/tacotron2/index.html">[Official Code]</a></a></p>
-                        <p class="pre-wrap lead"> 3. PortaSpeech: Non-autoregressive TTS model with VAE and Normalizing flow <a href="https://portaspeech.github.io/">[Official Demo page]</a><a href="https://github.com/NATSpeech/NATSpeech">[Official Code]</a></p>
-                        <p class="pre-wrap lead"> 4. VITS: Single-stage end-to-end TTS model with VAE augmented normalizing flow and adversarial training <a href="https://github.com/jaywalnut310/vits">[Official Demo page]</a><a href="https://github.com/jaywalnut310/vits">[Official Code]</a></p> */
-                    
-	    <p class="pre-wrap lead">&nbsp;</p>
-	    <p class="pre-wrap lead"> Source code can be available at the Supplementary Materials. Source code will be released after paper notification.</p>
+    
 	    </div>
                 </div>
             </div>
         </section>
 
-        <section class="page-section bg-primary text-white mb-0" id="vctk">
+        <section class="page-section bg-primary text-white mb-0" id="audiosr">
             <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                  <h2 class="page-section-heading d-inline-block text-white">Multi-speaker (VCTK Dataset)</h2>
+                  <h2 class="page-section-heading d-inline-block text-white">Audio Super-Resolution</h2>
                                         <p class="pre-wrap lead"></p>
                 </div>
                 <!-- Icon Divider-->
@@ -101,16 +93,23 @@
                       <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
                           <thead>
                             <tr>
-                              <th colspan="3"><p><em>Sentence 1 (p238): </em></p>
-                              <p><em>When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</em></p></th>
+                              <th colspan="3"><p><em>Audio: p253_144 </em></p>
+                                <div id="emo_button" class="col-lg-12 ml-auto">
+                        <h7>Sampling rate</h7>
+						<input id="sr0" type='button' value='2kHz' onclick="sr_click(0);"/>
+						<input id="sr1" type='button' value='4kHz' onclick="sr_click(1);"/>
+						<input id="sr2" type='button' value='8kHz' onclick="sr_click(2);"/>
+						<input id="sr3" type='button' value='12kHz' onclick="sr_click(3);"/>
+						<input id="sr4" type='button' value='16kHz' onclick="sr_click(4);"/>
+                    </div>
+                              <!--<p><em>When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</em></p></th>-->
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
                               <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: When a man looks for something beyond his reach his friends say he is looking for the pot of gold at the end of the <span style="color:red">rinbo</span>.</em></p>
                                 <audio id="player" controls >
-                                    <source src="audio/vctk/gt/generated_p238_011.wav" type="audio/wav" />
+                                    <source src="audio/audiosr/gt/p253_144.wav" type="audio/wav" />
                                 </audio>
                               </td>
                               <td><p><strong>GT (HiFi-GAN)</strong></p>
@@ -1549,6 +1548,76 @@
 
         <!-- slider JS -->
         <script type="text/javascript">
+        var sr = 0
+        function sr_click(i){
+            sr = i;
+
+            $('#sr'+i).css("background-color", "greenyellow")
+
+            for (j=0;j<5;j++)
+            {
+              if (j!=i)
+              {	
+                $('#sr'+j).css("background-color", "")
+              }	
+            }
+
+
+            audio_reload()
+          }
+
+        
+        function audio_reload() {
+				
+        sr = Number(sr);
+
+
+        if (sr ==0)
+        {
+          console.log(emotion)
+                    var img_name = "./audio/audiosr/2000/p253_144.png";
+          var audio_name = "./audio/audiosr/2000/p253_144.wav";
+        }
+
+        else {
+          
+          if (sr == 1)
+          {
+            console.log(emotion)
+            console.log(emotion)
+                    var img_name = "./audio/audiosr/4000/p253_144.png";
+          var audio_name = "./audio/audiosr/4000/p253_144.wav";
+          }
+          else if(sr==2)
+          {
+            console.log(emotion)
+            var img_name = "./audio/audiosr/8000/p253_144.png";
+          var audio_name = "./audio/audiosr/8000/p253_144.wav";
+          }
+          else if(sr==3)
+          {
+            console.log(emotion)
+            var img_name = "./audio/audiosr/12000/p253_144.png";
+          var audio_name = "./audio/audiosr/12000/p253_144.wav";
+          }
+          else{
+            console.log(emotion)
+            var img_name = "./audio/audiosr/16000/p253_144.png";
+          var audio_name = "./audio/audiosr/16000/p253_144.wav";
+        }
+        console.log(img_name)
+        console.log(audio_name)
+
+        $('#img_src').attr("src", img_name);
+        $('#audio_src').attr("src", audio_name);
+
+        console.log($('#audio_src').val());
+        console.log($("#audio_panel"))
+        $('#audio_panel')[0].load();
+      
+
+              };
+            
         </script>
     </body>
 </html>
