@@ -47,7 +47,7 @@
         <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading mb-0">Fre-Painter: AUDIO FREQUENCY INPAINTING WITH ROBUST SPEECH REPRESENTATION LEARNING OF MASKED AUTOENCODER
+                <h1 class="masthead-heading mb-0">FRE-PAINTER: AUDIO FREQUENCY INPAINTING WITH ROBUST SPEECH REPRESENTATION LEARNING OF MASKED AUTOENCODER
 </h1>
                 <!-- Masthead Subheading-->
                 <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Anonymous</p>
@@ -68,7 +68,16 @@
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     <div class="col-lg-12 ml-auto">
-                      <p class="pre-wrap lead">This paper presents HierSpeech, a high-quality end-to-end text-to-speech (TTS) system based on a hierarchical conditional variational autoencoder (VAE) utilizing self-supervised speech representations. Recently, single-stage TTS systems, which directly generate raw speech waveform from text, have been getting interest thanks to their ability in generating high-quality audio within a fully end-to-end training pipeline. However, there is still a room for improvement in the conventional TTS systems. Since it is challenging to infer both the linguistic and acoustic attributes from the text directly, missing the details of attributes, specifically linguistic information, is inevitable, which results in mispronunciation and over-smoothing problem in their synthetic speech. To address the aforementioned problem, we leverage self-supervised speech representations as additional linguistic representations to bridge an information gap between text and speech. Then, the hierarchical conditional VAE is adopted to connect these representations and to learn each attribute hierarchically by improving the linguistic capability in latent representations. Compared with the state-of-the-art TTS system, HierSpeech achieves +0.303 comparative mean opinion score, and reduces the phoneme error rate of synthesized speech from 9.16% to 5.78% on the VCTK dataset. Furthermore, we extend our model to HierSpeech-U, an untranscribed text-to-speech system. Specifically, HierSpeech-U can adapt to a novel speaker by utilizing self-supervised speech representations without text transcripts. The experimental results reveal that our method outperforms publicly available TTS models, and show the effectiveness of speaker adaptation with untranscribed speech.</p>
+                      <p class="pre-wrap lead">This paper presents Fre-Painter, a high-fidelity audio frequency inpainting system which is neural audio super-resolution by utilizing
+robust speech representation learning with various masking strategies. Recently, masked autoencoder has been found beneficial in
+learning robust representations of audio for speech classification
+tasks. Following these studies, we leverage these representations
+and investigate several masking strategies for neural audio superresolution. For the audio frequency inpainting, we propose upperband masking strategy with initialization of masking token which
+is simple but efficient for upsampling task. Furthermore, we also
+present mixed-ratio masking strategy which makes model robust for
+input speech with various sampling rates. Specifically, the experimental results demonstrate that Fre-Painter outperforms other neural
+audio super-resolution models.
+</p>
                         <p class="pre-wrap lead">&nbsp;</p>
                         <p class="pre-wrap lead">&nbsp;</p>
                         <p class="pre-wrap lead">We compare HierSpeech with several TTS models as:</p>
