@@ -51,7 +51,7 @@
                 <h1 class="masthead-heading mb-0">FRE-PAINTER: AUDIO FREQUENCY INPAINTING WITH ROBUST SPEECH REPRESENTATION LEARNING OF MASKED AUTOENCODER
 </h1>
                 <!-- Masthead Subheading-->
-                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Seung-Bin Kim, Sang-Hoon Lee, Ha-Yeoung Choi, and Seong-Whan Lee</p>
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Seung-Bin Kim, Sang-Hoon Lee, Ha-Yeong Choi, and Seong-Whan Lee</p>
             </div>
         </header>
 
@@ -161,10 +161,10 @@
 
 
 
-        <section class="page-section bg-info text-white mb-0" id="libritts">
+        <section class="page-section bg-info text-white mb-0" id="ablation">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block">Multi-speaker (LibriTTS)</h2>
+                    <h2 class="page-section-heading d-inline-block">Ablation Study</h2>
  
                 </div>
 
@@ -176,28 +176,28 @@
                                             <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
                           <thead>
                             <tr>
-                              <th colspan="3"><p><em>Sentence 1: </em></p>
-                              <p><em>You were not sure i said and was placated by the sound of a faint sigh that passed between us like the flight of a bird in the nigh.</em></p></th>
+                              <th colspan="3"><p><em>Sentence</em></p>
+                             
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: You were not sure i said and was placated by the sound of a faint sigh that passed between us like the flight of a bird in the night.</em></p>
+                              <td rowspan="1" style="vertical-align: top;"><p><strong></strong></p>
+                                <p><em></em></p>
                                 <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_196_122159_000006_000001.wav" type="audio/wav" />
+                                    <source src="" type="audio/wav" />
                                 </audio>
                         </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>You were not sure i said and was placated by the sound of a <span style="color:red">faete side</span> that pass between us like the flight of a bird in the night.</em></p></th>
+                              <td><p><strong></strong></p>
+                                <p><em></em></p></th>
                                 <audio id="player" controls>
-                                    <source src="audio/libritts/vits/generated_196_122159_000006_000001.wav" type="audio/wav" />
+                                    <source src="" type="audio/wav" />
                                 </audio>
                               </td>
-                              <td><p><strong>HierSpeech</strong></p>
-                                <p><em>ASR: You were not sure i said and was placated by the sound of a faint sigh that passed between us like the flight of a bird in the night.</em></p>
+                              <td><p><strong></strong></p>
+                                <p><em></em></p>
                                 <audio id="player" controls>
-                                  <source src="audio/libritts/hierspeech/generated_196_122159_000006_000001.wav" type="audio/wav" />
+                                  <source src="" type="audio/wav" />
                                 </audio></td>
                     
                             </tr>
@@ -205,470 +205,7 @@
                         </table>
 
 
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 2: </em></p>
-                              <p><em>By the edge of the river they stopped and said farewell.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: By the edge of the river they stopped and said farewell.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_101_126859_000003_000000.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: By the edge of the river they stopped and said farewell.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_101_126859_000003_000000.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: By the edge of the river they stopped and said farewell.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_101_126859_000003_000000.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       <p> </p>
-
-                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 3: </em></p>
-                              <p><em>And then i can imagine that i'm dressed gorgeously.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: And then i can imagine that i'm dressed <span style="color:red">gorgeous</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_103_1241_000025_000008.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: And then i can imagine that iam <span style="color:red">dress</span> <span style="color:red">score</span> <span style="color:red">to</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_103_1241_000025_000008.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: And then i can imagine that i'm dressed gorgeously.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_103_1241_000025_000008.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 4: </em></p>
-                              <p><em>And we may be sure that the eldest boy in that brood never forgot the day.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: And we may be sure that the eldest boy in <span style="color:red"></span> that brood <span style="color:red">nver</span> forgot the day.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_8825_292252_000024_000004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: We may be sure that the eldest boy <span style="color:red">an</span> that brood never forgot the day.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_8825_292252_000024_000004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: And we may be sure that the eldest boy in that brood never forgot the day.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_8825_292252_000024_000004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-                        <!--@@@@@@@@@@@@@@@@@@@-->
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 5: </em></p>
-                              <p><em>And, remember, that he had intended to tell me who he was when he arrived, only he was so ill.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: And remember that he had intended to tell me who he was when he arrived only he was so ill.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_8848_293963_000040_000003.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: And remember that he had intended to tell me who he was when he arrived only he was so <span style="color:red">lill</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_8848_293963_000040_000003.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: And remember that he had intended to tell me who he was when he arrived only he was so ill.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_8848_293963_000040_000003.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 6: </em></p>
-                              <p><em>When anne dressed for it she tossed aside the pearl beads she usually wore and took from her trunk the small box that had come to green gables on christmas day. in it was a thread-like gold chain with a tiny pink enamel heart as a pendant.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: When anne dressed for it she tossed aside the pearl beads she usually wore and took from her trunk the small box that had come to green gables on christmas day in it was a <span style="color:red">thread</span> <span style="color:red">like</span> gold chain with a tiny pink enamel heart as a pendant.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_112_123216_000037_000001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: <span style="color:red">An</span> <span style="color:red">anderos</span> for as she <span style="color:red">dust</span> <span style="color:red">decide</span> the <span style="color:red">perl</span> <span style="color:red">beas</span> she <span style="color:red">were</span> <span style="color:red">'n</span> <span style="color:red">too</span> <span style="color:red">ofron</span> the small <span style="color:red">boxe</span> come to green gables on christmas day and it was a <span style="color:red">threadlik</span> gold chain with <span style="color:red">ha</span> tiny pink and <span style="color:red">amehars</span> <span style="color:red">an</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_112_123216_000037_000001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: When <span style="color:red">un</span> dressed for as she tossed <span style="color:red">us</span> <span style="color:red">side</span> the pearl <span style="color:red">beast</span> she usually wore and from her trunk the small box that had come to green gables on christmas day and it was a <span style="color:red">thril</span> <span style="color:red">like</span> gold chain with a tiny pink and <span style="color:red">emmal</span> <span style="color:red">hartas</span> a pink.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_112_123216_000037_000001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-                        
-
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 7: </em></p>
-                              <p><em>But there was just nothing to be done with him.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: But there was just nothing to be done with him.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_3072_155948_000011_000006.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: <span style="color:red">That</span> there was just nothing to be done with him.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_3072_155948_000011_000006.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: But there was just nothing to be done with.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_3072_155948_000011_000006.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-
-
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 8: </em></p>
-                              <p><em>It is, of course, now too late for me to give any advice in reference to the proposed scheme of captain fox.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: It is of course now too late for me to give any advice in reference to the proposed scheme of captain fox.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_8479_276730_000015_000002.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: It is of course now too late for me to give any advice in reference to the proposed scheme of captain <span style="color:red">fo</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_8479_276730_000015_000002.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: It is of course now too late for me to give any advice in reference to the proposed scheme of captain fox.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_8479_276730_000015_000002.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-
-
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 9: </em></p>
-                              <p><em>Carol was angry.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: Carol was angry.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_512_124520_000067_000000.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: <span style="color:red">Terol</span> was angry.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_512_124520_000067_000000.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: Carol was angry.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_512_124520_000067_000000.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-
-                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 10: </em></p>
-                              <p><em>What is his name.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: What is his name.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_60_121082_000074_000001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: What is his name.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_60_121082_000074_000001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: What is his name.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_60_121082_000074_000001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 11: </em></p>
-                              <p><em>Lemon syrup.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: <span style="color:red">Emon</span> <span style="color:red">cyrro</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_192_123167_000005_000000.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: Lemon <span style="color:red">rup</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_192_123167_000005_000000.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: Lemon syrup.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_192_123167_000005_000000.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-                    
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 12: </em></p>
-                              <p><em>The two youngest miss thorpes were by themselves in the parlour; and, on anne's quitting it to call her sister, catherine took the opportunity of asking the other for some particulars of their yesterday's party.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: The two youngest miss thorpes were by themselves in the parlour and on anne's quitting it to call her sister catherine took the opportunity of asking the other for some particulars of their yesterday's <span style="color:red">part</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_14_212_000006_000001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: <span style="color:red">T</span> <span style="color:red">n</span> <span style="color:red">as</span> miss <span style="color:red">thortnsells</span> to <span style="color:red">parlo</span> and <span style="color:red">an</span> <span style="color:red">an's</span> <span style="color:red">quittingo</span> to <span style="color:red">cale</span> her sister catherine to the <span style="color:red">up</span> <span style="color:red">ertit</span> of <span style="color:red">s</span> <span style="color:red">any</span> other for some particulars <span style="color:red">ith</span> <span style="color:red"></span> <span style="color:red">yesterday</span> <span style="color:red">per</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_14_212_000006_000001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: The two youngest miss thorpes were by themselves in the parlour and on <span style="color:red">annes</span> quitting it to call her sister catherine took the opportunity of asking the other for some particulars of their yesterday's <span style="color:red">barr</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_14_212_000006_000001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 13: </em></p>
-                              <p><em>'without self- knowledge,' says one of the greatest students of the human heart that ever lived, 'you have no real root in yourselves.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR:Without self knowledge says one of the greatest students of the human heart that ever lived you have no real root in <span style="color:red">yourself</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_8725_294554_000006_000004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR:Without self knowledge says one of the greatest students of the human heart that ever lived you have no real <span style="color:red">rood</span> in yourselves.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_8725_294554_000006_000004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR:Without self knowledge says one of the greatest students of the human heart that ever <span style="color:red">live</span> you have no real root in <span style="color:red">yoursel</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_8725_294554_000006_000004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-
-
-
-
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 14: </em></p>
-                              <p><em>We need not give up the conclusions to which our labors in dream interpretation lead us even though we must consider those conclusions strange.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: We need not give up the conclusions to which our labors in dream interpretation lead us even though we must consider those conclusions strange.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_8776_270778_000029_000001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: We need not give up the conclusions to which our labors in dream <span style="color:red">and</span> interpretation lead us even though we must consider those conclusions <span style="color:red">strang</span>.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_8776_270778_000029_000001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: We need not give up the conclusions to which our labors <span style="color:red">and</span> dream interpretation lead us even though we must consider those conclusions strange.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_8776_270778_000029_000001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
-
-
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 15: </em></p>
-                              <p><em>Her mouth stiffened, the muscles of the cheek contracted on the right side of her pale, nervous face.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: Her mouth stiffened the muscles of the cheek contracted on the right side of her pale nervous face.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/gt/generated_56_1733_000003_000005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS</strong></p>
-                                <p><em>ASR: Her mouth stiffened the muscles of the cheek contracted on the right <span style="color:red">sige</span> of her pale nervous face.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/vits/generated_56_1733_000003_000005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech (Ours)</strong></p>
-                                <p><em>ASR: Her mouth stiffened the muscles of the cheek contracted on the right side of her pale nervous face.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/libritts/hierspeech/generated_56_1733_000003_000005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-
 
 
                         <!--@@@@@@@@@@@@@@@@@@@@-->
@@ -678,11 +215,12 @@
                     </div>
                     </section>
 
-                    <section class="page-section bg-primary text-white mb-0" id="adaptation">
+                    <section class="page-section bg-primary text-white mb-0" id="tts">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block">Speaker Adaptation</h2>
-   <p class="pre-wrap lead">We train the baseline HierSpeech using VCTK (98 speakers) and LibriTTS (1,151 speakers). Based on the pre-trained HierSpeech, we fine-tune each model with 20 samples from each speaker (10 novel speakers from VCTK)</p>
+                    <h2 class="page-section-heading d-inline-block">Speech Synthesis</h2>
+   <!--<p class="pre-wrap lead">We train the baseline HierSpeech using VCTK (98 speakers) and LibriTTS (1,151 speakers). Based on the pre-trained HierSpeech, we fine-tune each model with 20 samples from each speaker (10 novel speakers from VCTK)</p>
+                -->
                 </div>
 
                 <div class="divider-custom divider-light">
@@ -693,36 +231,36 @@
                       <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
                           <thead>
                             <tr>
-                              <th colspan="3"><p><em>Sentence 1: </em></p>
-                              <p><em>Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain.</em></p></th>
+                              <th colspan="3"><p><em>Sentence</em></p>
+                              <p><em></em></p></th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
                               <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: Aristotle thought that the rainbow was caused by the reflection <span style="color:red">f</span> the sun's rays <span style="color:red">on</span> the rain.</em></p>
+                                <p><em></em></p>
                                 <audio id="player" controls >
-                                    <source src="audio/adaptation/gt/generated_p305_018.wav" type="audio/wav" />
+                                    <source src="" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
                             <tr>
-                              <td><p><strong>HierSpeech (Zero-shot)</strong></p>
-                                <p><em>ASR: Aristotle thought <span style="color:red">t</span> the rainbow was caused by reflection <span style="color:red"></span> the sun's rays by the rain.</em></p>
+                              <td><p><strong></strong></p>
+                                <p><em></em></p>
                                 <audio id="player" controls >
-                                    <source src="audio/adaptation/zeroshot/generated_p305_018.wav" type="audio/wav" />
+                                    <source src="" type="audio/wav" />
                                 </audio>
                               </td>
-                              <td><p><strong>HierSpeech</strong></p>
-                                <p><em>ASR: Aristotle thought <span style="color:red"></span> that the rainbow was caused by reflection of <span style="color:red">a</span> sun's rays by the rain.</em></p>
+                              <td><p><strong></strong></p>
+                                <p><em></em></p>
                                 <audio id="player" controls >
-                                    <source src="audio/adaptation/hierspeech/generated_p305_018.wav" type="audio/wav" />
+                                    <source src="" type="audio/wav" />
                                 </audio>
                               </td>
-                              <td><p><strong>HierSpeech-U</strong></p>
-                                <p><em>ASR: Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain.</em></p>
+                              <td><p><strong></strong></p>
+                                <p><em></em></p>
                                 <audio id="player" controls >
-                                    <source src="audio/adaptation/hierspeechu/generated_p305_018.wav" type="audio/wav" />
+                                    <source src="" type="audio/wav" />
                                 </audio>
                               </td>
                             </tr>
@@ -732,440 +270,11 @@
 
 
 
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 2: </em></p>
-                              <p><em>The norsemen considered the rainbow as a bridge over which the gods passed from earth to their home in the sky.</em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <p><em>ASR: The norsemen considered the rainbow as a bridge over which the gods passed from earth to their home in the sky.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/adaptation/gt/generated_p246_016.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p><strong>HierSpeech (Zero-shot)</strong></p>
-                                <p><em>ASR: The norsemen considered the rainbow as a bridge over which the gods passed from earth to their home in the sky.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/adaptation/zeroshot/generated_p246_016.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech</strong></p>
-                                <p><em>ASR: The norsemen considered the rainbow as a bridge over which the gods passed from earth to their home in the sky.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/adaptation/hierspeech/generated_p246_016.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech-U</strong></p>
-                                <p><em>ASR: <span style="color:red">E</span> norsemen considered the rainbow as the bridge over which the gods passed from earth to their home in the sky.</em></p>
-                                <audio id="player" controls >
-                                    <source src="audio/adaptation/hierspeechu/generated_p246_016.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
                   </div>
               </div>
                     </div>
                     </section>   
 
-
-                    <section class="page-section bg-info text-white mb-0" id="conversion"> 
-            <div class="container">
-                <!-- About Section Heading-->
-                <div class="text-center">
-                  <h2 class="page-section-heading d-inline-block text-white">Voice Conversion</h2>
-                                        <p class="pre-wrap lead">All source speech are not seen during training</p>
-                </div>
-                <meta charset="utf-8">
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-12 ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th style="width: 10%">Source Speaker</th>
-                              <th style="width: 10%">Target Speaker</th>
-                              <th style="width: 40%">Converted</th>
-                              <th style="width: 40%">         </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="2" style="vertical-align: top;"><p>p267 (Female)</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/gt/p267_009.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td rowspan="2" style="vertical-align: top;"><p>p227 (Male)</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/gt/p227_004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/autovc/p267_009-to-p227_004.npy.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                
-                              <td><p>VoiceMixer</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/voicemixer/p267_009-to-p227_004.npy.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>VITS</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/vits/generated_p267_009-p227.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                      
-                              <td><p>HierSpeech</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/hierspeech/generated_p267_009-p227.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                           <tr>
-                            <td rowspan="2" style="vertical-align: top;">
-                              </td>
-                              <td rowspan="2" style="vertical-align: top;"><p>p234 (Female)</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/gt/p234_007.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/autovc/p267_009-to-p234_007.npy.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                
-                              <td><p>VoiceMixer</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/voicemixer/p267_009-to-p234_007.npy.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>VITS</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/vits/generated_p267_009-p234.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                      
-                              <td><p>HierSpeech</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/hierspeech/generated_p267_009-p234.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              </tr>
-                         
-                          </tbody>
-                        </table>
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th style="width: 10%">Source Speaker</th>
-                              <th style="width: 10%">Target Speaker</th>
-                              <th style="width: 40%">Converted</th>
-                              <th style="width: 40%">         </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="2" style="vertical-align: top;"><p>p259 (Male)</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/gt/p259_004.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td rowspan="2" style="vertical-align: top;"><p>p237 (Male)</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/gt/p237_013.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/autovc/p259_004-to-p237_013.npy.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                
-                              <td><p>VoiceMixer</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/voicemixer/p259_004-to-p237_013.npy.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>VITS</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/vits/generated_p259_004-p237.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                      
-                              <td><p>HierSpeech</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/hierspeech/generated_p259_004-p237.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                           <tr>
-                            <td rowspan="2" style="vertical-align: top;">
-                              </td>
-                              <td rowspan="2" style="vertical-align: top;"><p>p231 (Female)</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/gt/p231_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/autovc/p259_004-to-p231_005.npy.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                
-                              <td><p>VoiceMixer</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/voicemixer/p259_004-to-p231_005.npy.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>VITS</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/vits/generated_p259_004-p231.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                      
-                              <td><p>HierSpeech</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/hierspeech/generated_p259_004-p231.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              </tr>
-                         
-                          </tbody>
-                        </table>
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th style="width: 10%">Source Speaker</th>
-                              <th style="width: 10%">Target Speaker</th>
-                              <th style="width: 40%">Converted</th>
-                              <th style="width: 40%">         </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="2" style="vertical-align: top;"><p>p239 (Female)</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/gt/p239_010.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td rowspan="2" style="vertical-align: top;"><p>p270 (Male)</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/gt/p270_024.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/autovc/p239_010-to-p270_024.npy.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                
-                              <td><p>VoiceMixer</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/voicemixer/p239_010-to-p270_024.npy.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>VITS</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/vits/generated_p239_010-p270.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                      
-                              <td><p>HierSpeech</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/hierspeech/generated_p239_010-p270.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                           <tr>
-                            <td rowspan="2" style="vertical-align: top;">
-                              </td>
-                              <td rowspan="2" style="vertical-align: top;"><p>p231 (Female)</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/gt/p231_005.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p>AutoVC</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/autovc/p239_010-to-p231_005.npy.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                
-                              <td><p>VoiceMixer</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/voicemixer/p239_010-to-p231_005.npy.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><p>VITS</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/vits/generated_p239_010-p231.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                      
-                              <td><p>HierSpeech</p>
-                                <audio controls style="width: 240px;">
-                                    <source src="audio/vc/hierspeech/generated_p239_010-p231.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              </tr>
-                         
-                          </tbody>
-                        </table>
-                      <p> </p>  
-                      </div>
-                      </div>
-                      </div>
-                      </section>   
-                      <section class="page-section bg-primary text-white mb-0" id="ablation">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block">Ablation Study</h2>
-                         <p class="pre-wrap lead"></p>   
-   <p class="pre-wrap lead">PP: Phoneme Predictor, AE: Acoustic Encoder</p>
- 
-                </div>
-
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-auto ml-auto">
-                                            <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 1: </em></p>
-                              <p><em>The rainbow is a division of white light into many beautiful colors.  </em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                               
-                                <audio id="player" controls >
-                                    <source src="audio/ablation/gt/generated_p237_007.wav" type="audio/wav" />
-                                </audio>
-                        </td>
-                        </tr>
-                        <tr>
-                     <td><p><strong>VITS (300k)</strong></p>
-                                <audio id="player" controls>
-                                    <source src="audio/ablation/vits_300k/generated_p237_007.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS w flow 8 (300k)</strong></p>
-                                <audio id="player" controls>
-                                    <source src="audio/ablation/vits_flow8_300k/generated_p237_007.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS w PP (300k)</strong></p>
-                                <audio id="player" controls>
-                                  <source src="audio/ablation/vits_pp_300k/generated_p237_007.wav" type="audio/wav" />
-                                </audio></td>
-                    
-                            </tr>
-                                                    <tr>
-                     <td><p><strong>HierSpeech (300k)</strong></p>
-                                <audio id="player" controls>
-                                    <source src="audio/ablation/hierspeech_300k/generated_p237_007.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech w.o AE (300k)</strong></p>
-                                <audio id="player" controls>
-                                    <source src="audio/ablation/hierspeech_wo_ae/generated_p237_007.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech w.o AE and PP (300k)</strong></p>
-                                <audio id="player" controls>
-                                  <source src="audio/ablation/hierspeech_wo_ae_pp/generated_p237_007.wav" type="audio/wav" />
-                                </audio></td>
-                    
-                            </tr>
-                          </tbody>
-                        </table>
-    <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                          <thead>
-                            <tr>
-                              <th colspan="3"><p><em>Sentence 2: </em></p>
-                              <p><em>Please call stella. </em></p></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                               
-                                <audio id="player" controls >
-                                    <source src="audio/ablation/gt/generated_p257_001.wav" type="audio/wav" />
-                                </audio>
-                        </td>
-                        </tr>
-                        <tr>
-                     <td><p><strong>VITS (300k)</strong></p>
-                                <audio id="player" controls>
-                                    <source src="audio/ablation/vits_300k/generated_p257_001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS w flow 8 (300k)</strong></p>
-                                <audio id="player" controls>
-                                    <source src="audio/ablation/vits_flow8_300k/generated_p257_001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>VITS w PP (300k)</strong></p>
-                                <audio id="player" controls>
-                                  <source src="audio/ablation/vits_pp_300k/generated_p257_001.wav" type="audio/wav" />
-                                </audio></td>
-                    
-                            </tr>
-                                                    <tr>
-                     <td><p><strong>HierSpeech (300k)</strong></p>
-                                <audio id="player" controls>
-                                    <source src="audio/ablation/hierspeech_300k/generated_p257_001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech w.o AE (300k)</strong></p>
-                                <audio id="player" controls>
-                                    <source src="audio/ablation/hierspeech_wo_ae/generated_p257_001.wav" type="audio/wav" />
-                                </audio>
-                              </td>
-                              <td><p><strong>HierSpeech w.o AE and PP (300k)</strong></p>
-                                <audio id="player" controls>
-                                  <source src="audio/ablation/hierspeech_wo_ae_pp/generated_p257_001.wav" type="audio/wav" />
-                                </audio></td>
-                    
-                            </tr>
-                          </tbody>
-                        </table>
-                      <p> </p>
-                  </div>
-              </div>
-   </div>
-                    </section>  
 
 
 
