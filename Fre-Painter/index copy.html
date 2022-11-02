@@ -96,11 +96,11 @@
                               <th colspan="3"><p><em>Audio: p253_144 </em></p>
                                 <div id="emo_button" class="col-lg-12 ml-auto">
                         <h7>Sampling rate</h7>
-						<input id="sr2000" type='button' value='2kHz' onclick="sr_click(2000,'p253_144');"/>
-						<input id="sr4000" type='button' value='4kHz' onclick="sr_click(4000,'p253_144');"/>
-						<input id="sr8000" type='button' value='8kHz' onclick="sr_click(8000,'p253_144');"/>
-						<input id="sr12000" type='button' value='12kHz' onclick="sr_click(12000,'p253_144');"/>
-						<input id="sr16000" type='button' value='16kHz' onclick="sr_click(16000,'p253_144');"/>
+						<input id="sr2000" type='button' value='2kHz' onclick="sr_click(2000);"/>
+						<input id="sr4000" type='button' value='4kHz' onclick="sr_click(4000);"/>
+						<input id="sr8000" type='button' value='8kHz' onclick="sr_click(8000);"/>
+						<input id="sr12000" type='button' value='12kHz' onclick="sr_click(12000);"/>
+						<input id="sr16000" type='button' value='16kHz' onclick="sr_click(16000);"/>
                     </div>
                               <!--<p><em>When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</em></p></th>-->
                             </tr>
@@ -168,14 +168,14 @@
                                             <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
                                               <thead>
                             <tr>
-                              <th colspan="3"><p><em>Audio: p336_087 </em></p>
+                              <th colspan="3"><p><em>Audio: p253_144 </em></p>
                                 <div id="abl_button" class="col-lg-12 ml-auto">
                         <h7>Sampling rate</h7>
-						<input id="ssr2000" type='button' value='2kHz' onclick="abla_click(2000, 'p336_087');"/>
-						<input id="ssr4000" type='button' value='4kHz' onclick="abla_click(4000, 'p336_087');"/>
-						<input id="ssr8000" type='button' value='8kHz' onclick="abla_click(8000, 'p336_087');"/>
-						<input id="ssr12000" type='button' value='12kHz' onclick="abla_click(12000, 'p336_087');"/>
-						<input id="ssr16000" type='button' value='16kHz' onclick="abla_click(16000, 'p336_087');"/>
+						<input id="sr2000" type='button' value='2kHz' onclick="sr_click(2000);"/>
+						<input id="sr4000" type='button' value='4kHz' onclick="sr_click(4000);"/>
+						<input id="sr8000" type='button' value='8kHz' onclick="sr_click(8000);"/>
+						<input id="sr12000" type='button' value='12kHz' onclick="sr_click(12000);"/>
+						<input id="sr16000" type='button' value='16kHz' onclick="sr_click(16000);"/>
                     </div>
                               <!--<p><em>When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</em></p></th>-->
                             </tr>
@@ -183,42 +183,42 @@
                           <tbody>
                             <tr>
                               <td rowspan="1" style="vertical-align: top;"><p><strong>GT</strong></p>
-                                <audio id="abl_gt" controls >
-                                    <source id="abl_src_gt" src="audio/ablation/gt/8000/p336_087.wav" type="audio/wav" />
+                                <audio id="asr_gt" controls >
+                                    <source id="asr_src_gt" src="audio/ablation/gt/8000/p336_087.wav" type="audio/wav" />
                                 </audio>
-                                <img id="abl_img_gt" src="audio/ablation/gt/8000/p336_087.png" width="100%">
+                                <img id="asr_img_gt" src="audio/ablation/gt/8000/p336_087.png" width="100%">
                               </td>
                               <td><p><strong>GT (degraded)</strong></p>
-                                <audio id="abl_src" controls >
-                                    <source id="abl_src_src" src="audio/ablation/src/8000/p336_087.wav" type="audio/wav" />
+                                <audio id="asr_src" controls >
+                                    <source id="asr_src_src" src="audio/ablation/src/8000/p336_087.wav" type="audio/wav" />
                                 </audio>
-                                <img id="abl_img_src" src="audio/ablation/src/8000/p336_087.png" width="100%">
+                                <img id="asr_img_src" src="audio/ablation/src/8000/p336_087.png" width="100%">
                               </td>
                               <td><p><strong>Fre-Painter</strong></p>
-                                <audio id="abl_ours" controls >
-                                    <source id="abl_src_ours" src="audio/ablation/ours/8000/p336_087.wav" type="audio/wav" />
+                                <audio id="asr_src" controls >
+                                    <source id="asr_src_src" src="audio/ablation/ours/8000/p336_087.wav" type="audio/wav" />
                                 </audio>
-                                <img id="abl_img_ours" src="audio/ablation/ours/8000/p336_087.png" width="100%">
+                                <img id="asr_img_src" src="audio/ablation/ours/8000/p336_087.png" width="100%">
                               </td>
                             </tr>
                             <tr>
                               <td rowspan="1" style="vertical-align: top;"><p><strong>w/o pre-training</strong></p>
-                                <audio id="abl_pt" controls >
-                                    <source id="abl_src_pt" src="audio/ablation/scratch/8000/p336_087.wav" type="audio/wav" />
+                                <audio id="asr_hifigan" controls >
+                                    <source id="asr_src_hifigan" src="audio/ablation/scratch/8000/p336_087.wav" type="audio/wav" />
                                 </audio>
-                                <img id="abl_img_pt" src="audio/ablation/scratch/8000/p336_087.png" width="100%">
+                                <img id="asr_img_hifigan" src="audio/ablation/scratch/8000/p336_087.png" width="100%">
                               </td>
                               <td><p><strong>w/o initialization</strong></p>
-                                <audio id="abl_init" controls >
-                                    <source id="abl_src_init" src="audio/ablation/woinit/8000/p336_087.wav" type="audio/wav" />
+                                <audio id="asr_nu" controls >
+                                    <source id="asr_src_nu" src="audio/ablation/woinit/8000/p336_087.wav" type="audio/wav" />
                                 </audio>
-                                <img id="abl_img_init" src="audio/ablation/woinit/8000/p336_087.png" width="100%">
+                                <img id="asr_img_nu" src="audio/ablation/woinit/8000/p336_087.png" width="100%">
                               </td>
                               <td><p><strong>w/o masking</strong></p>
-                                <audio id="abl_mask" controls >
-                                    <source id="abl_src_mask" src="audio/ablation/womasking/8000/p336_087.wav" type="audio/wav" />
+                                <audio id="asr_ours" controls >
+                                    <source id="asr_src_ours" src="audio/ablation/womasking/8000/p336_087.wav" type="audio/wav" />
                                 </audio>
-                                <img id="abl_img_mask" src="audio/ablation/womasking/8000/p336_087.png" width="100%">
+                                <img id="asr_img_ours" src="audio/ablation/womasking/8000/p336_087.png" width="100%">
                               </td>
                             </tr>
                           </tbody>
@@ -314,10 +314,9 @@
         <!-- slider JS -->
         <script type="text/javascript">
         var sr = 0
-        function sr_click(i, name){
+        function sr_click(i){
             sr = i;
-            wav_name = '/'+name+'.wav';
-            png_name = '/'+name+'.png';
+
             $('#sr'+i).css("background-color", "greenyellow")
 
             for (j=0;j<18000;j +=2000)
@@ -337,21 +336,21 @@
 				
         sr = Number(sr);
         console.log(sr)
-          var img_gt = "./audio/audiosr/gt/" + sr + png_name;
-          var src_gt = "./audio/audiosr/gt/" + sr + wav_name;
+          var img_gt = "./audio/audiosr/gt//" + sr + "/p253_144.png";
+          var src_gt = "./audio/audiosr/gt/" + sr + "/p253_144.wav";
         
-          var img_src = "audio/audiosr/src/" + sr + png_name;
-          var src_src = "audio/audiosr/src/" + sr + wav_name;
+          var img_src = "audio/audiosr/src/" + sr + "/p253_144.png";
+          var src_src = "audio/audiosr/src/" + sr + "/p253_144.wav";
           
-          var img_hifigan = "./audio/audiosr/hifigan/" + sr + png_name;
-          var src_hifigan = "./audio/audiosr/hifigan/" + sr + wav_name;
+          var img_hifigan = "./audio/audiosr/hifigan/" + sr + "/p253_144.png";
+          var src_hifigan = "./audio/audiosr/hifigan/" + sr + "/p253_144.wav";
 
-          var img_nu = "./audio/audiosr/nu/" + sr + png_name;
-          var src_nu = "./audio/audiosr/nu/" + sr + wav_name;
+          var img_nu = "./audio/audiosr/nu/" + sr + "/p253_144.png";
+          var src_nu = "./audio/audiosr/nu/" + sr + "/p253_144.wav";
 
-          var img_ours = "./audio/audiosr/ours/" + sr + png_name;
-          var src_ours = "./audio/audiosr/ours/" + sr + wav_name;
-
+          var img_ours = "./audio/audiosr/ours/" + sr + "/p253_144.png";
+          var src_ours = "./audio/audiosr/ours/" + sr + "/p253_144.wav";
+       
         console.log(img_gt)
         console.log(src_gt)
         
@@ -402,108 +401,6 @@
 
               };
             
-
-
-              function abla_click(i, name){
-            sr = i;
-            wav_name = '/'+name+'.wav';
-            png_name = '/'+name+'.png';
-            $('#ssr'+i).css("background-color", "greenyellow")
-
-            for (j=0;j<18000;j +=2000)
-            {
-              if (j!=i)
-              {	
-                $('#ssr'+j).css("background-color", "")
-              }	
-            }
-
-
-            audio_reload2()
-          }
-
-        
-        function audio_reload2() {
-				
-        sr = Number(sr);
-        console.log(sr)
-          var img_gt = "./audio/ablation/gt/" + sr + png_name;
-          var src_gt = "./audio/ablation/gt/" + sr + wav_name;
-        
-          var img_src = "audio/ablation/src/" + sr + png_name;
-          var src_src = "audio/ablation/src/" + sr + wav_name;
-          
-          var img_ours = "./audio/ablation/ours/" + sr + png_name;
-          var src_ours = "./audio/ablation/ours/" + sr + wav_name;
-
-          var img_pt = "./audio/ablation/scratch/" + sr + png_name;
-          var src_pt = "./audio/ablation/scratch/" + sr + wav_name;
-
-          var img_init = "./audio/ablation/woinit/" + sr + png_name;
-          var src_init = "./audio/ablation/woinit/" + sr + wav_name;
-
-          var img_mask = "./audio/ablation/womasking/" + sr + png_name;
-          var src_mask = "./audio/ablation/womasking/" + sr + wav_name;
-
-        console.log(img_gt)
-        console.log(src_gt)
-        
-        console.log(img_src)
-        console.log(src_src)
-
-        console.log(img_ours)
-        console.log(src_ours)
-
-        console.log(img_pt)
-        console.log(src_pt)
-
-        console.log(img_init)
-        console.log(src_init)
-
-        console.log(img_mask)
-        console.log(src_mask)
-
-
-        $('#abl_img_src').attr("src", img_src);
-        $('#abl_src_src').attr("src", src_src);
-
-        console.log($('#abl_src_src').val());
-        console.log($("#abl_src"))
-        $('#abl_src')[0].load();
-
-        
-        $('#abl_img_ours').attr("src", img_ours);
-        $('#abl_src_ours').attr("src", src_ours);
-
-        console.log($('#abl_src_ours').val());
-        console.log($("#abl_ours"))
-        $('#abl_ours')[0].load();
-
-
-        $('#abl_img_pt').attr("src", img_pt);
-        $('#abl_src_pt').attr("src", src_pt);
-
-        console.log($('#abl_src_pt').val());
-        console.log($("#abl_pt"))
-        $('#abl_pt')[0].load();
-
-
-        $('#abl_img_init').attr("src", img_init);
-        $('#abl_src_init').attr("src", src_init);
-
-        console.log($('#abl_src_init').val());
-        console.log($("#abl_init"))
-        $('#abl_init')[0].load();
-      
-
-        $('#abl_img_mask').attr("src", img_mask);
-        $('#abl_src_mask').attr("src", src_mask);
-
-        console.log($('#abl_src_mask').val());
-        console.log($("#abl_mask"))
-        $('#abl_mask')[0].load();
-
-              };
         </script>
     </body>
 </html>
