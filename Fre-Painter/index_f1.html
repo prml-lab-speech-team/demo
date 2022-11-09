@@ -30,15 +30,17 @@
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Audio Demos</a>
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Audio demos</a>
                 <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audiblefrequency">Audible Frequency</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audiosr">Fre-Painter</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">ABSTRACT</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#audiosr">Audio Super-Resolution</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation">Ablation Study</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#tts">Speech Synthesis</a></li>
+                        <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#adaptation">Speaker Adaptation</a></li> -->
+                        <!--<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#conversion">Voice Conversion</a></li>-->
+                          <!--<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation">Ablation Study</a></li>-->
                     </ul>
                 </div>
             </div>
@@ -74,58 +76,11 @@
             </div>
         </section>
 
-        <section class="page-section bg-primary text-white mb-0" id="audiblefrequency">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block">Audible Frequency</h2>
- 
-                </div>
-
-                <div class="divider-custom divider-light">
-                    <p class="pre-wrap lead">For more accurate listening, it is recommended to conduct a simple audible frequency test.</p>
-                        
-                </div>
-                <div class="row text-center">
-                    <div class="col-lg-auto ml-auto">
-                      <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                             
-                        <thead>
-                            <tr>
-                              <th>
-                        <div class="col-lg-12 ml-auto">
-                          <h9>&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</h9>
-
-                          <br>
-                          <p style="color:red;">WARNING: HIGH-FREQUENCY SAMPLES WITH LOUD VOLUME MAY HAVE PAINFUL SOUND!</p>
-                          <span id="test-val1">1000 Hz  </span>&nbsp;&nbsp;
-                          <input id="test_sr" type="input" data-slider-min="1000" data-slider-max="11000"
-                               data-slider-step="1000" data-slider-value="0" data-slider-enabled="true"/>&nbsp;&nbsp;
-                          <span id="test-val2">11000 Hz</span>
-                          <br>
-                          <audio id="audio_panel" controls >
-                            <source id="test_audio_src" src="audio/test/1000.wav" type="audio/wav" />
-                          </audio>  
-                          <br>
-                          <img id="test_img_src" src="audio/test/1000.png" width="50%">
-                          <br>
-                          <h9>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</h9>
-                        </div>
-                              <!--<p><em>When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.</em></p></th>-->
-                            </tr>
-                          </thead>
-                          
-                        </table>
-                      <p> </p>
-                  </div>
-              </div>
-                    </div>
-                    </section>
-
-        <section class="page-section bg-info text-white mb-0" id="audiosr">
+        <section class="page-section bg-primary text-white mb-0" id="audiosr">
             <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
-                  <h2 class="page-section-heading d-inline-block text-white">Fre-Painter</h2>
+                  <h2 class="page-section-heading d-inline-block text-white">Audio Super-Resolution</h2>
                                         <p class="pre-wrap lead"></p>
                 </div>
                 <!-- Icon Divider-->
@@ -431,7 +386,7 @@
 
 
 
-        <section class="page-section bg-primary text-white mb-0" id="ablation">
+        <section class="page-section bg-info text-white mb-0" id="ablation">
             <div class="container">
                 <div class="text-center">
                     <h2 class="page-section-heading d-inline-block">Ablation Study</h2>
@@ -507,7 +462,7 @@
                     </div>
                     </section>
 
-                    <section class="page-section bg-info text-white mb-0" id="tts">
+                    <section class="page-section bg-primary text-white mb-0" id="tts">
             <div class="container">
                 <div class="text-center">
                     <h2 class="page-section-heading d-inline-block">Speech Synthesis</h2>
@@ -591,40 +546,7 @@
 
         <!-- slider JS -->
         <script type="text/javascript">
-          var sr = 0
-          var test_sr = 0
-        
-        $(function() {
-                $('#test_sr').slider({
-                    formatter: function(value) {
-                        return value + ' Hz';
-                    }
-                });
-
-                $('#test_sr').on("slide click", function () {
-                   test_reload()
-                });
-              });
-
-          function test_reload() {
-            test_sr = Number($("#test_sr").val());
-            console.log(test_sr)
-            var test_image = "audio/test/" + test_sr + ".png";
-            var test_audio = "audio/test/" + test_sr + ".wav";
-
-            console.log(test_image)
-            console.log(test_audio)
-
-            $('#test_img_src').attr("src", test_image);
-            $('#test_audio_src').attr("src", test_audio);
-            console.log($('#test_audio_src').val());
-            console.log($("#audio_panel"))
-            $('#audio_panel')[0].load();
-          };
-
-
-
-        
+        var sr = 0
         function sr_click(i, name){
             sr = i;
             wav_name = '/'+name+'.wav';
