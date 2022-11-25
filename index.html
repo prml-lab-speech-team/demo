@@ -1,166 +1,207 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>PRML Speech Team Demo Page</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <style>
-    .example {
-    font-size:20px;
-    padding-left:10px;
-    }
 
-    td{
-        width:400px;
-        text-align:center;
-        white-space:nowrap;
-        padding-left:15px;
-    }
-</style>
-</head>
 
-<body style='padding-left: 20px'>
-  
-<div class="container">
+    <head>
+        <meta charset="utf-8">
+          <style type="text/css">
+                 a:link { color: black; text-decoration: none;}
+                 a:visited { color: black; text-decoration: none;}
+                 a:hover { color: blue; text-decoration: underline;}
+           </style>
 
-	<header role="banner">
-	<h1 class="site-title">PRML Lab. Speech team</h1>		
-	</header>
-  PRML Lab. in Korea University
-	<br>
-	<br>
 
-	<main role="main">
-    <!-- <article>
-			<h4>
-        Fre-Painter: Audio Frequency Inpainting with Robust Speech Representation Learning of Masked Autoencoder
-        <a href="/demo/Fre-Painter/">[Demo]</a>
-        <a href="">[Paper]</a>
-      </h4>
-			<span>ICASSP (submitted), <time>2023</time></span>
-		</article>
-    <article>
-			<h4>DiffProsody: Latent Diffusion-based Prosody Generation for Expressive Speech Synthesis with Prosody Conditional Adversarial Training
-        <a href="/demo/DiffProsody/">[Demo]</a>
-        <a href="">[Paper]</a>
-      </h4>
-			<span>ICASSP (submitted), <time>2023</time></span>
-		</article> -->
-    <article>
-			<h4>
-        HierSpeech: Bridging the Gap between Text and Speech by Hierarchical Variational Inference using Self-supervised Representation for Speech Synthesis
-        <a href="https://sh-lee-prml.github.io/hierspeech-demo/">[Demo]</a>
-        <a href="https://openreview.net/pdf?id=awdyRVnfQKX">[Paper]</a>
-      </h4>
-			<span>NeurIPS, <time>2022</time></span>
-		</article>
-    <article>
-			<h4>Duration Controllable Voice Conversion via Phoneme-Based Information Bottleneck
-        <a href="/demo/hrnoh/DCVC/">[Demo]</a>
-        <a href="https://ieeexplore.ieee.org/document/9729483">[Paper]</a>
-      </h4>
-			<span>TASLP, <time>2022</time></span>
-		</article>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>PRML Speech Team Demo Page</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!-- Fonts CSS-->
+        <link rel="stylesheet" href="css/heading.css">
+        <link rel="stylesheet" href="css/body.css">
+        <!-- Bootstrap slider CSS -->
+        <!-- <link rel="stylesheet" href="css/bootstrap-slider.css"> -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" /> -->
+        
+    </head>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                    PRML Lab. Speech team
+                </a>
+                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Abstraction -->
+        <section class="page-section portfolio" id="abstract">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <!-- <div class="text-center">
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block"></h2>
+                </div> -->
+                <!-- Icon Divider-->
+                <!-- <div class="divider-custom">
+                    <div class="divider-custom"></div>
+                </div> -->
+                <!-- Portfolio Grid Items-->
+                <!-- <div class="row justify-content-center">
+                    <div class="col-lg-12 ml-auto">
+                        <p class="pre-wrap lead"></p>
+                    </div>
+                </div> -->
+            </div>
+        </section>
 
-    <article>
-			<h4>
-        StyleVC: Non-parallel Voice Conversion with Adversarial Style Generalization
-        <a href="/demo/insun-hwang/StyleVC/">[Demo]</a>
-        <a href="">[Paper]</a>
-      </h4>
-			<span>ICPR <time>2022</time></span>
-		</article>
-    <article>
-			<h4>
-        EmoQ-TTS: Emotion intensity Quantization for Fine-grained Controllable Emotional Text-to-Speech
-        <a href="/demo/EmoQ-TTS/">[Demo]</a>
-        <a href="https://ieeexplore.ieee.org/document/9747098">[Paper]</a>
-      </h4>
-			<span>ICASSP, <time>2022</time></span>
-		</article>
-    <article>
-			<h4>
-        Fre-GAN 2: Fast and Efficient Frequency-consistent Audio Synthesis
-        <a href="/demo/FreGAN2/">[Demo]</a>
-        <a href="https://ieeexplore.ieee.org/document/9746675">[Paper]</a>
-      </h4>
-			<span>ICASSP, <time>2022</time></span>
-		</article>
-    <article>
-			<h4>
-        PVAE-TTS: High-Quality Adaptive Text-to-Speech via Progressive Variational Autoencoder
-        <a href="/demo/PVAE-TTS/">[Demo]</a>
-        <a href="https://ieeexplore.ieee.org/document/9747388">[Paper]</a>
-      </h4>
-			<span>ICASSP, <time>2022</time></span>
-		</article>
-    <!-- <article>
-			<h4><a href="/demo/insun-hwang/RCVC/">RCVC: Rhythm Controllable Voice Conversion with Dynamic Information Bottleneck</a></h4>
-			<span><time>2021</time></span>
-		</article> -->
-    <article>
-			<h4>
-        VoiceMixer: Adversarial Voice Style Mixup
-        <a href="https://anonymous-speech.github.io/voicemixer/index.html">[Demo]</a>
-        <a href="https://proceedings.neurips.cc/paper/2021/hash/0266e33d3f546cb5436a10798e657d97-Abstract.html">[Paper]</a>
-      </h4>
-			<span>NeurIPS, <time>2021</time></span>
-		</article>
-    <article>
-			<h4>
-        GC-TTS: Few-shot Speaker Adaptation with Geometric Constraints
-        <a href="/demo/GC-TTS/">[Demo]</a>
-        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9658830">[Paper]</a>
-      </h4>
-      <span>SMC,<time>2021</time></span>
-		</article>
-    <article>
-			<h4>
-        Reinforce-Aligner: Reinforcement Alignment Search for Robust End-to-End Text-to-Speech
-        <a href="/demo/Reinforce-Aligner/">[Demo]</a>
-        <a href="https://www.isca-speech.org/archive/pdfs/interspeech_2021/chung21_interspeech.pdf">[Paper]</a>
-      </h4>
-			<span>Interspeech, <time>2021</time></span>
-		</article>
-    <article>
-			<h4>
-        Fre-GAN: Adversarial Frequency-consistent Audio Synthesis 
-        <a href="/demo/FreGAN/">[Demo]</a>
-        <a href="https://www.isca-speech.org/archive/pdfs/interspeech_2021/kim21f_interspeech.pdf">[Paper]</a>
-      </h4>
-			<span>Interspeech, <time>2021</time></span>
-		</article>
-    <article>
-			<h4>
-        Multi-SpectroGAN: High-Diversity and High-Fidelity Spectrogram Generation with Adversarial Style Recombination for Speech Synthesis 
-        <a href="https://anonymsg.github.io/MSG/Demo/index.html">[Demo]</a>
-        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/17559">[Paper]</a>
-      </h4>
-			<span>AAAI2021, <time>2021</time></span>
-		</article>
-    <article>
-			<h4>
-        Audio dequantization for high fidelity audio generation in flow-based neural vocoder 
-        <a href="https://christophyoon.github.io/deqflow_webdemo/">[Demo]</a>
-        <a href="https://www.isca-speech.org/archive_v0/Interspeech_2020/pdfs/1226.pdf">[Paper]</a>
-      </h4>
-      <span>Interspeech, <time>2020</time></span>
-		</article>    
-    <!-- <article>
-			<h4><a href="/demo/jhkim-few">Few-shot Speaker Adaptation with Geometric Constraints</a></h4>
-			<span><time>2020</time></span>
-		</article> -->
-    <!-- <article>
-			<h4><a href="/demo/chsong/">Individual Prosody Control using Generated Duration and Information via Mel Spectrogram Deformation</a></h4>
-			<span><time>2019</time></span>
-		</article>
-		<article>
-			<h4><a href="/demo/sh_lee/SpectroGAN.html/">SpectroGAN: Spectrogram Generation with Adversarial Networks for Speech Synthesis</a></h4>
-			<span><time>2019</time></span>
-		</article> -->
-  </main>
-</div>
+        <!-- Publications -->
+        <section class="page-section portfolio" id="Publications">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Publications</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 ml-auto">
+                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
+                            <thead>
+                                <!-- <tr>
+                                    <p class="pre-wrap lead">Fre-Painter: Audio Frequency Inpainting with Robust Speech Representation Learning of Masked Autoencoder</p>
+                                    <h7>ICASSP, <time>2023 </time>
+                                        <a href="/demo/Fre-Painter/">[Demo]</a>
+                                        <a href="">[Paper]</a>
+                                    </h7>
+                                    <br>
+                                </tr>
+                                <tr>
+                                    <p class="pre-wrap lead">DiffProsody: Latent Diffusion-based Prosody Generation for Expressive Speech Synthesis with Prosody Conditional Adversarial Training</p>
+                                    <h7>ICASSP, <time>2023 </time>
+                                        <a href="/demo/DiffProsody/">[Demo]</a>
+                                        <a href="">[Paper]</a>
+                                    </h7>
+                                    <br>
+                                </tr>                                 -->
+                                <tr>
+                                    <h7>NeurIPS, <time>2022 </time>
+                                    <a href="https://sh-lee-prml.github.io/hierspeech-demo/">[Demo]</a>
+                                    <a href="https://openreview.net/pdf?id=awdyRVnfQKX">[Paper]</a>
+                                    </h7>
+                                    <p class="pre-wrap lead">HierSpeech: Bridging the Gap between Text and Speech by Hierarchical Variational Inference using Self-supervised Representation for Speech Synthesis</p>
+                                    <br>
+                                </tr>
+                                <tr>
+                                    <h7>TASLP, <time>2022 </time>
+                                        <a href="/demo/hrnoh/DCVC/">[Demo]</a>
+                                        <a href="https://ieeexplore.ieee.org/document/9729483">[Paper]</a>
+                                    </h7>
+                                    <p class="pre-wrap lead">Duration Controllable Voice Conversion via Phoneme-Based Information Bottleneck</p>
+                                    <br>
+                                </tr>
+                                <tr>
+                                    <h7>ICPR, <time>2022 </time>
+                                        <a href="/demo/insun-hwang/StyleVC/">[Demo]</a>
+                                        <a href="">[Paper]</a>
+                                    </h7>
+                                    <p class="pre-wrap lead">StyleVC: Non-parallel Voice Conversion with Adversarial Style Generalization</p>
+                                    <br>
+                                </tr>
+                                <tr>
+                                    <h7>ICASSP, <time>2022 </time>
+                                        <a href="/demo/EmoQ-TTS/">[Demo]</a>
+                                        <a href="https://ieeexplore.ieee.org/document/9747098">[Paper]</a>
+                                    </h7>
+                                    <p class="pre-wrap lead">EmoQ-TTS: Emotion intensity Quantization for Fine-grained Controllable Emotional Text-to-Speech</p>
+                                    <br>
+                                </tr>
+                                <tr>
+                                    <h7>ICASSP, <time>2022 </time>
+                                        <a href="/demo/FreGAN2/">[Demo]</a>
+                                        <a href="https://ieeexplore.ieee.org/document/9746675">[Paper]</a>
+                                    </h7>
+                                    <p class="pre-wrap lead">Fre-GAN 2: Fast and Efficient Frequency-consistent Audio Synthesis</p>
+                                    <br>
+                                </tr>
+                                <tr>
+                                    <h7>ICASSP, <time>2022 </time>
+                                        <a href="/demo/PVAE-TTS/">[Demo]</a>
+                                        <a href="https://ieeexplore.ieee.org/document/9747388">[Paper]</a>
+                                    </h7>
+                                    <p class="pre-wrap lead">PVAE-TTS: High-Quality Adaptive Text-to-Speech via Progressive Variational Autoencoder</p>
+                                    <br>
+                                </tr>
+                                <tr>
+                                    <h7>NeurIPS, <time>2021 </time>
+                                        <a href="https://anonymous-speech.github.io/voicemixer/index.html">[Demo]</a>
+                                        <a href="https://proceedings.neurips.cc/paper/2021/hash/0266e33d3f546cb5436a10798e657d97-Abstract.html">[Paper]</a>
+                                    </h7>
+                                    <p class="pre-wrap lead">VoiceMixer: Adversarial Voice Style Mixup</p>
+                                    <br>
+                                </tr>
+                                <tr>
+                                    <h7>SMC, <time>2021 </time>
+                                        <a href="/demo/GC-TTS/">[Demo]</a>
+                                        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9658830">[Paper]</a>
+                                    </h7>
+                                    <p class="pre-wrap lead">GC-TTS: Few-shot Speaker Adaptation with Geometric Constraints</p>
+                                    <br>
+                                </tr>
+                                <tr>
+                                    <h7>Interspeech, <time>2021 </time>
+                                        <a href="/demo/Reinforce-Aligner/">[Demo]</a>
+                                        <a href="https://www.isca-speech.org/archive/pdfs/interspeech_2021/chung21_interspeech.pdf">[Paper]</a>
+                                    </h7>
+                                    <p class="pre-wrap lead">Reinforce-Aligner: Reinforcement Alignment Search for Robust End-to-End Text-to-Speech</p>
+                                    <br>
+                                </tr>
+                                <tr>
+                                    <h7>Interspeech, <time>2021 </time>
+                                        <a href="/demo/FreGAN/">[Demo]</a>
+                                        <a href="https://www.isca-speech.org/archive/pdfs/interspeech_2021/kim21f_interspeech.pdf">[Paper]</a>
+                                    </h7>
+                                    <p class="pre-wrap lead">Fre-GAN: Adversarial Frequency-consistent Audio Synthesis</p>
+                                    <br>
+                                </tr>
+                                <tr>
+                                    <h7>Interspeech, <time>2020 </time>
+                                        <a href="https://christophyoon.github.io/deqflow_webdemo/">[Demo]</a>
+                                        <a href="https://www.isca-speech.org/archive_v0/Interspeech_2020/pdfs/1226.pdf">[Paper]</a>
+                                    </h7>
+                                    <p class="pre-wrap lead">Audio dequantization for high fidelity audio generation in flow-based neural vocoder</p>
+                                    <br>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
 
-</body>
+                </div>
+            </div>
+        </section>
+
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+        <script src="js/scripts.js"></script>
+        <!-- Bootstrap slider JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
+
+        <!-- slider JS -->
+        <script type="text/javascript">
+        </script>
+    </body>
 </html>
