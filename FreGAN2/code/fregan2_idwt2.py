@@ -371,8 +371,8 @@ class MultiScaleDiscriminator(torch.nn.Module):
         y_down4 = torch.cat((yAA, yAC[0], yCA, yCC[0]), dim=1)
 
         yA_hat, yC_hat= self.dwt(y_hat)
-        yAA_hat, yAC_hat = self.dwt(yA)
-        yCA_hat, yCC_hat = self.dwt(yC[0])
+        yAA_hat, yAC_hat = self.dwt(yA_hat)
+        yCA_hat, yCC_hat = self.dwt(yC_hat[0])
 
         yhat_down2 = torch.cat((yA_hat, yC_hat[0]), dim=1)
         yhat_down4 = torch.cat((yAA_hat, yAC_hat[0], yCA_hat, yCC_hat[0]), dim=1)
