@@ -1,0 +1,4 @@
+p300_018|Aristotle thought that the rainbow was caused by reflection of the sun's rays by the rain.
+p301_013|Some have accepted it as a miracle without physical explanation.
+p302_017|Others have tried to explain the phenomenon physically.
+p330_011|When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.
