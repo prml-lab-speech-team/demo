@@ -1,341 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-          <style type="text/css">
-                 a:link { color: black; text-decoration: none;}
-                 a:visited { color: black; text-decoration: none;}
-                 a:hover { color: blue; text-decoration: underline;}
-           </style>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>DiffProsody Demo</title>
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet">
-        <!-- Fonts CSS-->
-        <link rel="stylesheet" href="css/heading.css">
-        <link rel="stylesheet" href="css/body.css">
-        <!-- Bootstrap slider CSS -->
-        <!-- <link rel="stylesheet" href="css/bootstrap-slider.css"> -->
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" /> -->
-        <script>
-            function createTable(dir, exp, audio, script, idx=1){
-                html = "<table class=\"table table-responsive align-content-center\" style=\"background-color: white; border-radius: 20px\">"
-                html +="<thead><tr><th colspan=\"5\" style=\"width: 40%\">"
-                html +="<div class=\"text-left\">Script : <i>"
-                html += script["script"]
-                html +="</i></div></th></tr></thead><tbody><tr>"
-                for(var key in exp){
-                    if (idx % 3 == 0){
-                        html += "<tr>"    
-                    }
-                    html +="<td style=\"vertical-align: top;\"><p></p>"
-                    html +=key
-                    // html +="<p><em>ASR: "
-                    // html +=script[exp[key]]
-                    // html +="</em></p>"
-                    html +="<div class=\"text-center\"><audio controls=\"controls\"><source src="
-                    f = dir + "/" + exp[key] + "/" + audio + ".wav"
-                    html += f
-                    html +=" type=\"audio/wav\" /></audio></div></td>"
-                    idx += 1
-                    if (idx % 3 == 0){
-                        html += "</tr>"    
-                    }
-                }
-                html +="</tr></tbody></table>"
-                return html
-            }
-        </script>
-    </head>
-    <body id="page-top">
-        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">DiffProsody</a>
-                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">Abstact</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#dp">Demo<br>DiffProsody</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#mc">Comparative<br>Model</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#pg">Ablation<br>PG</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#pcd">Ablation<br>PCD</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        
-        <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading mb-0">DiffProsody: Diffusion-based Latent Prosody Generation for Expressive Speech Synthesis with Prosody Conditional Adversarial Training</h1>
-                <!-- Masthead Subheading-->
-                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Hyung-Seok Oh, Sang-Hoon Lee and Seong-Whan Lee</p>
-            </div>
-        </header>
-        
-        <!-- Abstraction -->
-        <section class="page-section portfolio" id="abstract">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Abstract</h2>
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-12 ml-auto">
-                        <p class="pre-wrap lead">Expressive text-to-speech systems have undergone significant advancements owing to prosody modeling, but conventional methods can still be improved. Traditional approaches have relied on the autoregressive method to predict the quantized prosody vector; however, it suffers from the issues of long-term dependency and slow inference. This study proposes a novel approach called DiffProsody in which expressive speech is synthesized using a diffusion-based latent prosody generator and prosody conditional adversarial training. Our findings confirm the effectiveness of our prosody generator in generating a prosody vector. Furthermore, our prosody conditional discriminator significantly improves the quality of the generated speech by accurately emulating prosody. We use denoising diffusion generative adversarial networks to improve the prosody generation speed. Consequently, DiffProsody is capable of generating prosody 16 times faster than the conventional diffusion model. The superior performance of our proposed method has been demonstrated via experiments.
-                        </p>
-                        <br>
-                        <br>
-                    </div>
-                    <div class="text-center">
-                        <br>
-                        <img width="100%" src="./fig1.png">
-                    </div>
-                </div>
-            </div>
-        </section>
+  <head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+      a:link {
+        color: black;
+        text-decoration: none;
+      }
+      a:visited {
+        color: black;
+        text-decoration: none;
+      }
+      a:hover {
+        color: blue;
+        text-decoration: underline;
+      }
+    </style>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>DiffProsody Demo</title>
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- Fonts CSS-->
+    <link rel="stylesheet" href="css/heading.css" />
+    <link rel="stylesheet" href="css/body.css" />
+    <!-- Bootstrap slider CSS -->
+    <!-- <link rel="stylesheet" href="css/bootstrap-slider.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" /> -->
+    <script>
+      function createTable(dir, exp, audio, script, idx = 1) {
+        html =
+          '<table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">';
+        html += '<thead><tr><th colspan="5" style="width: 40%">';
+        html += '<div class="text-left">Script : <i>';
+        html += script["script"];
+        html += "</i></div></th></tr></thead><tbody><tr>";
+        for (var key in exp) {
+          if (idx % 3 == 0) {
+            html += "<tr>";
+          }
+          html += '<td style="vertical-align: top;"><p></p>';
+          html += key;
+          // html +="<p><em>ASR: "
+          // html +=script[exp[key]]
+          // html +="</em></p>"
+          html +=
+            '<div class="text-center"><audio controls="controls"><source src=';
+          f = dir + "/" + exp[key] + "/" + audio + ".wav";
+          html += f;
+          html += ' type="audio/wav" /></audio></div></td>';
+          idx += 1;
+          if (idx % 3 == 0) {
+            html += "</tr>";
+          }
+        }
+        html += "</tr></tbody></table>";
+        return html;
+      }
+    </script>
+  </head>
+  <body id="page-top">
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"
+          >DiffProsody</a
+        >
+        <button
+          class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#abstract"
+                >Abstact</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#mc"
+                >Comparative<br />Model</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#pg"
+                >Ablation<br />PG</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#pcd"
+                >Ablation<br />PCD</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#pitch"
+                >Ablation<br />Pitch&Energy</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-        <section class="page-section bg-primary text-white mb-0" id="dp">
-            <div class="container">
-                <!-- About Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">DiffProsody</h2>
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
-                </div>
+    <header class="masthead bg-white text-left">
+      <!-- text-black 사용 가능 -->
+      <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading mb-0">
+          DiffProsody: Diffusion-based Latent Prosody Generation for Expressive
+          Speech Synthesis with Prosody Conditional Adversarial Training
+        </h1>
+        <!-- Masthead Subheading-->
+        <p
+          class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic"
+        >
+          Hyung-Seok Oh, Sang-Hoon Lee and Seong-Whan Lee
+        </p>
+      </div>
+    </header>
 
-                <div class="row">
-                    <div id="div1" class="col-lg-auto ml-auto">
-                        <script>
-                            dir = "./wavs/audio"
-                            exp = {"GT": "gt",
-                                    "Vocoded": "gt_vocoded",
-                                    "DiffProsody": "dp",
-                                }
-                            audios = {
-                                "5683_32879_000031_000000": {
-                                "script":"(LibriTTS) I don't understand his absence."
-                                },                                
-                                "2428_83705_000038_000003": {
-                                "script":"(LibriTTS) She will keep them at bay."
-                                },
-                                "4992_41806_000029_000001": {
-                                "script":"(LibriTTS) It was kind of you to spend so much time in our behalf."
-                                },
-                                "7176_88083_000011_000002": {
-                                "script":"(LibriTTS) In despair he hurled himself downward too soon."
-                                }, 
-                                "p257_009": {
-                                "script":"(VCTK) There is , according to legend, a boiling pot of gold at one end."
-                                },
-                                "p334_004": {
-                                "script":"(VCTK) We also need a small plastic snake and a big toy frog for the kids."
-                                },                                
-                                "p313_007": {
-                                "script":"(VCTK) The rainbow is a division of white light into many beautiful colors."
-                                },
-                                "p360_013": {
-                                "script":"(VCTK) Some have accepted it as a miracle without physical explanation."
-                                },
-                            }
-                            for(var audio in audios){
-                                div = document.getElementById("div1")
-                                script=audios[audio]
-                                html = createTable(dir, exp, audio, script, 0)
-                                // console.log(html)
-                                div.insertAdjacentHTML("afterend", html);
-                            }
+    <!-- Abstraction -->
+    <section class="page-section portfolio" id="abstract">
+      <div class="container">
+        <!-- Portfolio Section Heading-->
+        <div class="text-center">
+          <h2 class="page-section-heading text-secondary mb-0 d-inline-block">
+            Abstract
+          </h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+          <div class="divider-custom"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+          <div class="col-lg-12 ml-auto">
+            <p class="legend lead">
+              Expressive text-to-speech systems have undergone significant
+              advancements owing to prosody modeling, but conventional methods
+              can still be improved. Traditional approaches have relied on the
+              autoregressive method to predict the quantized prosody vector;
+              however, it suffers from the issues of long-term dependency and
+              slow inference. This study proposes a novel approach called
+              DiffProsody in which expressive speech is synthesized using a
+              diffusion-based latent prosody generator and prosody conditional
+              adversarial training. Our findings confirm the effectiveness of
+              our prosody generator in generating a prosody vector. Furthermore,
+              our prosody conditional discriminator significantly improves the
+              quality of the generated speech by accurately emulating prosody.
+              We use denoising diffusion generative adversarial networks to
+              improve the prosody generation speed. Consequently, DiffProsody is
+              capable of generating prosody 16 times faster than the
+              conventional diffusion model. The superior performance of our
+              proposed method has been demonstrated via experiments.
+            </p>
+            <br />
+            <br />
+          </div>
+          <div class="text-center">
+            <br />
+            <img width="100%" src="./fig1.png" />
+            <br />
+            <img width="100%" src="./fig2.png" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="page-section bg-info text-white mb-0" id="mc">
-            <div class="container">
-                <!-- About Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">Comparative Model</h2>
-                </div>
-                <div class="text-center" style="text-align: center;">
-                    <br>
-                    <img src="./table1.png" width="100%">
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
-                </div>
+    <section class="page-section bg-info text-white mb-0" id="mc">
+      <div class="container">
+        <!-- About Section Heading-->
+        <div class="text-center">
+          <h2 class="page-section-heading d-inline-block text-white">
+            Comparative Model
+          </h2>
+        </div>
+        <div class="text-center" style="text-align: center">
+          <br />
+          <img src="./table1.png" width="100%" />
+          <br />
+          <img src="./table2.png" width="100%" />
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom"></div>
+        </div>
 
-                <div class="row">
-                    <div id="div2" class="col-lg-auto ml-auto">
-                        <script>
-                            dir = "./wavs/audio"
-                            exp = {"GT": "gt",
-                                    "Vocoded": "gt_vocoded",
-                                    "FastSpeech 2": "fs2",
-                                    "ProsoSpeech": "prs",
-                                    "DiffProsody": "dp",
-                                }
-                            audios = {
-                                "p362_005": {
-                                "script":"She can scoop these things into three red bags, and we will go meet her Wednesday at the train station."
-                                },
-                                "p278_016": {
-                                "script":"The Norsemen considered the rainbow as a bridge over which the gods passed from earth to their home in the sky. "
-                                },                                
-                                "p293_015": {
-                                "script":"The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain."
-                                },
-                                "p237_018": {
-                                "script":"Aristotle thought that the rainbow was caused by the reflection of the sun's rays by the rain."
-                                },                                
+        <div class="row">
+          <div id="div2" class="col-lg-auto ml-auto">
+            <script>
+              dir = "./wavs/audio";
+              exp = {
+                GT: "gt",
+                Vocoded: "gt_vocoded",
+                "FastSpeech 2": "fs2",
+                ProsoSpeech: "prs",
+                DiffProsody: "dp",
+              };
+              audios = {
+                p362_005: {
+                  script:
+                    "(VCTK) She can scoop these things into three red bags, and we will go meet her Wednesday at the train station.",
+                },
+                p278_016: {
+                  script:
+                    "(VCTK) The Norsemen considered the rainbow as a bridge over which the gods passed from earth to their home in the sky. ",
+                },
+                p293_015: {
+                  script:
+                    "(VCTK) The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain.",
+                },
+                p237_018: {
+                  script:
+                    "(VCTK) Aristotle thought that the rainbow was caused by the reflection of the sun's rays by the rain.",
+                },
+                LB1320_122612_000006_000004: {
+                  script:
+                    "(LibriTTS) At last the scout spoke in English, and at once explained the embarrassment of their situation.",
+                },
+                LB1335_27593_000006_000004: {
+                  script:
+                    "(LibriTTS) Add three glasses of sherry and madeira and allow it to boil once, when it is ready to serve.",
+                },
+                LB1509_143477_000076_000001: {
+                  script:
+                    "(LibriTTS) She's going to try to get Eugenio to talk to him.",
+                },
+                LB2294_169656_000006_000000: {
+                  script:
+                    "(LibriTTS) As far back as the sixteenth century the Spanish forts at Alhucemasnot to mention other placeswere established for the purpose of repressing piracy in its vicinity.",
+                },
+              };
+              for (var audio in audios) {
+                div = document.getElementById("div2");
+                script = audios[audio];
+                html = createTable(dir, exp, audio, script);
+                // console.log(html)
+                div.insertAdjacentHTML("afterend", html);
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="page-section bg-primary text-white mb-0" id="pg">
+      <div class="container">
+        <!-- About Section Heading-->
+        <div class="text-center">
+          <h2 class="page-section-heading d-inline-block text-white">
+            Ablation
+          </h2>
+          <br />
+          <h3 class="d-inline-block text-white">Prosody Generator</h3>
+        </div>
+        <div class="text-center" style="text-align: center">
+          <img src="./table3.png" width="100%" />
+        </div>
 
-                            }
-                            for(var audio in audios){
-                                div = document.getElementById("div2")
-                                script=audios[audio]
-                                html = createTable(dir, exp, audio, script)
-                                // console.log(html)
-                                div.insertAdjacentHTML("afterend", html);
-                            }
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom"></div>
+        </div>
 
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="page-section bg-primary text-white mb-0" id="pg">
-            <div class="container">
-                <!-- About Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">Ablation</h2>
-                    <br><h3 class="d-inline-block text-white">Prosody Generator</h3>
-                </div>
-                <div class="text-center" style="text-align: center;">
-                    <br>
-                    <img src="./table2.png" width="100%">
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
-                </div>
+        <div class="row">
+          <div id="div4" class="col-lg-auto ml-auto">
+            <script>
+              dir = "./wavs/pg";
+              exp = {
+                GT: "gt",
+                Vocoded: "gt_vocoded",
+                AR: "ar",
+                DDPM: "ddpm",
+                DDGAN: "ddgan",
+              };
+              audios = {
+                p300_018: {
+                  script:
+                    "Aristotle thought that the rainbow was caused by the reflection of the sun's rays by the rain.",
+                },
+                p301_013: {
+                  script:
+                    "Some have accepted it as a miracle without physical explanation.",
+                },
+                p302_017: {
+                  script:
+                    "Others have tried to explain the phenomenon physically.",
+                },
+                p330_011: {
+                  script:
+                    "When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow.",
+                },
+              };
+              for (var audio in audios) {
+                div = document.getElementById("div4");
+                script = audios[audio];
+                html = createTable(dir, exp, audio, script);
+                // console.log(html)
+                div.insertAdjacentHTML("afterend", html);
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <div class="row">
-                    <div id="div4" class="col-lg-auto ml-auto">
-                        <script>
-                            dir = "./wavs/pg"
-                            exp = {"GT": "gt",
-                                    "Vocoded": "gt_vocoded",
-                                    "AR": "ar",
-                                    "DDPM": "ddpm",
-                                    "DDGAN": "ddgan",
-                                }
-                            audios = {
-                                "p300_018": {
-                                "script":"Aristotle thought that the rainbow was caused by the reflection of the sun's rays by the rain."
-                                },
-                                "p301_013": {
-                                "script":"Some have accepted it as a miracle without physical explanation."
-                                },
-                                "p302_017": {
-                                "script":"Others have tried to explain the phenomenon physically."
-                                },
-                                "p330_011": {
-                                "script":"When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow."
-                                },
-                            }
-                            for(var audio in audios){
-                                div = document.getElementById("div4")
-                                script=audios[audio]
-                                html = createTable(dir, exp, audio, script)
-                                // console.log(html)
-                                div.insertAdjacentHTML("afterend", html);
-                            }
+    <section class="page-section bg-info text-white mb-0" id="pcd">
+      <div class="container">
+        <!-- About Section Heading-->
+        <div class="text-center">
+          <h2 class="page-section-heading d-inline-block text-white">
+            Ablation
+          </h2>
+          <br />
+          <h3 class="d-inline-block text-white">
+            Prosody Conditional Discriminator
+          </h3>
+        </div>
+        <div class="text-center" style="text-align: center">
+          <br />
+          <img src="./table4.png" />
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom"></div>
+        </div>
 
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="row">
+          <div id="div3" class="col-lg-auto ml-auto">
+            <script>
+              dir = "./wavs/pcd";
+              exp = {
+                GT: "gt",
+                Vocoded: "gt_vocoded",
+                ProsoSpeech: "prs",
+                "DiffProsody (w/o PCD)": "dp_wo_pcd",
+                DiffProsody: "dp",
+              };
+              audios = {
+                p225_001: {
+                  script: "Please call Stella.",
+                },
+                p227_004: {
+                  script:
+                    "We also need a small plastic snake and a big toy frog for the kids.",
+                },
+                p228_002: {
+                  script:
+                    "Ask her to bring these things with her from the store.",
+                },
+                p243_003: {
+                  script:
+                    "Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob.",
+                },
+              };
+              for (var audio in audios) {
+                div = document.getElementById("div3");
+                script = audios[audio];
+                html = createTable(dir, exp, audio, script);
+                // console.log(html)
+                div.insertAdjacentHTML("afterend", html);
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="page-section bg-info text-white mb-0" id="pcd">
-            <div class="container">
-                <!-- About Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">Ablation</h2>
-                    <br><h3 class="d-inline-block text-white">Prosody Conditional Discriminator</h3>
-                </div>
-                <div class="text-center" style="text-align: center;">
-                    <br>
-                    <img src="./table3.png">
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom"></div>
-                </div>
+    <section class="page-section bg-primary text-white mb-0" id="pitch">
+      <div class="container">
+        <!-- About Section Heading-->
+        <div class="text-center">
+          <h2 class="page-section-heading d-inline-block text-white">
+            Ablation
+          </h2>
+          <br />
+          <h3 class="d-inline-block text-white">Pitch&Energy</h3>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom"></div>
+        </div>
 
-                <div class="row">
-                    <div id="div3" class="col-lg-auto ml-auto">
-                        <script>
-                            dir = "./wavs/pcd"
-                            exp = {"GT": "gt",
-                                    "Vocoded": "gt_vocoded",
-                                    "ProsoSpeech": "prs",
-                                    "DiffProsody (w/o PCD)": "dp_wo_pcd",
-                                    "DiffProsody": "dp",
-                                }
-                            audios = {
-                                "p225_001": {
-                                "script":"Please call Stella."
-                                },
-                                "p227_004": {
-                                "script":"We also need a small plastic snake and a big toy frog for the kids."
-                                },
-                                "p228_002": {
-                                "script":"Ask her to bring these things with her from the store."
-                                },
-                                "p243_003": {
-                                "script":"Six spoons of fresh snow peas, five thick slabs of blue cheese, and maybe a snack for her brother Bob."
-                                },
+        <div class="row">
+          <div id="div1" class="col-lg-auto ml-auto">
+            <script>
+              dir = "./wavs/pitch";
+              exp = {
+                GT: "gt",
+                Vocoded: "gt_vocoded",
+                "DiffProsody (pitch & energy)": "dp_pitch",
+                DiffProsody: "dp",
+              };
+              audios = {
+                p225_007: {
+                  script:
+                    "The rainbow is a division of white light into many beautiful colors.",
+                },
+                p298_017: {
+                  script:
+                    "Others have tried to explain the phenomenon physically.",
+                },
+                p304_016: {
+                  script:
+                    "The Norsemen considered the rainbow as a bridge over which the gods passed from earth to their home in the sky.",
+                },
+                p307_012: {
+                  script:
+                    "Throughout the centuries people have explained the rainbow in various ways.",
+                },
+              };
+              for (var audio in audios) {
+                div = document.getElementById("div1");
+                script = audios[audio];
+                html = createTable(dir, exp, audio, script, 1);
+                // console.log(html)
+                div.insertAdjacentHTML("afterend", html);
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                            }
-                            for(var audio in audios){
-                                div = document.getElementById("div3")
-                                script=audios[audio]
-                                html = createTable(dir, exp, audio, script)
-                                // console.log(html)
-                                div.insertAdjacentHTML("afterend", html);
-                            }
+    <div class="scroll-to-top d-lg-none position-fixed">
+      <a
+        class="js-scroll-trigger d-block text-center text-white rounded"
+        href="#page-top"
+        ><i class="fa fa-chevron-up"></i
+      ></a>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <script src="js/scripts.js"></script>
+    <!-- Bootstrap slider JavaScript -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"
+      integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA=="
+      crossorigin="anonymous"
+    ></script>
 
-        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
-        <script src="js/scripts.js"></script>
-        <!-- Bootstrap slider JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
-
-        <!-- slider JS -->
-        <script type="text/javascript">
-        </script>
-    </body>
+    <!-- slider JS -->
+    <script type="text/javascript"></script>
+  </body>
 </html>
