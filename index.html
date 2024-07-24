@@ -1,294 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+      a:link {
+        color: black;
+        text-decoration: none;
+      }
+      a:visited {
+        color: black;
+        text-decoration: none;
+      }
+      a:hover {
+        color: blue;
+        text-decoration: underline;
+      }
+    </style>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>UnitCorrect Demo</title>
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- Fonts CSS-->
+    <link rel="stylesheet" href="css/heading.css" />
+    <link rel="stylesheet" href="css/body.css" />
+    <!-- Bootstrap slider CSS -->
+    <!-- <link rel="stylesheet" href="css/bootstrap-slider.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" /> -->
+    <script>
+      function createTable(dir, exp, audio, script, idx = 1) {
+        html =
+          '<table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">';
+        html += '<thead><tr><th colspan="5" style="width: 40%">';
+        html += '<div class="text-left">Script : <i>';
+        html += script["script"];
+        html += "</i></div></th></tr></thead><tbody><tr>";
+        for (var key in exp) {
+          if (idx % 3 == 0) {
+            html += "<tr>";
+          }
+          html += '<td style="vertical-align: top;"><p></p>';
+          html += key;
+          // html +="<p><em>ASR: "
+          // html +=script[exp[key]]
+          // html +="</em></p>"
+          html +=
+            '<div class="text-center"><audio controls="controls"><source src=';
+          f = dir + "/" + exp[key] + "/" + audio + ".wav";
+          html += f;
+          html += ' type="audio/wav" /></audio></div></td>';
+          idx += 1;
+          if (idx % 3 == 0) {
+            html += "</tr>";
+          }
+        }
+        html += "</tr></tbody></table>";
+        return html;
+      }
+    </script>
+  </head>
+  <body id="page-top">
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"
+          >UnitCorrect</a
+        >
+        <button
+          class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#abstract"
+                >Abstact</a
+              >
+            <!-- </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#mc"
+                >Comparative<br />Model</a
+              > -->
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#pg"
+                >Ablation<br />
+              >
+            </li>
+            <!-- <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#pcd"
+                >Ablation<br />PCD</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#pitch"
+                >Ablation<br />Pitch&Energy</a
+              > -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
- 
-    <head>
-        <meta charset="utf-8">
-          <style type="text/css">
-                 a:link { color: black; text-decoration: none;}
-                 a:visited { color: black; text-decoration: none;}
-                 a:hover { color: blue; text-decoration: underline;}
-           </style>
+    <header class="masthead bg-white text-left">
+      <!-- text-black 사용 가능 -->
+      <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading mb-0">
+          UnitCorrect: Unit-based Mispronunciation
+          Correction Model with a Detection System
+        </h1>
+        <!-- Masthead Subheading-->
+        <p
+          class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic"
+        >
+          Hyun-Woo Bae, Hyung-Seok Oh, Seung-Bin Kim and Seong-Whan Lee
+        </p>
+      </div>
+    </header>
 
+    <!-- Abstraction -->
+    <section class="page-section portfolio" id="abstract">
+      <div class="container">
+        <!-- Portfolio Section Heading-->
+        <div class="text-center">
+          <h2 class="page-section-heading text-secondary mb-0 d-inline-block">
+            Abstract
+          </h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+          <div class="divider-custom"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+          <div class="col-lg-12 ml-auto">
+            <p class="legend lead">
+              With recent globalization trends, the importance
+              of language education for nonnative speakers has significantly
+              increased. Research on pronunciation correction and speech
+              editing continues to be actively explored to reduce the pronun-
+              ciation gap between native and nonnative speakers. Traditional
+              speech editing models frequently suffer from unnaturalness at
+              the boundary of the corrected parts and demand substantial
+              input information to effectively synthesize corrected speech.
+              Furthermore, the scarcity of data for curated annotations of
+              mispronounced speech hinders training. This paper introduces
+              UnitCorrect, a mispronunciation correction model that leverages
+              self-supervised unit representations for synthesizing natural-
+              sounding speech and utilizing more phoneme information from
+              speech effectively. We also propose a dynamic time warp-
+              ing based mispronunciation detection system with reduced in-
+              formational requirements. This system automatically identifies
+              mispronounced segments by comparing the input audio with
+              the target text. Moreover, we supplement the insufficient text
+              information by incorporating frame-level text conditioning into
+              the input of the decoder, therby enabling the synthesis of high-
+              quality speech using a conditional flow-matching decoder. The
+              experimental results demonstrate that UnitCorrect outperforms
+              existing models in terms of mispronunciation corrections and
+              naturalness of speech.
+            </p>
+            <br />
+            <br />
+          </div>
+          <div class="text-center">
+            <br />
+            <img width="100%" src="./fig1.png" />
+            <br />
+            <img width="100%" src="./fig2.png" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>PRML Speech Team Demo Page</title>
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet">
-        <!-- Fonts CSS-->
-        <link rel="stylesheet" href="css/heading.css">
-        <link rel="stylesheet" href="css/body.css">
-        <!-- Bootstrap slider CSS -->
-        <!-- <link rel="stylesheet" href="css/bootstrap-slider.css"> -->
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" /> -->
-        
-    </head>
-    <body id="page-top">
-        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                    PRML Lab. Speech Team
-                </a>
-                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading mb-0">PRML Lab. Speech Team</h1>
-                <!-- Masthead Subheading-->
-                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Pattern Recognition & Machine Learning Lab</p>
-                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Korea University</p>
-            </div>
-        </header>
+    <div class="scroll-to-top d-lg-none position-fixed">
+      <a
+        class="js-scroll-trigger d-block text-center text-white rounded"
+        href="#page-top"
+        ><i class="fa fa-chevron-up"></i
+      ></a>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
-        <!-- Publications -->
-        <section class="page-section portfolio" id="Publications">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <!-- <div class="text-center">
-                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Publications</h2>
-                </div> -->
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">2024</h2>
-                <p></p>
-                <div class="row justify-content-center">                    
-                    <div class="col-lg-12 ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                            <thead>
-                                <tr>
-                                    <h7>ICASSP, <time>2024 </time>
-                                    <a href="">[Paper]</a>
-                                    <a href="https://sb-kim-prml.github.io/TranSentence">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">TranSentence: Speech-to-Speech Translation via Language-agnostic Sentence-level Speech Encoding without Language-parallel Data</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>ICASSP, <time>2024 </time>
-                                        <a href="">[Paper]</a>
-                                        <a href="https://bd-min.github.io/MIDI-Voice/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">MIDI-Voice: Expressive Zero-shot Singing Voice Synthesis via MIDI-driven Priors</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>AAAI, <time>2024 </time>
-                                        <a href="https://arxiv.org/pdf/2305.15816.pdf">[Paper]</a>
-                                        <a href="https://hayeong0.github.io/DDDM-VC-demo/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">DDDM-VC: Decoupled Denoising Diffusion Models with Disentangled Representation and Prior Mixup for Verified Robust Voice Conversion</p>
-                                    <br>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">2023</h2>
-                <p></p>
-                <div class="row justify-content-center">                    
-                    <div class="col-lg-12 ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                            <thead>
-                                <tr>
-                                    <h7>Interspeech, <time>2023 </time>
-                                    <a href="https://www.isca-speech.org/archive/pdfs/interspeech_2023/lee23i_interspeech.pdf">[Paper]</a>
-                                    <a href="https://hiervst.github.io/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">HierVST: Hierarchical Adaptive Zero-shot Voice Style Transfer</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>Interspeech, <time>2023 </time>
-                                        <a href="https://www.isca-speech.org/archive/pdfs/interspeech_2023/choi23d_interspeech.pdf">[Paper]</a>
-                                        <a href="https://diff-hiervc.github.io/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">Diff-HierVC: Diffusion-based Hierarchical Voice Conversion with Robust Pitch Generation and Masked Prior for Zero-shot Speaker Adaptation</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>ACPR, <time>2023 </time>
-                                    <a href="https://arxiv.org/pdf/2306.07489.pdf">[Paper]</a>
-                                    <a href="https://jisang93.github.io/pausespeech-demo/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">PauseSpeech: Natural Speech Synthesis via Pre-trained Language Model and Pause-based Prosody Modeling</p>
-                                    <br>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">2022</h2>
-                <p></p>
-                <div class="row justify-content-center">                    
-                    <div class="col-lg-12 ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                            <thead>
-                                <!-- <tr>
-                                    <p class="pre-wrap lead">Fre-Painter: Audio Frequency Inpainting with Robust Speech Representation Learning of Masked Autoencoder</p>
-                                    <h7>ICASSP, <time>2023 </time>
-                                        <a href="https://prml-lab-speech-team.github.io/demo/Fre-Painter/">[Demo]</a>
-                                        <a href="">[Paper]</a>
-                                    </h7>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <p class="pre-wrap lead">DiffProsody: Latent Diffusion-based Prosody Generation for Expressive Speech Synthesis with Prosody Conditional Adversarial Training</p>
-                                    <h7>ICASSP, <time>2023 </time>
-                                        <a href="https://prml-lab-speech-team.github.io/demo/DiffProsody/">[Demo]</a>
-                                        <a href="">[Paper]</a>
-                                    </h7>
-                                    <br>
-                                </tr>                                 -->
-                                <tr>
-                                    <h7>NeurIPS, <time>2022 </time>
-                                    <a href="https://openreview.net/pdf?id=awdyRVnfQKX">[Paper]</a>
-                                    <a href="https://sh-lee-prml.github.io/hierspeech-demo/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">HierSpeech: Bridging the Gap between Text and Speech by Hierarchical Variational Inference using Self-supervised Representation for Speech Synthesis</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>TASLP, <time>2022 </time>
-                                        <a href="https://ieeexplore.ieee.org/document/9729483">[Paper]</a>
-                                        <a href="https://prml-lab-speech-team.github.io/demo/hrnoh/DCVC/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">Duration Controllable Voice Conversion via Phoneme-Based Information Bottleneck</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>ICPR, <time>2022 </time>
-                                        <a href="">[Paper]</a>
-                                        <a href="https://prml-lab-speech-team.github.io/demo/insun-hwang/StyleVC/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">StyleVC: Non-parallel Voice Conversion with Adversarial Style Generalization</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>ICASSP, <time>2022 </time>
-                                        <a href="https://ieeexplore.ieee.org/document/9747098">[Paper]</a>
-                                        <a href="https://prml-lab-speech-team.github.io/demo/EmoQ-TTS/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">EmoQ-TTS: Emotion intensity Quantization for Fine-grained Controllable Emotional Text-to-Speech</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>ICASSP, <time>2022 </time>
-                                        <a href="https://ieeexplore.ieee.org/document/9746675">[Paper]</a>
-                                        <a href="https://prml-lab-speech-team.github.io/demo/FreGAN2/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">Fre-GAN 2: Fast and Efficient Frequency-consistent Audio Synthesis</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>ICASSP, <time>2022 </time>
-                                        <a href="https://ieeexplore.ieee.org/document/9747388">[Paper]</a>
-                                        <a href="https://prml-lab-speech-team.github.io/demo/PVAE-TTS/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">PVAE-TTS: High-Quality Adaptive Text-to-Speech via Progressive Variational Autoencoder</p>
-                                    <br>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">2021</h2>
-                <p></p>
-                <div class="row justify-content-center">                    
-                    <div class="col-lg-12 ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                            <thead>
-                                <tr>
-                                    <h7>NeurIPS, <time>2021 </time>
-                                        <a href="https://proceedings.neurips.cc/paper/2021/hash/0266e33d3f546cb5436a10798e657d97-Abstract.html">[Paper]</a>
-                                        <a href="https://anonymous-speech.github.io/voicemixer/index.html">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">VoiceMixer: Adversarial Voice Style Mixup</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>AAAI2021, <time>2021 </time>
-                                        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/17559">[Paper]</a>
-                                        <a href="https://anonymsg.github.io/MSG/Demo/index.html">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">Multi-SpectroGAN: High-Diversity and High-Fidelity Spectrogram Generation with Adversarial Style Recombination for Speech Synthesis</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>SMC, <time>2021 </time>
-                                        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9658830">[Paper]</a>
-                                        <a href="https://prml-lab-speech-team.github.io/demo/GC-TTS/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">GC-TTS: Few-shot Speaker Adaptation with Geometric Constraints</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>Interspeech, <time>2021 </time>
-                                        <a href="https://www.isca-speech.org/archive/pdfs/interspeech_2021/chung21_interspeech.pdf">[Paper]</a>
-                                        <a href="https://prml-lab-speech-team.github.io/demo/Reinforce-Aligner/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">Reinforce-Aligner: Reinforcement Alignment Search for Robust End-to-End Text-to-Speech</p>
-                                    <br>
-                                </tr>
-                                <tr>
-                                    <h7>Interspeech, <time>2021 </time>
-                                        <a href="https://www.isca-speech.org/archive/pdfs/interspeech_2021/kim21f_interspeech.pdf">[Paper]</a>
-                                        <a href="https://prml-lab-speech-team.github.io/demo/FreGAN/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">Fre-GAN: Adversarial Frequency-consistent Audio Synthesis</p>
-                                    <br>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">2020</h2>
-                <p></p>
-                <div class="row justify-content-center">                    
-                    <div class="col-lg-12 ml-auto">
-                        <table class="table table-responsive align-content-center" style="background-color: whitesmoke; border-radius: 20px">
-                            <thead>
-                                <tr>
-                                    <h7>Interspeech, <time>2020 </time>
-                                        <a href="https://www.isca-speech.org/archive_v0/Interspeech_2020/pdfs/1226.pdf">[Paper]</a>
-                                        <a href="https://christophyoon.github.io/deqflow_webdemo/">[Demo]</a>
-                                    </h7>
-                                    <p class="pre-wrap lead">Audio dequantization for high fidelity audio generation in flow-based neural vocoder</p>
-                                    <br>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <script src="js/scripts.js"></script>
+    <!-- Bootstrap slider JavaScript -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"
+      integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA=="
+      crossorigin="anonymous"
+    ></script>
 
-        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
-        <script src="js/scripts.js"></script>
-        <!-- Bootstrap slider JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
-
-        <!-- slider JS -->
-        <script type="text/javascript">
-        </script>
-    </body>
+    <!-- slider JS -->
+    <script type="text/javascript"></script>
+  </body>
 </html>
