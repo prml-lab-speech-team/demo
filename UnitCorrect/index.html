@@ -97,6 +97,13 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a
                 class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#compare"
+                >Comparative<br />Model</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                 href="#ablation"
                 >Ablation</a
               >
@@ -140,30 +147,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-12 ml-auto">
             <p class="legend lead">
-              With recent globalization trends, the importance
-              of language education for nonnative speakers has significantly
-              increased. Research on pronunciation correction and speech
-              editing continues to be actively explored to reduce the pronun-
-              ciation gap between native and nonnative speakers. Traditional
-              speech editing models frequently suffer from unnaturalness at
-              the boundary of the corrected parts and demand substantial
-              input information to effectively synthesize corrected speech.
-              Furthermore, the scarcity of data for curated annotations of
-              mispronounced speech hinders training. This paper introduces
-              UnitCorrect, a mispronunciation correction model that leverages
-              self-supervised unit representations for synthesizing natural-
-              sounding speech and utilizing more phoneme information from
-              speech effectively. We also propose a dynamic time warp-
-              ing based mispronunciation detection system with reduced in-
-              formational requirements. This system automatically identifies
-              mispronounced segments by comparing the input audio with
-              the target text. Moreover, we supplement the insufficient text
-              information by incorporating frame-level text conditioning into
-              the input of the decoder, therby enabling the synthesis of high-
-              quality speech using a conditional flow-matching decoder. The
-              experimental results demonstrate that UnitCorrect outperforms
-              existing models in terms of mispronunciation corrections and
-              naturalness of speech.
+              With recent globalization trends, the importance of language education for nonnative speakers has significantly increased. Research on pronunciation correction and speech editing continues to be actively explored to reduce the pronunciation gap between native and nonnative speakers. Traditional speech editing models frequently suffer from unnaturalness at the boundary of the corrected parts and demand substantial input information to effectively synthesize corrected speech. Furthermore, the scarcity of data for curated annotations of mispronounced speech hinders training. This paper introduces UnitCorrect, a mispronunciation correction model that leverages self-supervised unit representations for synthesizing natural-sounding speech and utilizing more phoneme information from speech effectively. We also propose a dynamic time warping based mispronunciation detection system with reduced informational requirements. This system automatically identifies mispronounced segments by comparing the input audio with the target text. Moreover, we supplement the insufficient text information by incorporating frame-level text conditioning into the input of the decoder, therby enabling the synthesis of high-quality speech using a conditional flow-matching decoder. The experimental results demonstrate that UnitCorrect outperforms existing models in terms of mispronunciation corrections and naturalness of speech.
             </p>
             <br />
             <br />
@@ -171,12 +155,78 @@
           <div class="text-center">
             <br />
             <img width="100%" src="./fig1.png" />
-            <br />
-            <img width="100%" src="./fig2.png" />
+            <!-- <br />
+            <img width="100%" src="./fig2.png" /> -->
           </div>
         </div>
       </div>
     </section>
+
+
+
+
+    <section class="page-section bg-info text-white mb-0" id="mc">
+      <div class="container">
+        <!-- About Section Heading-->
+        <div class="text-center">
+          <h2 class="page-section-heading d-inline-block text-white">
+            Comparative Model
+          </h2>
+        </div>
+        <!-- <div class="text-center" style="text-align: center">
+          <br />
+          <img src="./table1.png" width="100%" />
+          <br />
+          <img src="./table2.png" width="100%" />
+        </div> -->
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom"></div>
+        </div>
+
+        <div class="row">
+          <div id="div2" class="col-lg-auto ml-auto">
+            <script>
+              dir = "./samples/audio";
+              exp = {
+                GT: "gt",
+                A3T: "a3t",
+                CampNet: "campnet",
+                FluentSpeech: "fluentspeech",
+                Ours: "ours",
+              };
+              audios = {
+                YBAA_arctic_b0154: {
+                  script:
+                    "That is the strange part of it.",
+                },
+                HQTV_arctic_a0532: {
+                  script:
+                    "May drought destroy your crops.",
+                },
+
+              };
+
+              for (var audio in audios) {
+                div = document.getElementById("div2");
+                script = audios[audio];
+                html = createTable(dir, exp, audio, script);
+                // console.log(html)
+                div.insertAdjacentHTML("afterend", html);
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
 
     <div class="scroll-to-top d-lg-none position-fixed">
       <a
