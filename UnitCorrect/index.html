@@ -118,13 +118,12 @@
       </div>
     </nav>
 
-    <header class="masthead bg-white text-left">
+    <header class="masthead bg-white text-center">
       <!-- text-black 사용 가능 -->
       <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Heading-->
         <h1 class="masthead-heading mb-0">
-          UnitCorrect: Unit-based Mispronunciation
-          Correction Model with a Detection System
+          UnitCorrect: Unit-based Mispronunciation Correction Model with a Detection System
         </h1>
         <!-- Masthead Subheading-->
         <p
@@ -167,10 +166,7 @@
       </div>
     </section>
 
-
-
-
-    <section class="page-section bg-info text-white mb-0" id="mc">
+    <section class="page-section bg-info text-white mb-0" id="compare">
       <div class="container">
         <!-- About Section Heading-->
         <div class="text-center">
@@ -192,7 +188,7 @@
         <div class="row">
           <div id="div2" class="col-lg-auto ml-auto">
             <script>
-              dir = "./samples/audio";
+              dir = "./samples/compare";
               exp = {
                 GT: "gt",
                 A3T: "a3t",
@@ -229,6 +225,78 @@
 
               for (var audio in audios) {
                 div = document.getElementById("div2");
+                script = audios[audio];
+                wrong_script = audios[audio];
+                html = createTable(dir, exp, audio, script, wrong_script);
+                // console.log(html)
+                div.insertAdjacentHTML("afterend", html);
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section bg-info text-white mb-0" id="ablation">
+      <div class="container">
+        <!-- About Section Heading-->
+        <div class="text-center">
+          <h2 class="page-section-heading d-inline-block text-white">
+            Ablation
+          </h2>
+        </div>
+        <!-- <div class="text-center" style="text-align: center">
+          <br />
+          <img src="./table1.png" width="100%" />
+          <br />
+          <img src="./table2.png" width="100%" />
+        </div> -->
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom"></div>
+        </div>
+
+        <div class="row">
+          <div id="div3" class="col-lg-auto ml-auto">
+            <script>
+              dir = "./samples/abl";
+              exp = {
+                GT: "gt",
+                'w/o ctc': "ctc",
+                'w/o grlctc': "grlctc",
+                'w/o random masking': "masking",
+                'w frame-level masking': "f_masking",
+                Ours: "ours",
+              };
+              audios = {
+                HKK_arctic_b0068: {
+                  script:
+                    "Only the chance sound had led him to observe them.",
+                  wrong_script:
+                    "Only the chain sound had led him to observe them.",
+                },
+                THV_arctic_a0454: {
+                  script:
+                    "The sharp voice of Wolf Larsen aroused me.",
+                  wrong_script:
+                    "The sharp force of gold lushion around meat.",
+                },
+                YBAA_arctic_b0154: {
+                  script:
+                    "That is the strange part of it.",
+                  wrong_script:
+                    "Therst a strange part of it.",
+                },
+                TNI_arctic_a0516: {
+                  script:
+                    "Also there was awe in their faces.",
+                  wrong_script:
+                    "Also there was an awe in their faces.",
+                },
+              };
+
+              for (var audio in audios) {
+                div = document.getElementById("div3");
                 script = audios[audio];
                 wrong_script = audios[audio];
                 html = createTable(dir, exp, audio, script, wrong_script);
