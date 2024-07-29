@@ -37,13 +37,18 @@
     <!-- <link rel="stylesheet" href="css/bootstrap-slider.css"> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" /> -->
     <script>
-      function createTable(dir, exp, audio, script, idx = 1) {
+      function createTable(dir, exp, audio, script, wrong_script, idx = 1) {
         html =
           '<table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">';
         html += '<thead><tr><th colspan="5" style="width: 40%">';
-        html += '<div class="text-left">Script : <i>';
-        html += script["script"];
-        html += "</i></div></th></tr></thead><tbody><tr>";
+        html += '<div class="text-left">Recognized Script : <i>';
+          html += wrong_script["wrong_script"];
+          html += "</i></div></th></tr></thead><tbody><tr>";
+        html += '<thead><tr><th colspan="5" style="width: 40%">';
+        html += '<div class="text-left">Target Script : <i>';
+          html += script["script"];
+          html += "</i></div></th></tr></thead><tbody><tr>";
+
         for (var key in exp) {
           if (idx % 3 == 0) {
             html += "<tr>";
@@ -196,21 +201,37 @@
                 Ours: "ours",
               };
               audios = {
+                HKK_arctic_b0068: {
+                  script:
+                    "Only the chance sound had led him to observe them.",
+                  wrong_script:
+                    "Only the chain sound had led him to observe them.",
+                },
+                THV_arctic_a0454: {
+                  script:
+                    "The sharp voice of Wolf Larsen aroused me.",
+                  wrong_script:
+                    "The sharp force of gold lushion around meat.",
+                },
                 YBAA_arctic_b0154: {
                   script:
                     "That is the strange part of it.",
+                  wrong_script:
+                    "Therst a strange part of it.",
                 },
-                HQTV_arctic_a0532: {
+                TNI_arctic_a0516: {
                   script:
-                    "May drought destroy your crops.",
+                    "Also there was awe in their faces.",
+                  wrong_script:
+                    "Also there was an awe in their faces.",
                 },
-
               };
 
               for (var audio in audios) {
                 div = document.getElementById("div2");
                 script = audios[audio];
-                html = createTable(dir, exp, audio, script);
+                wrong_script = audios[audio];
+                html = createTable(dir, exp, audio, script, wrong_script);
                 // console.log(html)
                 div.insertAdjacentHTML("afterend", html);
               }
@@ -219,13 +240,6 @@
         </div>
       </div>
     </section>
-
-
-
-
-
-
-
 
 
     <div class="scroll-to-top d-lg-none position-fixed">
