@@ -1,337 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <style type="text/css">
-      a:link {
-        color: black;
-        text-decoration: none;
-      }
-      a:visited {
-        color: black;
-        text-decoration: none;
-      }
-      a:hover {
-        color: blue;
-        text-decoration: underline;
-      }
-    </style>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>UnitCorrect Demo</title>
-    <!-- Font Awesome icons (free version)-->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-    <!-- Fonts CSS-->
-    <link rel="stylesheet" href="css/heading.css" />
-    <link rel="stylesheet" href="css/body.css" />
-    <!-- Bootstrap slider CSS -->
-    <!-- <link rel="stylesheet" href="css/bootstrap-slider.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" /> -->
-    <script>
-      function createTable(dir, exp, audio, script, wrong_script, idx = 1) {
-        html =
-          '<table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px">';
-        html += '<thead><tr><th colspan="5" style="width: 40%">';
-        html += '<div class="text-left">Recognized Script : <i>';
-          html += wrong_script["wrong_script"];
-          html += "</i></div></th></tr></thead><tbody><tr>";
-        html += '<thead><tr><th colspan="5" style="width: 40%">';
-        html += '<div class="text-left">Target Script : <i>';
-          html += script["script"];
-          html += "</i></div></th></tr></thead><tbody><tr>";
-
-        for (var key in exp) {
-          if (idx % 3 == 0) {
-            html += "<tr>";
-          }
-          html += '<td style="vertical-align: top;"><p></p>';
-          html += key;
-          // html +="<p><em>ASR: "
-          // html +=script[exp[key]]
-          // html +="</em></p>"
-          html +=
-            '<div class="text-center"><audio controls="controls"><source src=';
-          f = dir + "/" + exp[key] + "/" + audio + ".wav";
-          html += f;
-          html += ' type="audio/wav" /></audio></div></td>';
-          idx += 1;
-          if (idx % 3 == 0) {
-            html += "</tr>";
-          }
-        }
-        html += "</tr></tbody></table>";
-        return html;
-      }
-    </script>
-  </head>
-  <body id="page-top">
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"
-          >UnitCorrect</a
-        >
-        <button
-          class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-0 mx-lg-1">
-              <a
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="#abstract"
-                >Abstact</a
-              >
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="#compare"
-                >Comparative<br />Model</a
-              >
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="#ablation"
-                >Ablation</a
-              >
-            </li>
-          </ul>
-        </div>
+<head>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    a:link {
+      color: black;
+      text-decoration: none;
+    }
+    a:visited {
+      color: black;
+      text-decoration: none;
+    }
+    a:hover {
+      color: blue;
+      text-decoration: underline;
+    }
+    .center-table {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px; /* 테이블 간 간격을 두기 위해 추가 */
+    }
+    .table-responsive {
+      margin: auto;
+    }
+    .text-center {
+      text-align: center;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>UnitCorrect Demo</title>
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+  <!-- Fonts CSS-->
+  <link rel="stylesheet" href="css/heading.css" />
+  <link rel="stylesheet" href="css/body.css" />
+</head>
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">UnitCorrect</a>
+      <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">Abstract</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#compare">Comparative<br />Model</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation">Ablation</a></li>
+        </ul>
       </div>
-    </nav>
-
-    <header class="masthead bg-white text-center">
-      <!-- text-black 사용 가능 -->
-      <div class="container d-flex align-items-center flex-column">
-        <!-- Masthead Heading-->
-        <h1 class="masthead-heading mb-0">
-          UnitCorrect: Unit-based Mispronunciation Correction Model with a Detection System
-        </h1>
-        <!-- Masthead Subheading-->
-        <p
-          class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic"
-        >
-          Hyun-Woo Bae, Hyung-Seok Oh, Seung-Bin Kim and Seong-Whan Lee
-        </p>
-      </div>
-    </header>
-
-    <!-- Abstraction -->
-    <section class="page-section portfolio" id="abstract">
-      <div class="container">
-        <!-- Portfolio Section Heading-->
-        <div class="text-center">
-          <h2 class="page-section-heading text-secondary mb-0 d-inline-block">
-            Abstract
-          </h2>
-        </div>
-        <!-- Icon Divider-->
-        <div class="divider-custom">
-          <div class="divider-custom"></div>
-        </div>
-        <!-- Portfolio Grid Items-->
-        <div class="row justify-content-center">
-          <div class="col-lg-12 ml-auto">
-            <p class="legend lead">
-              With recent globalization trends, the importance of language education for nonnative speakers has significantly increased. Research on pronunciation correction and speech editing continues to be actively explored to reduce the pronunciation gap between native and nonnative speakers. Traditional speech editing models frequently suffer from unnaturalness at the boundary of the corrected parts and demand substantial input information to effectively synthesize corrected speech. Furthermore, the scarcity of data for curated annotations of mispronounced speech hinders training. This paper introduces UnitCorrect, a mispronunciation correction model that leverages self-supervised unit representations for synthesizing natural-sounding speech and utilizing more phoneme information from speech effectively. We also propose a dynamic time warping based mispronunciation detection system with reduced informational requirements. This system automatically identifies mispronounced segments by comparing the input audio with the target text. Moreover, we supplement the insufficient text information by incorporating frame-level text conditioning into the input of the decoder, therby enabling the synthesis of high-quality speech using a conditional flow-matching decoder. The experimental results demonstrate that UnitCorrect outperforms existing models in terms of mispronunciation corrections and naturalness of speech.
-            </p>
-            <br />
-            <br />
-          </div>
-          <div class="text-center">
-            <br />
-            <img width="100%" src="./fig1.png" />
-            <!-- <br />
-            <img width="100%" src="./fig2.png" /> -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="page-section bg-info text-white mb-0" id="compare">
-      <div class="container">
-        <!-- About Section Heading-->
-        <div class="text-center">
-          <h2 class="page-section-heading d-inline-block text-white">
-            Comparative Model
-          </h2>
-        </div>
-        <!-- <div class="text-center" style="text-align: center">
-          <br />
-          <img src="./table1.png" width="100%" />
-          <br />
-          <img src="./table2.png" width="100%" />
-        </div> -->
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-          <div class="divider-custom"></div>
-        </div>
-
-        <div class="row">
-          <div id="div2" class="col-lg-auto ml-auto">
-            <script>
-              dir = "./samples/compare";
-              exp = {
-                GT: "gt",
-                A3T: "a3t",
-                CampNet: "campnet",
-                FluentSpeech: "fluentspeech",
-                Ours: "ours",
-              };
-              audios = {
-                HKK_arctic_b0068: {
-                  script:
-                    "Only the chance sound had led him to observe them.",
-                  wrong_script:
-                    "Only the chain sound had led him to observe them.",
-                },
-                THV_arctic_a0454: {
-                  script:
-                    "The sharp voice of Wolf Larsen aroused me.",
-                  wrong_script:
-                    "The sharp force of gold lushion around meat.",
-                },
-                YBAA_arctic_b0154: {
-                  script:
-                    "That is the strange part of it.",
-                  wrong_script:
-                    "Therst a strange part of it.",
-                },
-                TNI_arctic_a0516: {
-                  script:
-                    "Also there was awe in their faces.",
-                  wrong_script:
-                    "Also there was an awe in their faces.",
-                },
-              };
-
-              for (var audio in audios) {
-                div = document.getElementById("div2");
-                script = audios[audio];
-                wrong_script = audios[audio];
-                html = createTable(dir, exp, audio, script, wrong_script);
-                // console.log(html)
-                div.insertAdjacentHTML("afterend", html);
-              }
-            </script>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="page-section bg-info text-white mb-0" id="ablation">
-      <div class="container">
-        <!-- About Section Heading-->
-        <div class="text-center">
-          <h2 class="page-section-heading d-inline-block text-white">
-            Ablation
-          </h2>
-        </div>
-        <!-- <div class="text-center" style="text-align: center">
-          <br />
-          <img src="./table1.png" width="100%" />
-          <br />
-          <img src="./table2.png" width="100%" />
-        </div> -->
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-          <div class="divider-custom"></div>
-        </div>
-
-        <div class="row">
-          <div id="div3" class="col-lg-auto ml-auto">
-            <script>
-              dir = "./samples/abl";
-              exp = {
-                GT: "gt",
-                'w/o ctc': "ctc",
-                'w/o grlctc': "grlctc",
-                'w/o random masking': "masking",
-                'w frame-level masking': "f_masking",
-                Ours: "ours",
-              };
-              audios = {
-                HKK_arctic_b0068: {
-                  script:
-                    "Only the chance sound had led him to observe them.",
-                  wrong_script:
-                    "Only the chain sound had led him to observe them.",
-                },
-                THV_arctic_a0454: {
-                  script:
-                    "The sharp voice of Wolf Larsen aroused me.",
-                  wrong_script:
-                    "The sharp force of gold lushion around meat.",
-                },
-                YBAA_arctic_b0154: {
-                  script:
-                    "That is the strange part of it.",
-                  wrong_script:
-                    "Therst a strange part of it.",
-                },
-                TNI_arctic_a0516: {
-                  script:
-                    "Also there was awe in their faces.",
-                  wrong_script:
-                    "Also there was an awe in their faces.",
-                },
-              };
-
-              for (var audio in audios) {
-                div = document.getElementById("div3");
-                script = audios[audio];
-                wrong_script = audios[audio];
-                html = createTable(dir, exp, audio, script, wrong_script);
-                // console.log(html)
-                div.insertAdjacentHTML("afterend", html);
-              }
-            </script>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <div class="scroll-to-top d-lg-none position-fixed">
-      <a
-        class="js-scroll-trigger d-block text-center text-white rounded"
-        href="#page-top"
-        ><i class="fa fa-chevron-up"></i
-      ></a>
     </div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  </nav>
 
-    <script src="js/scripts.js"></script>
-    <!-- Bootstrap slider JavaScript -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"
-      integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA=="
-      crossorigin="anonymous"
-    ></script>
+  <header class="masthead bg-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+      <!-- Masthead Heading-->
+      <h1 class="masthead-heading mb-0">
+        UnitCorrect: Unit-based Mispronunciation Correction Model with a Detection System
+      </h1>
+      <!-- Masthead Subheading-->
+      <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">
+        Hyun-Woo Bae, Hyung-Seok Oh, Seung-Bin Kim and Seong-Whan Lee
+      </p>
+    </div>
+  </header>
 
-    <!-- slider JS -->
-    <script type="text/javascript"></script>
-  </body>
+  <!-- Abstraction -->
+  <section class="page-section portfolio" id="abstract">
+    <div class="container">
+      <!-- Portfolio Section Heading-->
+      <div class="text-center">
+        <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Abstract</h2>
+      </div>
+      <!-- Icon Divider-->
+      <div class="divider-custom">
+        <div class="divider-custom"></div>
+      </div>
+      <!-- Portfolio Grid Items-->
+      <div class="row justify-content-center">
+        <div class="col-lg-12 ml-auto">
+          <p class="legend lead">
+            With recent globalization trends, the importance of language education for nonnative speakers has significantly increased. Research on pronunciation correction and speech editing continues to be actively explored to reduce the pronunciation gap between native and nonnative speakers. Traditional speech editing models frequently suffer from unnaturalness at the boundary of the corrected parts and demand substantial input information to effectively synthesize corrected speech. Furthermore, the scarcity of data for curated annotations of mispronounced speech hinders training. This paper introduces UnitCorrect, a mispronunciation correction model that leverages self-supervised unit representations for synthesizing natural-sounding speech and utilizing more phoneme information from speech effectively. We also propose a dynamic time warping based mispronunciation detection system with reduced informational requirements. This system automatically identifies mispronounced segments by comparing the input audio with the target text. Moreover, we supplement the insufficient text information by incorporating frame-level text conditioning into the input of the decoder, therby enabling the synthesis of high-quality speech using a conditional flow-matching decoder. The experimental results demonstrate that UnitCorrect outperforms existing models in terms of mispronunciation corrections and naturalness of speech.
+          </p>
+          <br />
+          <br />
+        </div>
+        <div class="text-center">
+          <br />
+          <img width="100%" src="./fig1.png" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg-info text-white mb-0" id="compare">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="page-section-heading d-inline-block text-white">Comparative Model</h2>
+      </div>
+      <div class="divider-custom divider-light">
+        <div class="divider-custom"></div>
+      </div>
+      <div id="div2" class="row justify-content-center">
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg-info text-white mb-0" id="ablation">
+    <div class="container">
+      <!-- About Section Heading-->
+      <div class="text-center">
+        <h2 class="page-section-heading d-inline-block text-white">Ablation</h2>
+      </div>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom"></div>
+      </div>
+      <div id="div4" class="row justify-content-center">
+      </div>
+    </div>
+  </section>
+
+  <div class="scroll-to-top d-lg-none position-fixed">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <!-- Third party plugin JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <!-- Custom JS -->
+  <script>
+    const compareDir = "./samples/compare";
+    const ablDir = "./samples/abl";
+
+    const compareExp = {
+      GT: "gt",
+      A3T: "a3t",
+      CampNet: "campnet",
+      FluentSpeech: "fluentspeech",
+      Ours: "ours",
+    };
+
+    const ablExp = {
+      GT: "gt",
+      'w/o ctc': "ctc",
+      'w/o grlctc': "grlctc",
+      'w/o random masking': "masking",
+      'w frame-level masking': "f_masking",
+      Ours: "ours",
+    };
+
+    const compareAudios = {
+      HKK_arctic_b0068: {
+        script: "Only the chance sound had led him to observe them.",
+        wrong_script: "Only the chain sound had led him to observe them.",
+      },
+      THV_arctic_a0454: {
+        script: "The sharp voice of Wolf Larsen aroused me.",
+        wrong_script: "The sharp force of gold lushion around meat.",
+      },
+      YBAA_arctic_b0154: {
+        script: "That is the strange part of it.",
+        wrong_script: "Therst a strange part of it.",
+      },
+    };
+
+    const ablAudios = {
+      HKK_arctic_b0068: {
+        script: "Only the chance sound had led him to observe them.",
+        wrong_script: "Only the chain sound had led him to observe them.",
+      },
+      THV_arctic_a0454: {
+        script: "The sharp voice of Wolf Larsen aroused me.",
+        wrong_script: "The sharp force of gold lushion around meat.",
+      },
+      YBAA_arctic_b0154: {
+        script: "That is the strange part of it.",
+        wrong_script: "Therst a strange part of it.",
+      },
+    };
+
+    function createContent(dir, exp, audios, containerId) {
+      for (const audio in audios) {
+        const div = document.getElementById(containerId);
+        const script = audios[audio];
+        const wrong_script = audios[audio];
+        const html = createTable(dir, exp, audio, script, wrong_script);
+
+        const audioDiv = document.createElement("div");
+        audioDiv.className = "center-table";
+        audioDiv.innerHTML = html;
+
+        // Insert the new div with the table as a new row
+        const rowDiv = document.createElement("div");
+        rowDiv.className = "row justify-content-center";
+        rowDiv.appendChild(audioDiv);
+        div.appendChild(rowDiv);
+      }
+    }
+
+    function createTable(dir, exp, audio, script, wrong_script) {
+      let html = '<table class="table table-responsive align-content-center" style="background-color: white; border-radius: 20px; margin: auto;">';
+      html += '<thead><tr><th colspan="5" style="width: 40%">';
+      html += '<div class="text-left">Recognized Script : <i>';
+      html += wrong_script["wrong_script"];
+      html += "</i></div></th></tr></thead><tbody><tr>";
+      html += '<tr><th colspan="5" style="width: 40%">';
+      html += '<div class="text-left">Target Script : <i>';
+      html += script["script"];
+      html += "</i></div></th></tr><tbody><tr>";
+
+      let idx = 0;
+      for (const model in exp) {
+        if (idx % 3 === 0) {
+          html += "<tr class='center-cell'>";
+        }
+        html += '<td style="vertical-align: top; text-align: center;"><p></p>';
+        html += model;
+        html += '<div class="text-center"><audio controls="controls"><source src=';
+        const f = dir + "/" + exp[model] + "/" + audio + ".wav";
+        html += f;
+        html += ' type="audio/wav" /></audio></div>';
+        html += '<div class="text-center"><img src=';
+        const imgSrc = dir + "/" + exp[model] + "/" + audio + ".png";
+        html += imgSrc;
+        html += ' alt="Image for ' + audio + ' - ' + model + '" style="width:100%; margin-top:10px;" onerror="this.style.display=\'none\'; this.parentElement.classList.add(\'center-cell\');"></div></td>';
+        idx += 1;
+        if (idx % 3 === 0) {
+          html += "</tr>";
+        }
+      }
+      html += "</tr></tbody></table>";
+      return html;
+    }
+
+    // Create content for compare and ablation sections
+    createContent(compareDir, compareExp, compareAudios, "div2");
+    createContent(ablDir, ablExp, ablAudios, "div4");
+
+  </script>
+</body>
 </html>
